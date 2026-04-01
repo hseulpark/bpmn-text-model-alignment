@@ -1,0 +1,4 @@
+requests
+PyYAML
+sentence-transformers
+torch
