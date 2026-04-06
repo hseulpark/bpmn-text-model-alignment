@@ -1,0 +1,57 @@
+# =========================
+# Python / venv
+# =========================
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Model / NLP caches
+# =========================
+.cache/
+cache/
+**/.cache/
+
+**/huggingface/
+**/hf_cache/
+**/transformers_cache/
+**/sentence_transformers/
+
+*.spacy
+
+# =========================
+# Secrets / env files
+# =========================
+.env
+.env.*
+*.env
+HF_TOKEN*
+OPENAI_API_KEY*
+OPENROUTER_API_KEY*
