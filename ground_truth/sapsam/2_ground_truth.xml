@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Check Parts in Stock</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="In Stock" language="text/javascript">
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Retrieve Parts from Storage</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not in Stock" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Specify and Quantify Requirements</label>
+          <method/>
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Complete Purchase Order</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Check by Central Purchasing</label>
+          <method/>
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Vendor Known" language="text/javascript">
+          <call id="a10" endpoint="">
+            <parameters>
+              <label>Create Order Template</label>
+              <method/>
+              <type>:task</type>
+              <mid>'9'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Vendor Unknown" language="text/javascript">
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Create New Vendor</label>
+              <method/>
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a12" endpoint="">
+        <parameters>
+          <label>Approve Purchase Order</label>
+          <method/>
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a13" endpoint="">
+        <parameters>
+          <label>Receipt of Goods</label>
+          <method/>
+          <type>:task</type>
+          <mid>'12'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="No Issues" language="text/javascript"/>
+        <alternative condition="Delivery Issues" language="text/javascript">
+          <call id="a16" endpoint="">
+            <parameters>
+              <label>Adjust Order Status</label>
+              <method/>
+              <type>:task</type>
+              <mid>'14'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

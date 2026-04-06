@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="" a:alt_id="sid-4961B52B-FE1C-4C36-A550-88B0EED84CFC">
+    <parameters>
+      <label>Receive customer order</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a1" endpoint="" a:alt_id="sid-B817EB08-6364-4564-ADE2-948A138CBE4A">
+    <parameters>
+      <label>Processing customer demand</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-0102307F-BB46-4F54-B7E9-D8BD40074362">
+    <parameters>
+      <label>Determine demanded components according to planning</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-71D634A0-99BA-4840-ABA9-0F4B2DDD5571">
+    <alternative condition="">
+      <call id="a8" endpoint="" a:alt_id="sid-46B55198-A27F-47BA-9553-E951E62F7169">
+        <parameters>
+          <label>Purchase missing parts and put on stock</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="" />
+  </choose>
+  <call id="a9" endpoint="" a:alt_id="sid-39BBAD24-72AA-4635-A61A-3C164F0A27F5">
+    <parameters>
+      <label>Perform production</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a16" endpoint=""><parameters><label>Validate data</label><method /><type>:task</type><arguments /></parameters></call><call id="a10" endpoint="" a:alt_id="sid-2F8A28A4-257A-4C05-BF24-807CFE6F8415">
+    <parameters>
+      <label>Perform 
+quality checks</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-F8FBE3E0-D679-412F-8173-3F1DE1134C45">
+    <alternative condition="" />
+    <alternative condition="">
+      <call id="a15" endpoint="" a:alt_id="sid-B72FF84C-9348-4764-AE4C-552438970379">
+        <parameters>
+          <label>Perform follow-up production</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a14" endpoint="" a:alt_id="sid-4908C279-F33D-4B43-8158-0849F52D354A">
+    <parameters>
+      <label>Transport product to the warehouse</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a13" endpoint="" a:alt_id="sid-628CCD44-BAD8-4AF1-BDFC-1F77B7552512">
+    <parameters>
+      <label>Pack and label product</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-71C2F120-2B9B-4A5D-B6FD-D180E86FBCCD">
+    <parameters>
+      <label>Send product to customer</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

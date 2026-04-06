@@ -1,0 +1,7 @@
+The process begins when a Customer Service Representative (CSR) sends a mortgage offer to a customer. After sending the offer, the CSR waits for a reply from the customer. Once a reply is received, the process reaches a decision point where two possible paths can be taken.
+
+In the first path, the CSR updates the case details. Following this update, the CSR archives the work. After archiving, the CSR performs a cancellation. This path then leads to another decision point, which eventually merges back into the main flow of the process.
+
+In the second path, the CSR moves the case to administration. This leads to another decision point. From here, the CSR may generate a request for any outstanding documents needed. After generating this request, the process reaches yet another decision point. If the process continues along this path, the CSR updates the case details, archives the work, and performs a cancellation, similar to the first path. This sequence also leads to a decision point that merges back into the main flow.
+
+Both paths eventually converge at a final decision point, which leads to the end of the process. The process concludes once all necessary actions have been completed and the final decision point is reached.

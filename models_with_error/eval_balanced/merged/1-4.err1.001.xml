@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a12" endpoint="" a:alt_id="sid-A723D51F-907C-4590-8FF7-261914E31348">
+    <parameters>
+      <label>Company decides to go public</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a1" endpoint="" a:alt_id="sid-CBA2615C-D9E9-461D-A823-7E0F10CA54A9">
+    <parameters>
+      <label>Company selects the underwriters</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-9BA84F4B-ECB2-4F28-BCBF-E12194B834FA">
+    <parameters>
+      <label>Underwriters prepare a registration statement for the approval of SEC</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-49062CB7-3703-4A8F-BEAB-E7AE2549028F">
+    <parameters>
+      <label>Underwriters  check the issue's compliance</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-3390F041-01DB-4B68-87FE-A92964C970A0">
+    <parallel_branch>
+      <call id="a4" endpoint="" a:alt_id="sid-B69B3A5A-ED1C-4528-9649-73ECA753CFD9">
+        <parameters>
+          <label>Underwriters begin to firm up the issue price and Underwriters arrange a road show</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="" a:alt_id="sid-AE995A37-C22D-4A74-A8E7-C2A0A5C92F54">
+        <parameters>
+          <label>Underwriters awaite approval of registration statement</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a7" endpoint="" a:alt_id="sid-3FCB48B2-E639-4425-8552-D3D05C4E8EE1">
+    <parameters>
+      <label>Underwriters receive clearance from the SEC</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-BE0B2588-CED2-440E-9401-E781FD3D37F0">
+    <parameters>
+      <label>Underwriters fix the issue price</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-A99B1810-2852-437B-9A68-2F3E1ED18A0D">
+    <parameters>
+      <label>Underwriters enter into a firm commitment to buy the stock</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="" a:alt_id="sid-F8E3A5A1-40B5-4661-96A6-0D271E8BB236">
+    <parameters>
+      <label>Underwriters offer stock to the public</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

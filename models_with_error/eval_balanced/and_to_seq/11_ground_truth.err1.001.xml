@@ -1,0 +1,332 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <call id="a2" endpoint="">
+        <parameters>
+          <label>UI Selection</label>
+          <method/>
+          <type>:task</type>
+          <mid>'1'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a3" endpoint="">
+        <parameters>
+          <label>Start Program</label>
+          <method/>
+          <type>:task</type>
+          <mid>'2'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Ask for Tutorial</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="No" language="text/javascript">
+          <call id="a7" endpoint="">
+            <parameters>
+              <label>Standard Key Assignment</label>
+              <method/>
+              <type>:task</type>
+              <mid>'6'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Yes" language="text/javascript">
+          <call id="a8" endpoint="">
+            <parameters>
+              <label>Start Tutorial</label>
+              <method/>
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive">
+        <alternative condition="">
+          <call id="a10" endpoint="">
+            <parameters>
+              <label>Continue Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'9'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last">
+            <parallel_branch>
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Generate Ambient Noise</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'14'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a16" endpoint="">
+                <parameters>
+                  <label>Play Background Music</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'15'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+          <call id="a18" endpoint="">
+            <parameters>
+              <label>Load Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'17'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="">
+            <parameters>
+              <label>Prompt User for Input</label>
+              <method/>
+              <type>:task</type>
+              <mid>'18'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a20" endpoint="">
+            <parameters>
+              <label>Begin Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'19'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Load Saved Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a1" endpoint="">
+            <parameters>
+              <label>Generate Ambient Noise</label>
+              <color/>
+              <method>:post</method>
+              <arguments/>
+            </parameters>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+          <call id="a4" endpoint="">
+            <parameters>
+              <label>Play Background Music</label>
+              <color/>
+              <method>:post</method>
+              <arguments/>
+            </parameters>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+          <call id="a18" endpoint="">
+            <parameters>
+              <label>Load Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'17'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="">
+            <parameters>
+              <label>Prompt User for Input</label>
+              <method/>
+              <type>:task</type>
+              <mid>'18'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a20" endpoint="">
+            <parameters>
+              <label>Begin Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'19'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a12" endpoint="">
+            <parameters>
+              <label>Start New Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'12'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <parallel wait="-1" cancel="last">
+            <parallel_branch>
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Generate Ambient Noise</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'14'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a16" endpoint="">
+                <parameters>
+                  <label>Play Background Music</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'15'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </parallel_branch>
+          </parallel>
+          <call id="a18" endpoint="">
+            <parameters>
+              <label>Load Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'17'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a19" endpoint="">
+            <parameters>
+              <label>Prompt User for Input</label>
+              <method/>
+              <type>:task</type>
+              <mid>'18'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a20" endpoint="">
+            <parameters>
+              <label>Begin Game</label>
+              <method/>
+              <type>:task</type>
+              <mid>'19'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Access Game Settings" language="text/javascript">
+          <call id="a13" endpoint="">
+            <parameters>
+              <label>Access Game Settings</label>
+              <method/>
+              <type>:task</type>
+              <mid>'11'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-9F29E7FA-6866-4BBB-B544-ABC0E75B9030">
+    <parameters>
+      <label>Develop basic design</label>
+      <method/>
+      <type>:manualTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-C6B1E0EC-13A2-40D8-B326-E24C6A74FD6D">
+    <parameters>
+      <label>Order necessary Lego brick sets</label>
+      <method/>
+      <type>:serviceTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-5822826B-7527-4E1D-94F6-3F3098314DFE">
+    <parameters>
+      <label>Sort Lego bricks according to size</label>
+      <method/>
+      <type>:manualTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-3FE35417-CECA-4366-923C-45F00875766A">
+    <parallel_branch>
+      <call id="a14" endpoint="" a:alt_id="sid-FE9AEFBF-72F2-4098-BB01-7EC293046944">
+        <parameters>
+          <label>Put big bricks in suitable container</label>
+          <method/>
+          <type>:manualTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a16" endpoint="" a:alt_id="sid-C9E190FC-DF4D-410C-A03B-7AFFE9D82F3F">
+        <parameters>
+          <label>Put medium bricks in suitable container</label>
+          <method/>
+          <type>:manualTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a17" endpoint="" a:alt_id="sid-4AC52AF5-9DCC-4759-B701-8F26A7FD7374">
+        <parameters>
+          <label>Put small bricks in suitable container</label>
+          <method/>
+          <type>:manualTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <loop mode="pre_test" condition="true">
+    <call id="a4" endpoint="" a:alt_id="sid-02DEFF8B-EA41-44C7-B2B5-0E5248957963">
+      <parameters>
+        <label>Build subcomponents</label>
+        <method/>
+        <type>:manualTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-45ACBA93-5C07-4F7E-98E0-46E11ED5D8A7">
+      <alternative condition="">
+        <call id="a6" endpoint="" a:alt_id="sid-FD8D299D-65A7-4FE5-9B9E-931489194A80">
+          <parameters>
+            <label>Continue building subcomponents</label>
+            <method/>
+            <type>:manualTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a7" endpoint="" a:alt_id="sid-672D68F0-823B-4C0A-8056-CE75A959AC0D">
+          <parameters>
+            <label>Reorder Lego bricks</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+    <call id="a9" endpoint="" a:alt_id="sid-14E98F4F-75F0-4ED8-A284-005FAA975B19">
+      <parameters>
+        <label>Test subcomponents</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-BF65F859-C85E-4A9E-8940-5E347031A5A8">
+      <alternative condition="">
+        <call id="a12" endpoint="" a:alt_id="sid-5B9031C9-A781-458E-BB3D-0C2DB0561DEF">
+          <parameters>
+            <label>Redesign subcomponent</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a11" endpoint="" a:alt_id="sid-6C4C3CE2-A404-4368-B1CC-E7865241573C">
+          <parameters>
+            <label>Assemble to machine</label>
+            <method/>
+            <type>:manualTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+</description>

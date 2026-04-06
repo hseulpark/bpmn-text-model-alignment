@@ -1,0 +1,132 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/37_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/37_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "organize employee interviews",
+    "send appointment suggestions",
+    "conduct employee interview",
+    "assign training",
+    "make regular inquiries",
+    "ensure progress",
+    "confirm appointment",
+    "complete training",
+    "mark employee interview",
+    "hr department organize employee interviews",
+    "employee interview conduct side",
+    "regular inquiries make other side",
+    "employee confirm appointment"
+  ],
+  "model_tasks": [
+    "organize employee interviews",
+    "send appointment suggestions",
+    "conduct employee interview",
+    "assign training",
+    "make regular inquiries",
+    "confirm appointment",
+    "participate in interview",
+    "complete training",
+    "training completed",
+    "mark interview as conducted"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "ensure progress",
+        "hr department organize employee interviews",
+        "employee interview conduct side",
+        "regular inquiries make other side",
+        "employee confirm appointment"
+      ],
+      "additional_tasks": [
+        "participate in interview",
+        "training completed"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "confirm appointment",
+          "task_b": "participate in interview",
+          "before_score": 15,
+          "after_score": 13,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U2",
+              "U7"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U6",
+              "U7"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U0",
+              "U2"
+            ],
+            "user_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U10",
+              "U8"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 4,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with the HR department organizing employee interviews.\n\nFirst, appointment suggestions are sent.\n\nThen, the process branches: on one side, the employee interview is conducted, during which training is assigned, and on the other side, regular inquiries are made to ensure progress.\n\nSimultaneously, the employee must confirm the appointment, participate in the interview, and complete the training.\n\nFinally, the training is completed, and the employee interview is marked as conducted.",
+  "output_text": "The process begins with the initiation of organizing employee interviews. Once this is set in motion, the next step involves sending appointment suggestions to the relevant parties. After the appointment suggestions are sent, the process splits into three parallel activities that occur simultaneously.\n\nThe first activity in this parallel sequence is conducting the employee interview. After the interview is conducted, the next step is to assign training to the employee. \n\nThe second parallel activity involves making regular inquiries. This task runs concurrently with the other activities and continues until the parallel tasks converge again.\n\nThe third parallel activity is confirming the appointment. Once the appointment is confirmed, the next step is for the participant to take part in the interview. Following their participation, the participant is required to complete the assigned training.\n\nOnce all three parallel activities are completed, they converge back into a single flow. The process then proceeds to mark the training as completed. After this, the interview is officially marked as conducted. Finally, the process concludes with the end of the sequence."
+}

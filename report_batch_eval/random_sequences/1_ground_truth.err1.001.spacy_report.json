@@ -1,0 +1,115 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/1_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/1_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "check stock",
+    "retrieve it",
+    "remove work equipment",
+    "specify requirements",
+    "place order",
+    "wait days",
+    "receive receipt days",
+    "procure work equipment",
+    "need arise",
+    "work equipment remove storeroom",
+    "process wait days",
+    "order place supplier",
+    "process continue receipt"
+  ],
+  "model_tasks": [
+    "check stock",
+    "retrieve from storeroom",
+    "specify and quantify requirements",
+    "procure work equipment",
+    "wait 5 days",
+    "place order by email",
+    "receive work equipment",
+    "place order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive receipt days",
+        "need arise",
+        "order place supplier",
+        "process continue receipt"
+      ],
+      "additional_tasks": [
+        "place order by email"
+      ],
+      "merged_tasks": [
+        {
+          "model": "retrieve from storeroom",
+          "model_index": 1,
+          "user": [
+            "retrieve it",
+            "work equipment remove storeroom"
+          ],
+          "user_indices": [
+            1,
+            9
+          ],
+          "pair_sims": [
+            0.508,
+            0.545
+          ],
+          "combo_sim": 0.721
+        },
+        {
+          "model": "wait 5 days",
+          "model_index": 4,
+          "user": [
+            "wait days",
+            "process wait days"
+          ],
+          "user_indices": [
+            5,
+            10
+          ],
+          "pair_sims": [
+            0.703,
+            0.521
+          ],
+          "combo_sim": 0.596
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "procure work equipment",
+          "task_b": "place order",
+          "before_score": 12,
+          "after_score": 8,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "place order by email",
+          "task_b": "receive work equipment",
+          "before_score": 12,
+          "after_score": 10,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process in the procurement department of ACME AG starts as soon as a need arises.\n\nThe first step is to check the stock to see if the required work equipment is available.\n\nIf the work equipment is in stock, it is retrieved from the storeroom, and the process ends with the work equipment being removed from the storeroom.\n\nIf the work equipment is not in stock, the requirements are specified and quantified.\n\nFollowing this, an order is placed.\n\nThe process then waits 5 days for the receipt of the work equipment from the supplier. \n\nIf the the receipt of the work equipment is received before the 5 days pass, the process end with the work equipment being procured.\n\nIf the receipt for the work equipment is not received after 5 days, the order is placed by e-mail to the supplier.\n\nThe process continues upon the receipt of the work equipment.\n\nFinally, the process ends with the work equipment being procured.",
+  "output_text": "The process begins with an initial step where the stock is checked. After checking the stock, a decision is made based on whether the item is in stock or not. If the item is in stock, it is retrieved from the storeroom. Once the item is retrieved, the process moves towards placing an order, which leads to the conclusion of the process.\n\nIf the item is not in stock, the process takes a different path where the requirements are specified and quantified. Following this, work equipment is procured. After procuring the equipment, there is a waiting period of five days. After this waiting period, another decision is made based on whether the equipment was received before the five days elapsed.\n\nIf the equipment is received before the five days, the process proceeds directly to placing an order, which then leads to the end of the process. However, if the equipment is not received after the five days, an order is placed by email. Once the order is placed by email, the work equipment is received. After receiving the equipment, the process continues to placing an order, which then leads to the conclusion of the process."
+}

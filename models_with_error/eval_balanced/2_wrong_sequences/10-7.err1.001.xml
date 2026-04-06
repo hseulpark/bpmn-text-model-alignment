@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-0CCB5E3B-C414-4EB9-AF6E-715F563D4435">
+    <parameters>
+      <label>The MSPN registers the measurement at the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-645237F8-AB65-4724-9757-8A94250B12FE">
+    <parameters>
+      <label>The GO examines the application of the MSPN</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-83A65233-085A-429D-8845-EBB922278AF1">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-4BB4DD6B-4972-451F-B336-97605AF06240">
+        <parameters>
+          <label>The GO rejects the application of the MSPN</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-107B2057-6723-4064-8924-0C06239EB701">
+        <parameters>
+          <label>The GO confirmes the application of the MSPN</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a7" endpoint="" a:alt_id="sid-2DF5274E-4AA1-4229-9CB0-C3E5EE245371">
+    <parameters>
+      <label>The GO assigns the MSPN</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-A9ADCC76-33FC-43EC-8CA1-11CA0DF00FDD">
+    <parameters>
+      <label>The GO informs the MPO about the assignment of the MSPN</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-27B497D5-A11C-46FD-B04F-7E3FFA15CA0F">
+    <parameters>
+      <label>The GO informs the MSPO about the assignment of MSPN</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="" a:alt_id="sid-293F5FBC-D3C0-467E-AE9B-2F6B034884B7">
+    <parameters>
+      <label>The GO informs the SP about the assignment of MSPN</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,139 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/25_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/25_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "inform credit institution",
+    "prepare registration report",
+    "conduct check",
+    "complete tasks",
+    "determine issue price",
+    "organize information event",
+    "receive registration approval",
+    "decide issue price",
+    "check it",
+    "conclude contract",
+    "offer stock",
+    "abort process",
+    "check conduct parallel",
+    "preparation occur",
+    "information event organize issue price preparation",
+    "obligation occur"
+  ],
+  "model_tasks": [
+    "inform credit institution of sec approval start",
+    "prepare registration report",
+    "check against blue-sky laws",
+    "prepare issue price",
+    "wait for registration approval",
+    "organize information event",
+    "receive registration approval",
+    "decide issue price",
+    "check obligation occurrence",
+    "conclude contract",
+    "offer stock to public"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "complete tasks",
+        "check it",
+        "abort process",
+        "check conduct parallel",
+        "preparation occur"
+      ],
+      "additional_tasks": [
+        "check against blue-sky laws",
+        "wait for registration approval"
+      ],
+      "merged_tasks": [
+        {
+          "model": "prepare issue price",
+          "model_index": 3,
+          "user": [
+            "determine issue price",
+            "information event organize issue price preparation"
+          ],
+          "user_indices": [
+            4,
+            14
+          ],
+          "pair_sims": [
+            0.692,
+            0.559
+          ],
+          "combo_sim": 0.593
+        },
+        {
+          "model": "check obligation occurrence",
+          "model_index": 8,
+          "user": [
+            "conduct check",
+            "obligation occur"
+          ],
+          "user_indices": [
+            2,
+            15
+          ],
+          "pair_sims": [
+            0.425,
+            0.696
+          ],
+          "combo_sim": 0.761
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U4",
+              "U7"
+            ],
+            "user_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U3",
+              "U4"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the credit institution is informed that the SEC approval process has started.\n\nNext, the registration report is prepared and the check against Blue-Sky laws is conducted in parallel.\n\nOnce both tasks are completed, the preparation for determining the issue price and the wait for the company's registration approval occur simultaneously.\nAfter the issue price preparation, an information event is organized.\n\nOnce the registration approval is received and the information event is organized, the issue price is decided.\n\nThen, it is checked whether the obligation really occurs.\n\nIf the obligation occurs, the contract is concluded and the stock is offered to the public.\n\nIf the obligation does not occur, the process is aborted.",
+  "output_text": "The process begins with an initial step where the credit institution is informed that the SEC approval process has started. Following this, two activities occur simultaneously. First, a registration report is prepared. At the same time, there is a check to ensure compliance with Blue-Sky laws, which are state regulations designed to protect investors from securities fraud.\n\nOnce both of these tasks are completed, the process continues with another set of simultaneous activities. One task involves preparing the issue price for the stock. Concurrently, there is a waiting period for the registration approval to be received.\n\nAfter both of these tasks are completed, the process moves forward to organizing an information event. Following the event, the registration approval is received, and the issue price is decided.\n\nNext, there is a check to determine if any obligations have occurred. This leads to a decision point. If an obligation occurs, a contract is concluded, and the stock is offered to the public. If no obligation occurs, the process skips directly to the end.\n\nFinally, the process concludes, marking the end of the sequence of activities."
+}

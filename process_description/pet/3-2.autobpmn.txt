@@ -1,0 +1,5 @@
+The process begins with an initial step where files are checked. After this, a decision point is reached. If the files are not immediately available, the process involves physically tracking the files. Alternatively, if the files are missing, a search is initiated to locate them. Once either of these actions is completed, the process converges back to a single path.
+
+Following this, two activities occur simultaneously. First, the files are handed over to an Associate. At the same time, a document known as the Judge's Lawlist is distributed to the relevant people. Both of these tasks are carried out in parallel, meaning they happen at the same time but independently of each other.
+
+After these parallel activities are completed, the process continues with conducting directions hearings. This is the final step in the process, which then concludes the sequence of activities.

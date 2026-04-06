@@ -1,0 +1,216 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/logistics_cimino_3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/logistics_cimino_3.err1.001.xml",
+  "user_tasks": [
+    "receive shipment request",
+    "receive request",
+    "package goods",
+    "select type",
+    "related tasks",
+    "select kind",
+    "make decision",
+    "request quotes",
+    "requesting quotes",
+    "receive quotes",
+    "assign carrier",
+    "prepare necessary paperwork",
+    "fill in post label",
+    "complete post label",
+    "check insurance",
+    "need additional insurance",
+    "take out extra insurance",
+    "complete insurance check",
+    "complete tasks",
+    "add paperwork",
+    "move package",
+    "mark end",
+    "paperwork preparation",
+    "activities occur",
+    "type select same time",
+    "process wait completion",
+    "decision make options",
+    "second option involve",
+    "decision make point",
+    "process continue",
+    "process converge",
+    "process wait packaging",
+    "paperwork add package",
+    "package move pickup area"
+  ],
+  "model_tasks": [
+    "receive shipment request",
+    "package goods",
+    "select kind of shipment",
+    "request quotes from carriers",
+    "assign a carrier",
+    "prepare paperwork",
+    "fill in a post label",
+    "check insuarance",
+    "take out extra insuarance",
+    "add paperwork",
+    "move package to pickup area"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive request",
+        "select type",
+        "related tasks",
+        "select kind",
+        "make decision",
+        "requesting quotes",
+        "receive quotes",
+        "complete post label",
+        "check insurance",
+        "need additional insurance",
+        "complete insurance check",
+        "complete tasks",
+        "mark end",
+        "activities occur",
+        "type select same time",
+        "process wait completion",
+        "decision make options",
+        "second option involve",
+        "decision make point",
+        "process continue",
+        "process converge",
+        "process wait packaging",
+        "paperwork add package"
+      ],
+      "additional_tasks": [
+        "select kind of shipment",
+        "check insuarance"
+      ],
+      "merged_tasks": [
+        {
+          "model": "prepare paperwork",
+          "model_index": 5,
+          "user": [
+            "prepare necessary paperwork",
+            "paperwork preparation"
+          ],
+          "user_indices": [
+            11,
+            22
+          ],
+          "pair_sims": [
+            0.928,
+            0.921
+          ],
+          "combo_sim": 0.895
+        },
+        {
+          "model": "move package to pickup area",
+          "model_index": 10,
+          "user": [
+            "move package",
+            "package move pickup area"
+          ],
+          "user_indices": [
+            20,
+            33
+          ],
+          "pair_sims": [
+            0.728,
+            0.954
+          ],
+          "combo_sim": 0.95
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U14",
+              "U16"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U14",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U16",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U0",
+              "U1"
+            ],
+            "user_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U12",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 5,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a shipment request is received. Once the request is received, two activities occur simultaneously. First, the goods are packaged. At the same time, the type of shipment is selected.\n\nAfter the goods are packaged, the process waits for the completion of the shipment selection and related tasks. Meanwhile, after selecting the kind of shipment, a decision is made between two options. The first option involves requesting quotes from carriers. Once the quotes are received, a carrier is assigned, and the necessary paperwork is prepared.\n\nThe second option involves filling in a post label. After the post label is completed, the insurance is checked. At this point, another decision is made. If additional insurance is needed, extra insurance is taken out. If not, the process continues without taking out extra insurance. Regardless of the decision, the process converges back to a single path.\n\nOnce either the carrier assignment and paperwork preparation or the post label and insurance check (with or without extra insurance) are completed, the process waits for both the packaging of goods and the completion of the shipment selection tasks to be finished.\n\nAfter all these tasks are completed, the paperwork is added to the package. Finally, the package is moved to the pickup area, marking the end of the process.",
+  "output_text": "The process begins when a shipment request is received. Once the request is received, two activities occur simultaneously. First, the goods are packaged. Second, the type of shipment is selected.\n\nAfter the goods are packaged, the process waits for the completion of the shipment selection path. Meanwhile, after selecting the kind of shipment, there is a decision point to determine the next steps based on the type of shipment chosen.\n\nIf the shipment requires carrier services, quotes are requested from various carriers. Once the quotes are received, a carrier is assigned to handle the shipment. Following this, the necessary paperwork is prepared.\n\nAlternatively, if the shipment is to be sent via post, a post label is filled out. After this, the insurance for the shipment is checked. If additional insurance is needed, it is taken out. These steps occur in parallel, meaning the insurance check and the potential purchase of extra insurance can happen simultaneously.\n\nOnce the paperwork is prepared or the post label and insurance steps are completed, the process paths converge. The paperwork is then added to the package. Finally, the package is moved to the pickup area, marking the end of the process."
+}

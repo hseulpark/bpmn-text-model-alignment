@@ -1,0 +1,98 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/34_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/34_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "obtain overview",
+    "carry out several tasks",
+    "complete sps project",
+    "complete hmi project",
+    "complete safety project",
+    "test software",
+    "conduct design review",
+    "document draft",
+    "development team",
+    "several tasks carry out parallel"
+  ],
+  "model_tasks": [
+    "generate software and document draft",
+    "obtain machine overview",
+    "complete sps project by station",
+    "complete hmi project in stages",
+    "complete safety project",
+    "test software",
+    "conduct software design review",
+    "software ready for commissioning"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "carry out several tasks",
+        "development team",
+        "several tasks carry out parallel"
+      ],
+      "additional_tasks": [
+        "software ready for commissioning"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "generate software and document draft",
+          "task_b": "software ready for commissioning",
+          "before_score": 7,
+          "after_score": 5,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U2",
+              "U3"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U1",
+              "U9"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "and_to_seq => flattened <parallel> into sequence (structural fallback)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process at Harro Höfliger Verpackungsmaschinen GmbH begins with the generation of the software and document draft by the Production / Design and Development team.\n\nNext, an overview of the machine is obtained.\n\nThen, several tasks are carried out in parallel: the SPS project is completed by station, the HMI project is completed in stages, and the safety project is completed.\n\nOnce all programs are ready, the software is tested.\n\nAfterward, a software design review is conducted.\n\nFinally, the software is ready for commissioning.",
+  "output_text": "The process begins with the initiation of the project. The first step involves generating a draft of the software and its accompanying documentation. Once this draft is prepared, the next step is to obtain an overview of the machine, which likely involves gathering detailed information about the machine's specifications and functionalities.\n\nFollowing the machine overview, the process continues with the completion of the SPS (Sequential Programming System) project, which is done by addressing each station individually. After the SPS project is completed, the focus shifts to the HMI (Human-Machine Interface) project, which is completed in stages, ensuring that each part of the interface is developed and integrated properly.\n\nOnce the HMI project is completed, the process moves on to completing the safety project, ensuring that all safety protocols and measures are in place and functioning correctly. After the safety project is finalized, the software undergoes testing to ensure it operates as intended and meets all necessary requirements.\n\nFollowing the testing phase, a software design review is conducted. This review involves evaluating the software design to ensure it aligns with the project goals and specifications. If the software passes the design review, it is deemed ready for commissioning, indicating that it is prepared for deployment and use in its intended environment.\n\nThe process concludes with the software being ready for commissioning, marking the end of the project."
+}

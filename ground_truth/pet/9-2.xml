@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a0" endpoint="" a:alt_id="sid-4B2B04C2-04DC-48E2-A2B1-ABA82A1F9912">
+    <parameters>
+      <label>Customer Service Representative (CSR) sends a Mortgage offer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-009FC1E3-02B6-4DDA-BA9B-64616468439A">
+    <parameters>
+      <label>CSR waits for a customer reply</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-210E0513-AC0A-41F6-A298-4100EB3BD170">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-FD3B9175-108B-48A8-8B51-036FDE9FBE1D">
+        <parameters>
+          <label>CSR updates the case details</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-762CC214-3A8C-4353-975B-CAFA3010F12E">
+        <parameters>
+          <label>CSR archives the work</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="sid-99E435D0-8CE9-47E3-9033-54FFA9D28F3C">
+        <parameters>
+          <label>CSR performs cancellation</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-71900E17-33B8-439A-9787-FAD57E2B287C">
+        <parameters>
+          <label>CSR moves case to administration</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-63491867-445C-45F0-B234-434A3B477B73">
+        <alternative condition="">
+          <call id="a8" endpoint="" a:alt_id="sid-BBF46C42-FED8-40C8-AE73-68F5DBA5750D">
+            <parameters>
+              <label>CSR  generates request for outstanding documents</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-7B5FB289-3ED1-40A5-B537-87302C437190">
+            <alternative condition="">
+              <call id="a4" endpoint="" a:alt_id="sid-FD3B9175-108B-48A8-8B51-036FDE9FBE1D">
+                <parameters>
+                  <label>CSR updates the case details</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a6" endpoint="" a:alt_id="sid-762CC214-3A8C-4353-975B-CAFA3010F12E">
+                <parameters>
+                  <label>CSR archives the work</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a11" endpoint="" a:alt_id="sid-99E435D0-8CE9-47E3-9033-54FFA9D28F3C">
+                <parameters>
+                  <label>CSR performs cancellation</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+        <alternative condition=""/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

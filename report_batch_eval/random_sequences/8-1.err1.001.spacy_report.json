@@ -1,0 +1,123 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/8-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/8-1.err1.001.xml",
+  "user_tasks": [
+    "begin functional department",
+    "make request",
+    "fill vacant position",
+    "make demand",
+    "advertise post",
+    "attract potential candidates",
+    "follow advertisement",
+    "submit their applications",
+    "receive applications",
+    "check applications",
+    "assess suitability",
+    "fill post",
+    "fill position",
+    "functional department make request",
+    "applicants submit their applications",
+    "process proceed",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "func. department demands to fill the post",
+    "check the applications",
+    "applicants apply",
+    "advertise the post",
+    "fill the post"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin functional department",
+        "make request",
+        "fill vacant position",
+        "make demand",
+        "attract potential candidates",
+        "follow advertisement",
+        "receive applications",
+        "assess suitability",
+        "functional department make request",
+        "process proceed",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "func. department demands to fill the post"
+      ],
+      "merged_tasks": [
+        {
+          "model": "applicants apply",
+          "model_index": 2,
+          "user": [
+            "submit their applications",
+            "applicants submit their applications"
+          ],
+          "user_indices": [
+            7,
+            14
+          ],
+          "pair_sims": [
+            0.703,
+            0.827
+          ],
+          "combo_sim": 0.724
+        },
+        {
+          "model": "fill the post",
+          "model_index": 4,
+          "user": [
+            "fill post",
+            "fill position"
+          ],
+          "user_indices": [
+            11,
+            12
+          ],
+          "pair_sims": [
+            0.912,
+            0.508
+          ],
+          "combo_sim": 0.707
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "check the applications",
+          "task_b": "advertise the post",
+          "before_score": 8,
+          "after_score": 6,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "func. department demands to fill the post",
+          "task_b": "check the applications",
+          "before_score": 8,
+          "after_score": 6,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the functional department makes a request to fill a vacant position. Once this demand is made, the next step is to advertise the post to attract potential candidates. Following the advertisement, applicants submit their applications for the position. After receiving the applications, the next step involves reviewing and checking these applications to assess the suitability of the candidates. Once the applications have been thoroughly checked, the process proceeds to filling the post with the most suitable candidate. The process concludes after the position has been successfully filled.",
+  "output_text": "The process begins when the functional department identifies a need to fill a vacant position. Once this demand is established, the next step involves checking the applications that have been received. Following this, applicants are invited to apply for the position. To ensure that potential candidates are aware of the opportunity, the position is advertised. After the advertisement has been made and applications have been received and checked, the process proceeds to filling the post with a suitable candidate. The process concludes once the position has been successfully filled."
+}

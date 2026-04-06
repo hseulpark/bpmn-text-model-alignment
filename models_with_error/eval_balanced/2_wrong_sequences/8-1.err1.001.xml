@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-D8ACCA54-77B9-40C0-8333-2629B260D99B">
+    <parameters>
+      <label>func. department demands to fill the post</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-7EB5B10B-BA53-4A68-806C-4304D5AB5AB4">
+    <parameters>
+      <label>advertise the post</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-3CD1B882-6BD5-4163-994F-551D5388E575">
+    <parameters>
+      <label>applicants apply</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-5CF756A2-43BC-4282-BD75-C03E364245BB">
+    <parameters>
+      <label>fill the post</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+<call id="a4" endpoint="" a:alt_id="sid-A9334E9B-E0C8-4BD2-B036-3C726198DC56">
+    <parameters>
+      <label>check the applications</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  </description>

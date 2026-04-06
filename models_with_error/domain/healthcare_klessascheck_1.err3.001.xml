@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3EA30E71-F766-4E4A-95BE-2F485E993245">
+    <parameters>
+      <label>Diagnose Non-
+Specific Low
+Back Pain</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-2ECFB1FB-8F3E-40DB-B904-2D442EA54B67" a:mutated="true"><parallel_branch><choose mode="exclusive" a:alt_id="sid-D4F9ED81-34FA-4B7F-827D-651EA99BBF27">
+        <alternative condition="">
+          <call id="a7" endpoint="" a:alt_id="sid-86BB337B-0979-4876-B64D-160ABC9A6C13">
+            <parameters>
+              <label>Prescribe
+NSAID or SMR</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+    </parallel_branch><parallel_branch><call id="a4" endpoint="" a:alt_id="sid-D6CA3AD9-AAD1-4D67-8E9F-1832F973A025">
+        <parameters>
+          <label>Apply Exercise
+or other
+Nonpharmacol.
+Treatments</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-78E48128-4FD1-48E4-A021-03BFDA8C3781">
+        <alternative condition="">
+          <call id="a10" endpoint="" a:alt_id="sid-70264F1A-5CA1-4A32-B208-563721E18DBA">
+            <parameters>
+              <label>Prescribe
+NSAID</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-777E9B7E-D07B-472E-BEE1-FC207BE4A76E">
+            <alternative condition="">
+              <call id="a14" endpoint="" a:alt_id="sid-6588EF48-9EC4-41C1-8491-01D768A96CAC">
+                <parameters>
+                  <label>Prescribe
+Opioid</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="" />
+          </choose>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+    </parallel_branch></parallel><call id="a15" endpoint=""><parameters><label>Update database</label><method /><type>:task</type><arguments /></parameters></call></description>

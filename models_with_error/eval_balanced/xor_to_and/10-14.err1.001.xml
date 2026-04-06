@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <parallel wait="-1" cancel="last" a:alt_id="sid-CADC5BF2-7A74-45B8-9BDD-820BB5C4B28F" a:mutated="true"><parallel_branch><choose mode="exclusive" a:alt_id="sid-11C80357-51BE-409F-9FAD-79994CFBC8D0">
+        <alternative condition="">
+          <call id="a2" endpoint="" a:alt_id="sid-454DC8E7-8A7F-4AF5-9CB0-087A7E888146">
+            <parameters>
+              <label>MPOO sends the metering point operations bill to the GO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a3" endpoint="" a:alt_id="sid-8554E04F-CD09-4DA4-804B-54B9FF2A2F44">
+            <parameters>
+              <label>MSPO sends the measurement bill to the GO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a9" endpoint="" a:alt_id="sid-FEAF994F-81BB-4060-93DD-6CC895A5A390">
+            <parameters>
+              <label>MSPO sends the bill for additional readings to the GO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a10" endpoint="" a:alt_id="sid-41694BB2-4456-468F-8D65-0E8B6CD1E702">
+            <parameters>
+              <label>the MPOO sends the bill for the equipment acquisition to the GO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a5" endpoint="" a:alt_id="sid-87EC1576-ACAF-4A6F-BEE6-66CBAE16198B">
+        <parameters>
+          <label>the GO examines the bill</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-68820C4F-FF03-435C-B509-738BE8D008DA">
+        <alternative condition="">
+          <call id="a7" endpoint="" a:alt_id="sid-FCAC0E3B-35CF-4EDD-968D-76DDB00F1B7D">
+            <parameters>
+              <label>the GO rejects the invoice</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a8" endpoint="" a:alt_id="sid-03CA9579-CAA8-4F55-905E-40723D7BD693">
+            <parameters>
+              <label>the GO confirms the invoice with payment advice</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch><parallel_branch><call id="a11" endpoint="" a:alt_id="sid-2F3EE8F4-39C9-4070-938A-135B8ECE7907">
+        <parameters>
+          <label>MPOO sends the bill for the equipment acquisition to the MPON</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a12" endpoint="" a:alt_id="sid-7E384373-DECC-44BA-9F76-18D4F8A716C7">
+        <parameters>
+          <label>the MPON examines the bill</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-A05BC710-5FF1-4CF0-A717-875BBB1555D5">
+        <alternative condition="">
+          <call id="a16" endpoint="" a:alt_id="sid-B6900079-70DF-483C-9EFE-46E96DA5187C">
+            <parameters>
+              <label>the MPON confirms the invoice with payment advice</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a15" endpoint="" a:alt_id="sid-C137A9B2-9E1B-4E73-8517-14DF386EA7EE">
+            <parameters>
+              <label>the MPON rejects the invoice</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </parallel_branch></parallel></description>

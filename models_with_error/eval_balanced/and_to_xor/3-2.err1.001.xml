@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-69D810BD-6EC6-4AC0-AC33-4B27B6D4FAFB">
+    <parameters>
+      <label>check the files</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-2D316AF6-BDBA-482C-B985-93F815775249">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-EDC48326-C28E-4086-958F-7273F92FA5DA">
+        <parameters>
+          <label>physically track the files</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-5CBA7988-B7C8-44C1-9087-398DFD0E281D">
+        <parameters>
+          <label>initiate the search of missing files</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="sid-FDD5B2C2-DE67-4214-B33C-B9BE16F51FBD" a:mutated="true"><alternative condition=""><call id="a6" endpoint="" a:alt_id="sid-0FB28169-CB81-4130-A340-49AD21E42014">
+        <parameters>
+          <label>hand files to the Associate</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a7" endpoint="" a:alt_id="sid-C23016B9-5FEC-43D8-AA25-1E727F792CB0">
+        <parameters>
+          <label>distribute Judgeis Lawlist  to the relevant people</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative></choose><call id="a10" endpoint="" a:alt_id="sid-89AB6BB5-5795-4969-B15B-0BAB6DA666A9">
+    <parameters>
+      <label>conduct the directions hearings</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

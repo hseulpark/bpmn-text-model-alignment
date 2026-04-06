@@ -1,0 +1,202 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/29_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/29_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "receive order",
+    "carry out several tasks",
+    "prepare cart",
+    "desire wine",
+    "fetch wine",
+    "check it",
+    "desire other alcoholic beverages",
+    "prepare beverages",
+    "consolidate prepared items",
+    "deliver desired order",
+    "desired order",
+    "debit customer account",
+    "complete customer order",
+    "order receive hotel guest",
+    "room service manager create",
+    "several tasks carry out parallel",
+    "meals prepare kitchen",
+    "waiter prepare non alcoholic beverages",
+    "sommelier fetch wine",
+    "sommelier prepare beverages",
+    "waiter deliver desired order",
+    "waiter debit customer account"
+  ],
+  "model_tasks": [
+    "receive order",
+    "create and forward order ticket",
+    "prepare meals",
+    "prepare cart and non-alcoholic beverages",
+    "check if wine desired",
+    "fetch wine from cellar",
+    "check if other alcoholic beverages desired",
+    "prepare other alcoholic beverages",
+    "consolidate items",
+    "deliver order to guest",
+    "check for other orders",
+    "debit customer's account"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "prepare cart",
+        "desire wine",
+        "check it",
+        "prepare beverages",
+        "desired order",
+        "complete customer order",
+        "order receive hotel guest",
+        "room service manager create",
+        "several tasks carry out parallel",
+        "sommelier prepare beverages",
+        "waiter deliver desired order",
+        "waiter debit customer account"
+      ],
+      "additional_tasks": [
+        "create and forward order ticket",
+        "check if wine desired"
+      ],
+      "merged_tasks": [
+        {
+          "model": "fetch wine from cellar",
+          "model_index": 5,
+          "user": [
+            "fetch wine",
+            "sommelier fetch wine"
+          ],
+          "user_indices": [
+            4,
+            18
+          ],
+          "pair_sims": [
+            0.869,
+            0.733
+          ],
+          "combo_sim": 0.793
+        },
+        {
+          "model": "consolidate items",
+          "model_index": 8,
+          "user": [
+            "carry out several tasks",
+            "consolidate prepared items"
+          ],
+          "user_indices": [
+            1,
+            8
+          ],
+          "pair_sims": [
+            0.408,
+            0.802
+          ],
+          "combo_sim": 0.733
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "desire other alcoholic beverages",
+          "user_index": 6,
+          "model": [
+            "check if other alcoholic beverages desired",
+            "prepare other alcoholic beverages"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.733,
+            0.767
+          ],
+          "combo_sim": 0.703,
+          "adjacent": true
+        },
+        {
+          "user": "deliver desired order",
+          "user_index": 9,
+          "model": [
+            "deliver order to guest",
+            "check for other orders"
+          ],
+          "model_indices": [
+            9,
+            10
+          ],
+          "pair_sims": [
+            0.657,
+            0.605
+          ],
+          "combo_sim": 0.627,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "receive order",
+          "task_b": "deliver order to guest",
+          "before_score": 24,
+          "after_score": 22,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "create and forward order ticket",
+          "task_b": "consolidate items",
+          "before_score": 24,
+          "after_score": 22,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U16",
+              "U6"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U17",
+              "U6"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The Hotel Evanstonian process begins when an order is received from a hotel guest by the room service manager.\n\nThe room service manager creates and forwards the order ticket.\n\nNext, several tasks are carried out in parallel:\nIn the kitchen, meals are prepared, while the waiter prepares the cart and non-alcoholic beverages.\nThe sommelier checks if wine is desired.\nIf yes, the sommelier fetches the wine from the cellar.\nThen, it is checked if other alcoholic beverages are desired.\nIf yes, the sommelier prepares these beverages.\n\nAll prepared items are then consolidated, and the waiter delivers the desired order to the hotel guest.\n\nAfter delivery, it is checked if there are no other orders to process.\n\nIf this is the case, the waiter debits the customer's account.\n\nFinally, the customer order is completed.",
+  "output_text": "The process begins with receiving an order. Once the order is received, an order ticket is created and forwarded. After this, the process splits into three parallel paths.\n\nIn the first path, meals are prepared. In the second path, a cart and non-alcoholic beverages are prepared. In the third path, it is checked whether wine is desired. If wine is desired, wine is fetched from the cellar. If not, the process moves on to the next step. After checking for wine, it is then checked if other alcoholic beverages are desired. If they are, these beverages are prepared. If not, the process continues.\n\nOnce all these tasks are completed, the process converges, and all items are consolidated. After consolidation, the order is delivered to the guest. Following the delivery, it is checked if there are any other orders. If there are no other orders, the customer's account is debited. If there are other orders, the process ends without debiting the account at this point.\n\nThe process concludes after either debiting the customer's account or determining that there are other orders to handle."
+}

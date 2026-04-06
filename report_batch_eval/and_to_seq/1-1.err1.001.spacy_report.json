@@ -1,0 +1,163 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/1-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/1-1.err1.001.xml",
+  "user_tasks": [
+    "sales department receive order",
+    "sales department decide",
+    "storehouse process part list",
+    "storehouse make decision",
+    "storehouse place back order",
+    "engineering department prepare assembly",
+    "engineering department proceed",
+    "sales department ship bicycle",
+    "sales department decide initial decision point"
+  ],
+  "model_tasks": [
+    "sales department receives an order",
+    "sales department  accepts the bike order",
+    "sales department informs the storehouse",
+    "sales department  informs the engineering department",
+    "engineering department prepares for the bike assembling",
+    "storehouse  processes the part list",
+    "storehouse checks the  quantity of  parts",
+    "storehouse  reserves the part",
+    "storehouse back-orders the part",
+    "engineering department assembles the bicycle",
+    "sales department ships the bicycle",
+    "sales department rejects the bike order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "sales department decide initial decision point"
+      ],
+      "additional_tasks": [
+        "sales department  accepts the bike order",
+        "storehouse checks the  quantity of  parts",
+        "storehouse  reserves the part",
+        "engineering department assembles the bicycle",
+        "sales department rejects the bike order"
+      ],
+      "merged_tasks": [
+        {
+          "model": "engineering department prepares for the bike assembling",
+          "model_index": 4,
+          "user": [
+            "engineering department prepare assembly",
+            "engineering department proceed"
+          ],
+          "user_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.695,
+            0.584
+          ],
+          "combo_sim": 0.649
+        },
+        {
+          "model": "storehouse back-orders the part",
+          "model_index": 8,
+          "user": [
+            "storehouse make decision",
+            "storehouse place back order"
+          ],
+          "user_indices": [
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.593,
+            0.824
+          ],
+          "combo_sim": 0.796
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "sales department decide",
+          "user_index": 1,
+          "model": [
+            "sales department informs the storehouse",
+            "sales department  informs the engineering department"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.697,
+            0.651
+          ],
+          "combo_sim": 0.665,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "sales department informs the storehouse",
+          "task_b": "engineering department prepares for the bike assembling",
+          "before_score": 20,
+          "after_score": 16,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "sales department  accepts the bike order",
+          "task_b": "sales department informs the storehouse",
+          "before_score": 20,
+          "after_score": 18,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U2",
+              "U4"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U5",
+              "U6"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the sales department receives an order. Once the order is received, a decision is made to either accept or reject the bike order. If the sales department decides to accept the order, they proceed to inform both the storehouse and the engineering department about the order.\n\nAfter informing the relevant departments, the process splits into two parallel paths. In one path, the engineering department starts preparing for the bike assembly. In the other path, the storehouse processes the part list and checks the quantity of parts available.\n\nThe storehouse then makes a decision based on the availability of parts. If the parts are available, the storehouse reserves them. If the parts are not available, the storehouse places a back-order for the parts. Regardless of whether the parts are reserved or back-ordered, the process continues once the storehouse has completed its task.\n\nOnce both the engineering department has prepared for assembly and the storehouse has completed its tasks, the engineering department proceeds to assemble the bicycle. After the bicycle is assembled, the sales department ships the bicycle to the customer.\n\nIf, at the initial decision point, the sales department decides to reject the bike order, they proceed to reject the order, and the process ends.\n\nThe process concludes with the end of the order handling, whether the order was shipped or rejected.",
+  "output_text": "The process begins when the sales department receives an order. Once the order is received, a decision is made by the sales department to either accept or reject the bike order. If the sales department decides to accept the bike order, they proceed to inform both the storehouse and the engineering department about the order.\n\nAfter being informed, the engineering department prepares for the bike assembling. Meanwhile, the storehouse processes the part list and checks the quantity of parts needed for the order. At this point, the storehouse must decide whether the required parts are available in sufficient quantity.\n\nIf the parts are available, the storehouse reserves the parts needed for the order. If the parts are not available, the storehouse places a back-order for the missing parts. Regardless of whether the parts are reserved or back-ordered, the process continues once the parts issue is resolved.\n\nOnce the parts are ready, the engineering department assembles the bicycle. After the bicycle is assembled, the sales department takes responsibility for shipping the bicycle to the customer.\n\nIf, at the initial decision point, the sales department decides to reject the bike order, they proceed to formally reject the order. In either case, whether the order is accepted and processed or rejected, the process concludes with the end of the process."
+}

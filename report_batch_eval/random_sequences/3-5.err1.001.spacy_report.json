@@ -1,0 +1,189 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/3-5.err1.001.xml",
+  "user_tasks": [
+    "collect mail",
+    "collecting mail",
+    "sort unopened mail",
+    "distribute mail",
+    "open mail",
+    "sort mail",
+    "register it",
+    "follow registration",
+    "perform quality check",
+    "make decision",
+    "require list",
+    "compile list",
+    "send it",
+    "conclude possible path",
+    "involve matter details",
+    "capture details",
+    "provide them",
+    "take applicable fees",
+    "take fees",
+    "put receipt",
+    "copy documents",
+    "copies documents",
+    "post documents",
+    "capture party details",
+    "print court file",
+    "complete parallel activities",
+    "send list",
+    "complete steps",
+    "mail processing unit collect mail",
+    "mail clerk sort unopened mail",
+    "mail clerk distribute mail",
+    "registry open mail",
+    "registry sort mail",
+    "decision make point",
+    "mail require list",
+    "arm compile list",
+    "mail involve matter details",
+    "arm capture details",
+    "cashier take applicable fees",
+    "activities occur",
+    "arm put receipt",
+    "cashier capture party details",
+    "process paths converge",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "mail clerk  distributes the mail",
+    "mail clerk sorts the unopened mail",
+    "mail processing unit collects mail from the party",
+    "registry opens mail",
+    "registry sorts mail",
+    "registry register mail in a mail register",
+    "assistant registry manager  (arm) performs a quality check",
+    "arm compiles a list of requisition",
+    "arm sends  a list of requisition  back to the party",
+    "arm captures the matter details",
+    "arm provides the matter details to the cashier",
+    "cashier takes the applicable fees",
+    "arm puts the receipt",
+    "arm copied documents into an envelope",
+    "arm posts documents to the party",
+    "cashier captures the party details",
+    "cashier  prints the physical court file"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "collect mail",
+        "collecting mail",
+        "sort unopened mail",
+        "distribute mail",
+        "open mail",
+        "sort mail",
+        "register it",
+        "follow registration",
+        "perform quality check",
+        "make decision",
+        "require list",
+        "send it",
+        "conclude possible path",
+        "involve matter details",
+        "capture details",
+        "provide them",
+        "take applicable fees",
+        "take fees",
+        "put receipt",
+        "copy documents",
+        "copies documents",
+        "post documents",
+        "capture party details",
+        "complete parallel activities",
+        "send list",
+        "complete steps",
+        "decision make point",
+        "mail require list",
+        "mail involve matter details",
+        "activities occur",
+        "process paths converge",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "registry register mail in a mail register",
+        "assistant registry manager  (arm) performs a quality check",
+        "arm sends  a list of requisition  back to the party",
+        "arm copied documents into an envelope",
+        "arm posts documents to the party"
+      ],
+      "merged_tasks": [
+        {
+          "model": "arm compiles a list of requisition",
+          "model_index": 7,
+          "user": [
+            "compile list",
+            "arm compile list"
+          ],
+          "user_indices": [
+            11,
+            35
+          ],
+          "pair_sims": [
+            0.572,
+            0.849
+          ],
+          "combo_sim": 0.802
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "arm capture details",
+          "user_index": 37,
+          "model": [
+            "arm captures the matter details",
+            "arm provides the matter details to the cashier"
+          ],
+          "model_indices": [
+            9,
+            10
+          ],
+          "pair_sims": [
+            0.666,
+            0.585
+          ],
+          "combo_sim": 0.608,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "mail clerk  distributes the mail",
+          "task_b": "mail processing unit collects mail from the party",
+          "before_score": 13,
+          "after_score": 9,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "arm captures the matter details",
+          "task_b": "arm provides the matter details to the cashier",
+          "before_score": 13,
+          "after_score": 11,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the Mail Processing Unit collecting mail from the party. Once the mail is collected, a Mail Clerk sorts the unopened mail. After sorting, the Mail Clerk distributes the mail accordingly. The next step involves the Registry opening the mail. Once opened, the Registry sorts the mail and then registers it in a Mail Register.\n\nFollowing the registration, the Assistant Registry Manager (ARM) performs a quality check on the mail. At this point, a decision is made. If the mail requires a list of requisitions, the ARM compiles this list and sends it back to the party. This concludes one possible path of the process.\n\nAlternatively, if the mail involves matter details, the ARM captures these details and provides them to the Cashier. The Cashier then takes the applicable fees. After the fees are taken, two activities occur simultaneously. On one hand, the ARM puts the receipt and copies documents into an envelope, then posts these documents to the party. On the other hand, the Cashier captures the party details and prints the Physical Court File. Once both parallel activities are completed, the process paths converge.\n\nFinally, the process concludes after either sending the list of requisitions back to the party or completing the steps involving the matter details and fees.",
+  "output_text": "The process begins with the Mail Clerk distributing the mail. After distributing the mail, the Mail Clerk sorts the unopened mail. Once the mail is sorted, the Mail Processing Unit collects the mail from the party. Following this, the Registry opens the mail. After opening the mail, the Registry sorts it. The sorted mail is then registered by the Registry in a Mail Register.\n\nNext, the Assistant Registry Manager (ARM) performs a quality check on the registered mail. After the quality check, a decision is made. If the decision leads to compiling a list of requisitions, the ARM compiles this list and sends it back to the party. This path concludes with the process reaching a decision point again.\n\nAlternatively, if the decision leads to capturing the matter details, the ARM captures these details and provides them to the Cashier. The Cashier then takes the applicable fees. At this point, two activities occur in parallel.\n\nIn one parallel path, the ARM puts the receipt and then copies documents into an envelope. Afterward, the ARM posts these documents to the party. This path concludes at a synchronization point.\n\nIn the other parallel path, the Cashier captures the party details and then prints the Physical Court File. This path also concludes at the same synchronization point.\n\nOnce both parallel paths are completed, the process reaches the decision point again, and then the process ends."
+}

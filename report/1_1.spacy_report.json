@@ -1,0 +1,112 @@
+{
+  "log_path": "./evaluation/1_1.txt",
+  "bpmn_path": "./evaluation/1_1.xml",
+  "user_tasks": [
+    "small company manufacture customized bicycles",
+    "sales department receive order",
+    "storehouse inform latter case",
+    "storehouse process part list",
+    "engineering department prepare meantime",
+    "engineering department assemble bicycle",
+    "sales department ship bicycle",
+    "create new process instance",
+    "accept order",
+    "check required quantity",
+    "repeat procedure",
+    "order item"
+  ],
+  "model_tasks": [
+    "sales department receives an order",
+    "sales department  accepts the bike order",
+    "sales department informs the storehouse",
+    "sales department  informs the engineering department",
+    "engineering department prepares for the bike assembling",
+    "storehouse  processes the part list",
+    "storehouse checks the  quantity of  parts",
+    "storehouse  reserves the part",
+    "storehouse back-orders the part",
+    "engineering department assembles the bicycle",
+    "sales department ships the bicycle",
+    "sales department rejects the bike order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "create new process instance",
+        "accept order",
+        "check required quantity",
+        "repeat procedure",
+        "order item"
+      ],
+      "additional_tasks": [
+        "sales department  accepts the bike order",
+        "sales department informs the storehouse",
+        "sales department  informs the engineering department",
+        "storehouse checks the  quantity of  parts",
+        "storehouse  reserves the part",
+        "storehouse back-orders the part",
+        "sales department rejects the bike order"
+      ],
+      "merged_tasks": [
+        {
+          "model": "engineering department prepares for the bike assembling",
+          "model_index": 4,
+          "user": [
+            "engineering department prepare meantime",
+            "small company manufacture customized bicycles"
+          ],
+          "user_indices": [
+            4,
+            0
+          ],
+          "pair_sims": [
+            0.518,
+            0.505
+          ],
+          "combo_sim": 0.705
+        },
+        {
+          "model": "storehouse  processes the part list",
+          "model_index": 5,
+          "user": [
+            "storehouse process part list",
+            "storehouse inform latter case"
+          ],
+          "user_indices": [
+            3,
+            2
+          ],
+          "pair_sims": [
+            0.824,
+            0.464
+          ],
+          "combo_sim": 0.778
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "common_user_tasks": [
+          "sales department receive order",
+          "engineering department assemble bicycle",
+          "sales department ship bicycle"
+        ],
+        "common_model_tasks": [
+          "sales department receives an order",
+          "engineering department assembles the bicycle",
+          "sales department ships the bicycle"
+        ],
+        "kendall_tau_distance": 0,
+        "out_of_order_bpmn_tasks": [],
+        "common_count": 3
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis ON, but output_text is empty (AutoBPMN API failed).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0
+      }
+    }
+  },
+  "user_text": "A small company manufactures customized bicycles . Whenever the sales department receives an order , a new process instance is created . A member of the sales department can then reject or accept the order for a customized bike . In the former case , the process instance is finished . In the latter case , the storehouse and the engineering department are informed . The storehouse immediately processes the part list of the order and checks the required quantity of each part . If the part is available in-house , it is reserved . If it is not available , it is back-ordered . This procedure is repeated for each item on the part list . In the meantime , the engineering department prepares everything for the assembling of the ordered bicycle . If the storehouse has successfully reserved or back-ordered every item of the part list and the preparation activity has finished , the engineering department assembles the bicycle . Afterwards , the sales department ships the bicycle to the customer and finishes the process instance .",
+  "output_text": "",
+  "output_note": "AutoBPMN API failed: status=501, body_head=''"
+}

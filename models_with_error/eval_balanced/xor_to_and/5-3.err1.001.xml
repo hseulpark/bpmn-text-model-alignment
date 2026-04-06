@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-2FCAD3AA-2E3C-4A81-8AAB-7F67F831AA1A">
+    <parameters>
+      <label>employee submits an office supply request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-3B5407A8-B1D8-4B17-AD32-70574408786A">
+    <parameters>
+      <label>register the request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-F634FD17-81DB-4447-AB90-FF10CAB2A51E">
+    <parameters>
+      <label>immediate supervisor receives request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-BA916AF5-BE71-4F0F-92D1-B4FF1AB25A10">
+    <parameters>
+      <label>immediate supervisor approves request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-BC0210C3-FF65-4AF9-A3EC-966F6B98E2B2" a:mutated="true"><parallel_branch><call id="a20" endpoint="" a:alt_id="sid-ADF778B3-B5CA-4C7E-AD27-501D3745626B">
+        <parameters>
+          <label>immediate supervisor returns request to the employee</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-DFC31945-A416-4B5C-A57B-AB98F87E7978">
+        <parameters>
+          <label>employee reviews the comments</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch><parallel_branch /><parallel_branch><call id="a7" endpoint="" a:alt_id="sid-EABEB042-0403-4891-9EA6-F5A74BA11ADC">
+        <parameters>
+          <label>request goes to the purchase department</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a8" endpoint="" a:alt_id="sid-379BD62E-0FAC-43EF-BDD2-AA7011634325">
+        <parameters>
+          <label>the purchase department makes quotations</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="sid-2B4F6E29-2548-474C-9E13-72A35DADF746">
+        <parameters>
+          <label>the purchase department selects vendor</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-E821EF4F-B6D1-4B0C-8616-F96DD5B13790">
+        <alternative condition="">
+          <call id="a11" endpoint="" a:alt_id="sid-2E367DCA-F9B5-4271-85F3-8D5BD2A4DFB3">
+            <parameters>
+              <label>the purchase department chooses a different vendor</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+      <call id="a13" endpoint="" a:alt_id="sid-4489B150-1761-4C05-B3F0-C2894D74C673">
+        <parameters>
+          <label>the system  generates a purchase order</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a14" endpoint="" a:alt_id="sid-924B032C-456C-4792-8998-1C1FD32EE446">
+        <parameters>
+          <label>the system sends a purchase order</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="sid-E09283D5-9C34-42C6-B967-2AF363FA9BB3">
+        <parameters>
+          <label>the system waits for the product delivery</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a16" endpoint="" a:alt_id="sid-7798981D-CB64-4779-ACD5-35D49A4734B0">
+        <parameters>
+          <label>the system receives the invoice</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch></parallel><call id="a18" endpoint="" a:alt_id="sid-BFFD8C0E-506C-4859-8BAA-40E61C9FECAB">
+    <parameters>
+      <label>the system sends user notification</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

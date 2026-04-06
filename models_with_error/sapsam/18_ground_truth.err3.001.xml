@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Prepare Workplace and Place Motherboard</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Apply Thermal Paste</label>
+      <method />
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Insert CPU</label>
+      <method />
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="Installation Not Possible" language="text/javascript">
+    <call id="a9" endpoint="">
+          <parameters>
+            <label>Troubleshoot No Image</label>
+            <method />
+            <type>:task</type>
+            <mid>'8'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      <call id="a10" endpoint="">
+          <parameters>
+            <label>Troubleshoot Hard Drive</label>
+            <method />
+            <type>:task</type>
+            <mid>'9'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      <call id="a11" endpoint="">
+          <parameters>
+            <label>Troubleshoot No Power</label>
+            <method />
+            <type>:task</type>
+            <mid>'10'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      <call id="a12" endpoint="">
+          <parameters>
+            <label>Troubleshoot Boot Loop</label>
+            <method />
+            <type>:task</type>
+            <mid>'11'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      </loop>
+</description>

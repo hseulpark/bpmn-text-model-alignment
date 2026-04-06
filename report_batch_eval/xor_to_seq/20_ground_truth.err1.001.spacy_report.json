@@ -1,0 +1,107 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/20_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/20_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "begin customer",
+    "resolve issue",
+    "recognize problem",
+    "describe problem",
+    "identify problem",
+    "find suitable solution",
+    "describe solution",
+    "fix problem",
+    "check it",
+    "find solution",
+    "implement it",
+    "resolve problem",
+    "request new solution",
+    "suggest further solutions",
+    "contacts customer",
+    "customer want",
+    "customer recognize problem",
+    "customer describe problem",
+    "consultation team identify problem",
+    "contact customer service"
+  ],
+  "model_tasks": [
+    "customer contacts service",
+    "describe problem",
+    "identify problem and find solution",
+    "describe solution",
+    "customer fixes problem",
+    "solution helpful?",
+    "implement solution",
+    "request new solution",
+    "suggest further solutions"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin customer",
+        "resolve issue",
+        "recognize problem",
+        "identify problem",
+        "fix problem",
+        "check it",
+        "implement it",
+        "resolve problem",
+        "customer want",
+        "customer describe problem",
+        "consultation team identify problem",
+        "contact customer service"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "find suitable solution",
+          "user_index": 5,
+          "model": [
+            "solution helpful?",
+            "implement solution"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.629,
+            0.667
+          ],
+          "combo_sim": 0.618,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "customer contacts service",
+          "task_b": "solution helpful?",
+          "before_score": 14,
+          "after_score": 12,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the customer wants to resolve an issue through customer service.\n\nThe customer recognizes the problem and contacts customer service.\n\nThe customer then describes the problem.\n\nNext, the consultation team identifies the problem and finds a suitable solution.\n\nThis solution is described by the consultation team, and the problem is fixed by the customer.\n\nSubsequently, it is checked whether the solution is found to be helpful.\n\nIf the solution is found to be helpful, it is implemented, and the process ends with the problem being resolved.\n\nIf the solution is not found to be helpful, a new solution is requested.\n\nIf this new solution is also not helpful, further solutions are suggested by the consultation team.\n\nFinally, the process ends with the problem being resolved.",
+  "output_text": "The process begins when a customer contacts the service. The first step involves the customer describing the problem they are experiencing. Once the problem is described, the next step is to identify the problem and find a suitable solution.\n\nAfter identifying the problem and finding a solution, the solution is then described to the customer. The customer then attempts to fix the problem using the provided solution. Following this, there is a check to determine if the solution was helpful.\n\nIf the solution is helpful, the process moves forward to implement the solution. However, if the solution is not helpful, the process takes a different path where a new solution is requested. In response to this request, further solutions are suggested to the customer.\n\nThe process concludes after suggesting further solutions, ensuring that the customer receives adequate support to resolve their issue."
+}

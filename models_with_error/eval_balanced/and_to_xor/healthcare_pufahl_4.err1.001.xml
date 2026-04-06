@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-964FE7D7-E1C3-4E8C-B137-9EDF9D05A881">
+    <parameters>
+      <label>Assess patient conditions</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-8D9C7AA9-55A0-4F8A-BA0E-D6FB71A1F9C9" a:mutated="true"><alternative condition=""><call id="a3" endpoint="" a:alt_id="sid-167CC420-ADDA-4F14-A5B3-0D311C078971">
+        <parameters>
+          <label>Perform physical examination</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a11" endpoint="" a:alt_id="sid-46A8D72D-4364-492F-8445-883175279D91">
+        <parameters>
+          <label>Draw blood samples</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a12" endpoint="" a:alt_id="sid-DA9DEE8C-565E-446E-B729-F0EFE02EFB9D">
+        <parameters>
+          <label>Send analysis to the lab</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="sid-8BDB1690-ED7F-40FD-9B4D-EE9FDB72CE9E">
+        <parameters>
+          <label>Receive analysis from the lab</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative></choose><call id="a5" endpoint="" a:alt_id="sid-AC8DCA82-1900-455E-9968-FC6964454BA8">
+    <parameters>
+      <label>Make diagnosis</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-2018007C-9B35-4F2F-9911-C50F3B2F445B">
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="sid-159215E7-1EE3-4A6E-BF7B-5A0F0D4D7C4D">
+        <parameters>
+          <label>Surgical intervention</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a14" endpoint="" a:alt_id="sid-37AFAA21-3242-4223-A590-B2AF9106ABC6">
+        <parameters>
+          <label>Plan surgery</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a9" endpoint="" a:alt_id="sid-6D5E2D93-63C4-4627-A4FC-1F4549A556F3">
+    <parameters>
+      <label>Discharge patient</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

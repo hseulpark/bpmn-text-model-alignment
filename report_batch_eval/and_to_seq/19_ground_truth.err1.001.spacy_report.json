@@ -1,0 +1,200 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/19_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/19_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "risk manager initiate process",
+    "assessments accept",
+    "process continue credibility check",
+    "credibility check confirm",
+    "senior risk manager review credibility assessment",
+    "assessment accept",
+    "process move",
+    "rejection letter send client",
+    "credibility assessment accept",
+    "relation team call client",
+    "client pick up call",
+    "process proceed",
+    "relation team wait hour",
+    "customer pick up call",
+    "process continue",
+    "loan offer check",
+    "process wait",
+    "client accept offer",
+    "offer accept",
+    "welcome letter send",
+    "finance department activate",
+    "finance team validate loan activation",
+    "documents return client",
+    "client remind",
+    "complement information",
+    "create loan offer",
+    "execute initial payment"
+  ],
+  "model_tasks": [
+    "perform bkr check",
+    "perform jane doe check",
+    "credibility check",
+    "review credibility assessment",
+    "call client for information",
+    "wait one hour",
+    "call client for information",
+    "create loan offer",
+    "check loan offer",
+    "send loan offer",
+    "remind client",
+    "send welcome letter",
+    "activate loan application",
+    "validate loan activation",
+    "execute initial payment",
+    "return documents to client",
+    "send rejection letter",
+    "send rejection letter",
+    "send rejection letter"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "risk manager initiate process",
+        "assessments accept",
+        "credibility check confirm",
+        "senior risk manager review credibility assessment",
+        "assessment accept",
+        "process move",
+        "credibility assessment accept",
+        "relation team call client",
+        "process proceed",
+        "relation team wait hour",
+        "customer pick up call",
+        "process continue",
+        "process wait",
+        "client accept offer",
+        "offer accept",
+        "finance department activate",
+        "complement information"
+      ],
+      "additional_tasks": [
+        "perform bkr check",
+        "perform jane doe check",
+        "wait one hour",
+        "call client for information",
+        "send rejection letter",
+        "send rejection letter",
+        "send rejection letter"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send welcome letter",
+          "model_index": 11,
+          "user": [
+            "rejection letter send client",
+            "welcome letter send"
+          ],
+          "user_indices": [
+            7,
+            19
+          ],
+          "pair_sims": [
+            0.446,
+            0.934
+          ],
+          "combo_sim": 0.697
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "process continue credibility check",
+          "user_index": 2,
+          "model": [
+            "credibility check",
+            "review credibility assessment"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.745,
+            0.687
+          ],
+          "combo_sim": 0.781,
+          "adjacent": true
+        },
+        {
+          "user": "loan offer check",
+          "user_index": 15,
+          "model": [
+            "check loan offer",
+            "send loan offer"
+          ],
+          "model_indices": [
+            8,
+            9
+          ],
+          "pair_sims": [
+            0.984,
+            0.787
+          ],
+          "combo_sim": 0.885,
+          "adjacent": true
+        },
+        {
+          "user": "finance team validate loan activation",
+          "user_index": 21,
+          "model": [
+            "activate loan application",
+            "validate loan activation"
+          ],
+          "model_indices": [
+            12,
+            13
+          ],
+          "pair_sims": [
+            0.68,
+            0.933
+          ],
+          "combo_sim": 0.828,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U0",
+              "U6"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process at the DLL begins is started by the risk manager.\n\nThe risk manager initiates the process by performing a BKR check and a Jane Doe check in parallel.\n\nIf both assessments are accepted, the process continues with a credibility check.\n\nIf the credibility check is confirmed, the senior risk manager reviews the credibility assessment.\n\nIf the assessment is accepted, the process moves forward; otherwise, a rejection letter is sent to the client by the administrator, and the process ends.\n\nIf the credibility assessment is accepted, the customer relation team calls the client to complement information.\n\nIf the client picks up the call, the process  proceeds to create a loan offer. \nIf the client does not pick up the call, the customer relation team waits one hour to and calls again until the customer picks up the call.\nIf the client picks up the call the process continues as described above.\n\nAfter creating the loan offer, the loan offer is checked and then send to the client.\n\nThe process waits for the client to accept the offer.\nIf the offer is accepted, a welcome letter is sent by the administrator and the loan application is activated by the finance department.\nThe finance team then validates the loan activation and executes the initial payment.\nFinally, the documents are returned to the client by the administrator, and the process ends.\n\nIf the client does not accept the offer within one our, the client is reminded again.\nIf the client accepts the offer the process continues as described above.",
+  "output_text": "The process begins with an initial step where a BKR check is performed. Following this, a Jane Doe check is conducted. After these checks, a decision is made. If the outcome is \"Accepted,\" the process moves on to a credibility check. If the credibility check is \"Confirmed,\" the credibility assessment is reviewed. \n\nOnce the review is complete, another decision is made. If the result is \"Accepted,\" the process continues to another decision point. If this decision is \"true,\" the client is called for additional information. If the client does not pick up, the process waits for one hour before attempting to call the client again. If the client is reached, the process proceeds to create a loan offer.\n\nThe loan offer is then checked, and if everything is in order, it is sent to the client. After sending the loan offer, a decision is made. If the offer is accepted, a welcome letter is sent to the client. Following this, the loan application is activated, and its activation is validated. Once validated, the initial payment is executed, and the documents are returned to the client, concluding this path of the process.\n\nIf the loan offer is not accepted, the client is reminded, and the process escalates to a decision point. If the client does not respond, the process loops back to attempt contacting the client again. If the client is still unreachable, the process escalates and loops back to the previous decision point.\n\nIf at any point the decision is \"Rejected,\" a rejection letter is sent to the client. This concludes the process for that path, and the process ends. The process is designed to ensure that all necessary checks and communications are completed before finalizing the loan application."
+}

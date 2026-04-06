@@ -1,0 +1,101 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-7.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/3-7.err1.001.xml",
+  "user_tasks": [
+    "find police report",
+    "combine it",
+    "create complete set",
+    "assemble documentation",
+    "take over",
+    "calculate initial estimate",
+    "develop action plan",
+    "negotiate settlement",
+    "reach settlement",
+    "communicate outcome",
+    "inform claimant",
+    "employee combine other necessary documents",
+    "claims handler take over",
+    "claims handler develop action plan",
+    "process move claims manager",
+    "claims manager communicate outcome",
+    "process conclude",
+    "claimant inform result"
+  ],
+  "model_tasks": [
+    "employee  searches the police report",
+    "employee puts together claim documentation and police report",
+    "claims handler calculates an initial claim estimate",
+    "claims handler creates an action plan",
+    "claims manager negotiates a settlement on the claim estimate and claims manager informs claimant of the outcome"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "combine it",
+        "create complete set",
+        "assemble documentation",
+        "take over",
+        "calculate initial estimate",
+        "develop action plan",
+        "negotiate settlement",
+        "reach settlement",
+        "communicate outcome",
+        "inform claimant",
+        "employee combine other necessary documents",
+        "process move claims manager",
+        "claims manager communicate outcome",
+        "process conclude",
+        "claimant inform result"
+      ],
+      "additional_tasks": [
+        "employee puts together claim documentation and police report",
+        "claims handler creates an action plan",
+        "claims manager negotiates a settlement on the claim estimate and claims manager informs claimant of the outcome"
+      ],
+      "merged_tasks": [
+        {
+          "model": "claims handler calculates an initial claim estimate",
+          "model_index": 2,
+          "user": [
+            "claims handler take over",
+            "claims handler develop action plan"
+          ],
+          "user_indices": [
+            12,
+            13
+          ],
+          "pair_sims": [
+            0.737,
+            0.658
+          ],
+          "combo_sim": 0.7
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an employee searching for the police report. Once the police report is found, the employee combines it with other necessary documents to create a complete set of claim documentation. After assembling the documentation, a claims handler takes over to calculate an initial estimate for the claim. Following this, the claims handler develops an action plan based on the initial estimate. The process then moves to a claims manager, who negotiates a settlement based on the claim estimate. After reaching a settlement, the claims manager communicates the outcome to the claimant. The process concludes once the claimant has been informed of the result.",
+  "output_text": "The process begins when an employee starts by searching for the police report related to a claim. Once the police report is found, the employee proceeds to compile the necessary claim documentation along with the police report. After assembling these documents, the process moves to a claims handler who is responsible for calculating an initial estimate of the claim. Following this calculation, the claims handler develops an action plan based on the initial estimate. The process then transitions to a claims manager who takes on the task of negotiating a settlement based on the claim estimate. After reaching a settlement, the claims manager informs the claimant about the outcome of the negotiation. The process concludes after the claimant has been informed."
+}

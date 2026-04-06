@@ -1,0 +1,131 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/3-3.err1.001.xml",
+  "user_tasks": [
+    "register claim",
+    "examine it",
+    "examine claim",
+    "reach decision point",
+    "write settlement recommendation",
+    "follow writing",
+    "check recommendation",
+    "review it",
+    "mark claim",
+    "make decision",
+    "send claim",
+    "check settlement recommendation",
+    "make decisions",
+    "making decisions",
+    "end process",
+    "need further action",
+    "claims officer examine",
+    "claims officer write settlement recommendation",
+    "senior claims officer check recommendation",
+    "senior claims officer mark claim",
+    "decision make point",
+    "system send claim",
+    "process return point",
+    "claims officer examine claim",
+    "system proceed handling process",
+    "process involve summary"
+  ],
+  "model_tasks": [
+    "claims officer examines a claim",
+    "system registers a claim",
+    "claims officer writes a settlement recommendation",
+    "senior claims officer checks recommendation",
+    "senior claims officer marks the claim",
+    "system sends claim back",
+    "system proceeds the claim handling process"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "examine it",
+        "examine claim",
+        "reach decision point",
+        "write settlement recommendation",
+        "follow writing",
+        "check recommendation",
+        "review it",
+        "mark claim",
+        "make decision",
+        "check settlement recommendation",
+        "make decisions",
+        "making decisions",
+        "end process",
+        "need further action",
+        "claims officer examine",
+        "decision make point",
+        "process return point",
+        "system proceed handling process",
+        "process involve summary"
+      ],
+      "additional_tasks": [
+        "system proceeds the claim handling process"
+      ],
+      "merged_tasks": [
+        {
+          "model": "system sends claim back",
+          "model_index": 5,
+          "user": [
+            "send claim",
+            "system send claim"
+          ],
+          "user_indices": [
+            10,
+            21
+          ]
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U14",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U17",
+              "U23"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a claim is registered by the system. Once the claim is registered, a claims officer examines it. After examining the claim, a decision point is reached. If the decision is to proceed, the claims officer writes a settlement recommendation.\n\nFollowing the writing of the settlement recommendation, a senior claims officer checks the recommendation. After reviewing it, the senior claims officer marks the claim. At this point, another decision is made. If the decision is to send the claim back, the system sends the claim back, and the process returns to the point where the claims officer examines the claim again.\n\nAlternatively, if the decision is to continue with the claim, the system proceeds with the claim handling process. This leads back to the decision point where the claims officer examines the claim. If at any point the decision is not to proceed with the claim, the process ends.\n\nIn summary, the process involves registering a claim, examining it, potentially writing and checking a settlement recommendation, and making decisions on whether to send the claim back for re-examination or to proceed with handling, with the possibility of ending the process if no further action is needed.",
+  "output_text": "The process begins when a claim is initiated. First, a claims officer examines the claim to understand its details and context. After this examination, the system registers the claim, ensuring that all necessary information is recorded.\n\nFollowing the registration, a decision point is reached. If the condition is met (indicated as \"true\"), the process continues with the claims officer writing a settlement recommendation based on their examination. This recommendation is then reviewed by a senior claims officer, who checks the details and validity of the recommendation. After the review, the senior claims officer marks the claim, indicating their decision or any necessary actions.\n\nAnother decision point follows. Depending on the outcome, the system may send the claim back for further action or clarification. Alternatively, the system may proceed with the claim handling process, moving it forward in the workflow. Regardless of the path taken, the process loops back to the initial decision point after the claim is marked, allowing for further iterations if needed.\n\nIf the initial condition at the first decision point is not met, the process concludes without further action, reaching the end of the process."
+}

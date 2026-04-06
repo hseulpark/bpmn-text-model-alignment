@@ -1,0 +1,106 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_corradini_2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/tourism_corradini_2.err1.001.xml",
+  "user_tasks": [
+    "conduct search",
+    "find customer",
+    "identify customer",
+    "make offer",
+    "receive requests",
+    "provide further details",
+    "make decision",
+    "provide details",
+    "providing details",
+    "receive booking request",
+    "send bill",
+    "receive payment",
+    "decide steps",
+    "contact customer",
+    "book travel arrangements",
+    "book travel",
+    "send booking confirmation",
+    "process continue",
+    "process check",
+    "booking request receive customer",
+    "process involve",
+    "booking confirmation send customer",
+    "process loop",
+    "decide next steps"
+  ],
+  "model_tasks": [
+    "search for a customer",
+    "make customer an offer",
+    "provide details",
+    "receive booking request",
+    "send the bill",
+    "receive payment",
+    "contact customer",
+    "book travel",
+    "send booking confirmation"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "conduct search",
+        "receive requests",
+        "provide further details",
+        "make decision",
+        "providing details",
+        "decide steps",
+        "book travel arrangements",
+        "process continue",
+        "process check",
+        "booking request receive customer",
+        "process involve",
+        "booking confirmation send customer",
+        "process loop",
+        "decide next steps"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "search for a customer",
+          "model_index": 0,
+          "user": [
+            "find customer",
+            "identify customer"
+          ],
+          "user_indices": [
+            1,
+            2
+          ],
+          "pair_sims": [
+            0.886,
+            0.729
+          ],
+          "combo_sim": 0.805
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial step where a search is conducted to find a customer. Once a customer is identified, an offer is made to them. After making the offer, there is a decision point where it is determined whether the customer has any additional requests.\n\nIf the customer has additional requests, these requests are received, and further details are provided to the customer. Following this, another decision is made to check if the process should continue or if it should end. If the process continues, it leads to another decision point.\n\nIf the customer does not have additional requests, or after providing details, the process checks if a booking request has been received from the customer. If a booking request is received, the next step is to send the customer a bill.\n\nAfter sending the bill, there is a decision point to determine if the process should continue. If it continues, the process checks if the payment has been received. If the payment is received, there is another decision point to decide the next steps.\n\nIf the payment is received, the process involves contacting the customer. After contacting the customer, another decision is made to determine if the process should continue or if it should end.\n\nIf the payment is not received, or after contacting the customer, the process involves booking the travel arrangements. Once the travel is booked, a booking confirmation is sent to the customer. After sending the booking confirmation, the process loops back to the decision point where it checks if the payment has been received.\n\nIf at any decision point it is determined that the process should not continue, the process ends.",
+  "output_text": "The process begins with an initial step where a search is conducted to find a customer. Once a customer is identified, an offer is made to them. After making the offer, a decision point is reached where it is determined whether further details need to be provided to the customer. If it is decided that details are necessary, these details are provided.\n\nFollowing the provision of details, another decision point occurs. Here, it is assessed whether a booking request has been received. If a booking request is indeed received, the process continues with sending a bill to the customer.\n\nAfter the bill is sent, there is another decision point to check if the payment has been received. If the payment is confirmed, the process moves forward to another decision point where it is determined whether to contact the customer or proceed with booking the travel. If the decision is to contact the customer, this action is taken, and then the process loops back to the previous decision point regarding payment.\n\nIf the decision is to book the travel, this is done, and a booking confirmation is sent to the customer. After sending the booking confirmation, the process loops back to the decision point regarding payment.\n\nIf at any decision point it is determined that no further action is needed, the process concludes. This ensures that all necessary steps are completed before the process ends."
+}

@@ -1,0 +1,136 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/27_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/27_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "begin conflict",
+    "seek out mediator",
+    "schedule appointment",
+    "attend appointment",
+    "describe conflict",
+    "seek solution",
+    "check it",
+    "resolve conflict",
+    "schedule new appointment",
+    "start over",
+    "find conflict resolution",
+    "conflict occur employee",
+    "employee seek out mediator",
+    "hr department listen employee",
+    "employee attend appointment"
+  ],
+  "model_tasks": [
+    "hr listens and schedules appointment",
+    "seek mediator",
+    "conflict occurs",
+    "attend appointment and describe conflict",
+    "seek conflict resolution",
+    "schedule new appointment",
+    "seek conflict resolution"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "attend appointment",
+        "seek solution",
+        "check it",
+        "start over",
+        "employee seek out mediator",
+        "hr department listen employee",
+        "employee attend appointment"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "seek conflict resolution",
+          "model_index": 4,
+          "user": [
+            "resolve conflict",
+            "find conflict resolution"
+          ],
+          "user_indices": [
+            7,
+            10
+          ],
+          "pair_sims": [
+            0.858,
+            0.857
+          ],
+          "combo_sim": 0.815
+        },
+        {
+          "model": "seek conflict resolution",
+          "model_index": 6,
+          "user": [
+            "begin conflict",
+            "describe conflict"
+          ],
+          "user_indices": [
+            0,
+            4
+          ],
+          "pair_sims": [
+            0.736,
+            0.739
+          ],
+          "combo_sim": 0.734
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "conflict occur employee",
+          "user_index": 11,
+          "model": [
+            "conflict occurs",
+            "attend appointment and describe conflict"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.695,
+            0.591
+          ],
+          "combo_sim": 0.717,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "hr listens and schedules appointment",
+          "task_b": "conflict occurs",
+          "before_score": 11,
+          "after_score": 5,
+          "improvement": 6
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "hr listens and schedules appointment",
+          "task_b": "seek mediator",
+          "before_score": 11,
+          "after_score": 9,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process at SoKnow begins when a conflict occurs with an employee.\n\nThe employee then seeks out the mediator.\n\nNext, the HR department listens to the employee and schedules an appointment.\n\nThe employee attends the appointment and describes the conflict.\n\nSubsequently, a solution for the conflict is sought.\n\nIt is then checked whether the conflict is resolved.\n\nIf the conflict is not resolved, a new appointment is scheduled, and the process starts over with finding a conflict resolution.\n\nIf the conflict is resolved, the process ends with the conflict being resolved.",
+  "output_text": "The process begins when a situation arises that requires attention. Initially, the Human Resources (HR) department listens to the issue and schedules an appointment. Following this, a mediator is sought to assist in addressing the situation. The conflict then occurs, prompting the involved parties to attend the scheduled appointment and describe the conflict in detail.\n\nAfter the conflict is described, a decision point is reached. If the situation is deemed to require further action, the process continues with efforts to seek a resolution to the conflict. During this resolution-seeking phase, another decision point is encountered. If the conflict is not resolved, a new appointment is scheduled, and the process of seeking resolution is repeated. If the conflict remains unresolved after repeated attempts, the issue is escalated for further consideration.\n\nOnce the conflict is resolved, or if it is determined that no further action is necessary, the process concludes successfully. If the conflict is resolved, the process ends. If the conflict is not resolved and escalated, the process loops back to the initial decision point to determine the next steps. The process ultimately ends when a satisfactory resolution is achieved or when it is decided that no further action is required."
+}

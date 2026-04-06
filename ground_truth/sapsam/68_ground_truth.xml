@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Request Sample Products</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="">
+      <parameters>
+        <label>Provide Sample Products</label>
+        <method/>
+        <type>:task</type>
+        <mid>'2'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a4" endpoint="">
+      <parameters>
+        <label>Evaluate Sample</label>
+        <method/>
+        <type>:task</type>
+        <mid>'3'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Does Not Meet Requirements" language="text/javascript">
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Adjust Product Specifications</label>
+          <method/>
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a3" endpoint="">
+        <parameters>
+          <label>Provide Sample Products</label>
+          <method/>
+          <type>:task</type>
+          <mid>'2'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Evaluate Sample</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <call id="a6" endpoint="">
+      <parameters>
+        <label>Select Product</label>
+        <method/>
+        <type>:task</type>
+        <mid>'5'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a8" endpoint="">
+      <parameters>
+        <label>Send Purchase Order</label>
+        <method/>
+        <type>:task</type>
+        <mid>'6'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true">
+      <call id="a9" endpoint="">
+        <parameters>
+          <label>Check Stock Availability</label>
+          <method/>
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="Stock Available">
+        <choose mode="exclusive">
+          <alternative condition="Stock Available" language="text/javascript">
+            <call id="a11" endpoint="">
+              <parameters>
+                <label>Send Product</label>
+                <method/>
+                <type>:task</type>
+                <mid>'10'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a13" endpoint="">
+              <parameters>
+                <label>Receive Product</label>
+                <method/>
+                <type>:task</type>
+                <mid>'12'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a14" endpoint="">
+              <parameters>
+                <label>Check Products</label>
+                <method/>
+                <type>:task</type>
+                <mid>'13'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+            <choose mode="exclusive">
+              <alternative condition="Order Does Not Match" language="text/javascript">
+                <call id="a17" endpoint="">
+                  <parameters>
+                    <label>Request Missing Products</label>
+                    <method/>
+                    <type>:task</type>
+                    <mid>'17'</mid>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a9" endpoint="">
+                  <parameters>
+                    <label>Check Stock Availability</label>
+                    <method/>
+                    <type>:task</type>
+                    <mid>'8'</mid>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="Order Matches" language="text/javascript">
+                <call id="a16" endpoint="">
+                  <parameters>
+                    <label>Authorize Payment</label>
+                    <method/>
+                    <type>:task</type>
+                    <mid>'15'</mid>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a18" endpoint="">
+                  <parameters>
+                    <label>Process Payment</label>
+                    <method/>
+                    <type>:task</type>
+                    <mid>'16'</mid>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <call id="a19" endpoint="">
+                  <parameters>
+                    <label>Notify Supplier</label>
+                    <method/>
+                    <type>:task</type>
+                    <mid>'18'</mid>
+                    <arguments/>
+                  </parameters>
+                </call>
+                <escape/>
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="Stock Not Available" language="text/javascript">
+            <call id="a12" endpoint="">
+              <parameters>
+                <label>Restock Inventory</label>
+                <method/>
+                <type>:task</type>
+                <mid>'11'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a9" endpoint="">
+              <parameters>
+                <label>Check Stock Availability</label>
+                <method/>
+                <type>:task</type>
+                <mid>'8'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </loop>
+    </loop>
+  </loop>
+</description>

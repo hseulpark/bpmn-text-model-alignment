@@ -1,0 +1,132 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/32_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/32_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "plan discharge",
+    "set discharge date",
+    "discuss further course",
+    "determine care needs",
+    "assess care needs",
+    "create doctor letter",
+    "define supply facility",
+    "check it",
+    "require social services",
+    "initiate further care services",
+    "create discharge documentation",
+    "carry out advanced tasks",
+    "doctor set discharge date",
+    "further course discuss patient",
+    "care needs assess same time",
+    "doctor letter create parallel"
+  ],
+  "model_tasks": [
+    "plan discharge",
+    "set discharge date",
+    "discuss course with patient",
+    "determine medical care needs",
+    "assess nursing care needs",
+    "define supply facility",
+    "create doctor's letter",
+    "check social services requirement",
+    "initiate further care services",
+    "create discharge documentation",
+    "advanced discharge tasks"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "check it",
+        "carry out advanced tasks",
+        "doctor set discharge date",
+        "care needs assess same time",
+        "doctor letter create parallel"
+      ],
+      "additional_tasks": [
+        "assess nursing care needs",
+        "advanced discharge tasks"
+      ],
+      "merged_tasks": [
+        {
+          "model": "discuss course with patient",
+          "model_index": 2,
+          "user": [
+            "discuss further course",
+            "further course discuss patient"
+          ],
+          "user_indices": [
+            2,
+            13
+          ],
+          "pair_sims": [
+            0.741,
+            0.928
+          ],
+          "combo_sim": 0.912
+        },
+        {
+          "model": "determine medical care needs",
+          "model_index": 3,
+          "user": [
+            "determine care needs",
+            "assess care needs"
+          ],
+          "user_indices": [
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.871,
+            0.709
+          ],
+          "combo_sim": 0.813
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "define supply facility",
+          "task_b": "create doctor's letter",
+          "before_score": 14,
+          "after_score": 8,
+          "improvement": 6
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U3",
+              "U4"
+            ],
+            "user_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The department's process begins with a doctor planning a discharge.\n\nFirst, the doctor sets the discharge date.\n\nNext, the further course of action is discussed with the patient and their relatives.\n\nSimultaneously, the medical care needs are determined.\n\nAt the same time, the nursing care needs are assessed by the nursing staff.\n\nSubsequently, the doctor's letter is created.\n\nAfter discussing the further course with the patient and their relatives, determining the medical care needs, and assessing the nursing care needs, the supply facility is defined.\n\nThen, the doctor's letter is created in parallel, and it is checked whether social services are required.\n\nIf social services are required, further care services are initiated, and the discharge documentation is created.\n\nIf social services are not required, the discharge documentation is created directly.\n\nAfter the doctor's letter and the discharge documentation are created, advanced tasks for discharge are carried out, and the process ends with the discharge.",
+  "output_text": "The process begins with planning the discharge. Once the discharge is planned, the next step is to set a specific discharge date. After setting the discharge date, three activities occur simultaneously. First, there is a discussion with the patient about their course of treatment. Second, the medical care needs of the patient are determined. Third, the nursing care needs of the patient are assessed. These three activities are conducted in parallel and must all be completed before moving on to the next step.\n\nOnce the parallel activities are completed, the process continues with defining the supply facility that will be involved in the patient's discharge. Following this, a doctor's letter is created. After the doctor's letter is prepared, there is a check to determine if social services are required for the patient.\n\nAt this point, a decision is made based on whether social services are needed. If social services are required, further care services are initiated. If social services are not required, the process skips directly to the next step. Regardless of the decision, the process converges back to creating the discharge documentation.\n\nAfter the discharge documentation is created, advanced discharge tasks are performed. Finally, the process concludes with the completion of these advanced discharge tasks."
+}

@@ -1,0 +1,304 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/healthcare_bpmai_2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/healthcare_bpmai_2.err1.001.xml",
+  "user_tasks": [
+    "instruct they",
+    "visit nurse",
+    "check person insurance details",
+    "determine patient state",
+    "send they",
+    "take further steps",
+    "send patient",
+    "require examination",
+    "examine patient",
+    "follow examination",
+    "hospitalize patient",
+    "book patient",
+    "need further examination",
+    "direct patient",
+    "receive it",
+    "receive medicine",
+    "send patient initial examination",
+    "register patient",
+    "register they",
+    "pay fee",
+    "follow same steps",
+    "need further steps",
+    "complete necessary steps",
+    "person arrive hospital",
+    "nurse check person insurance details",
+    "process involve",
+    "process check",
+    "patient need",
+    "examination indicate",
+    "patient book hospitalization",
+    "examination suggest",
+    "patient send pharmacy",
+    "patient direct pharmacy",
+    "orders medicine pay pharmacy",
+    "patient book appointment",
+    "patient register hospital",
+    "patient pay fee",
+    "patient hospitalize examination",
+    "process continue"
+  ],
+  "model_tasks": [
+    "come to the hospital",
+    "stay the front",
+    "visit the nurse",
+    "check insurance",
+    "update database",
+    "check patients state",
+    "send patient home",
+    "examine the patient",
+    "hospitalize",
+    "book patient for doctor",
+    "send patient to pharmacy",
+    "visit pharmacy",
+    "order medicine",
+    "pay medicine",
+    "receive medicine",
+    "send patient home",
+    "check if patient is registered in hospital",
+    "register patient",
+    "pay fee",
+    "book patient for doctor",
+    "examine the patient",
+    "hospitalize",
+    "send patient to pharmacy",
+    "visit pharmacy",
+    "order medicine",
+    "pay medicine",
+    "receive medicine",
+    "send patient home"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "instruct they",
+        "determine patient state",
+        "send they",
+        "take further steps",
+        "require examination",
+        "follow examination",
+        "need further examination",
+        "direct patient",
+        "receive it",
+        "register they",
+        "follow same steps",
+        "need further steps",
+        "complete necessary steps",
+        "process involve",
+        "process check",
+        "patient need",
+        "examination indicate",
+        "patient book hospitalization",
+        "examination suggest",
+        "patient book appointment",
+        "patient register hospital",
+        "patient pay fee",
+        "process continue"
+      ],
+      "additional_tasks": [
+        "come to the hospital",
+        "stay the front",
+        "update database"
+      ],
+      "merged_tasks": [
+        {
+          "model": "check insurance",
+          "model_index": 3,
+          "user": [
+            "check person insurance details",
+            "nurse check person insurance details"
+          ],
+          "user_indices": [
+            2,
+            24
+          ],
+          "pair_sims": [
+            0.779,
+            0.638
+          ],
+          "combo_sim": 0.609
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "send patient",
+          "user_index": 6,
+          "model": [
+            "receive medicine",
+            "send patient home"
+          ],
+          "model_indices": [
+            26,
+            27
+          ],
+          "pair_sims": [
+            0.641,
+            0.853
+          ],
+          "combo_sim": 0.755,
+          "adjacent": true
+        },
+        {
+          "user": "hospitalize patient",
+          "user_index": 10,
+          "model": [
+            "hospitalize",
+            "book patient for doctor"
+          ],
+          "model_indices": [
+            8,
+            9
+          ],
+          "pair_sims": [
+            0.86,
+            0.59
+          ],
+          "combo_sim": 0.746,
+          "adjacent": true
+        },
+        {
+          "user": "book patient",
+          "user_index": 11,
+          "model": [
+            "book patient for doctor",
+            "examine the patient"
+          ],
+          "model_indices": [
+            19,
+            20
+          ],
+          "pair_sims": [
+            0.912,
+            0.556
+          ],
+          "combo_sim": 0.82,
+          "adjacent": true
+        },
+        {
+          "user": "send patient initial examination",
+          "user_index": 16,
+          "model": [
+            "check patients state",
+            "send patient home"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.552,
+            0.615
+          ],
+          "combo_sim": 0.619,
+          "adjacent": true
+        },
+        {
+          "user": "person arrive hospital",
+          "user_index": 23,
+          "model": [
+            "send patient home",
+            "check if patient is registered in hospital"
+          ],
+          "model_indices": [
+            15,
+            16
+          ],
+          "pair_sims": [
+            0.595,
+            0.617
+          ],
+          "combo_sim": 0.617,
+          "adjacent": true
+        },
+        {
+          "user": "patient send pharmacy",
+          "user_index": 31,
+          "model": [
+            "send patient to pharmacy",
+            "visit pharmacy"
+          ],
+          "model_indices": [
+            10,
+            11
+          ],
+          "pair_sims": [
+            0.948,
+            0.694
+          ],
+          "combo_sim": 0.835,
+          "adjacent": true
+        },
+        {
+          "user": "patient direct pharmacy",
+          "user_index": 32,
+          "model": [
+            "send patient to pharmacy",
+            "visit pharmacy",
+            "order medicine",
+            "pay medicine"
+          ],
+          "model_indices": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "pair_sims": [
+            0.764,
+            0.717,
+            0.563,
+            0.558
+          ],
+          "combo_sim": 0.61,
+          "adjacent": true
+        },
+        {
+          "user": "orders medicine pay pharmacy",
+          "user_index": 33,
+          "model": [
+            "order medicine",
+            "pay medicine"
+          ],
+          "model_indices": [
+            12,
+            13
+          ],
+          "pair_sims": [
+            0.708,
+            0.694
+          ],
+          "combo_sim": 0.774,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 5,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a person arrives at the hospital. Upon arrival, they are instructed to wait at the front area. After waiting, they proceed to visit a nurse. The nurse checks the person's insurance details. \n\nNext, the process involves determining the patient's state. If the patient's condition is such that they can be sent home, they are sent home. If not, further steps are taken. \n\nIf the patient is not sent home, the process checks if the patient needs to be examined. If an examination is required, the patient is examined. Following the examination, there are several possible outcomes:\n\n1. If the examination indicates hospitalization is necessary, the patient is hospitalized. After hospitalization, the patient is booked for a doctor’s appointment. If further examination is needed, the patient is examined again.\n\n2. If the examination suggests that the patient should be sent to the pharmacy, the patient is directed to the pharmacy. At the pharmacy, the patient orders medicine, pays for it, and receives it. After receiving the medicine, the process checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again.\n\n3. If the examination suggests that the patient can be sent home, the patient is sent home. The process then checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again.\n\nIf the patient is not sent home after the initial examination, the process checks if the patient is registered in the hospital. If the patient is not registered, they are registered. After registration, the patient pays a fee. \n\nOnce the fee is paid, the process checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again. \n\nAfter the examination, if hospitalization is necessary, the patient is hospitalized. If the patient needs to be sent to the pharmacy, they follow the same steps as previously described. If the patient can be sent home, they are sent home, and the process checks if further steps are needed.\n\nThe process continues to loop through these checks and actions until all necessary steps are completed, at which point the process ends.",
+  "output_text": "The process begins when a person arrives at the hospital. Upon arrival, they are instructed to stay at the front area. Next, they visit a nurse who checks their insurance details. After the insurance is verified, the hospital updates its database with the patient's information.\n\nThe process then involves checking the patient's current state. If the patient's condition is such that they can be sent home, they are sent home, and the process ends for them. If not, the process continues with further steps.\n\nIf the patient is not sent home, the next step is to check if they are already registered in the hospital. If they are not registered, they are registered, and then they proceed to pay any necessary fees. After the payment, the process checks if the patient needs to be booked for a doctor's appointment. If so, the patient is booked for a doctor, and the process continues with examining the patient.\n\nOnce the patient is examined, there are several possible outcomes. If the examination reveals that the patient needs to be hospitalized, they are admitted to the hospital. After hospitalization, the patient may be booked for a doctor again, and the examination process may repeat as necessary.\n\nAlternatively, if the examination indicates that the patient needs medication, they are sent to the pharmacy. At the pharmacy, the patient visits, orders the required medicine, pays for it, and receives the medicine. After receiving the medicine, the process checks if further examination or hospitalization is needed. If not, the patient may be sent home.\n\nThroughout the process, there are multiple decision points where the patient's condition is assessed to determine the next steps, such as whether to send them home, hospitalize them, or send them to the pharmacy. The process continues to loop through these steps as necessary until a final decision is made, and the process concludes."
+}

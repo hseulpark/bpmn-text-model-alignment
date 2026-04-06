@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Estimate Working Time Effort</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="">
+      <parameters>
+        <label>Check Resource Availability</label>
+        <method/>
+        <type>:task</type>
+        <mid>'2'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a4" endpoint="">
+      <parameters>
+        <label>Select and Contact Field Employee</label>
+        <method/>
+        <type>:task</type>
+        <mid>'3'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Not Reachable" language="text/javascript">
+      <call id="a3" endpoint="">
+        <parameters>
+          <label>Check Resource Availability</label>
+          <method/>
+          <type>:task</type>
+          <mid>'2'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Select and Contact Field Employee</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <call id="a6" endpoint="">
+      <parameters>
+        <label>Assign Task to Employee</label>
+        <method/>
+        <type>:task</type>
+        <mid>'5'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a7" endpoint="">
+      <parameters>
+        <label>Specify Task Completion Procedure</label>
+        <method/>
+        <type>:task</type>
+        <mid>'6'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a8" endpoint="">
+      <parameters>
+        <label>Employee Receives and Confirms Task</label>
+        <method/>
+        <type>:task</type>
+        <mid>'7'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a9" endpoint="">
+      <parameters>
+        <label>Employee Processes and Completes Task</label>
+        <method/>
+        <type>:task</type>
+        <mid>'8'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a10" endpoint="">
+      <parameters>
+        <label>Make Completion Report</label>
+        <method/>
+        <type>:task</type>
+        <mid>'9'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a11" endpoint="">
+      <parameters>
+        <label>Document Completion Report</label>
+        <method/>
+        <type>:task</type>
+        <mid>'10'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+</description>

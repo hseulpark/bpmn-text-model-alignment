@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-A667EBA3-A5A3-405E-A0B8-91C39DC1E6D8">
+    <parameters>
+      <label>Get travel request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-B7CD2820-6EB5-4B63-AFBD-10D35F8566A4">
+    <parameters>
+      <label>Prepare the tour plan</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-BDE80943-6312-4ED4-B5B4-57D2F9CE2A65">
+    <parameters>
+      <label>Send the tour  plan</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-45B79240-7422-497E-AD62-44C901D299C5">
+    <parameters>
+      <label>Receive response and Book the tour</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+        <choose mode="exclusive" a:alt_id="sid-2F7F7136-6B7A-464D-B841-6A1639E419D8">
+          <alternative condition="">
+            <call id="a9" endpoint="" a:alt_id="sid-77D287EA-7D22-4E59-A4B2-4209E65B0094">
+              <parameters>
+                <label>Contact customer</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <call id="a13" endpoint="" a:alt_id="sid-E97EC893-2EF2-4197-B855-05CAC8B0C6D2">
+              <parameters>
+                <label>Send the bill</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a11" endpoint="" a:alt_id="sid-B3EC097C-8261-49CE-8946-E4FBCF22358F">
+              <parameters>
+                <label>Send booking confirmation</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </alternative>
+        </choose>
+      </loop>
+    </description>

@@ -1,0 +1,182 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a11" endpoint="" a:alt_id="sid-6A2F0CEE-1CE6-432C-8E0C-6F05BAAEBB1D">
+        <parameters>
+          <label>Start receiving data subject request</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="">
+        <parameters>
+          <label>Finish receiving data subject request</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a1" endpoint="" a:alt_id="sid-A9B97678-298C-4EE7-82A3-836179299938">
+        <parameters>
+          <label>Check if withdrawn data are relevant</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-F4998816-41A2-476E-9C55-4E097F0388E4">
+        <alternative condition="">
+          <call id="a9" endpoint="" a:alt_id="sid-4D1171D1-2491-4D08-B841-8D30DCF9ECC4">
+            <parameters>
+              <label>Stop using withdrawn data</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a5" endpoint="" a:alt_id="sid-BB5F1C3A-DCD5-4C17-90CF-503D23B048FB">
+            <parameters>
+              <label>Communicate the withdraw</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a0" endpoint="" a:alt_id="sid-DFB327FD-78D3-4012-8BAC-82AF87341389">
+            <parameters>
+              <label>Inform the user that the withdraw will stop all running BPs</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a7" endpoint="" a:alt_id="sid-FCE0769D-0B18-4B46-8F5C-DEEC9F2748EF">
+            <parameters>
+              <label>Receive the notification about continuation</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-32DED13A-06FA-4A9D-BC9D-2B13766E878D">
+            <alternative condition="">
+              <call id="a8" endpoint="" a:alt_id="sid-693256AE-4AB9-47CD-8F4A-04F7378E340E">
+                <parameters>
+                  <label>Stop running BPs using withdrawn data</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a9" endpoint="" a:alt_id="sid-4D1171D1-2491-4D08-B841-8D30DCF9ECC4">
+                <parameters>
+                  <label>Stop using withdrawn data</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a5" endpoint="" a:alt_id="sid-BB5F1C3A-DCD5-4C17-90CF-503D23B048FB">
+                <parameters>
+                  <label>Communicate the withdraw</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+      </choose>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

@@ -1,0 +1,170 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/5-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/5-1.err1.001.xml",
+  "user_tasks": [
+    "receive customer request",
+    "receive request",
+    "assess it",
+    "approve loan",
+    "deny loan",
+    "send request",
+    "take action proceeding",
+    "occur approval",
+    "receive feedback",
+    "regard their loan request",
+    "receives feedback",
+    "system receive customer request",
+    "web service assess",
+    "ra web service approve loan",
+    "process move next step",
+    "ra web service deny loan",
+    "process continue next step",
+    "ra web service decide",
+    "process converge common point",
+    "customer receive feedback",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "system receives a customer request for a loan amount and risk assessment (ra) web service assesses the request",
+    "ra web service  approves the loan",
+    "ra web service  denies the loan",
+    "ra web service  send the request to the approver web service",
+    "customer receives feedback"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive customer request",
+        "receive request",
+        "assess it",
+        "approve loan",
+        "deny loan",
+        "send request",
+        "take action proceeding",
+        "occur approval",
+        "receive feedback",
+        "regard their loan request",
+        "receives feedback",
+        "system receive customer request",
+        "web service assess",
+        "process move next step",
+        "process continue next step",
+        "process converge common point",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "system receives a customer request for a loan amount and risk assessment (ra) web service assesses the request",
+        "ra web service  denies the loan"
+      ],
+      "merged_tasks": [
+        {
+          "model": "ra web service  send the request to the approver web service",
+          "model_index": 3,
+          "user": [
+            "ra web service deny loan",
+            "ra web service decide"
+          ],
+          "user_indices": [
+            15,
+            17
+          ],
+          "pair_sims": [
+            0.601,
+            0.68
+          ],
+          "combo_sim": 0.643
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "system receives a customer request for a loan amount and risk assessment (ra) web service assesses the request",
+          "task_b": "customer receives feedback",
+          "before_score": 8,
+          "after_score": 6,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U12",
+              "U13"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U13",
+              "U15"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U15",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U14",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 4,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the system receives a customer request for a loan amount. Once the request is received, it is assessed by the Risk Assessment (RA) Web service. After the assessment, there are three possible outcomes.\n\nFirst, if the RA Web service approves the loan, the process moves forward to the next step. Alternatively, if the RA Web service denies the loan, the process also continues to the next step. Lastly, if the RA Web service decides to send the request to the approver web service, this action is taken before proceeding.\n\nRegardless of which of the three outcomes occurs—approval, denial, or forwarding to the approver web service—the process converges at a common point. From this point, the customer receives feedback regarding their loan request. Finally, the process concludes.",
+  "output_text": "The process begins when the system receives a customer request for a loan amount. Immediately after receiving the request, a Risk Assessment (RA) Web service evaluates the request to determine the appropriate course of action.\n\nFollowing the assessment, there are three possible outcomes:\n\n1. If the RA Web service approves the loan, the process moves forward to the next step.\n2. If the RA Web service denies the loan, the process also moves forward to the next step.\n3. Alternatively, if the RA Web service decides that further evaluation is needed, it sends the request to an approver web service for additional review.\n\nRegardless of which path is taken—whether the loan is approved, denied, or sent for further approval—the process converges at a common point. At this stage, the customer receives feedback regarding the outcome of their loan request.\n\nFinally, after the customer has been informed, the process concludes. This ensures that every customer receives a clear response to their loan request, whether it is approved, denied, or requires further approval."
+}

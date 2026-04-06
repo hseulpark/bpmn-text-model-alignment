@@ -1,0 +1,121 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/22_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/22_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "begin patient registers",
+    "record data",
+    "register patient ssn",
+    "register patient name",
+    "register patient surname",
+    "complete registrations",
+    "print referral document",
+    "follow printing",
+    "archive record",
+    "complete registration process",
+    "mark end",
+    "process converge",
+    "clerk proceed",
+    "record archive file system"
+  ],
+  "model_tasks": [
+    "register patient",
+    "register ssn",
+    "register name",
+    "register surname",
+    "print referral document",
+    "archive record"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin patient registers",
+        "record data",
+        "complete registrations",
+        "follow printing",
+        "complete registration process",
+        "mark end",
+        "process converge",
+        "clerk proceed",
+        "record archive file system"
+      ],
+      "additional_tasks": [
+        "register name"
+      ],
+      "merged_tasks": [
+        {
+          "model": "register surname",
+          "model_index": 3,
+          "user": [
+            "register patient name",
+            "register patient surname"
+          ],
+          "user_indices": [
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.658,
+            0.797
+          ],
+          "combo_sim": 0.778
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "register patient ssn",
+          "user_index": 2,
+          "model": [
+            "register patient",
+            "register ssn"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.77,
+            0.797
+          ],
+          "combo_sim": 0.956,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "register patient",
+          "task_b": "register name",
+          "before_score": 10,
+          "after_score": 8,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "register patient",
+          "task_b": "register ssn",
+          "before_score": 10,
+          "after_score": 6,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process of clerks begins when a patient registers at the hospital.\n\nThe clerk starts by recording the data of each patient.\n\nOnce the data is recorded, the patient's SSN is registered, the patient's name is registered and the patient's surname is registered. These tasks are performed simultaneously.\n\nAfter these registrations are completed, the process converges, and the clerk proceeds to print the referral document.\n\nFollowing the printing, the record is archived in the file system.\n\nFinally, the registration process is completed, marking the end of the procedure.",
+  "output_text": "The process begins with the initiation of a starting event. The first step involves registering the patient, which is a task where the patient's information is initially collected. Following this, the process continues with the registration of the patient's Social Security Number (SSN), ensuring that this critical piece of identification is recorded.\n\nOnce the SSN is registered, the next step is to register the patient's name. This task involves entering the patient's first name into the system. After the name is registered, the process proceeds to register the patient's surname, completing the full identification of the patient.\n\nWith the patient's full details now recorded, the next task is to print a referral document. This document likely contains the patient's information and any necessary referrals for further action or appointments.\n\nAfter printing the referral document, the process moves on to archiving the record. This step involves storing the patient's information and the referral document in a secure and organized manner for future reference.\n\nFinally, the process concludes with an ending event, marking the completion of the entire sequence of tasks."
+}

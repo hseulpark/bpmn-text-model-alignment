@@ -1,0 +1,7 @@
+The process begins when a claim is registered by the system. Once the claim is registered, a claims officer examines it. After examining the claim, a decision point is reached. If the decision is to proceed, the claims officer writes a settlement recommendation.
+
+Following the writing of the settlement recommendation, a senior claims officer checks the recommendation. After reviewing it, the senior claims officer marks the claim. At this point, another decision is made. If the decision is to send the claim back, the system sends the claim back, and the process returns to the point where the claims officer examines the claim again.
+
+Alternatively, if the decision is to continue with the claim, the system proceeds with the claim handling process. This leads back to the decision point where the claims officer examines the claim. If at any point the decision is not to proceed with the claim, the process ends.
+
+In summary, the process involves registering a claim, examining it, potentially writing and checking a settlement recommendation, and making decisions on whether to send the claim back for re-examination or to proceed with handling, with the possibility of ending the process if no further action is needed.

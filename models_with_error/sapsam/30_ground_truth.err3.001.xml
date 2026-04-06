@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Client Initiates Service</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Enter Store and Look for Service</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Service Not Found" language="text/javascript" />
+    <alternative condition="Service Found" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Take Ticket</label>
+          <method />
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Ticket in App" language="text/javascript">
+          <call id="a8" endpoint="">
+            <parameters>
+              <label>Wait and Check Criteria</label>
+              <method />
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Physical Ticket" language="text/javascript">
+          <call id="a9" endpoint="">
+            <parameters>
+              <label>Wait for Turn</label>
+              <method />
+              <type>:task</type>
+              <mid>'8'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a10" endpoint="">
+        <parameters>
+          <label>Ask for Request</label>
+          <method />
+          <type>:task</type>
+          <mid>'9'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a11" endpoint="">
+        <parameters>
+          <label>Communicate Request to Assistant</label>
+          <method />
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:mutated="true"><alternative condition=""><call id="a13" endpoint="">
+            <parameters>
+              <label>Register Request</label>
+              <method />
+              <type>:task</type>
+              <mid>'12'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative><alternative condition="" /></choose><loop mode="pre_test" condition="true">
+        <call id="a13" endpoint="">
+          <parameters>
+            <label>Register Request</label>
+            <method />
+            <type>:task</type>
+            <mid>'12'</mid>
+            <arguments />
+          </parameters>
+        </call>
+        <escape />
+          </loop>
+      <call id="a16" endpoint="">
+        <parameters>
+          <label>Prepare Order</label>
+          <method />
+          <type>:task</type>
+          <mid>'15'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a17" endpoint="">
+        <parameters>
+          <label>Deliver Order</label>
+          <method />
+          <type>:task</type>
+          <mid>'16'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

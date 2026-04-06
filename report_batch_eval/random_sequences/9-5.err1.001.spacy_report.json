@@ -1,0 +1,197 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/9-5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/9-5.err1.001.xml",
+  "user_tasks": [
+    "indicate initiation",
+    "reach decision point",
+    "determine steps",
+    "receive expense report",
+    "encounter decision point",
+    "create new employee account",
+    "need new account",
+    "create it",
+    "create account",
+    "review report",
+    "approve report",
+    "approve it",
+    "require supervisor approval",
+    "need supervisor approval",
+    "determine outcome",
+    "send reimbursement",
+    "reject report",
+    "receive rejection notice",
+    "stop process",
+    "send email cancellation notice",
+    "submit expense report",
+    "receive email",
+    "company receive expense report",
+    "company decide",
+    "company proceed",
+    "process continue next decision point",
+    "process skip decision point",
+    "company review report",
+    "report require supervisor approval",
+    "supervisor review",
+    "company send reimbursement",
+    "employee receive rejection notice",
+    "process move next decision point",
+    "process reach decision point",
+    "company send email cancellation notice",
+    "employee receive email",
+    "process loop steps",
+    "determine next steps"
+  ],
+  "model_tasks": [
+    "company receives expense report",
+    "company creates new employee  account",
+    "company reviews report for automatic approval",
+    "supervisor approves the report",
+    "company sends reimbursement to employee's bank account",
+    "employee  receives a rejection notice",
+    "company automatically approves the report",
+    "employee re-submits the expense report",
+    "employee receives an email cancellation notice",
+    "company stops the process",
+    "employee  receives an approval in progress  email"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "indicate initiation",
+        "reach decision point",
+        "determine steps",
+        "encounter decision point",
+        "need new account",
+        "create it",
+        "review report",
+        "approve it",
+        "require supervisor approval",
+        "need supervisor approval",
+        "determine outcome",
+        "send reimbursement",
+        "reject report",
+        "receive rejection notice",
+        "stop process",
+        "receive email",
+        "company decide",
+        "company proceed",
+        "process continue next decision point",
+        "process skip decision point",
+        "company review report",
+        "report require supervisor approval",
+        "supervisor review",
+        "process move next decision point",
+        "process reach decision point",
+        "process loop steps",
+        "determine next steps"
+      ],
+      "additional_tasks": [
+        "company automatically approves the report",
+        "company stops the process"
+      ],
+      "merged_tasks": [
+        {
+          "model": "company creates new employee  account",
+          "model_index": 1,
+          "user": [
+            "create new employee account",
+            "create account"
+          ],
+          "user_indices": [
+            5,
+            8
+          ],
+          "pair_sims": [
+            0.924,
+            0.631
+          ],
+          "combo_sim": 0.881
+        },
+        {
+          "model": "employee re-submits the expense report",
+          "model_index": 7,
+          "user": [
+            "receive expense report",
+            "submit expense report"
+          ],
+          "user_indices": [
+            3,
+            20
+          ],
+          "pair_sims": [
+            0.671,
+            0.76
+          ],
+          "combo_sim": 0.727
+        },
+        {
+          "model": "employee receives an email cancellation notice",
+          "model_index": 8,
+          "user": [
+            "send email cancellation notice",
+            "company send email cancellation notice"
+          ],
+          "user_indices": [
+            19,
+            34
+          ],
+          "pair_sims": [
+            0.859,
+            0.874
+          ],
+          "combo_sim": 0.85
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "approve report",
+          "user_index": 10,
+          "model": [
+            "company reviews report for automatic approval",
+            "supervisor approves the report"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.65,
+            0.767
+          ],
+          "combo_sim": 0.633,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "employee re-submits the expense report",
+          "task_b": "company stops the process",
+          "before_score": 17,
+          "after_score": 15,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with a start event, indicating the initiation of the process. Immediately, a decision point is reached to determine the next steps. If the condition is true, the company receives an expense report. \n\nOnce the company receives the expense report, another decision point is encountered. Here, the company decides whether to create a new employee account. If a new account is needed, the company proceeds to create it. After the account is created, the process continues to the next decision point. If no new account is needed, the process skips directly to this decision point.\n\nAt this stage, the company reviews the report to determine if it qualifies for automatic approval. If the report is automatically approved, the company proceeds to approve it without further review. If not, the report requires supervisor approval.\n\nIf supervisor approval is needed, the supervisor reviews and approves the report. Following this, another decision point is reached to determine the outcome of the approval process. If the report is approved, the company sends a reimbursement to the employee's bank account. If the report is rejected, the employee receives a rejection notice. After either sending the reimbursement or the rejection notice, the process moves to the next decision point.\n\nOnce the report is either approved or rejected, the process reaches another decision point. Here, the company decides whether to stop the process. If the process is stopped, the company sends an email cancellation notice to the employee, who then re-submits the expense report. If the process is not stopped, the employee receives an email indicating that the approval is in progress.\n\nAfter these steps, the process loops back to the initial decision point to determine the next steps. If the condition is false at the initial decision point, the process ends.",
+  "output_text": "The process begins with a starting point where an initial decision is made. If the decision is true, the company receives an expense report. Once the report is received, the company checks if a new employee account needs to be created. If necessary, the company creates the new employee account. Regardless of whether a new account is created, the process continues with the company reviewing the report for automatic approval.\n\nAfter the review, another decision is made. If the report is not automatically approved, it is sent to a supervisor for approval. The supervisor then decides whether to approve or reject the report. If the supervisor approves the report, the company sends a reimbursement to the employee's bank account. If the supervisor rejects the report, the employee receives a rejection notice. In both cases, the process continues to the next stage.\n\nIf the report is automatically approved during the review, the process skips the supervisor's approval and moves directly to the next stage. At this point, another decision is made. If the decision leads to the employee re-submitting the expense report, the employee receives an email cancellation notice, and the company stops the process. Alternatively, if the decision results in the employee receiving an approval in progress email, the process continues without stopping.\n\nFinally, the process loops back to the initial decision point, allowing for the possibility of handling another expense report. If the initial decision is false, the process ends."
+}

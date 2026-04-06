@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3D8A8E63-2381-4564-A08C-DBAA61BE0B7F">
+    <parameters>
+      <label>INQ transmits the transaction data request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint=""><parameters><label>Update database</label><method /><type>:task</type><arguments /></parameters></call><call id="a2" endpoint="" a:alt_id="sid-D28EE549-02C1-4FDD-AA83-9FE6B4F069DD">
+    <parameters>
+      <label>IP checks the request of the INQ</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-DCD2C461-A56D-4EC8-918F-9814C07EDD5F">
+    <parameters>
+      <label>IP answers the question of the INQ</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

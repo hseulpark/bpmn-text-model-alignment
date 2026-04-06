@@ -1,0 +1,154 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/10_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/10_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "verify which request",
+    "send order",
+    "receive order",
+    "log request",
+    "authorize request",
+    "request model execution",
+    "merge tasks",
+    "follow merge",
+    "request evaluation",
+    "check it",
+    "request fulfillment support",
+    "contact incident manager",
+    "1st level",
+    "order send request handling",
+    "process return first step",
+    "closure request merge",
+    "closure request",
+    "process move",
+    "incident manager contact problem"
+  ],
+  "model_tasks": [
+    "verify request",
+    "send for request handling",
+    "receive by 1st level support",
+    "log and categorize request",
+    "verify request",
+    "send for request handling",
+    "receive by 1st level support",
+    "log and categorize request",
+    "request monitoring and escalation",
+    "closure and evaluation request",
+    "request fulfillment support",
+    "contact incident manager"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send order",
+        "authorize request",
+        "request model execution",
+        "merge tasks",
+        "follow merge",
+        "check it",
+        "process return first step",
+        "process move",
+        "incident manager contact problem"
+      ],
+      "additional_tasks": [
+        "receive by 1st level support",
+        "log and categorize request",
+        "request monitoring and escalation"
+      ],
+      "merged_tasks": [
+        {
+          "model": "receive by 1st level support",
+          "model_index": 2,
+          "user": [
+            "receive order",
+            "1st level"
+          ],
+          "user_indices": [
+            2,
+            12
+          ],
+          "pair_sims": [
+            0.471,
+            0.526
+          ],
+          "combo_sim": 0.704
+        },
+        {
+          "model": "closure and evaluation request",
+          "model_index": 9,
+          "user": [
+            "closure request merge",
+            "closure request"
+          ],
+          "user_indices": [
+            15,
+            16
+          ],
+          "pair_sims": [
+            0.677,
+            0.839
+          ],
+          "combo_sim": 0.666
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "verify which request",
+          "user_index": 0,
+          "model": [
+            "verify request",
+            "send for request handling"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.855,
+            0.633
+          ],
+          "combo_sim": 0.821,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U10",
+              "U12"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "and_to_seq => flattened <parallel> into sequence (structural fallback)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process of the request fulfillment begins with the start event, after which the request is verified by the incident manager. \n\nNext, where the order is sent for request handling.\n\nThe order is then received by the 1st level support.\n\nFollowing, the request is logged and categorized.\n\nIf the request is not authorized, the process returns to the first step.\n\nIf the request is authorized, the request monitoring and escalation is done by the incident manager and 1st level support.\n\nSimultaneously, the model execution is requested by the service request fulfillment group and 1st level support.\n\nThese tasks are then merged back into a single flow.\n\nFollowing the merge, the closure and evaluation is requested.\n\nAfter the closure and evaluation are requested, it is checked if there was a problem with the request processing or the request record.\n\nIf there was no problem, the process moves to request fulfillment support, leading to a successful end of the process.\n\nIf there was a problem, the incident manager is contacted about the problem, and the process ends.",
+  "output_text": "The process begins with an initial event. From there, a decision point is reached where a choice is made based on certain conditions. If the condition is met (indicated as \"true\"), the process proceeds to verify the request. Once the request is verified, it is sent for handling. The request is then received by the first level of support, where it is logged and categorized.\n\nFollowing this, another decision point is encountered. If the request is authorized, it moves forward to monitoring and escalation. After monitoring and escalation, the process continues to the closure and evaluation of the request. Subsequently, support for fulfilling the request is provided, and the incident manager is contacted. This leads to another decision point, which loops back to the initial decision point, allowing the process to potentially start over.\n\nIf, at the initial decision point, the condition is not met (indicated as \"Not Authorized\"), the process also proceeds to verify the request. However, this path leads to an escalation, which then connects back to the second decision point. This second decision point, in turn, loops back to the initial decision point, allowing the process to potentially start over.\n\nThe process concludes with an end event, marking the completion of the sequence of activities."
+}

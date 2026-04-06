@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-1F54E0B3-23C2-480B-859A-48321D77152B">
+    <parameters>
+      <label>Receive trip request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-8F3B8622-60EF-4945-854C-F6BFFAF95094">
+    <parallel_branch>
+      <call id="a2" endpoint="" a:alt_id="sid-43D8B553-8426-4C5B-A6D1-39365A81FB27">
+        <parameters>
+          <label>Send price request to the airlines</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a3" endpoint="" a:alt_id="sid-06AB1DB8-CDE3-4F63-B072-2D0DD2451051">
+        <parameters>
+          <label>Collect responses from the airlines</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a4" endpoint="" a:alt_id="sid-5AEDC859-A5E0-40AF-89E4-94BFCF1996BA">
+        <parameters>
+          <label>Select airline</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="" a:alt_id="sid-8DCBA7A1-4992-4DC5-AAE5-2BDF78469E86">
+        <parameters>
+          <label>Send price request to the hotels</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-157B9C15-4E1C-4AD4-8387-193CFEBF9191">
+        <parameters>
+          <label>Collect responses from the hotels</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="" a:alt_id="sid-172E74F1-A870-4D71-A133-644AC6997271">
+        <parameters>
+          <label>Select hotel</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a10" endpoint="" a:alt_id="sid-561304F3-89A9-4CEF-8952-ED7AD84E9963">
+    <parameters>
+      <label>Prepare the tour plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="sid-357B1843-0084-43CC-9D42-880A29FC9C05">
+    <parameters>
+      <label>Send the tour plan to the customer</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

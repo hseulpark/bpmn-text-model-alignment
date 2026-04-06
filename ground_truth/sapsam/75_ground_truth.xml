@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Receive Grape Harvest Task</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Receive Field Location Information</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Load Tools</label>
+      <method/>
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Drive to Field</label>
+      <method/>
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a6" endpoint="">
+    <parameters>
+      <label>Unload Tools at Field</label>
+      <method/>
+      <type>:task</type>
+      <mid>'5'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="">
+    <parameters>
+      <label>Conduct Grape Harvest by Hand</label>
+      <method/>
+      <type>:task</type>
+      <mid>'6'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a8" endpoint="">
+    <parameters>
+      <label>Load Tools After Harvest</label>
+      <method/>
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Drive to Winery</label>
+      <method/>
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a10" endpoint="">
+    <parameters>
+      <label>Unload Tools at Winery</label>
+      <method/>
+      <type>:task</type>
+      <mid>'9'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

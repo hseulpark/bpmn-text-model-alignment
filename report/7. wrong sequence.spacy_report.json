@@ -1,0 +1,88 @@
+{
+  "log_path": "./data/0.log.yaml",
+  "bpmn_path": "./data/7. wrong sequence.xml",
+  "user_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up brewer",
+    "pour water",
+    "serve"
+  ],
+  "model_tasks": [
+    "prepare coffee ground",
+    "pour water",
+    "set up the brewer",
+    "serve",
+    "boil water"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "common_user_tasks": [
+          "boil water",
+          "prepare coffee ground",
+          "set up brewer",
+          "pour water",
+          "serve"
+        ],
+        "common_model_tasks": [
+          "prepare coffee ground",
+          "pour water",
+          "set up the brewer",
+          "serve",
+          "boil water"
+        ],
+        "kendall_tau_distance": 4,
+        "out_of_order_bpmn_tasks": [
+          {
+            "bpmn_task": "boil water",
+            "bpmn_index": 4,
+            "matched_user_task": "boil water",
+            "user_index": 0,
+            "inversions_involving_this_task": 4
+          },
+          {
+            "bpmn_task": "pour water",
+            "bpmn_index": 1,
+            "matched_user_task": "pour water",
+            "user_index": 3,
+            "inversions_involving_this_task": 2
+          },
+          {
+            "bpmn_task": "set up the brewer",
+            "bpmn_index": 2,
+            "matched_user_task": "set up brewer",
+            "user_index": 2,
+            "inversions_involving_this_task": 2
+          },
+          {
+            "bpmn_task": "prepare coffee ground",
+            "bpmn_index": 0,
+            "matched_user_task": "prepare coffee ground",
+            "user_index": 1,
+            "inversions_involving_this_task": 1
+          },
+          {
+            "bpmn_task": "serve",
+            "bpmn_index": 3,
+            "matched_user_task": "serve",
+            "user_index": 4,
+            "inversions_involving_this_task": 1
+          }
+        ],
+        "common_count": 5
+      },
+      "gateway_analysis": {
+        "note": "No output_text provided; gateway analysis skipped.",
+        "gateway_mismatches": [],
+        "mismatch_count": 0
+      }
+    }
+  },
+  "user_text": "# User Input:\nFirst, boil water. Prepare coffee ground and set up the brewer. Pour water and serve.",
+  "output_text": ""
+}

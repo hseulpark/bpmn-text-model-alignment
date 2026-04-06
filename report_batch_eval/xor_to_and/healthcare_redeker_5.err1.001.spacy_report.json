@@ -1,0 +1,108 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/healthcare_redeker_5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/healthcare_redeker_5.err1.001.xml",
+  "user_tasks": [
+    "prepare room",
+    "perform surgery",
+    "follow surgery",
+    "discharge patient",
+    "sanitize room",
+    "complete both",
+    "move on",
+    "fill out report",
+    "complete report",
+    "pay bill",
+    "resolve decision",
+    "person arrive hospital",
+    "activities occur surgery",
+    "patient discharge hospital",
+    "room sanitize same time",
+    "process skip end",
+    "process conclude case"
+  ],
+  "model_tasks": [
+    "arrive to the hospital",
+    "prepare room for the surgery",
+    "perform surgery",
+    "discharge patient",
+    "sanitize room for the surgery",
+    "fill the report",
+    "pay the bill"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "follow surgery",
+        "complete both",
+        "move on",
+        "complete report",
+        "resolve decision",
+        "activities occur surgery",
+        "process skip end",
+        "process conclude case"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "arrive to the hospital",
+          "model_index": 0,
+          "user": [
+            "person arrive hospital",
+            "patient discharge hospital"
+          ],
+          "user_indices": [
+            11,
+            13
+          ],
+          "pair_sims": [
+            0.851,
+            0.572
+          ],
+          "combo_sim": 0.743
+        },
+        {
+          "model": "sanitize room for the surgery",
+          "model_index": 4,
+          "user": [
+            "sanitize room",
+            "room sanitize same time"
+          ],
+          "user_indices": [
+            4,
+            14
+          ],
+          "pair_sims": [
+            0.78,
+            0.656
+          ],
+          "combo_sim": 0.675
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": true
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a person arrives at the hospital. Once they have arrived, the next step is to prepare a room for the surgery. After the room is ready, the surgery is performed.\n\nFollowing the surgery, two activities occur simultaneously. First, the patient is discharged from the hospital. At the same time, the room used for the surgery is sanitized. Both of these tasks must be completed before moving on to the next step.\n\nOnce the patient is discharged and the room is sanitized, a report is filled out. After the report is completed, there is a decision point. If there is a bill to be paid, the bill is paid. If there is no bill to be paid, the process skips directly to the end. In either case, once the decision is resolved, the process concludes.",
+  "output_text": "The process begins when a person arrives at the hospital. Once they have arrived, preparations are made to ready a room for surgery. After the room is prepared, the surgery is performed.\n\nFollowing the surgery, two activities occur simultaneously. First, the patient is discharged from the hospital. At the same time, the room used for the surgery is sanitized. Both of these tasks must be completed before moving on to the next step.\n\nOnce the patient is discharged and the room is sanitized, a report is filled out. After the report is completed, two more activities happen concurrently. The bill for the hospital services is paid, and another unspecified task occurs simultaneously. Both of these activities must be completed before the process can conclude.\n\nFinally, the process ends after the bill is paid and the concurrent task is completed."
+}

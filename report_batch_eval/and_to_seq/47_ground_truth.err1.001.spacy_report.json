@@ -1,0 +1,168 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/47_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/47_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "determine selection",
+    "check it",
+    "execute system",
+    "purchase license",
+    "buy test license",
+    "agree framework contracts",
+    "create purchase agreement",
+    "provide contract data",
+    "update contract information",
+    "place order",
+    "forward payment",
+    "send message",
+    "execute payment",
+    "system provide contract data",
+    "final acceptance occur",
+    "payment forward parallel",
+    "message send controlling department"
+  ],
+  "model_tasks": [
+    "define requirements",
+    "select licenses",
+    "check system execution",
+    "purchase license",
+    "purchase test license",
+    "agree framework contracts",
+    "create license purchase agreement",
+    "provide license purchase contract data",
+    "update contract information",
+    "place order",
+    "final acceptance of delivery",
+    "review framework agreements",
+    "update system",
+    "forward payment",
+    "send message to accounting/controlling"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "determine selection",
+        "check it",
+        "execute payment",
+        "payment forward parallel"
+      ],
+      "additional_tasks": [
+        "define requirements",
+        "select licenses",
+        "create license purchase agreement",
+        "review framework agreements",
+        "update system"
+      ],
+      "merged_tasks": [
+        {
+          "model": "purchase test license",
+          "model_index": 4,
+          "user": [
+            "buy test license",
+            "create purchase agreement"
+          ],
+          "user_indices": [
+            4,
+            6
+          ],
+          "pair_sims": [
+            0.954,
+            0.503
+          ],
+          "combo_sim": 0.899
+        },
+        {
+          "model": "provide license purchase contract data",
+          "model_index": 7,
+          "user": [
+            "provide contract data",
+            "system provide contract data"
+          ],
+          "user_indices": [
+            7,
+            13
+          ],
+          "pair_sims": [
+            0.713,
+            0.633
+          ],
+          "combo_sim": 0.582
+        },
+        {
+          "model": "send message to accounting/controlling",
+          "model_index": 14,
+          "user": [
+            "send message",
+            "message send controlling department"
+          ],
+          "user_indices": [
+            11,
+            16
+          ],
+          "pair_sims": [
+            0.556,
+            0.682
+          ],
+          "combo_sim": 0.69
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "final acceptance of delivery",
+          "task_b": "update system",
+          "before_score": 19,
+          "after_score": 17,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U11",
+              "U16"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U5",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the definition of requirements by the purchasing team.\n\nNext, the selection of licenses is determined.\n\nThen, it is checked whether the system has been executed.\n\nIf yes, a license is purchased; otherwise, a test license is bought.\n\nAfter purchasing the license or test license, framework contracts are agreed upon, and a license purchase agreement is created.\n\nThe system then provides the license purchase contract data, and simultaneously, the contract information is updated.\n\nSubsequently, an order is placed.\n\nAfter the order is placed, the final acceptance of delivery occurs, followed by the review of framework agreements and the updating of the system.\nThus, the license is purchased.\n\nIn parallel, the payment is forwarded, and a message is sent to the Accounting/Controlling department to execute the payment.\n\nThe process ends with the confirmation that the license has been purchased and the payment has been executed.",
+  "output_text": "The process begins with the initial step of defining the requirements. Once the requirements are clearly defined, the next step is to select the appropriate licenses needed for the project. After selecting the licenses, a decision point is reached where it is determined whether the system has been executed or not.\n\nIf the system has been executed, the process continues with checking the system execution. Following this, a license is purchased. After purchasing the license, the process converges back to a decision point.\n\nIf the system has not been executed, a test license is purchased instead. This also leads back to the same decision point as the previous path.\n\nAfter either purchasing a license or a test license, the process moves forward to agreeing on framework contracts. Once the framework contracts are agreed upon, a license purchase agreement is created.\n\nThe process then splits into two parallel activities. One activity involves providing the license purchase contract data, while the other involves updating the contract information. Both activities occur simultaneously and independently.\n\nOnce both parallel activities are completed, the process converges again and proceeds to place an order. After placing the order, the final acceptance of delivery is conducted.\n\nFollowing the acceptance of delivery, the framework agreements are reviewed. The system is then updated accordingly. After updating the system, the payment is forwarded.\n\nFinally, a message is sent to the accounting or controlling department to inform them of the completed process. The process concludes with this final step."
+}

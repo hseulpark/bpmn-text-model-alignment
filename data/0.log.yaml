@@ -1,0 +1,14 @@
+event:
+  concept:instance: 6552
+  id:id: external
+  cpee:activity: external
+  cpee:instance: 823b614a-0549-4b70-b5ed-8bcac6d6fae4
+  lifecycle:transition: unknown
+  cpee:lifecycle:transition: description/exposition
+  cpee:change_uuid: e6846be24b814437a7d8d0d1062911c0cf597598
+  cpee:exposition: |+
+    # User Input:
+    First, boil water. Prepare coffee ground and set up the brewer. Pour water and serve.
+
+  time:timestamp: '2025-11-05T11:23:37.717629+01:00'
+...

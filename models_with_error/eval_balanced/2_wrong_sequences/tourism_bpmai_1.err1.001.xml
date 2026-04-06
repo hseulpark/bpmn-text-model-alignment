@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="" a:alt_id="sid-40C42EF6-F44D-44ED-810A-2EF8AAA426BA">
+    <parameters>
+      <label>Check customer request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a1" endpoint="" a:alt_id="sid-7EAFC870-251D-493E-878B-3B83C81306BF">
+    <parameters>
+      <label>Receive customer request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-8DB9D91F-10EF-4C16-AB66-88A71A865C57">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="sid-04D1CAA2-B7D8-4973-B91A-B91DC953D28C">
+        <alternative condition="">
+          <call id="a5" endpoint="" a:alt_id="sid-A706BF4B-954A-4000-BE16-E87E3B687D13">
+            <parameters>
+              <label>Manual registration</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a4" endpoint="" a:alt_id="sid-95130FEF-335F-4589-8ECF-8BF52EF0BFE8">
+            <parameters>
+              <label>Automatic registration</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <loop mode="pre_test" condition="true">
+        <call id="a14" endpoint="" a:alt_id="sid-761021B3-929E-46F1-9196-F4A6E981D502">
+          <parameters>
+            <label>Search for attraction provider</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-2BD80ABA-A481-4ED9-8C2F-E516636DCFEF">
+          <alternative condition="">
+            <call id="a10" endpoint="" a:alt_id="sid-6B08B260-D07D-4634-914E-A9725BC0F0AB">
+              <parameters>
+                <label>Book attraction</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-FF40F488-A19E-4E1D-BB6A-AEB90D0B76E1">
+              <alternative condition="">
+                <call id="a13" endpoint="" a:alt_id="sid-03556567-A75A-448C-B430-A88E085EBC19">
+                  <parameters>
+                    <label>Receive rejection</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="">
+                <call id="a12" endpoint="" a:alt_id="sid-D19C0A45-A40E-4573-96F9-CCE4BDA3C889">
+                  <parameters>
+                    <label>Receive booking confirmation</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a16" endpoint="" a:alt_id="sid-83FFC573-9063-40FD-B8A0-0E8CAE941E46">
+                  <parameters>
+                    <label>Send confirmation to the customer</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <escape a:alt_id="-1" />
+              </alternative>
+            </choose>
+          </alternative>
+          <alternative condition="">
+            <escape a:alt_id="-1" />
+          </alternative>
+        </choose>
+      </loop>
+    </alternative>
+    <alternative condition="">
+      <call id="a9" endpoint="" a:alt_id="sid-F834C8DF-8F0A-4408-898A-3A9420AE672A">
+        <parameters>
+          <label>Send notification to the customer</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

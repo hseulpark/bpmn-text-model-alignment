@@ -1,0 +1,88 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/33_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/33_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "analyze technology needs",
+    "conduct market analysis",
+    "generate ideas",
+    "find ideas",
+    "review they",
+    "follow review",
+    "pass idea",
+    "project management",
+    "approve idea",
+    "reject it",
+    "note this",
+    "developers generate ideas",
+    "employees review",
+    "project management decide",
+    "process continue"
+  ],
+  "model_tasks": [
+    "analyze technology needs",
+    "conduct market analysis",
+    "generate ideas",
+    "review ideas",
+    "pass to project management",
+    "approve idea",
+    "reject idea"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "find ideas",
+        "follow review",
+        "pass idea",
+        "note this",
+        "developers generate ideas",
+        "employees review",
+        "process continue"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "pass to project management",
+          "model_index": 4,
+          "user": [
+            "project management",
+            "project management decide"
+          ],
+          "user_indices": [
+            7,
+            13
+          ],
+          "pair_sims": [
+            0.766,
+            0.715
+          ],
+          "combo_sim": 0.711
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": true,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with an employee analyzing technology needs.\n\n\nNext, a market analysis is conducted by the employee and, in parallel, developers generate ideas.\n\nAfter the ideas are found, they are reviewed by the employees.\n\nFollowing the review of the ideas and the completion of the market analysis, the idea is passed to project management.\n\nProject management then decides whether to approve the idea or not.\n\nIf the idea is not approved, it is rejected.\n\nIf the idea is approved, this is noted and the process continues.\n\nThe process ends with the discovery of new technologies.",
+  "output_text": "The process begins with an initial step where the technology needs are analyzed. Once this analysis is complete, two activities occur simultaneously. The first activity involves conducting a market analysis, while the second activity focuses on generating ideas. \n\nAfter the market analysis is conducted, and the ideas are generated, the ideas are then reviewed. Once both the market analysis and the idea review are completed, the process continues with passing the information to project management.\n\nFollowing this, there is a step to approve the idea. If the idea is approved, the process concludes with the idea being rejected, which marks the end of the process."
+}

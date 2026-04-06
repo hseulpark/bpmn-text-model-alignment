@@ -1,0 +1,126 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/7-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/7-1.err1.001.xml",
+  "user_tasks": [
+    "check open leads",
+    "review leads",
+    "select leads",
+    "choose top leads",
+    "instruct sales assistant leads",
+    "enter decision point",
+    "contact leads",
+    "call customers",
+    "call customer",
+    "reach decision point",
+    "send note",
+    "receive note",
+    "process lead",
+    "mark end",
+    "contact top leads",
+    "manager select leads",
+    "manager instruct sales assistant",
+    "process enter decision point",
+    "process loop",
+    "sales assistant continue",
+    "sales assistant call customer",
+    "call result further action",
+    "sales assistant send note",
+    "manager process lead",
+    "process return processing",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "manager checks the open leads",
+    "manager selects the top five leads",
+    "manager tells sales assistant to  contact the leads",
+    "sales assistant calls  customer",
+    "sales assistant  sends a note to the manager",
+    "manager  processes the lead"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "review leads",
+        "enter decision point",
+        "contact leads",
+        "call customers",
+        "call customer",
+        "reach decision point",
+        "send note",
+        "receive note",
+        "process lead",
+        "mark end",
+        "contact top leads",
+        "manager instruct sales assistant",
+        "process enter decision point",
+        "process loop",
+        "sales assistant continue",
+        "call result further action",
+        "process return processing",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "manager checks the open leads",
+          "model_index": 0,
+          "user": [
+            "check open leads",
+            "manager select leads"
+          ],
+          "user_indices": [
+            0,
+            15
+          ],
+          "pair_sims": [
+            0.818,
+            0.673
+          ],
+          "combo_sim": 0.787
+        },
+        {
+          "model": "manager selects the top five leads",
+          "model_index": 1,
+          "user": [
+            "select leads",
+            "choose top leads"
+          ],
+          "user_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.679,
+            0.758
+          ],
+          "combo_sim": 0.731
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with a manager who checks the open leads. After reviewing the leads, the manager selects the top five leads to focus on. Once the top leads are chosen, the manager instructs the sales assistant to contact these leads.\n\nThe process then enters a decision point where it checks if the task of contacting the leads is complete. If it is not complete, the process loops back, and the sales assistant continues to call the customers. Once the sales assistant successfully calls a customer, another decision point is reached.\n\nAt this second decision point, if the call results in further action, the sales assistant sends a note to the manager. Upon receiving the note, the manager processes the lead accordingly. After processing, the process returns to the decision point to check if there are more leads to handle.\n\nIf there are no more leads to process, the process concludes. This marks the end of the sequence, ensuring that all top leads have been contacted and processed as necessary.",
+  "output_text": "The process begins with a manager who checks the open leads. After reviewing the leads, the manager selects the top five leads to focus on. Once the top leads are chosen, the manager instructs a sales assistant to contact these leads.\n\nThe process then involves a decision point where it checks if the task of contacting the leads is complete. If it is not complete, the process loops back to the point where the sales assistant is instructed to contact the leads again.\n\nOnce the sales assistant begins contacting a customer, two activities occur simultaneously. First, the sales assistant calls the customer. At the same time, the sales assistant sends a note to the manager to inform them about the contact attempt. After the note is sent, the manager processes the lead based on the information received.\n\nThese parallel activities converge, and the process checks again if the task of contacting the leads is complete. If it is complete, the process ends. If not, the loop continues, and the sales assistant may need to contact the leads again until the task is fully completed. Once all necessary contacts are made and processed, the process concludes."
+}

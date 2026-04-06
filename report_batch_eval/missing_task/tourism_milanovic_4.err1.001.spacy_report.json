@@ -1,0 +1,131 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_milanovic_4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/tourism_milanovic_4.err1.001.xml",
+  "user_tasks": [
+    "receive trip request",
+    "receive request",
+    "initiate tasks",
+    "send price request",
+    "send request",
+    "collect responses",
+    "gather responses",
+    "select airline",
+    "collected information",
+    "receive hotel responses",
+    "select hotel",
+    "prepare tour plan",
+    "send it",
+    "send tour plan",
+    "second task involve same time",
+    "process continue",
+    "process conclude",
+    "tour plan send customer"
+  ],
+  "model_tasks": [
+    "send price request to the airlines",
+    "collect responses from the airlines",
+    "select airline",
+    "send price request to the hotels",
+    "collect responses from the hotels",
+    "select hotel",
+    "prepare the tour plan",
+    "send the tour plan to the customer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive trip request",
+        "receive request",
+        "initiate tasks",
+        "send request",
+        "collected information",
+        "send it",
+        "second task involve same time",
+        "process continue",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "send price request to the airlines",
+        "collect responses from the airlines"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send price request to the hotels",
+          "model_index": 3,
+          "user": [
+            "send price request",
+            "receive hotel responses"
+          ],
+          "user_indices": [
+            3,
+            9
+          ],
+          "pair_sims": [
+            0.738,
+            0.641
+          ],
+          "combo_sim": 0.92
+        },
+        {
+          "model": "collect responses from the hotels",
+          "model_index": 4,
+          "user": [
+            "collect responses",
+            "gather responses"
+          ],
+          "user_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.67,
+            0.517
+          ],
+          "combo_sim": 0.627
+        },
+        {
+          "model": "send the tour plan to the customer",
+          "model_index": 7,
+          "user": [
+            "send tour plan",
+            "tour plan send customer"
+          ],
+          "user_indices": [
+            13,
+            17
+          ],
+          "pair_sims": [
+            0.872,
+            0.939
+          ],
+          "combo_sim": 0.929
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a trip request is received. Once the request is received, two tasks are initiated simultaneously. The first task involves sending a price request to various airlines. After sending the request, responses from the airlines are collected. Once all responses are gathered, an airline is selected based on the collected information.\n\nAt the same time, the second task involves sending a price request to different hotels. Similar to the airline process, responses from the hotels are collected after the request is sent. Once all hotel responses are received, a hotel is selected.\n\nAfter both the airline and hotel have been selected, the process continues with preparing the tour plan. Once the tour plan is ready, it is sent to the customer. The process concludes after the tour plan has been sent to the customer.",
+  "output_text": "The process begins with an initial step where the task of sending a price request to the airlines is initiated. Once this request is sent, the process involves collecting responses from the airlines. After gathering the necessary responses, the next step is to select an airline based on the information received.\n\nSimultaneously, another task is carried out where a price request is sent to various hotels. Following this, responses from the hotels are collected. Once the responses are in, a hotel is selected based on the collected information.\n\nBoth of these activities—selecting an airline and selecting a hotel—are conducted in parallel, meaning they occur independently but simultaneously. Once both selections are made, the process converges to a single path where the next step is to prepare the tour plan. After the tour plan is prepared, it is sent to the customer. The process concludes once the tour plan has been successfully sent to the customer."
+}

@@ -1,0 +1,179 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a1" endpoint="" a:alt_id="sid-C70D5454-0140-4A1D-8F3A-5C6B70B5A4E9">
+        <parameters>
+          <label>Package product</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a2" endpoint="" a:alt_id="sid-C97CF3C7-1B0D-4D22-B437-2410D81F5CD1">
+        <parameters>
+          <label>Start shipping product</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a3" endpoint="">
+        <parameters>
+          <label>Finish shipping product</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-3B13AB6D-18DC-4B52-80D6-30C513E7A8E6">
+        <alternative condition="">
+          <call id="a4" endpoint="" a:alt_id="sid-D4EAB5A8-B426-4E7E-B41C-36D0B245083F">
+            <parameters>
+              <label>Deliver to door</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-B8AA7EE0-B704-4537-8C10-25FED172E38F">
+            <alternative condition="">
+              <call id="a7" endpoint="" a:alt_id="sid-ABC0AE9A-04E7-4249-A807-6BDE1FB28D32">
+                <parameters>
+                  <label>Print pick-up receipt</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a8" endpoint="" a:alt_id="sid-85F96EFF-BCC5-4D73-9E49-9604756656BE">
+                <parameters>
+                  <label>Post pick-up receipt</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a12" endpoint="" a:alt_id="sid-8297031E-341A-4180-89EB-0EB87559D0A7">
+                <parameters>
+                  <label>Reroute to the closest station</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <call id="a5" endpoint="" a:alt_id="sid-1B9CBB6C-9543-42AC-A6EF-18AC3312309F">
+            <parameters>
+              <label>Deliver to station</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="sid-549947C5-E256-44A1-A4BB-730FD3437D88">
+        <alternative condition=""/>
+        <alternative condition="">
+          <call id="a13" endpoint="" a:alt_id="sid-49D7E82C-F30F-4606-98AE-2F2E0298550A">
+            <parameters>
+              <label>Receive the product back</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

@@ -1,0 +1,201 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/9-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/9-1.err1.001.xml",
+  "user_tasks": [
+    "back up database",
+    "check database",
+    "make decision",
+    "check crm system",
+    "follow system check",
+    "register defaulting accounts",
+    "defaulting accounts",
+    "register accounts",
+    "produce new table",
+    "send table",
+    "reach decision point",
+    "send alert",
+    "skip step",
+    "skip alert",
+    "send message",
+    "complete reconciliation",
+    "reach end",
+    "process continue",
+    "table send account management",
+    "process reach decision point",
+    "process continue decision point",
+    "process skip",
+    "process send alert",
+    "process move next decision point",
+    "process reach next decision point",
+    "process involve",
+    "decision make check",
+    "process send message",
+    "process move final decision point",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "back up the database",
+    "check the database",
+    "check the crm system",
+    "register all defaulting accounts and customers",
+    "produce new table of defaulting accounts",
+    "send table to account management",
+    "send an alert to the supervisor",
+    "check the crm system",
+    "reconcile with the existing account defaulters table",
+    "send message to the supervisor",
+    "complete reconciliation"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "make decision",
+        "reach decision point",
+        "skip step",
+        "skip alert",
+        "reach end",
+        "process continue",
+        "process reach decision point",
+        "process continue decision point",
+        "process skip",
+        "process send alert",
+        "process move next decision point",
+        "process reach next decision point",
+        "process involve",
+        "decision make check",
+        "process move final decision point",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "check the crm system",
+        "reconcile with the existing account defaulters table"
+      ],
+      "merged_tasks": [
+        {
+          "model": "check the database",
+          "model_index": 1,
+          "user": [
+            "check database",
+            "follow system check"
+          ],
+          "user_indices": [
+            1,
+            4
+          ],
+          "pair_sims": [
+            0.848,
+            0.435
+          ],
+          "combo_sim": 0.762
+        },
+        {
+          "model": "register all defaulting accounts and customers",
+          "model_index": 3,
+          "user": [
+            "register defaulting accounts",
+            "defaulting accounts"
+          ],
+          "user_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.897,
+            0.821
+          ],
+          "combo_sim": 0.874
+        },
+        {
+          "model": "produce new table of defaulting accounts",
+          "model_index": 4,
+          "user": [
+            "register accounts",
+            "produce new table"
+          ],
+          "user_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.515,
+            0.522
+          ],
+          "combo_sim": 0.701
+        },
+        {
+          "model": "send table to account management",
+          "model_index": 5,
+          "user": [
+            "send table",
+            "table send account management"
+          ],
+          "user_indices": [
+            9,
+            18
+          ],
+          "pair_sims": [
+            0.686,
+            0.887
+          ],
+          "combo_sim": 0.913
+        },
+        {
+          "model": "send message to the supervisor",
+          "model_index": 9,
+          "user": [
+            "send message",
+            "process send message"
+          ],
+          "user_indices": [
+            14,
+            27
+          ],
+          "pair_sims": [
+            0.645,
+            0.607
+          ],
+          "combo_sim": 0.621
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U23",
+              "U28"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 5,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the task of backing up the database. Once the database is backed up, the next step is to check the database. After checking the database, a decision is made. If the process continues, the next step is to check the CRM system.\n\nFollowing the CRM system check, another decision is made. If the process continues, the next task is to register all defaulting accounts and customers. After registering these accounts and customers, yet another decision is made. If the process continues, a new table of defaulting accounts is produced. This table is then sent to account management. After sending the table, the process reaches a decision point.\n\nAt this decision point, the process can either continue or skip to the next decision point. If the process continues, it moves to the next decision point. If the process skips, it directly reaches the next decision point.\n\nAt this subsequent decision point, the process can either send an alert to the supervisor or skip this step. If an alert is sent, the process then moves to the next decision point. If the alert is skipped, the process directly reaches the next decision point.\n\nThe process then involves checking the CRM system again. After this check, a decision is made. If the process continues, the next task is to reconcile with the existing account defaulters table. After reconciliation, the process reaches another decision point.\n\nAt this decision point, the process can either send a message to the supervisor or complete the reconciliation. If a message is sent, the process moves to the final decision point. If reconciliation is completed, the process also moves to the final decision point.\n\nFinally, the process concludes, reaching the end of the sequence.",
+  "output_text": "The process begins with the task of backing up the database. Once the database is backed up, the next step is to check the database. After checking the database, a decision point is reached where the process can take different paths.\n\nIf the process continues, the next step is to check the CRM system. After checking the CRM system, another decision point is encountered. If the process proceeds, the task is to register all defaulting accounts and customers. Following this registration, yet another decision point is reached.\n\nIf the process continues from this point, a new table of defaulting accounts is produced. Once the table is produced, it is sent to account management. After sending the table, the process reaches a decision point where it can either continue or take an alternative path.\n\nIf the process takes an alternative path at any of the decision points, it eventually leads to another decision point. From this decision point, the process can either send an alert to the supervisor or proceed without sending an alert. If an alert is sent, the process continues to another decision point.\n\nAfter the alert decision point, the process involves checking the CRM system again. Following this check, another decision point is reached. If the process continues, the next task is to reconcile with the existing account defaulters table. After reconciliation, the process reaches a final decision point.\n\nIf the process continues from the final decision point, a message is sent to the supervisor. Following this, the process completes with the task of completing reconciliation. Finally, the process ends."
+}

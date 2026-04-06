@@ -1,0 +1,143 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/logistics_klessascheck_5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/logistics_klessascheck_5.err1.001.xml",
+  "user_tasks": [
+    "package product",
+    "ship it",
+    "make decision",
+    "regard delivery method",
+    "deliver product",
+    "follow delivery",
+    "print pick receipt",
+    "pick up",
+    "carry out task",
+    "post receipt",
+    "reroute product",
+    "rerouting option",
+    "receive it",
+    "complete decisions",
+    "decision make shipping",
+    "decision make delivery",
+    "product reroute closest station",
+    "process continue next decision point",
+    "product deliver station",
+    "process move decision point",
+    "product need",
+    "process proceed final decision",
+    "final decision determine",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "package product",
+    "ship product",
+    "deliver to door",
+    "print pick-up receipt",
+    "post pick-up receipt",
+    "reroute to the closest station",
+    "deliver to station",
+    "receive the product back"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "ship it",
+        "make decision",
+        "regard delivery method",
+        "follow delivery",
+        "carry out task",
+        "reroute product",
+        "rerouting option",
+        "receive it",
+        "complete decisions",
+        "decision make shipping",
+        "decision make delivery",
+        "process continue next decision point",
+        "process move decision point",
+        "product need",
+        "process proceed final decision",
+        "final decision determine",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "receive the product back"
+      ],
+      "merged_tasks": [
+        {
+          "model": "post pick-up receipt",
+          "model_index": 4,
+          "user": [
+            "pick up",
+            "post receipt"
+          ],
+          "user_indices": [
+            7,
+            9
+          ],
+          "pair_sims": [
+            0.413,
+            0.847
+          ],
+          "combo_sim": 0.893
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "deliver product",
+          "user_index": 4,
+          "model": [
+            "ship product",
+            "deliver to door"
+          ],
+          "model_indices": [
+            1,
+            2
+          ],
+          "pair_sims": [
+            0.728,
+            0.635
+          ],
+          "combo_sim": 0.771,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U2",
+              "U4"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the task of packaging a product. Once the product is packaged, it is then shipped. After shipping, a decision is made regarding the delivery method. \n\nIf the decision is to deliver the product directly to the customer's door, the product is delivered accordingly. Following this delivery, another decision is made. If it is necessary to print a pick-up receipt, this task is carried out, and the receipt is then posted. After posting the receipt, the product is rerouted to the closest station. Once this rerouting is complete, the process continues to the next decision point.\n\nAlternatively, if the initial decision is to deliver the product to a station instead of directly to the door, the product is delivered to the station. This leads to the same decision point as the rerouting option.\n\nAt this decision point, if there is no further action required, the process moves to the final decision. However, if the product needs to be received back, it is received, and the process then proceeds to the final decision.\n\nThe final decision determines if the process should end, and once all tasks and decisions are completed, the process concludes.",
+  "output_text": "The process begins with the task of packaging a product. Once the product is packaged, it is then shipped. After shipping, a decision point is reached where it is determined whether the product should be delivered directly to the door or to a station.\n\nIf the decision is made to deliver the product to the door, the product is delivered accordingly. Following this delivery, another decision point occurs. If necessary, a pick-up receipt is printed and then posted. After posting the receipt, the product is rerouted to the closest station. This rerouting leads back to the previous decision point, where the process can continue based on the new conditions.\n\nAlternatively, if the initial decision is to deliver the product to a station, the product is delivered to the designated station. After this delivery, the process converges with the other path at a decision point.\n\nFinally, regardless of the delivery method, the process concludes with the product being received back, marking the end of the process."
+}

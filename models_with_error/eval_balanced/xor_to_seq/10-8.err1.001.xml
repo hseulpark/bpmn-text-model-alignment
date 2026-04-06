@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-C479C1BC-905D-49BE-B95B-6F1FAAFFE1EE">
+    <parameters>
+      <label>MSPO deregisters at the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-4B354B61-47DF-45DF-9044-CCDCBFBC7AB6">
+    <parameters>
+      <label>GO verifies the deregistration</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-FA98797B-EB49-482D-B08E-017A6BA81D59">
+        <parameters>
+          <label>GO rejects the deregistration</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a5" endpoint="" a:alt_id="sid-4DC5D8BF-1958-41B0-A6BB-8764F6BF5D96">
+        <parameters>
+          <label>GO preliminarily confirms the deregistration</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a7" endpoint="" a:alt_id="sid-FA2AF29B-3C95-4684-A22C-447E3A701250">
+    <parameters>
+      <label>GO assigns himself as MSP</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-C564CF35-CB9B-4EF0-A48B-A52378D3A024">
+    <parameters>
+      <label>GO informs the MSPO about the state of the assignment of the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-70173D39-1B15-495E-B78D-EDFC8C8157A7">
+    <parameters>
+      <label>GO informs the MPO about the assignment of the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="" a:alt_id="sid-7C274C37-4944-4C9D-BE39-724C415C410F">
+    <parameters>
+      <label>GO informs the SP about the assignment of the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

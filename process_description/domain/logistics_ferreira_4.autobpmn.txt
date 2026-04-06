@@ -1,0 +1,9 @@
+The process begins with the task of obtaining temperature values. After this, a decision is made. If the process follows one path, a standard notification is generated. This path then leads to another decision point.
+
+Alternatively, the process can take a different path from the initial decision, where three activities occur simultaneously. The first activity involves obtaining the status of a container, followed by estimating the container's status. A decision is then made based on this estimation. If necessary, a request to change the container is generated. Regardless of the decision, the process converges back to a single point.
+
+Simultaneously, the second activity involves obtaining the client's location, followed by estimating the distance. A decision is made based on this estimation. If required, the delivery time is estimated, leading to another decision. Depending on the outcome, a request to change the route may be generated. Regardless of the decision, the process converges back to a single point.
+
+The third simultaneous activity involves obtaining the status of goods, followed by estimating their status. A decision is made based on this estimation. If necessary, damages are evaluated, leading to another decision. Depending on the outcome, a request for removal or a price change request may be generated. Regardless of the decision, the process converges back to a single point.
+
+Once all three activities are completed, the process paths converge, leading back to the decision point after the standard notification. Finally, the process concludes with sending the generated messages, marking the end of the process.

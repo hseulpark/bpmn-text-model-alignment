@@ -1,0 +1,115 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/15_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/15_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "solve problems",
+    "receive ticket",
+    "require customer participation",
+    "contact customer",
+    "solve problem",
+    "need further information",
+    "gather necessary information",
+    "create notes",
+    "complete ticket",
+    "send confirmation",
+    "involve customer",
+    "creates notes",
+    "support team connect interview",
+    "customer try",
+    "support ask",
+    "notes create documentation",
+    "support team proceed",
+    "support team create notes",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "send confirmation",
+    "contact customer",
+    "conduct interview",
+    "connect to client",
+    "solve problem together",
+    "request further information",
+    "solve problem again",
+    "solve problem together",
+    "create documentation",
+    "solve problem independently",
+    "create documentation",
+    "receive ticket"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "require customer participation",
+        "gather necessary information",
+        "create notes",
+        "complete ticket",
+        "involve customer",
+        "creates notes",
+        "support team connect interview",
+        "customer try",
+        "support ask",
+        "support team proceed",
+        "support team create notes",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "conduct interview",
+        "connect to client",
+        "solve problem again",
+        "solve problem together",
+        "solve problem independently",
+        "create documentation"
+      ],
+      "merged_tasks": [
+        {
+          "model": "solve problem together",
+          "model_index": 4,
+          "user": [
+            "solve problems",
+            "solve problem"
+          ],
+          "user_indices": [
+            0,
+            4
+          ],
+          "pair_sims": [
+            0.835,
+            0.898
+          ],
+          "combo_sim": 0.857
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "contact customer",
+          "task_b": "connect to client",
+          "before_score": 17,
+          "after_score": 15,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with a request to the support of the Hochschule Mainz to solve problems.\n\nFirst, a ticket is received.\n\nOnce the ticket is received, it is determined whether the participation of the customer is necessary.\n\nIf customer participation is required, the customer is contacted, followed by a detailed interview on the problem.\n\nAfter the interview, the support team connects to the client of the customer.\n\nThe customer and support then try to solve the problem together.\n\nIf further information is needed, the support asks for it and then tries to solve the problem again.\n\nOnce all necessary information is gathered, the problem is solved, and notes are created for documentation.\n\nFinally, a confirmation that the ticket is completed is sent, and the process ends with the problem being solved.\n\nIf customer participation is not necessary, the support team proceeds to solve the problem without involving the customer.\n\nAfter solving the problem, the support team creates notes for documentation and sends a confirmation that the ticket is completed.\n\nThe process concludes with the problem being solved.",
+  "output_text": "The process begins with an initial step where a confirmation is sent. After sending the confirmation, a decision is made to determine whether customer participation is required. If customer participation is required, the next step is to contact the customer. Following this, an interview is conducted with the customer, and then a connection is established with the client.\n\nOnce connected to the client, another decision is made. If the condition is met, the process continues to another decision point. If this subsequent condition is also met, the problem is solved together with the client. After solving the problem together, a decision is made to check if further information is needed. If further information is needed, a request for additional information is made, and the problem is solved again. This leads back to solving the problem together, and the cycle continues until no further information is needed.\n\nIf no further information is needed, documentation is created. This documentation step leads back to the earlier decision point about connecting to the client, allowing the process to loop back if necessary.\n\nIf customer participation is not required initially, the problem is solved independently. After solving the problem independently, the process moves to a decision point. If the condition is met, documentation is created. This documentation step leads to another decision point. If the condition is met here, the problem is solved together, and the process continues as described earlier, with potential loops for requesting further information and solving the problem again.\n\nFinally, after all necessary steps are completed, the process concludes with receiving a ticket, marking the end of the process."
+}

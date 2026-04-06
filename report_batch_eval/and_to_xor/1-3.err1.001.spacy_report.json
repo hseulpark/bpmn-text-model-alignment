@@ -1,0 +1,172 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/1-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/1-3.err1.001.xml",
+  "user_tasks": [
+    "begin calls room service",
+    "calls room",
+    "answer call",
+    "take down guest order",
+    "note order",
+    "submit order ticket",
+    "give order details",
+    "assign order",
+    "prepare order",
+    "prepare cart",
+    "complete their tasks",
+    "readie cart",
+    "deliver cart",
+    "encounter decision point",
+    "debit guest account",
+    "complete either",
+    "guest call room service",
+    "room service manager answer call",
+    "manager submit order ticket",
+    "manager give order details",
+    "waiter prepare cart",
+    "waiter readie cart",
+    "process continue",
+    "waiter deliver cart",
+    "waiter return service station",
+    "process encounter decision point",
+    "guest account need",
+    "waiter proceed",
+    "waiter wait",
+    "process come end"
+  ],
+  "model_tasks": [
+    "guest calls room service",
+    "room service  manager takes down the order",
+    "room service  manager  submits an order ticket to a kitchen",
+    "room service  manager  gives an order to the sommelier",
+    "room service  manager  assigns the order to the waiter",
+    "kitchen and sommelier do  tasks",
+    "waiter readies a cart",
+    "waiter delivers a cart",
+    "waiter returns to the room-service station",
+    "waiter waits to do the billing",
+    "waiter debits guest ’ s account"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin calls room service",
+        "calls room",
+        "answer call",
+        "take down guest order",
+        "note order",
+        "submit order ticket",
+        "give order details",
+        "assign order",
+        "prepare order",
+        "prepare cart",
+        "complete their tasks",
+        "readie cart",
+        "deliver cart",
+        "encounter decision point",
+        "complete either",
+        "manager submit order ticket",
+        "manager give order details",
+        "waiter prepare cart",
+        "process continue",
+        "process encounter decision point",
+        "guest account need",
+        "waiter proceed",
+        "waiter wait",
+        "process come end"
+      ],
+      "additional_tasks": [
+        "kitchen and sommelier do  tasks"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "room service manager answer call",
+          "user_index": 17,
+          "model": [
+            "room service  manager takes down the order",
+            "room service  manager  submits an order ticket to a kitchen",
+            "room service  manager  gives an order to the sommelier",
+            "room service  manager  assigns the order to the waiter"
+          ],
+          "model_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.705,
+            0.598,
+            0.66,
+            0.637
+          ],
+          "combo_sim": 0.626,
+          "adjacent": true
+        },
+        {
+          "user": "waiter return service station",
+          "user_index": 24,
+          "model": [
+            "waiter returns to the room-service station",
+            "waiter waits to do the billing"
+          ],
+          "model_indices": [
+            8,
+            9
+          ],
+          "pair_sims": [
+            0.843,
+            0.591
+          ],
+          "combo_sim": 0.771,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "room service  manager  gives an order to the sommelier",
+          "task_b": "room service  manager  assigns the order to the waiter",
+          "before_score": 17,
+          "after_score": 15,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U19",
+              "U7"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a guest calls room service. The room service manager answers the call and takes down the guest's order. After noting the order, the manager submits an order ticket to the kitchen. Simultaneously, the manager gives the order details to the sommelier and assigns the order to a waiter.\n\nAt this point, the process splits into parallel activities. The kitchen and the sommelier start working on their respective tasks to prepare the order. Meanwhile, the waiter prepares a cart for delivery. Once both the kitchen and sommelier have completed their tasks and the waiter has readied the cart, the process continues.\n\nThe waiter then delivers the cart to the guest's room. After delivering the cart, the waiter returns to the room-service station. At this stage, the process encounters a decision point.\n\nIf the guest's account needs to be debited, the waiter proceeds to debit the guest's account. If not, the waiter waits to do the billing at a later time. Once either of these actions is completed, the process comes to an end.",
+  "output_text": "The process begins when a guest calls room service. The room service manager answers the call and takes down the guest's order. After noting the order, the manager submits an order ticket to the kitchen to prepare the food. Simultaneously, the manager gives the order details to the sommelier if any beverages are required. Additionally, the manager assigns the order to a waiter who will be responsible for delivering it.\n\nAt this point, the process splits into two parallel paths. In one path, the kitchen staff and the sommelier work on preparing the food and drinks as per the order. In the other path, the waiter prepares a cart to carry the order to the guest's room. Once both the kitchen and sommelier have completed their tasks and the waiter has readied the cart, the process converges.\n\nThe waiter then delivers the cart with the order to the guest's room. After delivering the order, the waiter returns to the room-service station. Here, the process diverges again into two possible actions. In one scenario, the waiter waits for the appropriate time to handle the billing. In the other scenario, the waiter directly debits the guest's account for the order.\n\nOnce either the billing is completed or the account is debited, the process concludes. This ensures that the guest receives their order efficiently and that the billing is handled appropriately."
+}

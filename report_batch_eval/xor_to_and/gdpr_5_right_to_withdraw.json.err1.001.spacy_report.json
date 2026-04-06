@@ -1,0 +1,182 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/gdpr_5_right_to_withdraw.json.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/gdpr_5_right_to_withdraw.json.err1.001.xml",
+  "user_tasks": [
+    "begin request",
+    "withdraw that",
+    "use withdrawn data",
+    "withdrawn data",
+    "stop use",
+    "send communication",
+    "inform user",
+    "withdraw data",
+    "stop ongoing business processes",
+    "use data",
+    "receive notification",
+    "stop running business processes",
+    "stop processes",
+    "confirm withdrawal",
+    "bypass steps",
+    "stop business processes",
+    "take necessary actions",
+    "request receive data subject",
+    "subject want",
+    "process proceed",
+    "process continue",
+    "process wait",
+    "user decide",
+    "process stop running business processes",
+    "process bypass steps",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "receive data subject request",
+    "check if withdrawn data are relevant",
+    "stop using withdrawn data",
+    "communicate the withdraw",
+    "inform the user that the withdraw will stop all running bps",
+    "receive the notification about continuation",
+    "stop running bps using withdrawn data",
+    "stop using withdrawn data",
+    "communicate the withdraw"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin request",
+        "withdraw that",
+        "stop use",
+        "send communication",
+        "inform user",
+        "stop ongoing business processes",
+        "use data",
+        "stop running business processes",
+        "stop processes",
+        "bypass steps",
+        "stop business processes",
+        "take necessary actions",
+        "subject want",
+        "process proceed",
+        "process wait",
+        "user decide",
+        "process stop running business processes",
+        "process bypass steps",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "inform the user that the withdraw will stop all running bps",
+        "stop running bps using withdrawn data"
+      ],
+      "merged_tasks": [
+        {
+          "model": "check if withdrawn data are relevant",
+          "model_index": 1,
+          "user": [
+            "use withdrawn data",
+            "withdrawn data"
+          ],
+          "user_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.807,
+            0.792
+          ],
+          "combo_sim": 0.81
+        },
+        {
+          "model": "receive the notification about continuation",
+          "model_index": 5,
+          "user": [
+            "receive notification",
+            "process continue"
+          ],
+          "user_indices": [
+            10,
+            20
+          ],
+          "pair_sims": [
+            0.646,
+            0.551
+          ],
+          "combo_sim": 0.756
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "withdraw data",
+          "user_index": 7,
+          "model": [
+            "stop using withdrawn data",
+            "communicate the withdraw"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.841,
+            0.628
+          ],
+          "combo_sim": 0.841,
+          "adjacent": true
+        },
+        {
+          "user": "confirm withdrawal",
+          "user_index": 13,
+          "model": [
+            "stop using withdrawn data",
+            "communicate the withdraw"
+          ],
+          "model_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.561,
+            0.718
+          ],
+          "combo_sim": 0.634,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "stop running bps using withdrawn data",
+          "task_b": "communicate the withdraw",
+          "before_score": 16,
+          "after_score": 15,
+          "improvement": 1
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "inform the user that the withdraw will stop all running bps",
+          "task_b": "receive the notification about continuation",
+          "before_score": 16,
+          "after_score": 14,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a request is received from a data subject. The first step is to check if the data that the subject wants to withdraw is relevant. If the data is relevant, the process proceeds to stop using the withdrawn data. After stopping the use of the data, a communication is sent to inform about the withdrawal.\n\nAt this point, there is a decision to be made. If the process continues, it eventually leads to the end of the process. However, if the data is not relevant, the user is informed that withdrawing the data will stop all ongoing business processes that use this data. The process then waits to receive a notification from the user about whether they wish to continue with the withdrawal.\n\nIf the user decides to continue, the process stops all running business processes that use the withdrawn data. After stopping these processes, the use of the withdrawn data is also stopped, and a communication is sent to confirm the withdrawal. Again, there is a decision point, and if the process continues, it eventually leads to the end of the process.\n\nIf the user decides not to continue with the withdrawal, the process bypasses the steps of stopping the business processes and the use of the data, and it directly leads to the end of the process. The process concludes once all necessary actions have been taken based on the user's decision.",
+  "output_text": "The process begins when a request from a data subject is received. The first step is to check if the data that the subject wants to withdraw is relevant. If the data is relevant, the process proceeds to stop using the withdrawn data. After stopping the use of the data, the next step is to communicate the withdrawal to the necessary parties.\n\nFollowing this communication, there is a decision point. Regardless of the outcome of this decision, the process continues to another decision point. From this second decision point, the process moves forward to a third decision point.\n\nIf the initial check determines that the withdrawn data is not relevant, the user is informed that withdrawing the data will stop all ongoing business processes that use this data. The process then waits to receive a notification from the user about whether they wish to continue with the withdrawal.\n\nOnce the notification about continuation is received, two actions occur simultaneously. First, any running business processes that use the withdrawn data are stopped. Second, the process stops using the withdrawn data, if it hasn't been stopped already. After these actions, the withdrawal is communicated again.\n\nAfter this communication, there is another decision point. Regardless of the outcome, the process continues to a parallel point where it synchronizes with the other ongoing actions. Once all actions are synchronized, the process reaches the final decision point.\n\nFinally, the process concludes and comes to an end."
+}

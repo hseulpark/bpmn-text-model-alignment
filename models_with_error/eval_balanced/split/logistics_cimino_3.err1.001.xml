@@ -1,0 +1,204 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a1" endpoint="" a:alt_id="sid-AF5B427A-0503-49F5-B3E1-99DFC69244A8">
+        <parameters>
+          <label>Receive shipment request</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-CE7D3542-14D5-4DC4-B975-929BC636449F">
+        <parallel_branch>
+          <call id="a14" endpoint="" a:alt_id="sid-E4AAB8A6-DD22-4678-82C0-51B4162D4C8D">
+            <parameters>
+              <label>Start packaging goods</label>
+              <color/>
+              <method>:post</method>
+              <arguments/>
+            </parameters>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+          <call id="a2" endpoint="">
+            <parameters>
+              <label>Finish packaging goods</label>
+              <color/>
+              <method>:post</method>
+              <arguments/>
+            </parameters>
+            <annotations>
+              <_generic/>
+              <_logging_behavior>
+                <_exclude>false</_exclude>
+                <_include>false</_include>
+              </_logging_behavior>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a4" endpoint="" a:alt_id="sid-0F997295-AC0A-472A-8989-6844BF7F78A7">
+            <parameters>
+              <label>Select kind of shipment</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-3C536089-D1C0-45C5-8E2F-54838E8D1BAE">
+            <alternative condition="">
+              <call id="a6" endpoint="" a:alt_id="sid-49247859-3D48-40C4-8DE6-F8164678141E">
+                <parameters>
+                  <label>Request quotes from carriers</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a7" endpoint="" a:alt_id="sid-D3C2C43D-C60A-4DDA-90D7-3C4CBF2847E5">
+                <parameters>
+                  <label>Assign a carrier</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a8" endpoint="" a:alt_id="sid-2D0F87E6-99B9-46A5-8705-859ABB208569">
+                <parameters>
+                  <label>Prepare paperwork</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <call id="a10" endpoint="" a:alt_id="sid-74AA83F8-4EE9-42B0-AF01-D5E5E4AA6709">
+                <parameters>
+                  <label>Fill in a post label</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a11" endpoint="" a:alt_id="sid-E33D1F7C-420D-4741-B69E-105788E6D731">
+                <parameters>
+                  <label>Check insuarance</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="sid-9258382B-099C-49C5-953C-3BAF1F29822D">
+                <alternative condition=""/>
+                <alternative condition="">
+                  <call id="a0" endpoint="" a:alt_id="sid-EFF868BA-C255-4437-A48C-2D1A26273DAE">
+                    <parameters>
+                      <label>Take out extra insuarance</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </alternative>
+          </choose>
+        </parallel_branch>
+      </parallel>
+      <call id="a16" endpoint="" a:alt_id="sid-6061F776-78A8-4793-8BB5-D39F46F7FEE6">
+        <parameters>
+          <label>Add paperwork</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="sid-CA5CCCE4-F910-4EBD-B95F-3E50FA45C368">
+        <parameters>
+          <label>Move package to pickup area</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

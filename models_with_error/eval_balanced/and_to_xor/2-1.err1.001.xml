@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-A9125C9A-5C88-402C-8FBE-6DAF655346E5">
+    <parameters>
+      <label>customer perceives service degradation</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-890F25A1-6FD1-4D26-BCB8-674CEDFAB35F">
+    <parameters>
+      <label>system sends problem parameters list to customer service</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-F55258E2-CDE9-467F-A024-0FD111D114B8">
+    <parameters>
+      <label>service employee enters a problem report into system</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-E97A9608-1509-4861-843C-FAF4176335C9">
+    <parameters>
+      <label>service employee compares problem report to the customer SLA</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-4CC804D3-7A4D-4F09-B439-C93C20C1459C">
+    <parameters>
+      <label>service employee determines necessary counter measures</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="post_test" condition="true">
+    <choose mode="exclusive" a:alt_id="sid-C1B24378-1FBE-4094-AD42-FD5157A63B45">
+      <alternative condition="">
+        <call id="a6" endpoint="" a:alt_id="sid-1B18F219-B960-4C48-A00A-64B24F64F446">
+          <parameters>
+            <label>electronic service determines the customer significance</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a8" endpoint="" a:alt_id="sid-5575A4A3-3940-4A4E-BFAE-32A6283AF92A">
+          <parameters>
+            <label>service employee  links to an extra problem fix process</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="" />
+    </choose>
+  </loop>
+  <call id="a10" endpoint="" a:alt_id="sid-C36CD465-BD81-4F42-A7F6-D9140D1835F4">
+    <parameters>
+      <label>service employee  creates a detailed problem report</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a11" endpoint="" a:alt_id="sid-7C318F91-9881-41BE-BC34-2DC2C0C6D67F">
+    <parameters>
+      <label>service employee   sends problem report to Service Management</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a12" endpoint="" a:alt_id="sid-28C1EA18-5581-4238-AB9D-B90514FD1FAF">
+    <parameters>
+      <label>service management deals with violations of quality</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a52" endpoint="" a:alt_id="sid-6E57A1C4-9A27-4C03-89D5-BE5B85FEF676">
+    <parameters>
+      <label>service management investigates the problem</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-8C050B0B-55E2-4B55-9146-E8D30035C784">
+    <alternative condition="">
+      <call id="a16" endpoint="" a:alt_id="sid-953E90FB-141D-4520-88C1-BB4934A2B877">
+        <parameters>
+          <label>service management  performs the analysis</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="sid-D16C36D8-3688-45B2-808A-6C0F63DD7CB2">
+        <parameters>
+          <label>service management  creates a trouble report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a15" endpoint="" a:alt_id="sid-4C058D09-2912-4DF7-A830-9BE174E4BE95">
+        <parameters>
+          <label>service management   sends  problem report to Resource Provisioning</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a18" endpoint="" a:alt_id="sid-4E452C12-884A-4740-A059-A8708605EAFA">
+        <parameters>
+          <label>resource provisioning checks for potential issues</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-5FD54E73-E7CB-4D10-9367-4920301F5E2C">
+        <alternative condition="">
+          <call id="a20" endpoint="" a:alt_id="sid-071696FC-F7CF-407E-9B45-DBD47B3036A6">
+            <parameters>
+              <label>resource provisioning analyses the problem</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a22" endpoint="" a:alt_id="sid-0D022C6E-2831-43B5-89C1-34E506842019">
+            <parameters>
+              <label>resource provisioning creates a trouble report</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a21" endpoint="" a:alt_id="sid-1B773E63-93D6-4E73-B860-D4CE4E61F0B0">
+            <parameters>
+              <label>resource provisioning creates a service execution notification</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a25" endpoint="" a:alt_id="sid-6D2BC689-B2F7-4E8B-BB4A-82C6664995A5">
+        <parameters>
+          <label>resource provisioning  sends a status report  to service management</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a26" endpoint="" a:alt_id="sid-B5CDB505-9EAE-4029-916A-3DEB6B1140BC">
+    <parameters>
+      <label>service management  prepares the final status report</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-EEF1B407-E3B9-47F7-A10D-5524FD4CA9D8">
+    <alternative condition="">
+      <call id="a32" endpoint="" a:alt_id="sid-DA4D2CE7-08AF-45BA-B24E-F3101450790A">
+        <parameters>
+          <label>service managementcreates a request for automatic resource restoration</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a33" endpoint="" a:alt_id="sid-25A300FC-B224-4293-AF09-2D0F1DD4F3BF">
+        <parameters>
+          <label>service management   sends request to resource provisioning</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a34" endpoint="" a:alt_id="sid-BF37AA3A-AFDD-4FD2-918E-A1EA276AB38E">
+        <parameters>
+          <label>resource provisioning receives the restoration request</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a35" endpoint="" a:alt_id="sid-B9EB9200-68AD-4FCE-B3B4-4B02C114F981">
+        <parameters>
+          <label>recource provisioning tracks all possible errors</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a36" endpoint="" a:alt_id="sid-74318926-1E3A-4C57-9DB2-DF089B84A1AC">
+        <parameters>
+          <label>resource provisioning undertakes all necessary corrective actions</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a37" endpoint="" a:alt_id="sid-07FB9FCE-C47E-4C2F-B6E1-A470D7E94F23">
+        <parameters>
+          <label>resource provisioning creates a trouble-shooting report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a38" endpoint="" a:alt_id="sid-7F2DDC9E-5D95-4C93-92CB-4205F555023F">
+        <parameters>
+          <label>resource provisioning  sends report to service management</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a39" endpoint="" a:alt_id="sid-E664FE5F-9BF5-4991-8E21-E5B91FEC359A">
+        <parameters>
+          <label>service management sends trouble-shooting report to customer service</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a30" endpoint="" a:alt_id="sid-1DC8DE66-E0EB-493D-B2AA-F5F2A81F1706">
+        <parameters>
+          <label>service management creates the problem resolution report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a31" endpoint="" a:alt_id="sid-07303304-3B1D-476F-A9E2-6745B64C223F">
+        <parameters>
+          <label>service management  sends the problem resolution report to customer service</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a41" endpoint="" a:alt_id="sid-11EBDE29-8894-4F9C-9E26-C63EC9409388">
+        <parameters>
+          <label>customer service receives the problem resolution report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a28" endpoint="" a:alt_id="sid-59D0135B-13E9-4EA8-B225-6B6FE0606D0B">
+        <parameters>
+          <label>service management  sends  actual service performance  to the customer service</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a42" endpoint="" a:alt_id="sid-278BDFF3-B80B-435D-BDC5-D06701EC0C63">
+        <parameters>
+          <label>customer service  receives the actual service performance</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a29" endpoint="" a:alt_id="sid-74F96E1B-7154-4984-B304-2BA5D3AFD5AA">
+        <parameters>
+          <label>service management  undertakes corrective actions</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a30" endpoint="" a:alt_id="sid-1DC8DE66-E0EB-493D-B2AA-F5F2A81F1706">
+        <parameters>
+          <label>service management creates the problem resolution report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a31" endpoint="" a:alt_id="sid-07303304-3B1D-476F-A9E2-6745B64C223F">
+        <parameters>
+          <label>service management  sends the problem resolution report to customer service</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a41" endpoint="" a:alt_id="sid-11EBDE29-8894-4F9C-9E26-C63EC9409388">
+        <parameters>
+          <label>customer service receives the problem resolution report</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive" a:alt_id="sid-91D32CEB-824A-4EBA-9A09-55C6FABC1884" a:mutated="true"><alternative condition=""><call id="a45" endpoint="" a:alt_id="sid-D0813E7E-1CE6-4A05-B603-54E6DF95CF3D">
+        <parameters>
+          <label>customer service  creates a report for customer</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a46" endpoint="" a:alt_id="sid-96338755-FCB0-430B-9D98-5309B155B3A3">
+        <parameters>
+          <label>customer service  reports an SLA violation rebate to billing &amp; collections</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a47" endpoint="" a:alt_id="sid-F9D0278F-487F-40B1-9359-CB8718CE5727">
+        <parameters>
+          <label>billing &amp; collections adjusts the billing</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative></choose><call id="a49" endpoint="" a:alt_id="sid-55FE2624-B6C0-47BF-B802-D630B7946850">
+    <parameters>
+      <label>customer service sends report for the customer</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a50" endpoint="" a:alt_id="sid-FAAB028F-5DDE-4480-B98C-EFDDAFE87F83">
+    <parameters>
+      <label>customer receives the report</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

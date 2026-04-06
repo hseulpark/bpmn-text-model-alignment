@@ -1,0 +1,106 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/10-5.err1.001.xml",
+  "user_tasks": [
+    "initiate request",
+    "follow request",
+    "send tender",
+    "receive tender",
+    "place order",
+    "receive order",
+    "confirm it",
+    "send necessary master data",
+    "mark end",
+    "data transfer",
+    "mpoo respond request",
+    "mpon receive tender",
+    "mpoo confirm",
+    "confirmation mark end"
+  ],
+  "model_tasks": [
+    "the mpon requests a device takeover bid of the mpoo",
+    "the mpoo sends a tender for the equipment takeover to the mpon and the mpon places an order at the mpoo",
+    "the mpoo confirms the order of the mpon and sends the master data"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "initiate request",
+        "follow request",
+        "send tender",
+        "receive tender",
+        "place order",
+        "receive order",
+        "confirm it",
+        "send necessary master data",
+        "mark end",
+        "data transfer",
+        "confirmation mark end"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "the mpoo confirms the order of the mpon and sends the master data",
+          "model_index": 2,
+          "user": [
+            "mpoo respond request",
+            "mpoo confirm"
+          ],
+          "user_indices": [
+            10,
+            12
+          ],
+          "pair_sims": [
+            0.601,
+            0.644
+          ],
+          "combo_sim": 0.643
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "mpon receive tender",
+          "user_index": 11,
+          "model": [
+            "the mpon requests a device takeover bid of the mpoo",
+            "the mpoo sends a tender for the equipment takeover to the mpon and the mpon places an order at the mpoo"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.592,
+            0.751
+          ],
+          "combo_sim": 0.693,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the MPON initiating a request for a device takeover bid from the MPOO. Following this request, the MPOO responds by sending a tender for the equipment takeover back to the MPON. Once the MPON receives the tender, they proceed to place an order with the MPOO. After receiving the order, the MPOO confirms it and sends the necessary master data to the MPON. This confirmation and data transfer mark the end of the process.",
+  "output_text": "The process begins with an initial step where the MPON (which could be an organization or a department) initiates a request for a device takeover bid from the MPOO. Following this request, the MPOO responds by sending a tender for the equipment takeover back to the MPON. Simultaneously, the MPON places an order with the MPOO for the equipment. After receiving the order, the MPOO confirms it and proceeds to send the necessary master data to the MPON. This marks the completion of the process."
+}

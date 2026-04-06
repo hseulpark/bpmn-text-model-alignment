@@ -1,0 +1,387 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/2-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/2-1.err1.001.xml",
+  "user_tasks": [
+    "begin customer",
+    "notice degradation",
+    "send list",
+    "enter problem report",
+    "compare report",
+    "determine necessary countermeasures",
+    "address issue",
+    "reach decision point",
+    "determine significance",
+    "link issue",
+    "create detailed problem report",
+    "send it",
+    "address violations",
+    "investigate problem",
+    "perform analysis",
+    "create trouble report",
+    "send problem report",
+    "face decision point",
+    "analyze problem",
+    "create execution notification",
+    "send status report",
+    "receive status report",
+    "prepare final status report",
+    "encounter decision point",
+    "create request",
+    "send which",
+    "receive request",
+    "track possible errors",
+    "undertake necessary corrective actions",
+    "create troubleshooting report",
+    "troubleshooting report",
+    "send report",
+    "forward it",
+    "create problem resolution report",
+    "receive it",
+    "send actual service performance",
+    "undertake corrective actions",
+    "reach point",
+    "create report",
+    "report violation rebate",
+    "adjust billing",
+    "complete parallel activities",
+    "mark end",
+    "service management",
+    "resource provisioning",
+    "customer service",
+    "customer notice degradation",
+    "system send list",
+    "service employee enter problem report",
+    "service employee determine necessary countermeasures",
+    "process loop",
+    "process continue decision point",
+    "several actions occur",
+    "electronic service determine significance",
+    "service employee link issue",
+    "process proceed additional actions",
+    "paths converge",
+    "service employee create detailed problem report",
+    "service management address violations",
+    "service management send problem report",
+    "resource provisioning face decision point",
+    "paths lead resource provisioning",
+    "service management receive status report",
+    "decision point encounter stage",
+    "service management create request",
+    "resource provisioning receive request",
+    "service management create problem resolution report",
+    "service management send actual service performance",
+    "service management undertake corrective actions",
+    "process reach point",
+    "parallel activities occur",
+    "customer service create report",
+    "customer service send report"
+  ],
+  "model_tasks": [
+    "customer perceives service degradation",
+    "system sends problem parameters list to customer service",
+    "service employee enters a problem report into system",
+    "service employee compares problem report to the customer sla",
+    "service employee determines necessary counter measures",
+    "electronic service determines the customer significance",
+    "service employee  links to an extra problem fix process",
+    "service employee  creates a detailed problem report",
+    "service employee   sends problem report to service management",
+    "service management deals with violations of quality",
+    "service management investigates the problem",
+    "service management  performs the analysis",
+    "service management  creates a trouble report",
+    "service management   sends  problem report to resource provisioning",
+    "resource provisioning checks for potential issues",
+    "resource provisioning analyses the problem",
+    "resource provisioning creates a trouble report",
+    "resource provisioning creates a service execution notification",
+    "resource provisioning  sends a status report  to service management",
+    "service management  prepares the final status report",
+    "service managementcreates a request for automatic resource restoration",
+    "service management   sends request to resource provisioning",
+    "resource provisioning receives the restoration request",
+    "recource provisioning tracks all possible errors",
+    "resource provisioning undertakes all necessary corrective actions",
+    "resource provisioning creates a trouble-shooting report",
+    "resource provisioning  sends report to service management",
+    "service management sends trouble-shooting report to customer service",
+    "service management creates the problem resolution report",
+    "service management  sends the problem resolution report to customer service",
+    "customer service receives the problem resolution report",
+    "service management  sends  actual service performance  to the customer service",
+    "customer service  receives the actual service performance",
+    "service management  undertakes corrective actions",
+    "service management creates the problem resolution report",
+    "service management  sends the problem resolution report to customer service",
+    "customer service receives the problem resolution report",
+    "customer service  creates a report for customer",
+    "customer service  reports an sla violation rebate to billing & collections",
+    "billing & collections adjusts the billing",
+    "customer service sends report for the customer",
+    "customer receives the report"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin customer",
+        "notice degradation",
+        "send list",
+        "enter problem report",
+        "compare report",
+        "determine necessary countermeasures",
+        "address issue",
+        "reach decision point",
+        "determine significance",
+        "link issue",
+        "create detailed problem report",
+        "send it",
+        "address violations",
+        "investigate problem",
+        "perform analysis",
+        "send problem report",
+        "face decision point",
+        "analyze problem",
+        "create execution notification",
+        "send status report",
+        "receive status report",
+        "encounter decision point",
+        "create request",
+        "send which",
+        "receive request",
+        "track possible errors",
+        "undertake necessary corrective actions",
+        "create troubleshooting report",
+        "troubleshooting report",
+        "send report",
+        "forward it",
+        "receive it",
+        "undertake corrective actions",
+        "reach point",
+        "create report",
+        "report violation rebate",
+        "complete parallel activities",
+        "mark end",
+        "customer service",
+        "system send list",
+        "process loop",
+        "process continue decision point",
+        "several actions occur",
+        "process proceed additional actions",
+        "paths converge",
+        "paths lead resource provisioning",
+        "decision point encounter stage",
+        "process reach point",
+        "parallel activities occur"
+      ],
+      "additional_tasks": [
+        "system sends problem parameters list to customer service",
+        "service management   sends  problem report to resource provisioning",
+        "resource provisioning checks for potential issues",
+        "resource provisioning creates a trouble report",
+        "resource provisioning  sends a status report  to service management",
+        "resource provisioning receives the restoration request",
+        "recource provisioning tracks all possible errors",
+        "resource provisioning undertakes all necessary corrective actions",
+        "resource provisioning creates a trouble-shooting report",
+        "service management sends trouble-shooting report to customer service",
+        "service management  sends the problem resolution report to customer service",
+        "customer service receives the problem resolution report",
+        "customer service  reports an sla violation rebate to billing & collections",
+        "customer service sends report for the customer",
+        "customer receives the report"
+      ],
+      "merged_tasks": [
+        {
+          "model": "service management  performs the analysis",
+          "model_index": 11,
+          "user": [
+            "service management",
+            "service management send actual service performance"
+          ],
+          "user_indices": [
+            43,
+            67
+          ],
+          "pair_sims": [
+            0.788,
+            0.722
+          ],
+          "combo_sim": 0.744
+        },
+        {
+          "model": "resource provisioning creates a service execution notification",
+          "model_index": 17,
+          "user": [
+            "resource provisioning",
+            "resource provisioning receive request"
+          ],
+          "user_indices": [
+            44,
+            65
+          ],
+          "pair_sims": [
+            0.624,
+            0.684
+          ],
+          "combo_sim": 0.703
+        },
+        {
+          "model": "resource provisioning  sends report to service management",
+          "model_index": 26,
+          "user": [
+            "service management send problem report",
+            "service management receive status report"
+          ],
+          "user_indices": [
+            59,
+            62
+          ],
+          "pair_sims": [
+            0.669,
+            0.649
+          ],
+          "combo_sim": 0.672
+        },
+        {
+          "model": "customer service  creates a report for customer",
+          "model_index": 37,
+          "user": [
+            "customer service create report",
+            "customer service send report"
+          ],
+          "user_indices": [
+            71,
+            72
+          ],
+          "pair_sims": [
+            0.935,
+            0.772
+          ],
+          "combo_sim": 0.828
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "create problem resolution report",
+          "user_index": 33,
+          "model": [
+            "service management creates the problem resolution report",
+            "service management  sends the problem resolution report to customer service",
+            "customer service receives the problem resolution report"
+          ],
+          "model_indices": [
+            34,
+            35,
+            36
+          ],
+          "pair_sims": [
+            0.702,
+            0.626,
+            0.696
+          ],
+          "combo_sim": 0.605,
+          "adjacent": true
+        },
+        {
+          "user": "send actual service performance",
+          "user_index": 35,
+          "model": [
+            "service management  sends  actual service performance  to the customer service",
+            "customer service  receives the actual service performance"
+          ],
+          "model_indices": [
+            31,
+            32
+          ],
+          "pair_sims": [
+            0.723,
+            0.747
+          ],
+          "combo_sim": 0.695,
+          "adjacent": true
+        },
+        {
+          "user": "service employee enter problem report",
+          "user_index": 48,
+          "model": [
+            "service employee enters a problem report into system",
+            "service employee compares problem report to the customer sla"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.84,
+            0.58
+          ],
+          "combo_sim": 0.655,
+          "adjacent": true
+        },
+        {
+          "user": "service management address violations",
+          "user_index": 58,
+          "model": [
+            "service employee   sends problem report to service management",
+            "service management deals with violations of quality",
+            "service management investigates the problem"
+          ],
+          "model_indices": [
+            8,
+            9,
+            10
+          ],
+          "pair_sims": [
+            0.569,
+            0.659,
+            0.611
+          ],
+          "combo_sim": 0.601,
+          "adjacent": true
+        },
+        {
+          "user": "service management create request",
+          "user_index": 64,
+          "model": [
+            "service managementcreates a request for automatic resource restoration",
+            "service management   sends request to resource provisioning"
+          ],
+          "model_indices": [
+            20,
+            21
+          ],
+          "pair_sims": [
+            0.601,
+            0.708
+          ],
+          "combo_sim": 0.63,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer notices a degradation in the service they are receiving. In response, the system automatically sends a list of problem parameters to customer service. A service employee then enters a problem report into the system and compares this report to the customer's Service Level Agreement (SLA). Based on this comparison, the service employee determines the necessary countermeasures to address the issue.\n\nNext, a decision point is reached. If the decision is affirmative, the process loops back to the beginning of the decision point. Otherwise, the process continues to another decision point where several actions can occur. The electronic service may determine the significance of the customer, or a service employee may link the issue to an extra problem fix process. Alternatively, the process can proceed without additional actions. All paths eventually converge back to the main flow.\n\nFollowing this, the service employee creates a detailed problem report and sends it to Service Management. Service Management then addresses any violations of quality and investigates the problem further. Another decision point is reached, leading to two possible paths. In one path, Service Management performs an analysis and creates a trouble report. In the other path, Service Management sends the problem report to Resource Provisioning, which checks for potential issues.\n\nResource Provisioning then faces another decision point. It can either analyze the problem and create a trouble report or create a service execution notification. Both paths lead to Resource Provisioning sending a status report back to Service Management. Once Service Management receives the status report, it prepares the final status report.\n\nAt this stage, another decision point is encountered with three possible actions. Service Management can create a request for automatic resource restoration, which is then sent to Resource Provisioning. Resource Provisioning receives the request, tracks possible errors, undertakes necessary corrective actions, and creates a troubleshooting report. This report is sent back to Service Management, which then forwards it to customer service. Service Management also creates a problem resolution report and sends it to customer service, which receives it.\n\nAlternatively, Service Management can send the actual service performance to customer service, which receives it. Lastly, Service Management can undertake corrective actions, create a problem resolution report, and send it to customer service, which receives it.\n\nAfter these actions, the process reaches a point where two parallel activities occur. Customer service creates a report for the customer and reports an SLA violation rebate to billing and collections. Billing and collections then adjust the billing accordingly. Once these parallel activities are completed, customer service sends the report to the customer, who receives it, marking the end of the process.",
+  "output_text": "The process begins with a starting point, where an initial event occurs. There are no specific actions, decisions, or tasks that take place between the start and the end. The process concludes immediately after it begins, reaching the endpoint without any intermediate steps or activities. This represents a very simple process that starts and ends without any additional actions or decisions in between."
+}

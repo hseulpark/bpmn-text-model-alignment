@@ -1,0 +1,163 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/16_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/16_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "activate learning progress",
+    "learning progress",
+    "selected objects",
+    "make decision",
+    "set learning progress",
+    "set it",
+    "display status",
+    "pass exercise",
+    "process task",
+    "teachers activate learning progress",
+    "students click learning progress",
+    "status display color markings",
+    "red cross mean",
+    "course pass",
+    "green marking indicate",
+    "yellow marking mean",
+    "gray marking show"
+  ],
+  "model_tasks": [
+    "activate learning progress",
+    "click on learning progress",
+    "set progress manually",
+    "set progress automatically",
+    "click on learning progress",
+    "display red cross",
+    "display green marking",
+    "display yellow marking",
+    "display gray marking"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "selected objects",
+        "make decision",
+        "set it",
+        "display status",
+        "pass exercise",
+        "process task",
+        "course pass",
+        "yellow marking mean"
+      ],
+      "additional_tasks": [
+        "set progress automatically",
+        "click on learning progress"
+      ],
+      "merged_tasks": [
+        {
+          "model": "click on learning progress",
+          "model_index": 1,
+          "user": [
+            "learning progress",
+            "students click learning progress"
+          ],
+          "user_indices": [
+            1,
+            10
+          ],
+          "pair_sims": [
+            0.761,
+            0.839
+          ],
+          "combo_sim": 0.868
+        },
+        {
+          "model": "set progress manually",
+          "model_index": 2,
+          "user": [
+            "set learning progress",
+            "teachers activate learning progress"
+          ],
+          "user_indices": [
+            4,
+            9
+          ],
+          "pair_sims": [
+            0.592,
+            0.441
+          ],
+          "combo_sim": 0.558
+        },
+        {
+          "model": "display gray marking",
+          "model_index": 8,
+          "user": [
+            "status display color markings",
+            "gray marking show"
+          ],
+          "user_indices": [
+            11,
+            16
+          ],
+          "pair_sims": [
+            0.688,
+            0.903
+          ],
+          "combo_sim": 0.871
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "green marking indicate",
+          "user_index": 14,
+          "model": [
+            "display green marking",
+            "display yellow marking"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.871,
+            0.634
+          ],
+          "combo_sim": 0.767,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U3",
+              "U4"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The learning progress process begins with the start event.\n\nTeachers activate the learning progress in selected objects.\n\nStudents click on \"Learning Progress\" for each object.\n\nAfter students click on \"Learning Progress\" for each object, a decision is made whether the learning progress is set manually by the user or automatically by the teacher.\n\nIf the learning progress is set manually, it is done by the user.\n\nIf it is set automatically, it is done by the teacher.\n\nAfter students click on \"Learning Progress\" for each object or teachers activate the learning progress in selected objects, the status of the learning progress is displayed through color markings.\n\nThere are different possibilities:\nA red cross means that the course, test, or exercise was not passed.\nA green marking indicates that the task was fully processed.\nA yellow marking means that the task is in progress.\nA gray marking shows that the task has not yet started.\n\nThe process then ends.",
+  "output_text": "The process begins with the activation of learning progress. After this initial step, a decision is made. If the decision results in a \"true\" outcome, the process continues to another decision point. Here, the process can take one of several paths.\n\nOne path involves clicking on the learning progress, which leads to another decision. If this decision requires manual intervention, the process splits into two parallel actions: setting the progress manually and setting the progress automatically. Both actions occur simultaneously. Once both actions are completed, the process converges and another decision is made.\n\nIf the decision indicates a manual path, the process loops back to clicking on the learning progress. This action leads to an escalation, which then returns to the previous decision point. If the decision does not require manual intervention, the process continues to the next decision point.\n\nIf the initial decision does not result in a \"true\" outcome, the process can display one of several markings: a red cross, a green marking, a yellow marking, or a gray marking. Each of these markings represents a different outcome and leads back to the decision point.\n\nFinally, if the decision at the beginning of the process does not lead to any further actions, the process concludes and ends."
+}

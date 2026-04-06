@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Plan Discharge</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Set Discharge Date</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:mutated="true"><alternative condition=""><call id="a5" endpoint="">
+        <parameters>
+          <label>Discuss Course with Patient</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a6" endpoint="">
+        <parameters>
+          <label>Determine Medical Care Needs</label>
+          <method />
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a7" endpoint="">
+        <parameters>
+          <label>Assess Nursing Care Needs</label>
+          <method />
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative></choose><call id="a9" endpoint="">
+    <parameters>
+      <label>Define Supply Facility</label>
+      <method />
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="">
+    <parameters>
+      <label>Create Doctor's Letter</label>
+      <method />
+      <type>:task</type>
+      <mid>'9'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="">
+      <call id="a12" endpoint="">
+        <parameters>
+          <label>Check Social Services Requirement</label>
+          <method />
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a14" endpoint="">
+            <parameters>
+              <label>Initiate Further Care Services</label>
+              <method />
+              <type>:task</type>
+              <mid>'13'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        <call id="a15" endpoint="">
+        <parameters>
+          <label>Create Discharge Documentation</label>
+          <method />
+          <type>:task</type>
+          <mid>'14'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="" />
+  </choose>
+  </description>

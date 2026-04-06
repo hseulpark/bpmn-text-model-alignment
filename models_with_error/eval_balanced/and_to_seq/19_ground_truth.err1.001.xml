@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a3" endpoint="">
+        <parameters>
+          <label>Perform BKR Check</label>
+          <method />
+          <type>:task</type>
+          <mid>'1'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a4" endpoint="">
+        <parameters>
+          <label>Perform Jane Doe Check</label>
+          <method />
+          <type>:task</type>
+          <mid>'2'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <choose mode="exclusive">
+    <alternative condition="Accepted" language="text/javascript">
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Credibility Check</label>
+          <method />
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Confirmed" language="text/javascript">
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Review Credibility Assessment</label>
+              <method />
+              <type>:task</type>
+              <mid>'8'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Accepted" language="text/javascript">
+              <loop mode="pre_test" condition="true">
+                <call id="a13" endpoint="">
+                  <parameters>
+                    <label>Call Client for Information</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'11'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Client Does Not Pick Up" language="text/javascript">
+                  <call id="a16" endpoint="">
+                    <parameters>
+                      <label>Wait One Hour</label>
+                      <method />
+                      <type>:task</type>
+                      <mid>'23'</mid>
+                      <arguments />
+                    </parameters>
+                  </call>
+                  <call id="a13" endpoint="">
+                    <parameters>
+                      <label>Call Client for Information</label>
+                      <method />
+                      <type>:task</type>
+                      <mid>'11'</mid>
+                      <arguments />
+                    </parameters>
+                  </call>
+                </loop>
+                <call id="a15" endpoint="">
+                  <parameters>
+                    <label>Create Loan Offer</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'13'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a17" endpoint="">
+                  <parameters>
+                    <label>Check Loan Offer</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'14'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a18" endpoint="">
+                  <parameters>
+                    <label>Send Loan Offer</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'15'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <loop mode="pre_test" condition="Offer Not Accepted" language="text/javascript">
+                  <call id="a21" endpoint="">
+                    <parameters>
+                      <label>Remind Client</label>
+                      <method />
+                      <type>:task</type>
+                      <mid>'24'</mid>
+                      <arguments />
+                    </parameters>
+                  </call>
+                </loop>
+                <call id="a20" endpoint="">
+                  <parameters>
+                    <label>Send Welcome Letter</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'17'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a22" endpoint="">
+                  <parameters>
+                    <label>Activate Loan Application</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'18'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a23" endpoint="">
+                  <parameters>
+                    <label>Validate Loan Activation</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'19'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a24" endpoint="">
+                  <parameters>
+                    <label>Execute Initial Payment</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'20'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a25" endpoint="">
+                  <parameters>
+                    <label>Return Documents to Client</label>
+                    <method />
+                    <type>:task</type>
+                    <mid>'21'</mid>
+                    <arguments />
+                  </parameters>
+                </call>
+              </loop>
+            </alternative>
+            <alternative condition="Rejected" language="text/javascript">
+              <call id="a8" endpoint="">
+                <parameters>
+                  <label>Send Rejection Letter</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'10'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="Rejected" language="text/javascript">
+          <call id="a8" endpoint="">
+            <parameters>
+              <label>Send Rejection Letter</label>
+              <method />
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="Rejected" language="text/javascript">
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Send Rejection Letter</label>
+          <method />
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

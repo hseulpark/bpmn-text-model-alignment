@@ -1,0 +1,183 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/5-4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/5-4.err1.001.xml",
+  "user_tasks": [
+    "begin employee",
+    "purchase product",
+    "make purchase",
+    "submit expense report",
+    "include list",
+    "involve supervisor",
+    "review expense report",
+    "approve report",
+    "receive report",
+    "check receipts",
+    "match items",
+    "are discrepancies",
+    "send report",
+    "edit report",
+    "require further edits",
+    "find everything",
+    "accept expenses",
+    "confirm payment",
+    "need further editing",
+    "make necessary changes",
+    "reassess report",
+    "employee purchase product",
+    "employee submit expense report",
+    "process continue",
+    "supervisor approve report",
+    "treasurer receive report",
+    "treasurer send report",
+    "employee edit report",
+    "process loop",
+    "treasurer find order",
+    "treasurer confirm payment",
+    "process move next decision point",
+    "report need further editing",
+    "employee make necessary changes"
+  ],
+  "model_tasks": [
+    "employee purchases a product",
+    "employee submits an expense report with a list of items",
+    "supervisor reviews the expense report",
+    "supervisor approves the report",
+    "supervisor moves report to the treasurer",
+    "treasurer checks receipts",
+    "treasurer matches the items on the list",
+    "treasurer  sends report back to the employee",
+    "employee edits the report",
+    "treasurer accepts the expenses for processing",
+    "treasurer confirms the payment",
+    "employee edits the report",
+    "review request"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin employee",
+        "purchase product",
+        "make purchase",
+        "include list",
+        "involve supervisor",
+        "approve report",
+        "receive report",
+        "match items",
+        "are discrepancies",
+        "send report",
+        "require further edits",
+        "find everything",
+        "accept expenses",
+        "confirm payment",
+        "need further editing",
+        "make necessary changes",
+        "reassess report",
+        "process continue",
+        "process loop",
+        "process move next decision point",
+        "employee make necessary changes"
+      ],
+      "additional_tasks": [
+        "treasurer matches the items on the list",
+        "treasurer  sends report back to the employee",
+        "treasurer accepts the expenses for processing",
+        "review request"
+      ],
+      "merged_tasks": [
+        {
+          "model": "employee submits an expense report with a list of items",
+          "model_index": 1,
+          "user": [
+            "submit expense report",
+            "employee submit expense report"
+          ],
+          "user_indices": [
+            3,
+            22
+          ],
+          "pair_sims": [
+            0.784,
+            0.862
+          ],
+          "combo_sim": 0.819
+        },
+        {
+          "model": "supervisor moves report to the treasurer",
+          "model_index": 4,
+          "user": [
+            "treasurer receive report",
+            "treasurer send report"
+          ],
+          "user_indices": [
+            25,
+            26
+          ],
+          "pair_sims": [
+            0.741,
+            0.711
+          ],
+          "combo_sim": 0.733
+        },
+        {
+          "model": "treasurer checks receipts",
+          "model_index": 5,
+          "user": [
+            "check receipts",
+            "treasurer find order"
+          ],
+          "user_indices": [
+            9,
+            29
+          ],
+          "pair_sims": [
+            0.767,
+            0.55
+          ],
+          "combo_sim": 0.755
+        },
+        {
+          "model": "employee edits the report",
+          "model_index": 11,
+          "user": [
+            "edit report",
+            "report need further editing"
+          ],
+          "user_indices": [
+            13,
+            32
+          ],
+          "pair_sims": [
+            0.772,
+            0.743
+          ],
+          "combo_sim": 0.73
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when an employee purchases a product. After making the purchase, the employee submits an expense report that includes a list of the items they bought. This report is then subject to a decision point where it is determined whether the process should continue or end.\n\nIf the process continues, the next step involves the supervisor reviewing the expense report. After reviewing, the supervisor approves the report, which leads to another decision point. If the report is approved, the supervisor forwards it to the treasurer.\n\nOnce the treasurer receives the report, they check the receipts and match the items listed in the report. At this stage, there is another decision point. If there are discrepancies or issues, the treasurer sends the report back to the employee for corrections. The employee then edits the report as needed, and the process loops back to the decision point to determine if further edits are required or if the process can continue.\n\nIf the treasurer finds everything in order, they accept the expenses for processing. The treasurer then confirms the payment, and the process moves to the next decision point.\n\nIf at any point the report needs further editing, the employee makes the necessary changes, and the process loops back to the appropriate decision point to reassess the report.\n\nThe process continues to loop through these steps until all conditions are satisfied, leading to the successful completion of the expense report processing. If at any decision point it is determined that the process should not continue, the process ends.",
+  "output_text": "The process begins when an employee purchases a product. After making the purchase, the employee submits an expense report that includes a list of the items they bought. This report is then subject to an initial decision point.\n\nIf the decision is to proceed, the supervisor reviews the expense report. Following the review, the supervisor approves the report, leading to another decision point. If the report is approved, the supervisor forwards it to the treasurer.\n\nThe treasurer then checks the receipts and matches them with the items listed in the report. At this stage, there is another decision point. If the treasurer finds discrepancies or issues, the report is sent back to the employee for editing. The employee makes the necessary edits and resubmits the report, which leads to another decision point to determine if further edits are needed or if the process can continue.\n\nIf the treasurer finds everything in order, they accept the expenses for processing and confirm the payment. This confirmation leads to the conclusion of the treasurer's tasks and the process moves back to the previous decision point.\n\nIf, at any point, the decision is not to proceed with the current report, a review request is initiated, which leads to the end of the process.\n\nThis process ensures that all expense reports are thoroughly reviewed and approved before any payments are confirmed, allowing for corrections and resubmissions if necessary."
+}

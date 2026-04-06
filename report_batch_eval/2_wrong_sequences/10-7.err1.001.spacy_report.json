@@ -1,0 +1,168 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-7.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/10-7.err1.001.xml",
+  "user_tasks": [
+    "register measurement",
+    "take step",
+    "examine application",
+    "reach decision point",
+    "reject application",
+    "confirm application",
+    "assign mspn",
+    "make assignment",
+    "inform mspo",
+    "inform mpo",
+    "inform sp",
+    "mspn register measurement",
+    "go take next step",
+    "mspn submit",
+    "go choose possible outcomes",
+    "go decide",
+    "process move step",
+    "go reject application",
+    "process continue rejection",
+    "go confirm application",
+    "process proceed same decision point",
+    "process move next step",
+    "go assign mspn",
+    "go inform mspo",
+    "go inform mpo",
+    "go inform sp",
+    "process come end"
+  ],
+  "model_tasks": [
+    "the mspn registers the measurement at the go",
+    "the go examines the application of the mspn",
+    "the go rejects the application of the mspn",
+    "the go confirmes the application of the mspn",
+    "the go assigns the mspn",
+    "the go informs the mpo about the assignment of the mspn",
+    "the go informs the mspo about the assignment of mspn",
+    "the go informs the sp about the assignment of mspn"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "register measurement",
+        "take step",
+        "examine application",
+        "reach decision point",
+        "reject application",
+        "confirm application",
+        "make assignment",
+        "inform mspo",
+        "inform mpo",
+        "inform sp",
+        "go take next step",
+        "go choose possible outcomes",
+        "go decide",
+        "process move step",
+        "go reject application",
+        "process continue rejection",
+        "go confirm application",
+        "process proceed same decision point",
+        "process move next step",
+        "go inform mpo",
+        "go inform sp",
+        "process come end"
+      ],
+      "additional_tasks": [
+        "the go informs the mpo about the assignment of the mspn",
+        "the go informs the sp about the assignment of mspn"
+      ],
+      "merged_tasks": [
+        {
+          "model": "the go assigns the mspn",
+          "model_index": 4,
+          "user": [
+            "assign mspn",
+            "go assign mspn"
+          ],
+          "user_indices": [
+            6,
+            22
+          ],
+          "pair_sims": [
+            0.761,
+            0.912
+          ],
+          "combo_sim": 0.858
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "mspn register measurement",
+          "user_index": 11,
+          "model": [
+            "the mspn registers the measurement at the go",
+            "the go examines the application of the mspn"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.796,
+            0.567
+          ],
+          "combo_sim": 0.732,
+          "adjacent": true
+        },
+        {
+          "user": "mspn submit",
+          "user_index": 13,
+          "model": [
+            "the go rejects the application of the mspn",
+            "the go confirmes the application of the mspn"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.578,
+            0.659
+          ],
+          "combo_sim": 0.608,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "the go informs the mpo about the assignment of the mspn",
+          "task_b": "the go informs the sp about the assignment of mspn",
+          "before_score": 10,
+          "after_score": 8,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "the go informs the mpo about the assignment of the mspn",
+          "task_b": "the go informs the mspo about the assignment of mspn",
+          "before_score": 10,
+          "after_score": 4,
+          "improvement": 6
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the initial step where the MSPN registers the measurement at the GO. Following this, the GO takes the next step to examine the application submitted by the MSPN. After examining the application, a decision point is reached where the GO must choose between two possible outcomes.\n\nIf the GO decides to reject the application of the MSPN, the process moves to the step where the GO formally rejects the application. After this rejection, the process continues to a decision point that leads to the next step.\n\nAlternatively, if the GO confirms the application of the MSPN, the process proceeds to the same decision point as after the rejection. Regardless of whether the application was rejected or confirmed, the process then moves forward to the next step.\n\nIn this subsequent step, the GO assigns the MSPN. Once the assignment is made, the GO informs the MSPO about this assignment. Following this, the GO also informs the MPO about the assignment of the MSPN. Finally, the GO informs the SP about the assignment of the MSPN. With these notifications completed, the process comes to an end.",
+  "output_text": "The process begins with the initial step where the MSPN registers the measurement at the GO. Following this, the GO examines the application submitted by the MSPN. After the examination, a decision point is reached where the GO must choose between two possible outcomes.\n\nIf the GO decides to reject the application of the MSPN, the process moves to the next step where the GO formally rejects the application. After this rejection, the process continues to a point where it converges with the other possible outcome.\n\nAlternatively, if the GO confirms the application of the MSPN, the process proceeds with the GO confirming the application. This confirmation also leads to the same convergence point as the rejection path.\n\nOnce the process paths converge, the GO assigns the MSPN. After the assignment, the GO takes a series of steps to inform various parties about the assignment. First, the GO informs the MPO about the assignment of the MSPN. Next, the GO informs the MSPO about the assignment. Finally, the GO informs the SP about the assignment of the MSPN.\n\nThe process concludes after the GO has informed all relevant parties, marking the end of the process."
+}

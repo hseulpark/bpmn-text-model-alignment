@@ -1,0 +1,175 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/5-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/5-1.err1.001.xml",
+  "user_tasks": [
+    "receive customer request",
+    "receive request",
+    "assess it",
+    "approve loan",
+    "deny loan",
+    "send request",
+    "take action proceeding",
+    "occur approval",
+    "receive feedback",
+    "regard their loan request",
+    "receives feedback",
+    "system receive customer request",
+    "web service assess",
+    "ra web service approve loan",
+    "process move next step",
+    "ra web service deny loan",
+    "process continue next step",
+    "ra web service decide",
+    "process converge common point",
+    "customer receive feedback",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "system receives a customer request for a loan amount",
+    "risk assessment (ra) web service assesses the request",
+    "ra web service  approves the loan",
+    "ra web service  denies the loan",
+    "ra web service  send the request to the approver web service",
+    "customer receives feedback"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive customer request",
+        "receive request",
+        "assess it",
+        "approve loan",
+        "deny loan",
+        "send request",
+        "take action proceeding",
+        "occur approval",
+        "receive feedback",
+        "regard their loan request",
+        "receives feedback",
+        "process move next step",
+        "process continue next step",
+        "process converge common point",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "risk assessment (ra) web service assesses the request",
+          "model_index": 1,
+          "user": [
+            "web service assess",
+            "ra web service decide"
+          ],
+          "user_indices": [
+            12,
+            17
+          ],
+          "pair_sims": [
+            0.672,
+            0.723
+          ],
+          "combo_sim": 0.793
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "ra web service deny loan",
+          "user_index": 15,
+          "model": [
+            "ra web service  denies the loan",
+            "ra web service  send the request to the approver web service"
+          ],
+          "model_indices": [
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.933,
+            0.601
+          ],
+          "combo_sim": 0.884,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U12",
+              "U13"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U13",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U14",
+              "U16"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "xor_to_seq => missing <choose mode='exclusive'>; treated as sequential (structural fallback)"
+          },
+          {
+            "mismatch_type": "exclusive_to_parallel_inconsistency",
+            "task_pair": [
+              "U14",
+              "U16"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ],
+            "detail": "xor_to_and => converted <choose mode='exclusive'> to <parallel> (structural fallback)"
+          }
+        ],
+        "mismatch_count": 5,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": true,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": true
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the system receives a customer request for a loan amount. Once the request is received, it is assessed by the Risk Assessment (RA) Web service. After the assessment, there are three possible outcomes.\n\nFirst, if the RA Web service approves the loan, the process moves forward to the next step. Alternatively, if the RA Web service denies the loan, the process also continues to the next step. Lastly, if the RA Web service decides to send the request to the approver web service, this action is taken before proceeding.\n\nRegardless of which of the three outcomes occurs—approval, denial, or forwarding to the approver web service—the process converges at a common point. From this point, the customer receives feedback regarding their loan request. Finally, the process concludes.",
+  "output_text": "The process begins when the system receives a customer request for a loan amount. Once the request is received, it is assessed by the Risk Assessment (RA) Web service. After the assessment, the process splits into three parallel paths.\n\nIn the first path, the RA Web service approves the loan. In the second path, the RA Web service denies the loan. In the third path, the RA Web service sends the request to another service, the approver web service.\n\nAll three paths converge back together, and once they do, the customer receives feedback regarding their loan request. Finally, the process concludes."
+}

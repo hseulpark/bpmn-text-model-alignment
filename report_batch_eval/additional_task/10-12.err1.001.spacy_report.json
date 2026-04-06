@@ -1,0 +1,100 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-12.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/10-12.err1.001.xml",
+  "user_tasks": [
+    "inform inq",
+    "take responsibility",
+    "notify ip",
+    "inform ip",
+    "change data",
+    "make decision",
+    "confirm changes",
+    "reject changes",
+    "communicate their decision",
+    "mark end",
+    "ec inform inq",
+    "inq take responsibility",
+    "decision make point",
+    "ip determine",
+    "ip decide",
+    "inq propose",
+    "process conclude",
+    "ip communicate their decision"
+  ],
+  "model_tasks": [
+    "update database",
+    "ec tells  inq about the data change",
+    "inq notifies the ip of the change",
+    "ip checks whether the  data can be changed",
+    "ip confirmes the changes of inq",
+    "ip rejectes the changes of inq"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "inform inq",
+        "take responsibility",
+        "notify ip",
+        "inform ip",
+        "change data",
+        "make decision",
+        "confirm changes",
+        "reject changes",
+        "communicate their decision",
+        "mark end",
+        "inq take responsibility",
+        "decision make point",
+        "ip determine",
+        "ip decide",
+        "inq propose",
+        "process conclude",
+        "ip communicate their decision"
+      ],
+      "additional_tasks": [
+        "update database",
+        "inq notifies the ip of the change",
+        "ip checks whether the  data can be changed",
+        "ip confirmes the changes of inq",
+        "ip rejectes the changes of inq"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "ec tells  inq about the data change",
+          "task_b": "ip checks whether the  data can be changed",
+          "before_score": 8,
+          "after_score": 4,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "ec tells  inq about the data change",
+          "task_b": "inq notifies the ip of the change",
+          "before_score": 8,
+          "after_score": 6,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial step where EC informs INQ about a change in data. Following this, INQ takes the responsibility to notify IP about the data change. Once IP is informed, they proceed to check whether the data can indeed be changed.\n\nAt this point, a decision is made. If IP determines that the data can be changed, they confirm the changes back to INQ. Alternatively, if IP decides that the data cannot be changed, they reject the changes proposed by INQ.\n\nRegardless of whether the changes are confirmed or rejected, the process concludes after IP communicates their decision. This marks the end of the process.",
+  "output_text": "The process begins with an initial step where the database is updated. Following this update, a specific entity referred to as \"EC\" communicates with another entity called \"INQ\" to inform them about the change in the data. Once INQ is aware of the data change, they proceed to notify a third entity, \"IP,\" about this modification.\n\nUpon receiving the notification, IP takes on the responsibility of verifying whether the data can indeed be changed. This leads to a decision point where IP must determine the outcome of their verification.\n\nIf IP concludes that the data change is permissible, they confirm the changes back to INQ. Alternatively, if IP decides that the data change is not acceptable, they reject the changes proposed by INQ.\n\nRegardless of whether IP confirms or rejects the changes, the process converges back to a single path and then concludes."
+}

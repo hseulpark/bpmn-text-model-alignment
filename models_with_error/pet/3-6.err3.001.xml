@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-D126D9EE-B2D2-4954-97D7-035CCAB74D8D">
+    <parameters>
+      <label>receive a claim</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-9B4D3989-8C93-4D5A-A7FC-3D8065EEB2CF">
+    <parameters>
+      <label>check claimant insurance status and evaluate claim  severity</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-BD7A6740-05EB-4397-90F5-944AFA802EF0">
+        <parameters>
+          <label>send claimant relevant forms</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true">
+        <call id="a7" endpoint="" a:alt_id="sid-EEF37B5A-C688-4A14-9E51-85753074C4B3">
+          <parameters>
+            <label>claimant returns the forms</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a8" endpoint="" a:alt_id="sid-3C8D5E0C-1061-43EF-9CCB-F323783DA36D">
+          <parameters>
+            <label>check forms for completeness</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-380804A1-B1BB-4E6F-8E4C-A4C96873211D">
+          <alternative condition="">
+            </alternative>
+          <alternative condition="">
+            <call id="a11" endpoint="" a:alt_id="sid-BB4B3D19-FC92-4087-9788-18A4E677FB0B">
+              <parameters>
+                <label>register the claim in  Claims Management system</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </alternative>
+        </choose>
+      </loop>
+    <call id="a4" endpoint="" a:alt_id="sid-032A872F-CD5B-4737-A08A-4DCF10D0E641">
+        <parameters>
+          <label>informe claimant about claim rejection</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </description>

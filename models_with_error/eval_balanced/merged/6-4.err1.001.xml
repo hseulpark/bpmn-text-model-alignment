@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-E433EB00-85B2-414E-B233-87FA1FDA1D9A">
+    <parameters>
+      <label>company determines contact details of potential customers</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-562AD96F-524F-4667-B652-D3D67C529DDD">
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-59570426-26FE-4643-9CD7-39770DE579C2">
+        <parameters>
+          <label>company  buys details for cold calls</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-0CC1C0B9-1195-4256-BF1B-4716AF2DFE22">
+        <parameters>
+          <label>marketing staff participates in exhibitions</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-1E78EDA4-D09B-4586-ABF5-6DF9A2E8FC41">
+        <parameters>
+          <label>company knows person interested in the product</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a7" endpoint="" a:alt_id="sid-D73C2D3F-B398-48F6-A41A-49609C76094E">
+    <parameters>
+      <label>call center staff calls the customer</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-AB26A69F-065D-43B9-AD99-0385328FE750">
+    <parameters>
+      <label>call center staff  determines the contact person</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-390B21F6-0A0B-4C0E-8830-059C635CED12">
+    <parameters>
+      <label>call center staff determines the budget and call center staff assesses customer interest</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-FB815050-72A7-4659-93C8-3470CE3B659C">
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="sid-3CC3EEA7-4C09-44A1-A6AC-2CD0C21CC9FE">
+        <alternative condition="">
+          <call id="a15" endpoint="" a:alt_id="sid-E00B4C34-6356-4A25-BE56-0CF0C523796D">
+            <parameters>
+              <label>sales representative makes  online presentation</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a17" endpoint="" a:alt_id="sid-7CE8AEAC-1983-4FD2-B017-0711F07C62B6">
+            <parameters>
+              <label>pre-sales employee makes  online presentation</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a19" endpoint="" a:alt_id="sid-DFC06F3B-71D6-4794-86FF-D3D941AC6F3C">
+        <parameters>
+          <label>company waits for the customer</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-B84FA34F-0531-407C-8A16-0D649B3A3E39">
+        <alternative condition="">
+          <call id="a21" endpoint="" a:alt_id="sid-2D512B3B-0075-4382-BCE9-43F58B1DDE03">
+            <parameters>
+              <label>sales representative calls the customer</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+      <call id="a23" endpoint="" a:alt_id="sid-AC116867-FFE4-496F-9B59-1588AB4DB8A5">
+        <parameters>
+          <label>company creates a quotation</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <choose mode="exclusive" a:alt_id="sid-C1E236E2-BA82-4BCB-A0D5-56D74A77A9E9">
+        <alternative condition="">
+          <call id="a13" endpoint="" a:alt_id="sid-5F216AEC-0873-4DFD-B880-6BC6BD86FF3A">
+            <parameters>
+              <label>head of development  acquires the customer</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-3CC3EEA7-4C09-44A1-A6AC-2CD0C21CC9FE">
+            <alternative condition="">
+              <call id="a15" endpoint="" a:alt_id="sid-E00B4C34-6356-4A25-BE56-0CF0C523796D">
+                <parameters>
+                  <label>sales representative makes  online presentation</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <call id="a17" endpoint="" a:alt_id="sid-7CE8AEAC-1983-4FD2-B017-0711F07C62B6">
+                <parameters>
+                  <label>pre-sales employee makes  online presentation</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+          <call id="a19" endpoint="" a:alt_id="sid-DFC06F3B-71D6-4794-86FF-D3D941AC6F3C">
+            <parameters>
+              <label>company waits for the customer</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-B84FA34F-0531-407C-8A16-0D649B3A3E39">
+            <alternative condition="">
+              <call id="a21" endpoint="" a:alt_id="sid-2D512B3B-0075-4382-BCE9-43F58B1DDE03">
+                <parameters>
+                  <label>sales representative calls the customer</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="" />
+          </choose>
+          <call id="a23" endpoint="" a:alt_id="sid-AC116867-FFE4-496F-9B59-1588AB4DB8A5">
+            <parameters>
+              <label>company creates a quotation</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+    </alternative>
+  </choose>
+</description>

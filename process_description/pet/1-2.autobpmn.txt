@@ -1,0 +1,7 @@
+The process begins when a customer brings a defective computer to the service center. The Customer Service Representative (CRS) first examines the computer to identify the defect. After assessing the issue, the CRS provides the customer with a repair cost estimate.
+
+At this point, a decision is made. If the customer decides not to proceed with the repair, they take the computer back home, and the process ends there.
+
+If the customer agrees to the repair, the process continues with a series of parallel activities. The CRS simultaneously checks both the hardware and the software of the computer. For the hardware, the CRS inspects it thoroughly and then proceeds to repair any identified issues. For the software, the CRS examines it and makes necessary configurations to ensure it functions correctly.
+
+Once both the hardware and software tasks are completed, the CRS conducts a final test to ensure the entire system is functioning properly. If the system passes the test, the process concludes successfully. If any issues are detected during the test, the process may loop back to the earlier stages of checking and repairing, depending on the specific conditions set by the service center's procedures. Finally, once all tasks are satisfactorily completed, the process ends.

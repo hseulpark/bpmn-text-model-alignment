@@ -1,0 +1,164 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/healthcare_bpmai_3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/healthcare_bpmai_3.err1.001.xml",
+  "user_tasks": [
+    "signify initiation",
+    "make phone call",
+    "make decision",
+    "accept patient",
+    "add patient",
+    "conduct patient control",
+    "monitor patient",
+    "complete patient control",
+    "evaluate condition",
+    "call patient",
+    "hospitalize they",
+    "follow hospitalization",
+    "following hospitalization",
+    "involve childbirth event",
+    "meet condition",
+    "meet different condition",
+    "provide special treatment",
+    "regard patient acceptance",
+    "reach end point",
+    "mark conclusion",
+    "process continue decision point",
+    "process proceed",
+    "process loop",
+    "condition remain",
+    "process move",
+    "process involve childbirth event",
+    "process continue post hospitalization care",
+    "process involve",
+    "paths converge childbirth",
+    "patient accept initial decision point",
+    "process skip end",
+    "process reach end point"
+  ],
+  "model_tasks": [
+    "decision about patient acceptance",
+    "call to the hospital",
+    "add to list of patients",
+    "patient control",
+    "call patient to hospital",
+    "patient hospitalization",
+    "child birth",
+    "patient post-hospitalization",
+    "special treatment"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "signify initiation",
+        "make phone call",
+        "make decision",
+        "accept patient",
+        "monitor patient",
+        "evaluate condition",
+        "hospitalize they",
+        "following hospitalization",
+        "meet condition",
+        "meet different condition",
+        "reach end point",
+        "mark conclusion",
+        "process continue decision point",
+        "process proceed",
+        "process loop",
+        "condition remain",
+        "process move",
+        "process involve",
+        "paths converge childbirth",
+        "patient accept initial decision point",
+        "process skip end",
+        "process reach end point"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "patient control",
+          "model_index": 3,
+          "user": [
+            "conduct patient control",
+            "complete patient control"
+          ],
+          "user_indices": [
+            5,
+            7
+          ],
+          "pair_sims": [
+            0.852,
+            0.883
+          ],
+          "combo_sim": 0.839
+        },
+        {
+          "model": "child birth",
+          "model_index": 6,
+          "user": [
+            "involve childbirth event",
+            "process involve childbirth event"
+          ],
+          "user_indices": [
+            13,
+            25
+          ],
+          "pair_sims": [
+            0.582,
+            0.606
+          ],
+          "combo_sim": 0.574
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "follow hospitalization",
+          "user_index": 11,
+          "model": [
+            "call patient to hospital",
+            "patient hospitalization"
+          ],
+          "model_indices": [
+            4,
+            5
+          ],
+          "pair_sims": [
+            0.645,
+            0.785
+          ],
+          "combo_sim": 0.682,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "decision about patient acceptance",
+          "task_b": "call to the hospital",
+          "before_score": 11,
+          "after_score": 7,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with a start event, which signifies the initiation of the process. The first step involves making a phone call to the hospital. Following this, a decision is made regarding whether to accept the patient.\n\nAt this decision point, if the patient is accepted, the process continues by adding the patient to a list. After being added to the list, there is another decision point. If the condition is true, the process proceeds to conduct a patient control, which involves checking or monitoring the patient. Once the patient control is completed, the process loops back to the previous decision point to re-evaluate the condition.\n\nIf the condition remains true, the process moves forward to call the patient to the hospital. After the patient is called, they are hospitalized. Following hospitalization, the process involves the childbirth event.\n\nAfter childbirth, there is another decision point. If the condition is met, the process continues with post-hospitalization care for the patient. Alternatively, if a different condition is met, the process involves providing special treatment to the patient. Both paths eventually converge back to the decision point after childbirth.\n\nIf, at the initial decision point regarding patient acceptance, the patient is not accepted, the process skips directly to the end. Similarly, after the post-hospitalization care or special treatment, the process also reaches the end point, marking the conclusion of the process.",
+  "output_text": "The process begins with a decision about whether to accept a patient. Once this decision is made, a call is placed to the hospital. Following the call, there is a decision point where it is determined whether to add the patient to a list of patients. If the patient is added to the list, the process continues with a patient control step, which involves checking or monitoring the patient in some way.\n\nAfter the patient control step, there is another decision point. If the outcome is positive, the patient is called to the hospital. Once the patient arrives at the hospital, they undergo hospitalization. During hospitalization, the process includes the childbirth event.\n\nFollowing childbirth, there is a decision point where the process can take one of two paths. The first path involves post-hospitalization care for the patient, ensuring they receive the necessary follow-up and support after leaving the hospital. The second path involves providing special treatment, which may be necessary depending on the patient's condition or specific needs.\n\nAfter either post-hospitalization care or special treatment, the process converges back to a common point. If at any decision point earlier in the process the decision was not to proceed with adding the patient to the list or calling them to the hospital, the process would also converge back to this common point.\n\nFinally, the process concludes with an end event, marking the completion of the sequence of activities related to patient acceptance, hospitalization, and any necessary follow-up care."
+}

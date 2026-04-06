@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Analyze Technology Needs</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Conduct Market Analysis</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Generate Ideas</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Review Ideas</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a8" endpoint="">
+    <parameters>
+      <label>Pass to Project Management</label>
+      <method/>
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Approved" language="text/javascript">
+      <call id="a10" endpoint="">
+        <parameters>
+          <label>Approve Idea</label>
+          <method/>
+          <type>:task</type>
+          <mid>'9'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not Approved" language="text/javascript">
+      <call id="a11" endpoint="">
+        <parameters>
+          <label>Reject Idea</label>
+          <method/>
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

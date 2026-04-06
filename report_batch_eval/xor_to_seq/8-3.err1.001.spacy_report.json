@@ -1,0 +1,137 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/8-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/8-3.err1.001.xml",
+  "user_tasks": [
+    "begin resources department",
+    "identify need",
+    "detect need",
+    "report vacancy",
+    "reach decision point",
+    "receive job description",
+    "evaluate job description",
+    "require changes",
+    "requires changes",
+    "request corrections",
+    "requests corrections",
+    "make corrections",
+    "approve job description",
+    "need corrections",
+    "advertise vacancy",
+    "resources department identify need",
+    "hfd report vacancy",
+    "process continue",
+    "hfd receive job description",
+    "decision point occur",
+    "hfd evaluate job description",
+    "job description require changes",
+    "hfd request corrections",
+    "process loop",
+    "hfd approve job description",
+    "process return initial decision point",
+    "process continue initial decision point",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "hfd detects a number of personnel requirements",
+    "hfd reports the vacancy to personnel department",
+    "hfd gets the job description for review from personnel department",
+    "hfd asks for corrections",
+    "hfd approves the job description",
+    "hfd advertizes the vacancy"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin resources department",
+        "identify need",
+        "detect need",
+        "report vacancy",
+        "reach decision point",
+        "receive job description",
+        "evaluate job description",
+        "require changes",
+        "requires changes",
+        "request corrections",
+        "requests corrections",
+        "make corrections",
+        "approve job description",
+        "need corrections",
+        "advertise vacancy",
+        "resources department identify need",
+        "process continue",
+        "decision point occur",
+        "job description require changes",
+        "process loop",
+        "process return initial decision point",
+        "process continue initial decision point",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "hfd advertizes the vacancy"
+      ],
+      "merged_tasks": [
+        {
+          "model": "hfd gets the job description for review from personnel department",
+          "model_index": 2,
+          "user": [
+            "hfd receive job description",
+            "hfd evaluate job description"
+          ],
+          "user_indices": [
+            18,
+            20
+          ],
+          "pair_sims": [
+            0.811,
+            0.779
+          ],
+          "combo_sim": 0.775
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "hfd report vacancy",
+          "user_index": 16,
+          "model": [
+            "hfd detects a number of personnel requirements",
+            "hfd reports the vacancy to personnel department"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.626,
+            0.869
+          ],
+          "combo_sim": 0.782,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the Human Resources Department (HFD) identifies a need for additional personnel. Once this need is detected, the HFD reports the vacancy to the Personnel Department. After reporting the vacancy, a decision point is reached.\n\nAt this decision point, if the process continues, the HFD receives a job description from the Personnel Department for review. Upon receiving the job description, another decision point occurs. Here, the HFD evaluates the job description. If the job description requires changes, the HFD requests corrections. Once the corrections are made, the process loops back to the point where the HFD receives the job description for review again.\n\nIf the HFD approves the job description without needing any corrections, they proceed to advertise the vacancy. After advertising the vacancy, the process returns to the initial decision point where the HFD had received the job description for review.\n\nIf, at the initial decision point after reporting the vacancy, the process does not continue with receiving a job description, the process concludes.",
+  "output_text": "The process begins when the Human Resources Department (HFD) identifies a need for additional personnel. Once this need is detected, the HFD reports the vacancy to the Personnel Department. After reporting the vacancy, a decision point is reached where it is determined whether the process should continue.\n\nIf the decision is to proceed, the HFD receives a job description from the Personnel Department for review. Upon reviewing the job description, the HFD may find it necessary to request corrections. After any required corrections are made, the HFD approves the job description. Following approval, the HFD advertises the vacancy to attract potential candidates.\n\nThe process then loops back to the decision point to determine if further actions are needed. If no further actions are required, the process concludes."
+}

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="sid-69C0A96C-D7B0-49A3-9281-55D1CFE9AE8E">
+    <alternative condition="">
+      <call id="a2" endpoint="" a:alt_id="sid-556C4CD9-B937-4B39-A652-B7E07B829899">
+        <parameters>
+          <label>Fault detector reports a failure to the MPO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-2B1662D9-1A3A-4806-9A7B-A66FF8007AEE">
+        <parameters>
+          <label>MPO has a suspicion of  own fault</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a5" endpoint="" a:alt_id="sid-B36AD3B2-85F0-43AA-8E76-2B9EC87F2C45">
+    <parameters>
+      <label>MPO  examines the failure</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-9C01D15B-5F64-4F15-84BE-356ACC81F213">
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="sid-05028FFC-5FD1-4310-B68E-8FDAA0C0A1C0">
+        <parameters>
+          <label>MPO rejects the failure of the fault detector</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a8" endpoint="" a:alt_id="sid-DD237CF4-2A88-4020-B14F-52B5F28FF4EF">
+        <parameters>
+          <label>MPO confirms the failure of the fault detector</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a9" endpoint="" a:alt_id="sid-CA5B8BFB-7635-4159-A4B4-8487E0D307C6">
+        <parameters>
+          <label>MPO informes the GO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a16" endpoint="" a:alt_id="sid-D7EBB824-2869-4C5A-9EA0-898F6026B866">
+        <parameters>
+          <label>MPO informes the MSP</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a10" endpoint="" a:alt_id="sid-1F814560-5AD7-4852-860F-A111817F54B1">
+        <parameters>
+          <label>MPO fixes the fault at the measuring device</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="sid-CAC2B703-91CA-41A4-8993-B31242AD4B17">
+        <parameters>
+          <label>MPO shares the results of the repairs</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a12" endpoint="" a:alt_id="sid-276B99EC-7B1D-461D-8548-00B4605782F7">
+        <parameters>
+          <label>MPO informs the GO about the resolution of the interference and MPO informs the MSP about the resolution of the interference</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      </alternative>
+  </choose>
+</description>

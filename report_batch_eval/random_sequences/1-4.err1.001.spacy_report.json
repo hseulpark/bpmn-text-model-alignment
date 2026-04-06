@@ -1,0 +1,147 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/1-4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/1-4.err1.001.xml",
+  "user_tasks": [
+    "begin company",
+    "follow decision",
+    "select underwriters",
+    "manage public offering",
+    "selects underwriters",
+    "prepare registration statement",
+    "determine issue price",
+    "arrange road show",
+    "present offering",
+    "approve registration statement",
+    "receive clearance",
+    "receiving clearance",
+    "finalize issue price",
+    "purchase stock",
+    "offer stock",
+    "mark completion",
+    "exchange commission",
+    "company decide",
+    "company select underwriters",
+    "underwriters prepare registration statement",
+    "commission approve",
+    "underwriters check",
+    "issue comply necessary regulations",
+    "activities occur point",
+    "underwriters wait other hand",
+    "process continue",
+    "underwriters receive clearance",
+    "underwriters offer stock"
+  ],
+  "model_tasks": [
+    "company decides to go public",
+    "company selects the underwriters",
+    "underwriters enter into a firm commitment to buy the stock",
+    "underwriters  check the issue's compliance",
+    "underwriters begin to firm up the issue price",
+    "underwriters arrange a road show",
+    "underwriters awaite approval of registration statement",
+    "underwriters receive clearance from the sec",
+    "underwriters fix the issue price",
+    "underwriters prepare a registration statement for the approval of sec",
+    "underwriters offer stock to the public"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin company",
+        "follow decision",
+        "select underwriters",
+        "prepare registration statement",
+        "determine issue price",
+        "present offering",
+        "approve registration statement",
+        "receive clearance",
+        "receiving clearance",
+        "finalize issue price",
+        "purchase stock",
+        "offer stock",
+        "mark completion",
+        "exchange commission",
+        "commission approve",
+        "issue comply necessary regulations",
+        "activities occur point",
+        "underwriters wait other hand",
+        "process continue",
+        "underwriters receive clearance"
+      ],
+      "additional_tasks": [
+        "underwriters enter into a firm commitment to buy the stock",
+        "underwriters begin to firm up the issue price",
+        "underwriters fix the issue price"
+      ],
+      "merged_tasks": [
+        {
+          "model": "company decides to go public",
+          "model_index": 0,
+          "user": [
+            "manage public offering",
+            "company decide"
+          ],
+          "user_indices": [
+            3,
+            17
+          ],
+          "pair_sims": [
+            0.565,
+            0.567
+          ],
+          "combo_sim": 0.715
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "selects underwriters",
+          "user_index": 4,
+          "model": [
+            "underwriters awaite approval of registration statement",
+            "underwriters receive clearance from the sec"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.609,
+            0.629
+          ],
+          "combo_sim": 0.617,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "underwriters enter into a firm commitment to buy the stock",
+          "task_b": "underwriters prepare a registration statement for the approval of sec",
+          "before_score": 16,
+          "after_score": 8,
+          "improvement": 8
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a company decides to go public. Following this decision, the company selects underwriters to manage the public offering. The underwriters then prepare a registration statement, which needs to be approved by the Securities and Exchange Commission (SEC). After preparing the registration statement, the underwriters check to ensure that the issue complies with all necessary regulations.\n\nAt this point, two activities occur simultaneously. On one hand, the underwriters start to determine the issue price of the stock. As part of this process, they arrange a road show to present the offering to potential investors. On the other hand, the underwriters wait for the approval of the registration statement from the SEC.\n\nOnce both the road show is arranged and the registration statement is approved, the process continues with the underwriters receiving clearance from the SEC. With this clearance, the underwriters are able to finalize the issue price of the stock. They then enter into a firm commitment to purchase the stock from the company.\n\nFinally, the underwriters offer the stock to the public, marking the completion of the process.",
+  "output_text": "The process begins when a company decides to go public. Following this decision, the company selects underwriters to assist with the process. Once selected, the underwriters enter into a firm commitment to purchase the stock from the company. After this commitment, the underwriters check to ensure that the stock issue complies with all necessary regulations.\n\nAt this point, two activities occur simultaneously. First, the underwriters start to determine the issue price of the stock. As part of this effort, they arrange a roadshow to present the stock offering to potential investors. Meanwhile, the underwriters also await approval of the registration statement from the relevant authorities.\n\nOnce both of these parallel activities are completed, the underwriters receive clearance from the Securities and Exchange Commission (SEC). With this clearance, they proceed to finalize the issue price of the stock. Subsequently, the underwriters prepare a registration statement for the SEC's approval.\n\nAfter the registration statement is approved, the underwriters offer the stock to the public. This marks the end of the process."
+}

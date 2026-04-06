@@ -1,0 +1,119 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/6-4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/6-4.err1.001.xml",
+  "user_tasks": [
+    "company determine contact details",
+    "company know person",
+    "center staff reach out customer",
+    "company wait presentation",
+    "options lead company",
+    "involve sales representative",
+    "assess customer interest"
+  ],
+  "model_tasks": [
+    "company determines contact details of potential customers",
+    "company  buys details for cold calls",
+    "marketing staff participates in exhibitions",
+    "company knows person interested in the product",
+    "call center staff calls the customer",
+    "call center staff  determines the contact person",
+    "call center staff determines the budget and call center staff assesses customer interest",
+    "sales representative makes  online presentation",
+    "pre-sales employee makes  online presentation",
+    "company waits for the customer",
+    "sales representative calls the customer",
+    "company creates a quotation",
+    "head of development  acquires the customer",
+    "sales representative makes  online presentation",
+    "pre-sales employee makes  online presentation",
+    "company waits for the customer",
+    "sales representative calls the customer",
+    "company creates a quotation"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "options lead company",
+        "assess customer interest"
+      ],
+      "additional_tasks": [
+        "company determines contact details of potential customers",
+        "company  buys details for cold calls",
+        "marketing staff participates in exhibitions",
+        "call center staff calls the customer",
+        "call center staff determines the budget and call center staff assesses customer interest",
+        "pre-sales employee makes  online presentation",
+        "company waits for the customer",
+        "sales representative calls the customer",
+        "company creates a quotation",
+        "head of development  acquires the customer",
+        "sales representative makes  online presentation",
+        "pre-sales employee makes  online presentation",
+        "company waits for the customer",
+        "sales representative calls the customer",
+        "company creates a quotation"
+      ],
+      "merged_tasks": [
+        {
+          "model": "call center staff  determines the contact person",
+          "model_index": 5,
+          "user": [
+            "company determine contact details",
+            "center staff reach out customer"
+          ],
+          "user_indices": [
+            0,
+            2
+          ],
+          "pair_sims": [
+            0.594,
+            0.641
+          ],
+          "combo_sim": 0.718
+        },
+        {
+          "model": "sales representative makes  online presentation",
+          "model_index": 7,
+          "user": [
+            "company wait presentation",
+            "involve sales representative"
+          ],
+          "user_indices": [
+            3,
+            5
+          ],
+          "pair_sims": [
+            0.481,
+            0.57
+          ],
+          "combo_sim": 0.617
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 7,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the company determining the contact details of potential customers. After this, there are three possible paths the company can take to gather these details. \n\nFirst, the company might decide to purchase contact details specifically for making cold calls. Alternatively, marketing staff could participate in exhibitions to gather contact information. Lastly, the company might already know a person who is interested in their product. Regardless of the path chosen, the process converges to the next step.\n\nOnce the contact details are obtained, call center staff reach out to the customer. During this call, they identify the appropriate contact person, determine the customer's budget, and assess their level of interest in the product.\n\nFollowing the assessment of customer interest, there are two main paths the process can take. The first path involves making an online presentation. This presentation can be conducted either by a sales representative or a pre-sales employee. After the presentation, the company waits for a response from the customer.\n\nWhile waiting, the company has two options for follow-up. The first option involves a sales representative calling the customer. This call can lead to further actions based on the customer's response. The second option is to continue waiting without immediate follow-up. Eventually, both options lead to the company creating a quotation for the customer.\n\nThe second main path after assessing customer interest involves the head of development acquiring the customer. Similar to the first path, an online presentation is made, either by a sales representative or a pre-sales employee. After the presentation, the company waits for the customer's response.\n\nDuring this waiting period, the company again has two options for follow-up. The first option involves a sales representative calling the customer, which can lead to further actions based on the customer's response. The second option is to continue waiting without immediate follow-up. Eventually, both options lead to the company creating a quotation for the customer.\n\nFinally, after the quotation is created, the process concludes.",
+  "output_text": "The process begins with the company determining the contact details of potential customers. Once this is done, there are three possible paths the company can take:\n\n1. The company may decide to purchase contact details specifically for making cold calls.\n2. Alternatively, marketing staff might participate in exhibitions to gather contact information.\n3. The company might already know a person who is interested in their product.\n\nAfter any of these actions, the process converges, and the call center staff proceeds to call the customer. During this call, the staff identifies the appropriate contact person and assesses the customer's budget and interest in the product.\n\nFollowing this assessment, the process can take two main directions:\n\n- In one direction, the process involves making an online presentation. This presentation can be conducted by either a sales representative or a pre-sales employee. After the presentation, the company waits for the customer's response. If necessary, a sales representative may call the customer to follow up. This follow-up call can occur through two different paths, but both lead to the same outcome. After the call, the company creates a quotation for the customer.\n\n- In the other direction, the head of development might directly acquire the customer. Similar to the previous path, an online presentation is made by either a sales representative or a pre-sales employee. The company then waits for the customer's response. If needed, a sales representative calls the customer, with two possible paths leading to the same result. After this, the company creates a quotation.\n\nIn both main directions, after the quotation is created, the process concludes."
+}

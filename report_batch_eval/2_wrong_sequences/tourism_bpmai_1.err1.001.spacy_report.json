@@ -1,0 +1,159 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_bpmai_1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/tourism_bpmai_1.err1.001.xml",
+  "user_tasks": [
+    "receive customer request",
+    "receive request",
+    "check it",
+    "determine steps",
+    "check request",
+    "make decision",
+    "choose manual registration",
+    "complete it",
+    "select automatic registration",
+    "reach same decision point",
+    "meet condition",
+    "complete search",
+    "book attraction",
+    "receive rejection",
+    "receive booking confirmation",
+    "send confirmation",
+    "check customer request",
+    "send notification",
+    "reach final decision point",
+    "decision lead registration process",
+    "process continue type",
+    "process involve decision point",
+    "process continue next decision point",
+    "confirmation send customer",
+    "process move same decision point",
+    "process return previous decision point",
+    "initial decision lead registration",
+    "notification send customer",
+    "process reach final decision point",
+    "determine next steps"
+  ],
+  "model_tasks": [
+    "check customer request",
+    "receive customer request",
+    "manual registration",
+    "automatic registration",
+    "search for attraction provider",
+    "book attraction",
+    "receive rejection",
+    "receive booking confirmation",
+    "send confirmation to the customer",
+    "send notification to the customer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive request",
+        "check it",
+        "determine steps",
+        "check request",
+        "make decision",
+        "complete it",
+        "reach same decision point",
+        "meet condition",
+        "complete search",
+        "send confirmation",
+        "reach final decision point",
+        "decision lead registration process",
+        "process continue type",
+        "process involve decision point",
+        "process continue next decision point",
+        "process move same decision point",
+        "process return previous decision point",
+        "initial decision lead registration",
+        "process reach final decision point",
+        "determine next steps"
+      ],
+      "additional_tasks": [
+        "automatic registration",
+        "search for attraction provider"
+      ],
+      "merged_tasks": [
+        {
+          "model": "manual registration",
+          "model_index": 2,
+          "user": [
+            "choose manual registration",
+            "select automatic registration"
+          ],
+          "user_indices": [
+            6,
+            8
+          ],
+          "pair_sims": [
+            0.911,
+            0.763
+          ],
+          "combo_sim": 0.768
+        },
+        {
+          "model": "send notification to the customer",
+          "model_index": 9,
+          "user": [
+            "send notification",
+            "notification send customer"
+          ],
+          "user_indices": [
+            17,
+            27
+          ],
+          "pair_sims": [
+            0.821,
+            0.953
+          ],
+          "combo_sim": 0.892
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "check customer request",
+          "task_b": "receive customer request",
+          "before_score": 14,
+          "after_score": 10,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U21",
+              "U24"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer request is received. Once the request is received, it is checked to determine the next steps. After checking the request, a decision is made. If the decision leads to a registration process, there are two possible paths: manual registration or automatic registration. \n\nIf manual registration is chosen, it is completed before moving to the next decision point. Similarly, if automatic registration is selected, it is completed before reaching the same decision point. After either type of registration, the process continues to another decision point.\n\nAt this decision point, if the condition is met, the process involves searching for an attraction provider. Once the search is completed, another decision is made. If the decision is to proceed, the next step is to book the attraction. After attempting to book the attraction, there are two possible outcomes: receiving a rejection or receiving a booking confirmation.\n\nIf a rejection is received, the process continues to the next decision point. If a booking confirmation is received, a confirmation is sent to the customer, and then the process moves to the same decision point. Regardless of whether a rejection or confirmation is received, the process eventually returns to the previous decision point.\n\nIf the initial decision after checking the customer request does not lead to registration, a notification is sent to the customer. After sending the notification, the process reaches the final decision point, which leads to the end of the process.",
+  "output_text": "The process begins when a customer request is received. Initially, the request is checked to ensure all necessary information is present. Once the request is checked, it is officially received, and the process moves to a decision point.\n\nAt this decision point, it is determined whether the registration should be handled manually or automatically. If manual registration is chosen, the process proceeds with the manual registration task. If automatic registration is selected, the process moves to the automatic registration task. After either type of registration is completed, the process converges back to a common path.\n\nNext, the process reaches another decision point. If the condition is met, the process continues to search for an attraction provider. If the condition is not met, the process skips this step and moves directly to the next decision point.\n\nAssuming the search for an attraction provider is conducted, the process then decides whether to book the attraction. If the booking is attempted, the process waits for a response. If a rejection is received, the process records the rejection. If a booking confirmation is received, the process sends a confirmation to the customer. After either receiving a rejection or sending a confirmation, the process converges back to a common path.\n\nIf the search for an attraction provider is not conducted, the process bypasses the booking steps and moves directly to the next decision point.\n\nFinally, the process reaches the last decision point. If the condition is met, a notification is sent to the customer. Regardless of whether a notification is sent, the process concludes at the end point."
+}

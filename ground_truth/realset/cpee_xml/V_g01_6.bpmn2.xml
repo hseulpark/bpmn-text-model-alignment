@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-2143C9B1-6ABB-4C11-BC2D-5DB16F288777">
+    <parameters>
+      <label>ask customer if he wants only a burger or a menu</label>
+      <method/>
+      <type>:serviceTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-E41A81AE-E7C5-4A08-81C2-04DF50CDE5A2">
+    <alternative condition="">
+      <parallel wait="-1" cancel="last" a:alt_id="sid-62AB7948-58D7-4962-B6E6-E67E12253F25">
+        <parallel_branch>
+          <call id="a4" endpoint="" a:alt_id="sid-A961A540-DC4C-42F3-AFA9-98209B314C65">
+            <parameters>
+              <label>prepare drink</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a6" endpoint="" a:alt_id="sid-B9E4C816-D357-4D06-8FA6-E841624B8631">
+            <parameters>
+              <label/>
+              <method/>
+              <type>:intermediateCatchEvent</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a5" endpoint="" a:alt_id="sid-D089C1BA-1D49-4BE6-9C4B-0BDC1F94849F">
+            <parameters>
+              <label>ask whether customer wants wedges or fries</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-A416FF4A-C318-4B98-84BF-C131D20B8A97">
+            <alternative condition="">
+              <call id="a8" endpoint="" a:alt_id="sid-6F8EE36D-CFDF-4F37-96E4-35C44ACBD124">
+                <parameters>
+                  <label>prepare fries</label>
+                  <method/>
+                  <type>:serviceTask</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a11" endpoint="" a:alt_id="sid-096B5126-C17D-4EED-8F71-0182E39874F5">
+                <parameters>
+                  <label/>
+                  <method/>
+                  <type>:intermediateCatchEvent</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="">
+              <call id="a9" endpoint="" a:alt_id="sid-4F384E7C-4322-4221-8C44-E9DCCAE178C1">
+                <parameters>
+                  <label>prepare wedges</label>
+                  <method/>
+                  <type>:serviceTask</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a12" endpoint="" a:alt_id="sid-BF74743F-926D-4DB3-A81C-2A2AE19F698B">
+                <parameters>
+                  <label/>
+                  <method/>
+                  <type>:intermediateCatchEvent</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </parallel_branch>
+      </parallel>
+    </alternative>
+    <alternative condition=""/>
+  </choose>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-6EE5F316-605F-4C37-AAAA-0F5E4832B6B4">
+    <parallel_branch>
+      <call id="a15" endpoint="" a:alt_id="sid-48F06201-4534-48C0-8B24-CDF0EEC17F46">
+        <parameters>
+          <label>prepares burger</label>
+          <method/>
+          <type>:serviceTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a22" endpoint="" a:alt_id="sid-60D1D2FA-BA6F-4CE1-A70C-3F58FC335548">
+        <parameters>
+          <label/>
+          <method/>
+          <type>:intermediateCatchEvent</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a16" endpoint="" a:alt_id="sid-3E8C8D5C-5E48-4BF3-9831-19904E0F075C">
+          <parameters>
+            <label>gives enthusiastic status updates</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a17" endpoint="" a:alt_id="sid-EDEFDDC4-979D-4423-8456-BFA758B699F7">
+          <parameters>
+            <label/>
+            <method/>
+            <type>:intermediateCatchEvent</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="sid-47C2153E-1CBD-4890-9242-AD57903AF251" language="text/javascript">
+          <call id="a16" endpoint="" a:alt_id="sid-3E8C8D5C-5E48-4BF3-9831-19904E0F075C">
+            <parameters>
+              <label>gives enthusiastic status updates</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a17" endpoint="" a:alt_id="sid-EDEFDDC4-979D-4423-8456-BFA758B699F7">
+            <parameters>
+              <label/>
+              <method/>
+              <type>:intermediateCatchEvent</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+  </parallel>
+  <call id="a20" endpoint="" a:alt_id="sid-0BC0770F-56BE-418D-A910-E6BABAAEE6B8">
+    <parameters>
+      <label>puts order on conveyer belt</label>
+      <method/>
+      <type>:serviceTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

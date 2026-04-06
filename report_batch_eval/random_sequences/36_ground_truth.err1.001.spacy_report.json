@@ -1,0 +1,129 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/36_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/36_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "analyze results",
+    "develop new strategic opportunities",
+    "formulate objectives",
+    "forward report",
+    "read report",
+    "send it",
+    "forward it",
+    "formulate consulting service",
+    "consulting team analyze results",
+    "report formulate",
+    "report forward management team",
+    "management team read report"
+  ],
+  "model_tasks": [
+    "formulate report",
+    "analyze workshop results",
+    "develop strategic opportunities",
+    "formulate consulting service",
+    "forward report to management",
+    "read and check report",
+    "correct report",
+    "read and check report",
+    "forward report",
+    "formulate consulting service"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "formulate objectives",
+        "send it",
+        "forward it"
+      ],
+      "additional_tasks": [
+        "formulate report",
+        "correct report",
+        "read and check report",
+        "formulate consulting service"
+      ],
+      "merged_tasks": [
+        {
+          "model": "analyze workshop results",
+          "model_index": 1,
+          "user": [
+            "analyze results",
+            "consulting team analyze results"
+          ],
+          "user_indices": [
+            0,
+            8
+          ],
+          "pair_sims": [
+            0.7,
+            0.584
+          ],
+          "combo_sim": 0.553
+        },
+        {
+          "model": "forward report to management",
+          "model_index": 4,
+          "user": [
+            "report forward management team",
+            "management team read report"
+          ],
+          "user_indices": [
+            10,
+            11
+          ],
+          "pair_sims": [
+            0.851,
+            0.642
+          ],
+          "combo_sim": 0.809
+        },
+        {
+          "model": "read and check report",
+          "model_index": 5,
+          "user": [
+            "read report",
+            "report formulate"
+          ],
+          "user_indices": [
+            4,
+            9
+          ],
+          "pair_sims": [
+            0.809,
+            0.435
+          ],
+          "combo_sim": 0.688
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "formulate report",
+          "task_b": "formulate consulting service",
+          "before_score": 12,
+          "after_score": 6,
+          "improvement": 6
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with the formulation of the consulting service by the Consulting team.\nThe Consulting team then analyzes the results of the workshops.\nFollowing this, new strategic opportunities are developed.\nA report with the results and objectives is then formulated.\nThis report is forwarded to the Management team.\nThe Management team reads the report and checks if it is in order.\nIf the report is not in order, it is sent back for correction and then rechecked.\nIf the report is in order, it is immediately forwarded.\nFinally, the consulting service is formulated, and the process ends with the formulation of the consulting service.",
+  "output_text": "The process begins with the initiation of a task to formulate a report. Once the report is formulated, the next step involves analyzing the results of a workshop. Following the analysis, strategic opportunities are developed based on the workshop results. After developing these opportunities, a consulting service is formulated.\n\nOnce the consulting service is formulated, the report is forwarded to management. At this point, a decision is made. If the decision is affirmative, the report is read and checked. After reading and checking the report, another decision is made. If the report is in order, it is forwarded, and the consulting service is formulated again. This leads back to the initial decision point after forwarding the report.\n\nIf, during the reading and checking of the report, it is found to be not in order, the report is corrected. After correction, the report is read and checked again. If the report is still not in order after correction, an escalation occurs. This escalation leads back to the decision point after the report is read and checked.\n\nThe process continues in this loop of checking, correcting, and escalating until the report is finally in order and forwarded, at which point the process concludes. If the initial decision after forwarding the report to management is negative, the process ends immediately."
+}

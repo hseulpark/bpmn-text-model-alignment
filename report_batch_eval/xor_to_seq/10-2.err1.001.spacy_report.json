@@ -1,0 +1,209 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/10-2.err1.001.xml",
+  "user_tasks": [
+    "begin mpon",
+    "report meter operation",
+    "examine application",
+    "confirm application",
+    "reject application",
+    "inform mpoo",
+    "communicate registration confirmation",
+    "perform equipment acquisition",
+    "encounter failure",
+    "inform go",
+    "inform mpon",
+    "confirm failure",
+    "complete task",
+    "assign mpon",
+    "confirm assignment",
+    "inform mspo",
+    "inform sp",
+    "mark end",
+    "/or equipment",
+    "mpon report meter operation",
+    "go examine application",
+    "go reject",
+    "go reject application",
+    "process move next step",
+    "go inform mpoo",
+    "go confirm application",
+    "process proceed",
+    "mpon encounter failure",
+    "process converge",
+    "go assign mpon",
+    "process continue",
+    "go inform mspo",
+    "go inform sp"
+  ],
+  "model_tasks": [
+    "the mpon reports the meter operation to the go",
+    "the go examines the application",
+    "the go rejects the application",
+    "the go confirmes the application",
+    "the go informs the mpoo about the registration confirmation",
+    "the go informs the mspo about the registration confirmation",
+    "the mpon and the mpoo perform the equipment acquisition and / or equipment changes",
+    "the mpon informs the go about the failure",
+    "the go informs the mpon about the failure",
+    "the go confirms the failure of the assignment",
+    "the mpon informs the go about the successful completion",
+    "the go assigns the mpon",
+    "the go confirms the assignment",
+    "the go informs the mpoo about the assignment status of the mpon",
+    "the go informs the mspo about the assignment status of the mpon",
+    "the go informs the sp about the assignment status of the mpon"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin mpon",
+        "report meter operation",
+        "examine application",
+        "confirm application",
+        "reject application",
+        "communicate registration confirmation",
+        "perform equipment acquisition",
+        "encounter failure",
+        "inform go",
+        "confirm failure",
+        "complete task",
+        "assign mpon",
+        "inform mspo",
+        "inform sp",
+        "mark end",
+        "/or equipment",
+        "go reject",
+        "go reject application",
+        "process move next step",
+        "go confirm application",
+        "process proceed",
+        "mpon encounter failure",
+        "process converge",
+        "process continue",
+        "go inform sp"
+      ],
+      "additional_tasks": [
+        "the mpon and the mpoo perform the equipment acquisition and / or equipment changes",
+        "the go confirms the failure of the assignment",
+        "the go informs the mpoo about the assignment status of the mpon",
+        "the go informs the mspo about the assignment status of the mpon",
+        "the go informs the sp about the assignment status of the mpon"
+      ],
+      "merged_tasks": [
+        {
+          "model": "the go informs the mpoo about the registration confirmation",
+          "model_index": 4,
+          "user": [
+            "inform mpoo",
+            "go inform mpoo"
+          ],
+          "user_indices": [
+            5,
+            24
+          ],
+          "pair_sims": [
+            0.653,
+            0.686
+          ],
+          "combo_sim": 0.683
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "inform mpon",
+          "user_index": 10,
+          "model": [
+            "the mpon informs the go about the failure",
+            "the go informs the mpon about the failure"
+          ],
+          "model_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.711,
+            0.647
+          ],
+          "combo_sim": 0.68,
+          "adjacent": true
+        },
+        {
+          "user": "go examine application",
+          "user_index": 20,
+          "model": [
+            "the go examines the application",
+            "the go rejects the application",
+            "the go confirmes the application"
+          ],
+          "model_indices": [
+            1,
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.863,
+            0.632,
+            0.69
+          ],
+          "combo_sim": 0.705,
+          "adjacent": true
+        },
+        {
+          "user": "go assign mpon",
+          "user_index": 29,
+          "model": [
+            "the mpon informs the go about the successful completion",
+            "the go assigns the mpon"
+          ],
+          "model_indices": [
+            10,
+            11
+          ],
+          "pair_sims": [
+            0.641,
+            0.893
+          ],
+          "combo_sim": 0.751,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "the go informs the mpoo about the assignment status of the mpon",
+          "task_b": "the go informs the sp about the assignment status of the mpon",
+          "before_score": 27,
+          "after_score": 25,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "the go rejects the application",
+          "task_b": "the go confirmes the application",
+          "before_score": 27,
+          "after_score": 23,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the MPON reports the meter operation to the GO. Following this, the GO examines the application. After examining the application, there is a decision point where the GO can either reject or confirm the application.\n\nIf the GO rejects the application, the process moves to the next step where the GO informs the MPOO and the MSPO about the registration confirmation. If the GO confirms the application, the process also proceeds to informing the MPOO and the MSPO about the registration confirmation.\n\nOnce the registration confirmation is communicated, the MPON and the MPOO perform the equipment acquisition and/or equipment changes. After this, there is another decision point. If the MPON encounters a failure, they inform the GO about it. The GO then has two options: they can either inform the MPON about the failure or confirm the failure of the assignment. Regardless of the choice, the process converges back to the main flow.\n\nIf the MPON successfully completes the task, they inform the GO about the successful completion. The GO then assigns the MPON and confirms the assignment. After confirming the assignment, the process continues.\n\nThe GO then informs the MPOO about the assignment status of the MPON. Following this, the GO informs the MSPO about the assignment status. Finally, the GO informs the SP about the assignment status of the MPON, marking the end of the process.",
+  "output_text": "The process begins with the MPON reporting the meter operation to the GO. Following this, the GO examines the application. If the application is rejected, the GO confirms the rejection and then informs both the MPOO and the MSPO about the registration confirmation.\n\nNext, the MPON and the MPOO proceed with acquiring equipment and/or making necessary equipment changes. At this point, a decision is made: if there is a failure, the MPON informs the GO about it. The GO then either informs the MPON about the failure or confirms the failure of the assignment. Both of these actions lead back to a decision point.\n\nIf the equipment acquisition and changes are successful, the MPON informs the GO about the successful completion. The GO then assigns the MPON and confirms this assignment. This leads to the same decision point as before.\n\nAfter the decision point, the GO informs the MPOO about the assignment status of the MPON. Subsequently, the GO also informs the MSPO and the SP about the assignment status of the MPON. The process concludes with this final communication."
+}

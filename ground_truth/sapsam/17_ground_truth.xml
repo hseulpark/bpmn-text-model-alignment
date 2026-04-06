@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Log on to Email Provider</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Choose Package</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Check Personal Account Availability</label>
+      <method/>
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="">
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Enter Personal Information</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last">
+        <parallel_branch>
+          <call id="a10" endpoint="">
+            <parameters>
+              <label>Provide Full Names</label>
+              <method/>
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Upload Photo ID</label>
+              <method/>
+              <type>:task</type>
+              <mid>'8'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a12" endpoint="">
+        <parameters>
+          <label>Confirm Personal Data</label>
+          <method/>
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a13" endpoint="">
+        <parameters>
+          <label>Generate Email ID and Password</label>
+          <method/>
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not Available" language="text/javascript"/>
+  </choose>
+</description>

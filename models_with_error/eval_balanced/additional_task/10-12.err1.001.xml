@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a7" endpoint=""><parameters><label>Update database</label><method /><type>:task</type><arguments /></parameters></call><call id="a1" endpoint="" a:alt_id="sid-540CC11F-A308-4D86-87AC-97EDE6CE784D">
+    <parameters>
+      <label>EC tells  INQ about the data change</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-7DE45EF3-D2EC-4798-B3DB-0061F506431C">
+    <parameters>
+      <label>INQ notifies the IP of the change</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-BA467D1F-3736-40FC-B604-5E4FF16380CD">
+    <parameters>
+      <label>IP checks whether the  data can be changed</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-018A66EC-8EA7-4A9C-912B-FB3E9646DD4D">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-CB6F00BE-77C5-4EA2-9B41-3C4A0A3A559A">
+        <parameters>
+          <label>IP confirmes the changes of INQ</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a6" endpoint="" a:alt_id="sid-90366BDD-E596-44BE-85A4-558C8324DA44">
+        <parameters>
+          <label>IP rejectes the changes of INQ</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

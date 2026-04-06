@@ -1,0 +1,355 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/4-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/4-1.err1.001.xml",
+  "user_tasks": [
+    "begin customer",
+    "make notice",
+    "gather data",
+    "connect doctor",
+    "conduct thorough inquiry",
+    "gather necessary information",
+    "record information",
+    "hand in it",
+    "store information",
+    "print form information",
+    "make decision",
+    "create patient file",
+    "store registration form",
+    "produce registration cards",
+    "add new patient",
+    "involve team members",
+    "assign new patients",
+    "record assignments",
+    "require medical file",
+    "add information",
+    "pass produced registration cards",
+    "prepare letter",
+    "send it",
+    "receive copy",
+    "inform intaker",
+    "add copy",
+    "plan meeting",
+    "examine them",
+    "register additional observations",
+    "place copy",
+    "take path",
+    "put patient",
+    "provide team leader",
+    "formulate treatment plan",
+    "conclude process",
+    "customer make notice",
+    "secretarial worker inquire patient data",
+    "secretarial worker connect doctor",
+    "nursing officer conduct thorough inquiry",
+    "nursing officer record information",
+    "secretarial office store information",
+    "decision make point",
+    "process continue direction",
+    "secretarial office create patient file",
+    "secretarial office add new patient",
+    "path lead staff meeting",
+    "secretarial office assign new patients",
+    "team members determine",
+    "decision point occur",
+    "secretarial office prepare letter",
+    "secretarial office receive copy",
+    "process continue first intaker",
+    "process take path",
+    "second intaker plan first meeting",
+    "secretarial office put patient",
+    "team members formulate treatment plan"
+  ],
+  "model_tasks": [
+    "customer makes notice at the secretarial office",
+    "secretarial worker inquires the patient data",
+    "secretarial worker  put through the doctor to the nursing officer",
+    "nursing officer makes a full inquiry into the patient's state",
+    "nursing officer  records information on registration form",
+    "nursing officer hands form in at the secretarial office",
+    "secretarial office stores information in the information system",
+    "secretarial office prints the form's information",
+    "secretarial office creates a patient file",
+    "secretarial office stores registration form and the print in the patient file",
+    "secretarial office produces two registration cards",
+    "secretarial office adds  new patient on the list of new notices",
+    "team members have staff meeting",
+    "secretarial office assigns new patients to team  members",
+    "secretarial office records assignments on an assignment list",
+    "team members determine whether the medical file of the patient is required",
+    "secretarial office  provides the team-leader with a list of these patients",
+    "secretarial office stores the assignments in the information system",
+    "secretarial office passes the produced registration cards",
+    "secretarial office prepares a letter to the family doctor",
+    "secretarial office sends a letter to the family doctor",
+    "secretarial  receives a copy of a medical file",
+    "secretarial office  informs the  intaker",
+    "secretarial office adds the copy to the patient file",
+    "first intaker plans a meeting with the patient",
+    "first intaker  examines the patient",
+    "first intaker  registers additional observations in notes",
+    "first intaker puts a copy of notes in the patient's file",
+    "first intaker adds standard checklist to the patient's file",
+    "second intaker plans the first meeting",
+    "secretarial office types out the tapes",
+    "secretarial office adds the info to the patient file",
+    "secretarial office puts the patient on the list of patients",
+    "team members add information to assignment list",
+    "team members  formulate a treatment plan for patients"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin customer",
+        "make notice",
+        "gather data",
+        "connect doctor",
+        "conduct thorough inquiry",
+        "gather necessary information",
+        "record information",
+        "hand in it",
+        "store information",
+        "make decision",
+        "store registration form",
+        "add new patient",
+        "involve team members",
+        "assign new patients",
+        "record assignments",
+        "add information",
+        "prepare letter",
+        "send it",
+        "receive copy",
+        "add copy",
+        "plan meeting",
+        "examine them",
+        "register additional observations",
+        "place copy",
+        "take path",
+        "put patient",
+        "provide team leader",
+        "conclude process",
+        "decision make point",
+        "process continue direction",
+        "path lead staff meeting",
+        "decision point occur",
+        "secretarial office prepare letter",
+        "process take path"
+      ],
+      "additional_tasks": [
+        "secretarial worker  put through the doctor to the nursing officer",
+        "nursing officer  records information on registration form",
+        "nursing officer hands form in at the secretarial office",
+        "secretarial office stores information in the information system",
+        "secretarial office stores registration form and the print in the patient file",
+        "secretarial office adds  new patient on the list of new notices",
+        "secretarial office  provides the team-leader with a list of these patients",
+        "secretarial office stores the assignments in the information system",
+        "secretarial office passes the produced registration cards",
+        "secretarial office  informs the  intaker",
+        "first intaker  examines the patient",
+        "first intaker  registers additional observations in notes",
+        "first intaker puts a copy of notes in the patient's file",
+        "first intaker adds standard checklist to the patient's file",
+        "team members add information to assignment list"
+      ],
+      "merged_tasks": [
+        {
+          "model": "nursing officer makes a full inquiry into the patient's state",
+          "model_index": 3,
+          "user": [
+            "nursing officer conduct thorough inquiry",
+            "nursing officer record information"
+          ],
+          "user_indices": [
+            38,
+            39
+          ],
+          "pair_sims": [
+            0.83,
+            0.62
+          ],
+          "combo_sim": 0.768
+        },
+        {
+          "model": "secretarial office produces two registration cards",
+          "model_index": 10,
+          "user": [
+            "produce registration cards",
+            "pass produced registration cards"
+          ],
+          "user_indices": [
+            13,
+            20
+          ],
+          "pair_sims": [
+            0.709,
+            0.662
+          ],
+          "combo_sim": 0.68
+        },
+        {
+          "model": "team members determine whether the medical file of the patient is required",
+          "model_index": 15,
+          "user": [
+            "create patient file",
+            "require medical file"
+          ],
+          "user_indices": [
+            11,
+            18
+          ],
+          "pair_sims": [
+            0.665,
+            0.727
+          ],
+          "combo_sim": 0.716
+        },
+        {
+          "model": "first intaker plans a meeting with the patient",
+          "model_index": 24,
+          "user": [
+            "inform intaker",
+            "process continue first intaker"
+          ],
+          "user_indices": [
+            24,
+            51
+          ],
+          "pair_sims": [
+            0.695,
+            0.61
+          ],
+          "combo_sim": 0.666
+        },
+        {
+          "model": "secretarial office types out the tapes",
+          "model_index": 30,
+          "user": [
+            "secretarial office store information",
+            "secretarial office receive copy"
+          ],
+          "user_indices": [
+            40,
+            50
+          ],
+          "pair_sims": [
+            0.615,
+            0.64
+          ],
+          "combo_sim": 0.61
+        },
+        {
+          "model": "team members  formulate a treatment plan for patients",
+          "model_index": 34,
+          "user": [
+            "formulate treatment plan",
+            "team members formulate treatment plan"
+          ],
+          "user_indices": [
+            33,
+            55
+          ],
+          "pair_sims": [
+            0.723,
+            0.941
+          ],
+          "combo_sim": 0.89
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "secretarial worker connect doctor",
+          "user_index": 37,
+          "model": [
+            "secretarial office prepares a letter to the family doctor",
+            "secretarial office sends a letter to the family doctor",
+            "secretarial  receives a copy of a medical file"
+          ],
+          "model_indices": [
+            19,
+            20,
+            21
+          ],
+          "pair_sims": [
+            0.654,
+            0.669,
+            0.552
+          ],
+          "combo_sim": 0.616,
+          "adjacent": true
+        },
+        {
+          "user": "secretarial office add new patient",
+          "user_index": 44,
+          "model": [
+            "secretarial office adds the info to the patient file",
+            "secretarial office puts the patient on the list of patients"
+          ],
+          "model_indices": [
+            31,
+            32
+          ],
+          "pair_sims": [
+            0.734,
+            0.79
+          ],
+          "combo_sim": 0.763,
+          "adjacent": true
+        },
+        {
+          "user": "secretarial office assign new patients",
+          "user_index": 46,
+          "model": [
+            "secretarial office assigns new patients to team  members",
+            "secretarial office records assignments on an assignment list"
+          ],
+          "model_indices": [
+            13,
+            14
+          ],
+          "pair_sims": [
+            0.891,
+            0.557
+          ],
+          "combo_sim": 0.834,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "secretarial office  provides the team-leader with a list of these patients",
+          "task_b": "team members add information to assignment list",
+          "before_score": 37,
+          "after_score": 35,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "secretarial office puts the patient on the list of patients",
+          "task_b": "team members add information to assignment list",
+          "before_score": 37,
+          "after_score": 35,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer makes a notice at the secretarial office. Following this, a secretarial worker inquires about the patient data. Once the data is gathered, the secretarial worker connects the doctor to the nursing officer. The nursing officer then conducts a thorough inquiry into the patient's condition. After gathering all necessary information, the nursing officer records this information on a registration form and hands it in at the secretarial office.\n\nThe secretarial office then stores the information in the information system and prints the form's information. At this point, a decision is made. If the process continues in one direction, the secretarial office creates a patient file, stores the registration form and the print in the patient file, and produces two registration cards. The secretarial office then adds the new patient to the list of new notices. This path leads to a staff meeting where team members are involved.\n\nAfter the staff meeting, the secretarial office assigns new patients to team members and records these assignments on an assignment list. Team members then determine whether the medical file of the patient is required and add this information to the assignment list. The secretarial office stores the assignments in the information system and passes the produced registration cards.\n\nAnother decision point occurs. If the process follows one path, the secretarial office prepares a letter to the family doctor and sends it. The secretarial office then receives a copy of a medical file and informs the intaker, adding the copy to the patient file.\n\nThe process continues with the first intaker planning a meeting with the patient and examining them. The first intaker registers additional observations in notes and places a copy of these notes in the patient's file, along with a standard checklist.\n\nAt another decision point, if the process takes one path, the second intaker plans the first meeting. The secretarial office types out the tapes and adds the information to the patient file.\n\nFinally, the secretarial office puts the patient on the list of patients and provides the team leader with this list. Team members then formulate a treatment plan for the patients, concluding the process.",
+  "output_text": "The process begins when a customer makes a notice at the secretarial office. Following this, a secretarial worker inquires about the patient's data. Once the data is gathered, the secretarial worker connects the doctor to the nursing officer. The nursing officer then conducts a thorough inquiry into the patient's state and records the information on a registration form. After completing the form, the nursing officer hands it in at the secretarial office.\n\nNext, the secretarial office stores the information in the information system and prints the form's information. At this point, a decision is made. If the process continues in one direction, the secretarial office creates a patient file, stores the registration form and the print in the patient file, and produces two registration cards. The secretarial office then adds the new patient to the list of new notices.\n\nAfter this, the process converges, and the team members have a staff meeting. The secretarial office assigns new patients to team members and records these assignments on an assignment list. Team members then determine whether the medical file of the patient is required. If it is, the secretarial office provides the team leader with a list of these patients and stores the assignments in the information system. The secretarial office then passes the produced registration cards.\n\nAnother decision point occurs here. If the process follows one path, the secretarial office prepares a letter to the family doctor and sends it. The secretarial office then receives a copy of a medical file and informs the intaker. The copy is added to the patient file.\n\nThe process then continues with the first intaker planning a meeting with the patient, examining the patient, and registering additional observations in notes. A copy of these notes is placed in the patient's file, and a standard checklist is added to the file.\n\nAt another decision point, if the process takes one path, the second intaker plans the first meeting. The secretarial office types out the tapes and adds the information to the patient file.\n\nThe process then converges again, and the secretarial office puts the patient on the list of patients. Team members add information to the assignment list and formulate a treatment plan for the patients. The process concludes at this point."
+}

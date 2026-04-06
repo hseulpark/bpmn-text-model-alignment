@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a14" endpoint=""><parameters><label>Validate data</label><method /><type>:task</type><arguments /></parameters></call><loop mode="pre_test" condition="true">
+    <call id="a2" endpoint="">
+      <parameters>
+        <label>Verify Request</label>
+        <method />
+        <type>:task</type>
+        <mid>'1'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a4" endpoint="">
+      <parameters>
+        <label>Receive by 1st Level Support</label>
+        <method />
+        <type>:task</type>
+        <mid>'3'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a5" endpoint="">
+      <parameters>
+        <label>Log and Categorize Request</label>
+        <method />
+        <type>:task</type>
+        <mid>'4'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Not Authorized" language="text/javascript">
+      <call id="a2" endpoint="">
+        <parameters>
+          <label>Verify Request</label>
+          <method />
+          <type>:task</type>
+          <mid>'1'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a3" endpoint="">
+        <parameters>
+          <label>Send for Request Handling</label>
+          <method />
+          <type>:task</type>
+          <mid>'2'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Receive by 1st Level Support</label>
+          <method />
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Log and Categorize Request</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </loop>
+    <call id="a7" endpoint="">
+      <parameters>
+        <label>Request Monitoring and Escalation</label>
+        <method />
+        <type>:task</type>
+        <mid>'6'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a10" endpoint="">
+      <parameters>
+        <label>Closure and Evaluation Request</label>
+        <method />
+        <type>:task</type>
+        <mid>'9'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a12" endpoint="">
+          <parameters>
+            <label>Request Fulfillment Support</label>
+            <method />
+            <type>:task</type>
+            <mid>'11'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      <call id="a13" endpoint="">
+          <parameters>
+            <label>Contact Incident Manager</label>
+            <method />
+            <type>:task</type>
+            <mid>'13'</mid>
+            <arguments />
+          </parameters>
+        </call>
+      </loop>
+</description>

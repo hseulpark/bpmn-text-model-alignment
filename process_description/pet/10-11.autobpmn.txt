@@ -1,0 +1,9 @@
+The process begins with an initial step where the Grid Operator (GO) requests measurements from the Measurement Service Provider (MSP). Following this, the MSP checks the request it has received from the GO. At this point, a decision is made by the MSP.
+
+If the MSP decides to deny the request from the GO, it proceeds to inform the GO about this denial. After this notification, the process reaches a point where it can conclude.
+
+Alternatively, if the MSP chooses to perform the measurement, it carries out the necessary actions to obtain the measurements. After performing the measurement, another decision is made. If there is a failure in the measurement process, the MSP informs the GO about this failure. This notification leads to the conclusion of the process.
+
+If the measurement is successful, the MSP transmits the measured values to the GO. The GO then processes these measured values. After processing, the GO sends any changed values back to the MSP. Subsequently, the GO transmits the readings to the Service Provider (SP). Once this transmission is complete, the process reaches a point where it can conclude.
+
+In summary, the process involves a series of interactions between the GO and the MSP, with decisions made at key points that determine the subsequent actions, ultimately leading to the conclusion of the process.

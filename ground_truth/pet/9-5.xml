@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <loop mode="pre_test" condition="true">
+    <call id="a1" endpoint="" a:alt_id="sid-DED84BC9-0279-4496-B9BF-657303BF3B86">
+      <parameters>
+        <label>company receives expense report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-08116F99-464E-4393-A8E7-91211B942471">
+      <alternative condition="">
+        <call id="a3" endpoint="" a:alt_id="sid-B1C895FC-1BEC-4B0E-9D3B-51B499A4AFCA">
+          <parameters>
+            <label>company creates new employee  account</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition=""/>
+    </choose>
+    <call id="a5" endpoint="" a:alt_id="sid-1F83D085-A3A1-456A-9592-B61BB8221C17">
+      <parameters>
+        <label>company reviews report for automatic approval</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-B16012F5-12E2-4E20-BDE8-43C744E0C805">
+      <alternative condition="">
+        <call id="a8" endpoint="" a:alt_id="sid-9B23501C-9F88-491A-991E-B634DD1770C6">
+          <parameters>
+            <label>supervisor approves the report</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-65FE2841-6337-4F1C-8EE0-4F1513C83E0C">
+          <alternative condition="">
+            <call id="a11" endpoint="" a:alt_id="sid-B800525D-A8C2-4C8D-BC7F-0590B4A958E0">
+              <parameters>
+                <label>company sends reimbursement to employee's bank account</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <call id="a12" endpoint="" a:alt_id="sid-0D3E267D-34D5-456D-98BE-BB33C5F90B46">
+              <parameters>
+                <label>employee  receives a rejection notice</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="">
+        <call id="a7" endpoint="" a:alt_id="sid-AAB417D9-F2C7-46B8-B4CA-D88099C8C288">
+          <parameters>
+            <label>company automatically approves the report</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+    <choose mode="exclusive" a:alt_id="sid-EB4839B1-FF50-4F2F-B41B-624D34A1D8DF">
+      <alternative condition="">
+        <call id="a16" endpoint="" a:alt_id="sid-2937FB24-907F-4229-960E-7F27A3404058">
+          <parameters>
+            <label>company stops the process</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a17" endpoint="" a:alt_id="sid-196A1496-C19E-44EA-86E4-0F216A5C6EE9">
+          <parameters>
+            <label>employee receives an email cancellation notice</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a18" endpoint="" a:alt_id="sid-8AFBE19B-6E8E-4509-B7A9-B682846008CD">
+          <parameters>
+            <label>employee re-submits the expense report</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a15" endpoint="" a:alt_id="sid-66C4C9C4-DE54-4CBB-BD41-F524D99A96EC">
+          <parameters>
+            <label>employee  receives an approval in progress  email</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <escape a:alt_id="-1"/>
+      </alternative>
+      <alternative condition="">
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+</description>

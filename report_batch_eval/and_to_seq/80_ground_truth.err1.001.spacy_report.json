@@ -1,0 +1,101 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/80_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/80_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "manage personnel",
+    "managing personnel",
+    "start payroll program",
+    "control automated debits",
+    "calculate labor costs",
+    "pay social contributions",
+    "pay additional costs",
+    "enter bonuses",
+    "control financial accounting",
+    "send invoice",
+    "complete personnel accounting",
+    "health insurance",
+    "salaries pay",
+    "health insurance pay"
+  ],
+  "model_tasks": [
+    "manage personnel accounting",
+    "start payroll program",
+    "control automated debits",
+    "calculate labor costs",
+    "pay salaries and social contributions",
+    "pay health insurance and additional costs",
+    "enter bonuses",
+    "control financial accounting",
+    "send invoice"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "manage personnel",
+        "managing personnel",
+        "pay additional costs",
+        "health insurance"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "pay salaries and social contributions",
+          "model_index": 4,
+          "user": [
+            "pay social contributions",
+            "salaries pay"
+          ],
+          "user_indices": [
+            5,
+            12
+          ],
+          "pair_sims": [
+            0.833,
+            0.656
+          ],
+          "combo_sim": 0.918
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U11",
+              "U5"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "and_to_seq => flattened <parallel> into sequence (structural fallback)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with managing personnel accounting in the personnel administration.\n\nFirst, the payroll program is started.\n\nNext, the automated debits are controlled.\n\nSubsequently, the labor costs are calculated, salaries and social contributions are paid, and health insurance and additional costs are paid simultaneously.\n\nThen, bonuses are entered, leading to the control of financial accounting.\n\nAfter the financial accounting is controlled, the invoice is sent, which finally completes the personnel accounting.",
+  "output_text": "The process begins with the initiation of managing personnel accounting. Once this is underway, the next step is to start the payroll program. Following the activation of the payroll program, there is a task to control automated debits, ensuring that all automated financial transactions are correctly managed.\n\nAfter controlling the automated debits, the process moves on to calculating labor costs. This involves determining the total expenses associated with employee wages and related costs. Once labor costs are calculated, the next step is to pay salaries and social contributions, ensuring that employees receive their due compensation and that any required social contributions are made.\n\nFollowing the payment of salaries and social contributions, the process continues with paying health insurance and additional costs. This step ensures that all health-related and other supplementary expenses are covered.\n\nNext, bonuses are entered into the system, accounting for any additional compensation employees are entitled to receive. After entering bonuses, the process involves controlling financial accounting, which ensures that all financial records are accurate and up-to-date.\n\nFinally, the process concludes with sending an invoice, which likely involves billing for services or reconciling accounts. Once the invoice is sent, the process comes to an end."
+}

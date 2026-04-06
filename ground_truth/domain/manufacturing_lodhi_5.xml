@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a5" endpoint="" a:alt_id="sid-AE9E3F4C-5B5B-4D3D-A5B2-219696EDF355">
+    <parameters>
+      <label>Receive production order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a16" endpoint="" a:alt_id="sid-9E3A86A2-5437-42B4-87D8-E89F0B68C672">
+    <parameters>
+      <label>Prepare production order</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a6" endpoint="" a:alt_id="sid-59D9A37B-6C8B-41FE-B88C-DFE60EA8F678">
+      <parameters>
+        <label>Collect raw materials</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a7" endpoint="" a:alt_id="sid-BA3EC16A-5E30-4B17-8227-9935A7FFFC64">
+      <parameters>
+        <label>Cutting</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-4AB4B96E-2FAD-4AE6-8B39-D8A563B9D0D0">
+      <parallel_branch>
+        <call id="a9" endpoint="" a:alt_id="sid-594EB945-4E78-4540-AD69-179B153350CD">
+          <parameters>
+            <label>Stitching</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a10" endpoint="" a:alt_id="sid-9954F714-AA88-4D6C-AAFC-C08FF1D87C22">
+          <parameters>
+            <label>Printing</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+    </parallel>
+    <call id="a12" endpoint="" a:alt_id="sid-928E9C1C-5F7A-46BB-953D-0520EF2DC52F">
+      <parameters>
+        <label>Complete production</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a0" endpoint="" a:alt_id="sid-DB102B55-E115-4900-96ED-3481E251FE20">
+      <parameters>
+        <label>Check quality</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a1" endpoint="" a:alt_id="sid-BCE13664-E16E-4C01-BF5B-940F9DB35670">
+      <parameters>
+        <label>Create quality report</label>
+        <method/>
+        <type>:task</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-CB2D1754-2128-405E-A6C9-C8AE48B086E1">
+      <alternative condition="">
+        <call id="a3" endpoint="" a:alt_id="sid-CCB28019-E218-447E-9C65-5D71C1F4A5BC">
+          <parameters>
+            <label>Adjust  settings</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a13" endpoint="" a:alt_id="sid-ED4D8283-9985-44FC-84FE-CCE709952339">
+          <parameters>
+            <label>Send data to warehouse</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <escape a:alt_id="-1"/>
+      </alternative>
+    </choose>
+  </loop>
+</description>

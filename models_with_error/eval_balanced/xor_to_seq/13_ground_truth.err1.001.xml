@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Create Bill of Materials</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Order Goods</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+        <parameters>
+          <label>Clarify Inquiry with Specialist</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <loop mode="pre_test" condition="true">
+    <call id="a6" endpoint="">
+      <parameters>
+        <label>Await Delivery</label>
+        <method />
+        <type>:task</type>
+        <mid>'5'</mid>
+        <arguments />
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Delivery within 5 Days">
+      <choose mode="exclusive">
+        <alternative condition="Delivery within 5 Days" language="text/javascript">
+          <call id="a8" endpoint="">
+            <parameters>
+              <label>Check Quantity and Quality</label>
+              <method />
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Standards Not Met" language="text/javascript">
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Request Replacement Delivery</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'12'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a6" endpoint="">
+                <parameters>
+                  <label>Await Delivery</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'5'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Standards Met" language="text/javascript">
+              <call id="a14" endpoint="">
+                <parameters>
+                  <label>Store Goods</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'13'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a16" endpoint="">
+                <parameters>
+                  <label>Transmit Order</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'14'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a17" endpoint="">
+                <parameters>
+                  <label>Prepare and Package Goods</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'15'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a18" endpoint="">
+                <parameters>
+                  <label>Ship or Issue Goods</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'16'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <escape />
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="No Delivery" language="text/javascript">
+          <call id="a9" endpoint="">
+            <parameters>
+              <label>Contact Supplier for Immediate Shipping</label>
+              <method />
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Immediate Shipping Possible" language="text/javascript">
+              <call id="a6" endpoint="">
+                <parameters>
+                  <label>Await Delivery</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'5'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Immediate Shipping Not Possible" language="text/javascript">
+              <call id="a11" endpoint="">
+                <parameters>
+                  <label>Escalate Delivery Issues</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'9'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <escape />
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </loop>
+  </loop>
+</description>

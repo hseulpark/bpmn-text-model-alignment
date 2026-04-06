@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Receive Application</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Review Documents</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Reject" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Create Rejection</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Preselect" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Examine Documents in Detail</label>
+          <method />
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:mutated="true"><parallel_branch><call id="a9" endpoint="">
+            <parameters>
+              <label>Conduct Telephone Interview</label>
+              <method />
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </parallel_branch><parallel_branch /></parallel><call id="a12" endpoint="">
+        <parameters>
+          <label>Conduct Personal Interview</label>
+          <method />
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a11" endpoint="">
+        <parameters>
+          <label>Forward to Relevant Department</label>
+          <method />
+          <type>:task</type>
+          <mid>'9'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a10" endpoint="">
+        <parameters>
+          <label>Communicate Personal Interview Appointment</label>
+          <method />
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="">
+          <choose mode="exclusive" a:mutated="true"><alternative condition=""><call id="a16" endpoint="">
+                <parameters>
+                  <label>Schedule Assessment Center</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'12'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative><alternative condition=""><call id="a17" endpoint="">
+                <parameters>
+                  <label>Plan and Prepare Assessment Center</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'13'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative></choose><call id="a18" endpoint="">
+            <parameters>
+              <label>Conduct Assessment Center</label>
+              <method />
+              <type>:task</type>
+              <mid>'15'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Not Suitable" language="text/javascript" />
+      </choose>
+      <choose mode="exclusive">
+        <alternative condition="Accepted" language="text/javascript">
+          <call id="a19" endpoint="">
+            <parameters>
+              <label>Draft Acceptance Letter</label>
+              <method />
+              <type>:task</type>
+              <mid>'17'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Rejected" language="text/javascript">
+          <call id="a20" endpoint="">
+            <parameters>
+              <label>Draft Rejection Letter</label>
+              <method />
+              <type>:task</type>
+              <mid>'18'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

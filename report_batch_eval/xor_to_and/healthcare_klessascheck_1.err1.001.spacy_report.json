@@ -1,0 +1,82 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/healthcare_klessascheck_1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/healthcare_klessascheck_1.err1.001.xml",
+  "user_tasks": [
+    "diagnose condition",
+    "make diagnosis",
+    "take different paths",
+    "apply superficial heat",
+    "prescribe non steroidal anti inflammatory drug",
+    "skip step",
+    "prescribe medication",
+    "apply exercise",
+    "applying exercise",
+    "prescribe nsaid",
+    "prescribe opioid",
+    "process involve first path",
+    "process proceed",
+    "process move point",
+    "process involve second path",
+    "paths converge",
+    "process come end"
+  ],
+  "model_tasks": [
+    "diagnose non-\nspecific low\nback pain",
+    "apply\nsuperficial\nheat or other\nnonpharmocol.\ntreatments",
+    "prescribe\nnsaid or smr",
+    "apply exercise\nor other\nnonpharmacol.\ntreatments",
+    "prescribe\nnsaid",
+    "prescribe\nopioid"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "diagnose condition",
+        "make diagnosis",
+        "take different paths",
+        "prescribe non steroidal anti inflammatory drug",
+        "skip step",
+        "prescribe medication",
+        "apply exercise",
+        "applying exercise",
+        "process involve first path",
+        "process proceed",
+        "process move point",
+        "process involve second path",
+        "paths converge",
+        "process come end"
+      ],
+      "additional_tasks": [
+        "diagnose non-\nspecific low\nback pain",
+        "prescribe\nnsaid or smr",
+        "apply exercise\nor other\nnonpharmacol.\ntreatments"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with diagnosing a condition known as non-specific low back pain. Once the diagnosis is made, there is a decision point where two different paths can be taken.\n\nIn the first path, the process involves applying superficial heat or other non-pharmacological treatments. After this treatment, there is another decision point. From here, the process can either proceed to prescribing a non-steroidal anti-inflammatory drug (NSAID) or a skeletal muscle relaxant (SMR), or it can skip this step. Regardless of whether medication is prescribed, the process then moves to a point where it converges with the other path.\n\nIn the second path, the process involves applying exercise or other non-pharmacological treatments. Following this, there is a decision point where the process can either proceed to prescribing an NSAID or skip this step. If an NSAID is prescribed, there is another decision point where the process can either proceed to prescribing an opioid or skip this step. Regardless of whether an opioid is prescribed, the process then moves to a point where it converges with the other path.\n\nFinally, after both paths have converged, the process comes to an end.",
+  "output_text": "The process begins with diagnosing a condition known as non-specific low back pain. Once the diagnosis is made, a decision is required to determine the next step. There are two possible paths to follow.\n\nThe first option involves applying superficial heat or other non-pharmacological treatments. After this treatment, another decision is made. One possibility is to prescribe either a non-steroidal anti-inflammatory drug (NSAID) or a skeletal muscle relaxant (SMR). After this prescription, the process moves to a point where it can either conclude or return to the earlier decision point for further evaluation.\n\nAlternatively, after applying superficial heat or other non-pharmacological treatments, the process can directly move to the point where it can conclude or return to the earlier decision point.\n\nThe second option after the initial diagnosis is to apply exercise or other non-pharmacological treatments. Following this, another decision is made. One possibility is to prescribe an NSAID. If this path is chosen, the process then involves prescribing an opioid as well. These two actions can occur simultaneously or independently, but both must be completed before moving forward. After these prescriptions, the process reaches a point where it can either conclude or return to the earlier decision point for further evaluation.\n\nAlternatively, after applying exercise or other non-pharmacological treatments, the process can directly move to the point where it can conclude or return to the earlier decision point.\n\nFinally, once all necessary treatments and prescriptions have been considered and applied, the process concludes."
+}

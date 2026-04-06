@@ -1,0 +1,199 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-10.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/split/10-10.err1.001.xml",
+  "user_tasks": [
+    "report failure",
+    "starting point",
+    "examine failure",
+    "face decision",
+    "reject failure",
+    "confirm failure",
+    "inform general operator",
+    "confirmed failure",
+    "inform service provider",
+    "follow notifications",
+    "fix fault",
+    "measuring device",
+    "complete repairs",
+    "share results",
+    "share repair results",
+    "inform go",
+    "inform msp",
+    "complete notifications",
+    "reach its conclusion",
+    "production operator",
+    "several actions",
+    "fault detector report failure",
+    "starting point occur",
+    "process converge decision point",
+    "mpo examine failure",
+    "mpo face decision",
+    "mpo reject failure",
+    "process move end",
+    "mpo confirm failure",
+    "mpo inform general operator",
+    "mpo inform service provider",
+    "mpo proceed notifications",
+    "mpo share results",
+    "mpo inform go",
+    "mpo inform msp",
+    "process reach its conclusion"
+  ],
+  "model_tasks": [
+    "fault detector reports a failure to the mpo",
+    "mpo has a suspicion of  own fault",
+    "mpo starts examining the failure",
+    "mpo finishes examining the failure",
+    "mpo rejects the failure of the fault detector",
+    "mpo confirms the failure of the fault detector",
+    "mpo informes the go",
+    "mpo informes the msp",
+    "mpo fixes the fault at the measuring device",
+    "mpo shares the results of the repairs",
+    "mpo informs the go about the resolution of the interference",
+    "mpo informs the msp about the resolution of the interference"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "report failure",
+        "starting point",
+        "examine failure",
+        "face decision",
+        "reject failure",
+        "confirm failure",
+        "inform general operator",
+        "confirmed failure",
+        "inform service provider",
+        "follow notifications",
+        "fix fault",
+        "measuring device",
+        "complete repairs",
+        "share results",
+        "share repair results",
+        "inform go",
+        "inform msp",
+        "complete notifications",
+        "reach its conclusion",
+        "production operator",
+        "several actions",
+        "starting point occur",
+        "process converge decision point",
+        "mpo face decision",
+        "process move end",
+        "mpo inform service provider",
+        "mpo proceed notifications",
+        "mpo share results",
+        "process reach its conclusion"
+      ],
+      "additional_tasks": [
+        "mpo fixes the fault at the measuring device"
+      ],
+      "merged_tasks": [
+        {
+          "model": "fault detector reports a failure to the mpo",
+          "model_index": 0,
+          "user": [
+            "mpo examine failure",
+            "mpo confirm failure"
+          ],
+          "user_indices": [
+            24,
+            28
+          ],
+          "pair_sims": [
+            0.815,
+            0.783
+          ],
+          "combo_sim": 0.79
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "mpo inform general operator",
+          "user_index": 29,
+          "model": [
+            "mpo informes the go",
+            "mpo informes the msp"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.73,
+            0.682
+          ],
+          "combo_sim": 0.692,
+          "adjacent": true
+        },
+        {
+          "user": "mpo inform go",
+          "user_index": 33,
+          "model": [
+            "mpo has a suspicion of  own fault",
+            "mpo starts examining the failure",
+            "mpo finishes examining the failure"
+          ],
+          "model_indices": [
+            1,
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.667,
+            0.653,
+            0.627
+          ],
+          "combo_sim": 0.632,
+          "adjacent": true
+        },
+        {
+          "user": "mpo inform msp",
+          "user_index": 34,
+          "model": [
+            "mpo shares the results of the repairs",
+            "mpo informs the go about the resolution of the interference",
+            "mpo informs the msp about the resolution of the interference"
+          ],
+          "model_indices": [
+            9,
+            10,
+            11
+          ],
+          "pair_sims": [
+            0.604,
+            0.567,
+            0.694
+          ],
+          "combo_sim": 0.667,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with two possible starting points. First, a fault detector reports a failure to the Maintenance and Production Operator (MPO). Alternatively, the MPO may have a suspicion of their own fault. Regardless of which starting point occurs, the process converges at a decision point where the MPO examines the failure.\n\nAfter examining the failure, the MPO faces another decision. If the MPO rejects the failure of the fault detector, the process moves directly to the end. However, if the MPO confirms the failure of the fault detector, several actions follow.\n\nFirst, the MPO informs the General Operator (GO) about the confirmed failure. Then, the MPO also informs the Maintenance Service Provider (MSP). Following these notifications, the MPO proceeds to fix the fault at the measuring device. Once the repairs are completed, the MPO shares the results of the repairs.\n\nAfter sharing the repair results, the MPO informs the GO about the resolution of the interference. Subsequently, the MPO also informs the MSP about the resolution of the interference. Once these notifications are completed, the process reaches its conclusion.",
+  "output_text": "The process begins with a starting point, where an initial event occurs. There are no specific actions, decisions, or tasks described between the start and the end. The process concludes immediately after it begins, reaching the endpoint without any intermediate steps or activities. Essentially, this process starts and ends without any additional actions or events taking place in between."
+}

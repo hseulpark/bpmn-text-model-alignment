@@ -1,0 +1,230 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/5-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/5-3.err1.001.xml",
+  "user_tasks": [
+    "begin employee",
+    "submit request",
+    "register it",
+    "send request",
+    "receive it",
+    "approve request",
+    "return it",
+    "review comments",
+    "make changes",
+    "resubmit request",
+    "revisit decision point",
+    "conclude process",
+    "forward it",
+    "determine best options",
+    "fulfil request",
+    "obtain quotations",
+    "obtaining quotations",
+    "select vendor",
+    "choose different vendor",
+    "make decision",
+    "select suitable vendor",
+    "confirm vendor",
+    "generate purchase order",
+    "send purchase order",
+    "deliver products",
+    "receive invoice",
+    "send notification",
+    "inform them",
+    "mark end",
+    "employee submit request",
+    "request send registration",
+    "immediate supervisor decide",
+    "supervisor approve request",
+    "employee review comments",
+    "immediate supervisor approve request",
+    "purchase department make",
+    "quotations determine best options",
+    "department select vendor",
+    "purchase department choose different vendor",
+    "system generate purchase order",
+    "purchase order send vendor",
+    "system wait delivery",
+    "system receive invoice",
+    "system send notification"
+  ],
+  "model_tasks": [
+    "employee submits an office supply request",
+    "register the request",
+    "immediate supervisor receives request",
+    "immediate supervisor approves request",
+    "immediate supervisor returns request to the employee",
+    "employee reviews the comments",
+    "request goes to the purchase department",
+    "the purchase department makes quotations",
+    "the purchase department selects vendor",
+    "the purchase department chooses a different vendor",
+    "the system  generates a purchase order",
+    "the system sends a purchase order",
+    "the system waits for the product delivery",
+    "the system receives the invoice"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin employee",
+        "submit request",
+        "register it",
+        "send request",
+        "receive it",
+        "approve request",
+        "return it",
+        "review comments",
+        "make changes",
+        "resubmit request",
+        "revisit decision point",
+        "conclude process",
+        "forward it",
+        "determine best options",
+        "fulfil request",
+        "obtain quotations",
+        "obtaining quotations",
+        "select vendor",
+        "choose different vendor",
+        "make decision",
+        "select suitable vendor",
+        "confirm vendor",
+        "generate purchase order",
+        "send notification",
+        "inform them",
+        "mark end",
+        "request send registration",
+        "quotations determine best options",
+        "department select vendor",
+        "purchase order send vendor",
+        "system send notification"
+      ],
+      "additional_tasks": [
+        "immediate supervisor returns request to the employee"
+      ],
+      "merged_tasks": [
+        {
+          "model": "immediate supervisor receives request",
+          "model_index": 2,
+          "user": [
+            "immediate supervisor decide",
+            "supervisor approve request"
+          ],
+          "user_indices": [
+            31,
+            32
+          ],
+          "pair_sims": [
+            0.759,
+            0.714
+          ],
+          "combo_sim": 0.78
+        },
+        {
+          "model": "the system waits for the product delivery",
+          "model_index": 12,
+          "user": [
+            "deliver products",
+            "system wait delivery"
+          ],
+          "user_indices": [
+            24,
+            41
+          ],
+          "pair_sims": [
+            0.605,
+            0.847
+          ],
+          "combo_sim": 0.896
+        },
+        {
+          "model": "the system receives the invoice",
+          "model_index": 13,
+          "user": [
+            "receive invoice",
+            "system receive invoice"
+          ],
+          "user_indices": [
+            25,
+            42
+          ],
+          "pair_sims": [
+            0.852,
+            0.915
+          ],
+          "combo_sim": 0.884
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "employee submit request",
+          "user_index": 29,
+          "model": [
+            "employee submits an office supply request",
+            "register the request"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.73,
+            0.553
+          ],
+          "combo_sim": 0.693,
+          "adjacent": true
+        },
+        {
+          "user": "purchase department make",
+          "user_index": 35,
+          "model": [
+            "request goes to the purchase department",
+            "the purchase department makes quotations",
+            "the purchase department selects vendor"
+          ],
+          "model_indices": [
+            6,
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.636,
+            0.614,
+            0.651
+          ],
+          "combo_sim": 0.601,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "immediate supervisor returns request to the employee",
+          "task_b": "employee reviews the comments",
+          "before_score": 16,
+          "after_score": 14,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when an employee submits a request for office supplies. Once the request is submitted, it is registered in the system. After registration, the request is sent to the employee's immediate supervisor, who receives it for review.\n\nThe immediate supervisor then decides whether to approve the request. If the supervisor does not approve the request, it is returned to the employee with comments. The employee reviews these comments and decides whether to make any changes or resubmit the request. This decision point is revisited until the request is either approved or the process is otherwise concluded.\n\nIf the immediate supervisor approves the request, it is forwarded to the purchase department. The purchase department then makes quotations to determine the best options for fulfilling the request. After obtaining quotations, the department selects a vendor. If the selected vendor is not suitable, the purchase department may choose a different vendor. This decision is made until a suitable vendor is selected.\n\nOnce a vendor is confirmed, the system generates a purchase order. The purchase order is then sent to the vendor. After sending the purchase order, the system waits for the delivery of the products. Once the products are delivered, the system receives an invoice from the vendor.\n\nAfter receiving the invoice, the system sends a notification to the user, informing them of the completion of the process. This marks the end of the process.",
+  "output_text": "The process begins when an employee submits a request for office supplies. Once the request is submitted, it is registered in the system. After registration, the immediate supervisor receives the request for review. The supervisor then decides whether to approve the request.\n\nIf the supervisor does not approve the request, it is returned to the employee with comments. The employee reviews these comments and decides whether to make any changes or resubmit the request. This decision leads back to the point where the supervisor can review the request again.\n\nIf the supervisor approves the request, it is forwarded to the purchase department. The purchase department then makes quotations to evaluate potential vendors. After gathering quotations, the department selects a vendor. At this point, there is a decision to either proceed with the selected vendor or choose a different one. If a different vendor is chosen, the process loops back to the point of selecting a vendor.\n\nOnce a vendor is confirmed, the system generates a purchase order. This purchase order is then sent out by the system. Following this, the system waits for the delivery of the product. Upon delivery, the system receives the invoice for the order.\n\nFinally, the process concludes after the invoice is received, marking the end of the office supply request process."
+}

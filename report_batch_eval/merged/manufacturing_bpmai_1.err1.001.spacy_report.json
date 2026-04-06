@@ -1,0 +1,159 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/manufacturing_bpmai_1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/manufacturing_bpmai_1.err1.001.xml",
+  "user_tasks": [
+    "establish this",
+    "execute requirements planning",
+    "follow execution",
+    "move on",
+    "evaluate capacity",
+    "meet production needs",
+    "involve scheduling",
+    "involves scheduling",
+    "release proposal",
+    "organize production timeline",
+    "schedule proposal",
+    "confirm process order",
+    "solidify plans",
+    "create transfer order",
+    "issue goods",
+    "issuing goods",
+    "move materials",
+    "moving materials",
+    "confirm good issue",
+    "issue materials",
+    "follow confirmation",
+    "process good receipt",
+    "acknowledge receipt",
+    "finalize financial",
+    "evaluating capacity",
+    "production tracking",
+    "logistical aspects",
+    "process move on execution",
+    "process involve scheduling",
+    "good receipt process confirmation",
+    "step involve",
+    "process conclude settlement",
+    "process come end",
+    "finalize financial aspects"
+  ],
+  "model_tasks": [
+    "create production plan and process order",
+    "execute mrp and evaluate capacity",
+    "schedule and release proposal",
+    "confirm process order",
+    "create transfer order or good issue",
+    "confirm good issue",
+    "good receipt",
+    "order settlement"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "establish this",
+        "execute requirements planning",
+        "follow execution",
+        "move on",
+        "meet production needs",
+        "involve scheduling",
+        "involves scheduling",
+        "organize production timeline",
+        "solidify plans",
+        "issue goods",
+        "issuing goods",
+        "move materials",
+        "moving materials",
+        "issue materials",
+        "follow confirmation",
+        "acknowledge receipt",
+        "finalize financial",
+        "production tracking",
+        "logistical aspects",
+        "process move on execution",
+        "process involve scheduling",
+        "good receipt process confirmation",
+        "step involve",
+        "process conclude settlement",
+        "process come end",
+        "finalize financial aspects"
+      ],
+      "additional_tasks": [
+        "create production plan and process order",
+        "order settlement"
+      ],
+      "merged_tasks": [
+        {
+          "model": "execute mrp and evaluate capacity",
+          "model_index": 1,
+          "user": [
+            "evaluate capacity",
+            "evaluating capacity"
+          ],
+          "user_indices": [
+            4,
+            24
+          ],
+          "pair_sims": [
+            0.637,
+            0.607
+          ],
+          "combo_sim": 0.633
+        },
+        {
+          "model": "schedule and release proposal",
+          "model_index": 2,
+          "user": [
+            "release proposal",
+            "schedule proposal"
+          ],
+          "user_indices": [
+            8,
+            10
+          ],
+          "pair_sims": [
+            0.774,
+            0.707
+          ],
+          "combo_sim": 0.947
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "create production plan and process order",
+          "task_b": "schedule and release proposal",
+          "before_score": 17,
+          "after_score": 15,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "create production plan and process order",
+          "task_b": "execute mrp and evaluate capacity",
+          "before_score": 17,
+          "after_score": 13,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the initiation of a production plan and process order. Once this is established, the next step involves executing the Material Requirements Planning (MRP). Following the execution of MRP, the process moves on to evaluating the capacity to ensure that resources are available to meet the production needs.\n\nAfter evaluating capacity, the process involves scheduling and releasing a proposal. This step is crucial for organizing the production timeline and ensuring that all necessary approvals are in place. Once the proposal is scheduled and released, the process order is confirmed, solidifying the plans for production.\n\nThe next step involves creating a transfer order or issuing goods, which is necessary for moving materials or products to the appropriate locations for production. After this, the good issue is confirmed, ensuring that the materials or products have been correctly issued and are ready for the next phase.\n\nFollowing the confirmation of the good issue, a good receipt is processed. This step involves acknowledging the receipt of goods, which is essential for inventory and production tracking. Finally, the process concludes with the settlement of the order, which involves finalizing all financial and logistical aspects of the production order. Once the order settlement is complete, the process comes to an end.",
+  "output_text": "The process begins with the initiation of creating a production plan and a process order. Once this is completed, the next step involves executing the Material Requirements Planning (MRP) and evaluating the capacity to ensure that resources are adequately allocated for production. Following this evaluation, a proposal is scheduled and released, which sets the stage for the subsequent steps.\n\nAfter the proposal is scheduled and released, the process order is confirmed, ensuring that all necessary approvals and checks are in place. The next step involves creating a transfer order or issuing goods, which is essential for moving materials or products to the required locations.\n\nOnce the transfer order is created or the goods are issued, the process continues with confirming the good issue, verifying that the materials or products have been correctly dispatched. Following this confirmation, a good receipt is recorded, acknowledging that the goods have been received as expected.\n\nThe process then moves to the order settlement stage, where all financial and logistical aspects of the order are finalized and reconciled. This marks the completion of the process, and the process concludes successfully."
+}

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a13" endpoint="" a:alt_id="sid-6C304E84-D307-40F9-AA4E-8CB7F66F2594">
+    <parameters>
+      <label>check the CRM system</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-9C36442A-C803-4F71-B511-CEB0A25D38FB">
+    <parameters>
+      <label>check the database</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-CA21B520-F375-418B-A6C8-7F9CA4C13ACD">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-88842091-55F5-40C1-967F-72C763830A90">
+        <parameters>
+          <label>check the CRM system</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-5B7BB4F3-B7AE-42B4-BF54-CA6D943BD918">
+        <alternative condition="">
+          <call id="a6" endpoint="" a:alt_id="sid-C7F702FC-2805-4CF3-9D63-74F80ED1FAEF">
+            <parameters>
+              <label>register all defaulting accounts and customers</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-5120D349-FD8C-4C43-9734-FDD08DC7FCAE">
+            <alternative condition="">
+              <call id="a8" endpoint="" a:alt_id="sid-456F518E-B346-4D9B-8AE0-DA88FCBDF42D">
+                <parameters>
+                  <label>produce new table of defaulting accounts</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a9" endpoint="" a:alt_id="sid-BB8029F6-0FAB-4F7D-BDE3-0CDB586757F1">
+                <parameters>
+                  <label>send table to account management</label>
+                  <method />
+                  <type>:task</type>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="" />
+          </choose>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+    </alternative>
+    <alternative condition="" />
+  </choose>
+  <choose mode="exclusive" a:alt_id="sid-512FA7BA-FA6F-47BA-98F0-B84707E740DB">
+    <alternative condition="">
+      <call id="a12" endpoint="" a:alt_id="sid-5B000BA8-7235-4452-9C68-EA7C3C0537C3">
+        <parameters>
+          <label>send an alert to the supervisor</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="" />
+  </choose>
+  <call id="a1" endpoint="" a:alt_id="sid-00B9E2AE-4B4D-4948-A613-2DCF97CB29F9">
+    <parameters>
+      <label>back up the database</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-5D841F93-2B63-487A-95B2-B057873CE4F4">
+    <alternative condition="">
+      <call id="a15" endpoint="" a:alt_id="sid-97D6607E-4658-4CBA-8AE4-2234614C21BA">
+        <parameters>
+          <label>reconcile with the existing account defaulters table</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="" />
+  </choose>
+  <choose mode="exclusive" a:alt_id="sid-DBA8960D-9A35-455E-80F8-F03B5A314724">
+    <alternative condition="">
+      <call id="a18" endpoint="" a:alt_id="sid-2A402D78-A13D-49A5-816D-030C9F97D774">
+        <parameters>
+          <label>send message to the supervisor</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a24" endpoint="" a:alt_id="sid-76ADA947-4C18-4E87-8158-B5930C544BEC">
+        <parameters>
+          <label>complete reconciliation</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

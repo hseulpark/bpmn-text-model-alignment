@@ -1,0 +1,7 @@
+The process begins with the initiation of a production plan and process order. Once this is established, the next step involves executing the Material Requirements Planning (MRP). Following the execution of MRP, the process moves on to evaluating the capacity to ensure that resources are available to meet the production needs.
+
+After evaluating capacity, the process involves scheduling and releasing a proposal. This step is crucial for organizing the production timeline and ensuring that all necessary approvals are in place. Once the proposal is scheduled and released, the process order is confirmed, solidifying the plans for production.
+
+The next step involves creating a transfer order or issuing goods, which is necessary for moving materials or products to the appropriate locations for production. After this, the good issue is confirmed, ensuring that the materials or products have been correctly issued and are ready for the next phase.
+
+Following the confirmation of the good issue, a good receipt is processed. This step involves acknowledging the receipt of goods, which is essential for inventory and production tracking. Finally, the process concludes with the settlement of the order, which involves finalizing all financial and logistical aspects of the production order. Once the order settlement is complete, the process comes to an end.

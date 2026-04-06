@@ -1,0 +1,180 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/6-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/6-3.err1.001.xml",
+  "user_tasks": [
+    "receive new order",
+    "obtain order",
+    "determine necessary parts",
+    "gather information",
+    "enter it",
+    "generate list",
+    "transfer list",
+    "make decision",
+    "regard availability",
+    "take path",
+    "procure parts",
+    "procure missing parts",
+    "receive notice",
+    "prompt employee",
+    "take care",
+    "handle implementation",
+    "undergo quality check",
+    "meet required standards",
+    "required standards",
+    "complete quality check",
+    "mark end",
+    "new order receive sales department",
+    "quantities require",
+    "pps generate list",
+    "list transfer pps",
+    "decision make point",
+    "process take path",
+    "parts miss",
+    "process continue next step",
+    "order undergo quality check",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "get a new order from the sales department",
+    "master determines the necessary parts,  quantities and delivery date",
+    "enter info into production planning system ( pps )",
+    "pps creates a list of procured parts",
+    "transfer data from pps to enterprise resource planning system ( erp )",
+    "procure missing parts",
+    "receive a notice from the system",
+    "validate data",
+    "employee takes care of the implementation",
+    "check the order for its quality"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "obtain order",
+        "determine necessary parts",
+        "gather information",
+        "enter it",
+        "generate list",
+        "transfer list",
+        "make decision",
+        "regard availability",
+        "take path",
+        "procure parts",
+        "take care",
+        "undergo quality check",
+        "meet required standards",
+        "required standards",
+        "complete quality check",
+        "mark end",
+        "quantities require",
+        "pps generate list",
+        "list transfer pps",
+        "decision make point",
+        "process take path",
+        "parts miss",
+        "process continue next step",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "master determines the necessary parts,  quantities and delivery date",
+        "enter info into production planning system ( pps )",
+        "pps creates a list of procured parts",
+        "transfer data from pps to enterprise resource planning system ( erp )",
+        "validate data"
+      ],
+      "merged_tasks": [
+        {
+          "model": "get a new order from the sales department",
+          "model_index": 0,
+          "user": [
+            "receive new order",
+            "new order receive sales department"
+          ],
+          "user_indices": [
+            0,
+            21
+          ],
+          "pair_sims": [
+            0.816,
+            0.831
+          ],
+          "combo_sim": 0.823
+        },
+        {
+          "model": "employee takes care of the implementation",
+          "model_index": 8,
+          "user": [
+            "prompt employee",
+            "handle implementation"
+          ],
+          "user_indices": [
+            13,
+            15
+          ],
+          "pair_sims": [
+            0.554,
+            0.573
+          ],
+          "combo_sim": 0.716
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "enter info into production planning system ( pps )",
+          "task_b": "pps creates a list of procured parts",
+          "before_score": 11,
+          "after_score": 9,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U10",
+              "U11"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U11",
+              "U27"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a new order is received from the sales department. Once the order is obtained, the master is responsible for determining the necessary parts, the quantities required, and the delivery date for the order. After this information is gathered, it is entered into the production planning system, often referred to as PPS.\n\nThe PPS then generates a list of parts that need to be procured for the order. This list is subsequently transferred from the PPS to the Enterprise Resource Planning system, known as ERP. At this point, a decision is made regarding the availability of the parts.\n\nIf there are any missing parts, the process takes a path where these parts are procured. Once the missing parts are procured, or if no parts were missing initially, the process continues to the next step.\n\nThe next step involves receiving a notice from the system, which prompts an employee to take care of the implementation of the order. After the implementation is handled, the order undergoes a quality check to ensure it meets the required standards.\n\nFinally, the process concludes after the quality check is completed, marking the end of the process.",
+  "output_text": "The process begins when a new order is received from the sales department. Once the order is obtained, the master is responsible for determining the necessary parts, quantities, and the delivery date required to fulfill the order. After this assessment, the information is entered into the production planning system, commonly referred to as PPS.\n\nThe PPS then generates a list of parts that need to be procured. This list is subsequently transferred to the Enterprise Resource Planning system, or ERP, for further processing. At this point, a decision is made regarding the availability of the parts. If any parts are missing, the process involves procuring these missing parts. Once the procurement is complete, or if no parts were missing initially, the process continues.\n\nThe next step involves receiving a notice from the system, which prompts the validation of the data. After the data is validated, an employee is tasked with taking care of the implementation of the order. Following the implementation, the order undergoes a quality check to ensure it meets the required standards. Once the quality check is completed, the process concludes."
+}

@@ -1,0 +1,478 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/2-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/2-2.err1.001.xml",
+  "user_tasks": [
+    "customer send their data",
+    "data receive",
+    "service team enter information",
+    "service team check data",
+    "decision make point",
+    "data find",
+    "service team correct data",
+    "data correct",
+    "process continue",
+    "decision make",
+    "new customer object need",
+    "service team create",
+    "process move step",
+    "contract documents check",
+    "issues find documents",
+    "service team analyze",
+    "issues find",
+    "process continue additional steps",
+    "contract documents finalize",
+    "cis send confirmation document",
+    "grid operator check request",
+    "grid operator send response",
+    "grid operator inform resolution",
+    "grid operator communicate old supplier",
+    "service team create cis contract",
+    "customer decide",
+    "customer confirm contract",
+    "several actions occur",
+    "grid operator transmit meter data",
+    "old supplier create final billing",
+    "service team receive meter data",
+    "customer withdraw contract",
+    "process skip steps",
+    "process conclude",
+    "compare entered data",
+    "prepare contract documents",
+    "resolve issues",
+    "generate new contract documents",
+    "send request",
+    "compute final billing",
+    "send billing",
+    "mark end"
+  ],
+  "model_tasks": [
+    "customer transmits data to the customer service department",
+    "customer  service receives the customer data",
+    "customer  service enters customer data object  into the crm system",
+    "customer  service  compares entered data  with the internal customer data",
+    "customer  service checks customer data for completeness and plausibility",
+    "customer  service corrects customer data",
+    "review request",
+    "customer  service creates new customer object",
+    "customer  service prepares the contract documents for the power supplier switch",
+    "cis checks the contract documents",
+    "customer  service analyzes the causing issues",
+    "customer  service resolves the causing issues",
+    "customer  service generates contract documents",
+    "cis sends out a confirmation document to the customer",
+    "cis sends out grid operator request",
+    "grid operator checks request for supplier concurrence",
+    "grid operator transmits a response comment",
+    "grid operator informs all  suppliers",
+    "grid operator demands the resolution of the conflict",
+    "grid operator communicates with the old supplier",
+    "grid operator terminates  the sales agreement",
+    "customer service creates a cis contract",
+    "customer checks the contract details",
+    "customer confirms the switch contract",
+    "grid operator transmits the power meter data",
+    "grid operator computes the final billing",
+    "grid operator sends billing to the old supplier",
+    "old supplier creates final billing",
+    "old supplier sends the  billing to the customer",
+    "customer services receive the meter data",
+    "customer service imports the meter data to systems",
+    "customer withdraws from the switch contract"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "service team enter information",
+        "service team check data",
+        "decision make point",
+        "data find",
+        "data correct",
+        "process continue",
+        "decision make",
+        "service team create",
+        "process move step",
+        "issues find documents",
+        "service team analyze",
+        "issues find",
+        "process continue additional steps",
+        "contract documents finalize",
+        "several actions occur",
+        "process skip steps",
+        "process conclude",
+        "compare entered data",
+        "prepare contract documents",
+        "send request",
+        "mark end"
+      ],
+      "additional_tasks": [
+        "customer  service  compares entered data  with the internal customer data",
+        "customer  service checks customer data for completeness and plausibility",
+        "review request",
+        "customer  service creates new customer object",
+        "customer  service prepares the contract documents for the power supplier switch",
+        "customer  service analyzes the causing issues",
+        "customer  service resolves the causing issues",
+        "grid operator checks request for supplier concurrence",
+        "grid operator transmits a response comment",
+        "grid operator informs all  suppliers",
+        "grid operator terminates  the sales agreement",
+        "customer checks the contract details",
+        "grid operator sends billing to the old supplier",
+        "old supplier sends the  billing to the customer",
+        "customer withdraws from the switch contract"
+      ],
+      "merged_tasks": [
+        {
+          "model": "customer  service enters customer data object  into the crm system",
+          "model_index": 2,
+          "user": [
+            "customer send their data",
+            "new customer object need"
+          ],
+          "user_indices": [
+            0,
+            10
+          ],
+          "pair_sims": [
+            0.604,
+            0.608
+          ],
+          "combo_sim": 0.662
+        },
+        {
+          "model": "cis sends out a confirmation document to the customer",
+          "model_index": 13,
+          "user": [
+            "cis send confirmation document",
+            "customer confirm contract"
+          ],
+          "user_indices": [
+            19,
+            26
+          ],
+          "pair_sims": [
+            0.905,
+            0.607
+          ],
+          "combo_sim": 0.873
+        },
+        {
+          "model": "cis sends out grid operator request",
+          "model_index": 14,
+          "user": [
+            "grid operator check request",
+            "grid operator send response"
+          ],
+          "user_indices": [
+            20,
+            21
+          ],
+          "pair_sims": [
+            0.696,
+            0.723
+          ],
+          "combo_sim": 0.74
+        },
+        {
+          "model": "grid operator demands the resolution of the conflict",
+          "model_index": 18,
+          "user": [
+            "grid operator inform resolution",
+            "resolve issues"
+          ],
+          "user_indices": [
+            22,
+            36
+          ],
+          "pair_sims": [
+            0.704,
+            0.422
+          ],
+          "combo_sim": 0.783
+        },
+        {
+          "model": "customer confirms the switch contract",
+          "model_index": 23,
+          "user": [
+            "customer decide",
+            "customer withdraw contract"
+          ],
+          "user_indices": [
+            25,
+            31
+          ],
+          "pair_sims": [
+            0.559,
+            0.602
+          ],
+          "combo_sim": 0.63
+        },
+        {
+          "model": "grid operator computes the final billing",
+          "model_index": 25,
+          "user": [
+            "compute final billing",
+            "send billing"
+          ],
+          "user_indices": [
+            39,
+            40
+          ],
+          "pair_sims": [
+            0.653,
+            0.403
+          ],
+          "combo_sim": 0.567
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "data receive",
+          "user_index": 1,
+          "model": [
+            "customer transmits data to the customer service department",
+            "customer  service receives the customer data"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.629,
+            0.655
+          ],
+          "combo_sim": 0.663,
+          "adjacent": true
+        },
+        {
+          "user": "service team receive meter data",
+          "user_index": 30,
+          "model": [
+            "customer services receive the meter data",
+            "customer service imports the meter data to systems"
+          ],
+          "model_indices": [
+            29,
+            30
+          ],
+          "pair_sims": [
+            0.865,
+            0.763
+          ],
+          "combo_sim": 0.747,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "customer  service receives the customer data",
+          "task_b": "customer  service  compares entered data  with the internal customer data",
+          "before_score": 44,
+          "after_score": 42,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "old supplier creates final billing",
+          "task_b": "old supplier sends the  billing to the customer",
+          "before_score": 44,
+          "after_score": 42,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U3",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U0",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U15",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U3",
+              "U30"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U0",
+              "U30"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U15",
+              "U31"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U30",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U26",
+              "U31"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U15",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U0",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U0",
+              "U15"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U15",
+              "U30"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          }
+        ],
+        "mismatch_count": 12,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 6,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer sends their data to the customer service department. Once the data is received, the customer service team enters this information into the CRM system. They then compare the newly entered data with the existing internal customer data. Following this, the customer service team checks the data for completeness and plausibility.\n\nAt this point, a decision is made. If the data is found to be incomplete or implausible, the customer service team corrects the data. Once the data is corrected, or if it was already complete and plausible, the process continues.\n\nNext, another decision is made. If a new customer object is needed, the customer service team creates it and prepares the contract documents for the customer's power supplier switch. If a new customer object is not needed, the process moves forward without this step.\n\nThe contract documents are then checked by the CIS (Customer Information System). If issues are found with the documents, the customer service team analyzes and resolves these issues, then generates new contract documents. If no issues are found, the process continues without these additional steps.\n\nOnce the contract documents are finalized, the CIS sends a confirmation document to the customer and also sends a request to the grid operator. The grid operator checks the request to ensure it aligns with supplier agreements. After this check, the grid operator sends a response.\n\nAnother decision is made here. If there is a conflict, the grid operator informs all suppliers and demands resolution. If there is no conflict, the process continues.\n\nThe grid operator then communicates with the old supplier and terminates the sales agreement. Following this, the customer service team creates a CIS contract, which the customer reviews. The customer then decides whether to confirm or withdraw from the switch contract.\n\nIf the customer confirms the contract, several actions occur simultaneously. The grid operator transmits the power meter data, computes the final billing, and sends this billing to the old supplier. Meanwhile, the old supplier creates the final billing and sends it to the customer. Once these tasks are completed, the customer service team receives the meter data and imports it into their systems.\n\nIf the customer withdraws from the contract, the process skips these steps and moves towards completion.\n\nFinally, the process concludes, marking the end of the sequence of activities.",
+  "output_text": "The process begins when a customer sends their data to the customer service department. The customer service team receives this data and enters it into the CRM system. They then compare the entered data with the internal customer data to ensure accuracy. Following this, the customer service team checks the data for completeness and plausibility.\n\nAt this point, a decision is made: if the data is incomplete or implausible, the customer service team corrects the data. Once the data is verified or corrected, the process continues with a review request.\n\nNext, another decision is made: if necessary, the customer service team creates a new customer object and prepares the contract documents for switching the power supplier. Whether or not a new customer object is created, the process proceeds to the next step.\n\nThe contract documents are then checked by the CIS (Customer Information System). If issues are found, the customer service team analyzes and resolves these issues, then generates new contract documents. If no issues are found, the process continues without further action.\n\nOnce the contract documents are finalized, the CIS sends a confirmation document to the customer and also sends a request to the grid operator. The grid operator checks the request for supplier concurrence and transmits a response comment.\n\nAnother decision point occurs: if there is a conflict, the grid operator informs all suppliers and demands resolution of the conflict. If there is no conflict, the process continues.\n\nThe grid operator then communicates with the old supplier and terminates the sales agreement. Following this, the customer service team creates a CIS contract, which the customer checks for details.\n\nThe customer then decides whether to confirm or withdraw from the switch contract. If the customer confirms, the process splits into parallel activities: the grid operator transmits power meter data, computes the final billing, and sends it to the old supplier, while the old supplier creates and sends the final billing to the customer. These activities occur simultaneously.\n\nOnce the parallel activities are completed, the customer service team receives the meter data and imports it into their systems. If the customer withdraws from the contract, the process bypasses these steps and moves directly to the end.\n\nFinally, the process concludes, marking the end of the sequence of activities."
+}

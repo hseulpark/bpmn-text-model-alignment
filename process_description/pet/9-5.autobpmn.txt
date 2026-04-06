@@ -1,0 +1,11 @@
+The process begins with a start event, indicating the initiation of the process. Immediately, a decision point is reached to determine the next steps. If the condition is true, the company receives an expense report. 
+
+Once the company receives the expense report, another decision point is encountered. Here, the company decides whether to create a new employee account. If a new account is needed, the company proceeds to create it. After the account is created, the process continues to the next decision point. If no new account is needed, the process skips directly to this decision point.
+
+At this stage, the company reviews the report to determine if it qualifies for automatic approval. If the report is automatically approved, the company proceeds to approve it without further review. If not, the report requires supervisor approval.
+
+If supervisor approval is needed, the supervisor reviews and approves the report. Following this, another decision point is reached to determine the outcome of the approval process. If the report is approved, the company sends a reimbursement to the employee's bank account. If the report is rejected, the employee receives a rejection notice. After either sending the reimbursement or the rejection notice, the process moves to the next decision point.
+
+Once the report is either approved or rejected, the process reaches another decision point. Here, the company decides whether to stop the process. If the process is stopped, the company sends an email cancellation notice to the employee, who then re-submits the expense report. If the process is not stopped, the employee receives an email indicating that the approval is in progress.
+
+After these steps, the process loops back to the initial decision point to determine the next steps. If the condition is false at the initial decision point, the process ends.

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Claim Revenue</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Self-Financing" language="text/javascript">
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Ensure Self-Financing</label>
+          <method />
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Funding Received" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Receive Funding Amounts</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Gain High Market Share in Open-Source Solutions</label>
+          <method />
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Generate Revenue Through Additional Services</label>
+          <method />
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a11" endpoint="">
+        <parameters>
+          <label>Organize Training Units</label>
+          <method />
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a12" endpoint="">
+        <parameters>
+          <label>Perform Consulting Services</label>
+          <method />
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a14" endpoint="">
+        <parameters>
+          <label>Generate Follow-Up Projects</label>
+          <method />
+          <type>:task</type>
+          <mid>'13'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </description>

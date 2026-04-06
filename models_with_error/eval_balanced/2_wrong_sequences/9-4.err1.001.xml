@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-1E68336F-5EBB-4382-9364-6196D17AD3AA">
+    <parameters>
+      <label>Coordination Unit finalizes the dates</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-A895C4FA-BFF9-404A-9210-A528AACD2CFE">
+    <parameters>
+      <label>Support Officer updates all group calendars</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-4F31EF18-97C2-41DF-BCE7-670E7857BE19">
+    <parameters>
+      <label>Support Officer creates meeting folders</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-EAB8079B-9848-484A-8114-6EA61BE44694">
+    <parameters>
+      <label>Support Officer ensures all appropriate documents are uploaded to system</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-EC87C078-0001-4FAA-BF01-6DD9F15C8857">
+    <parameters>
+      <label>Committee Members hold  meeting</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-25189A44-0B38-432B-8235-49B13970F628">
+    <parameters>
+      <label>Support Officer advises Committee Members to read all  documents</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-DC4EA5E4-379C-459C-BDAD-CA9DC0E537A5">
+    <parameters>
+      <label>Support Office produces minutes</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-BF59DDDB-0E0B-418B-AEA9-0B2A1A86D4CA">
+    <parameters>
+      <label>Coordination Unit conducts a QA check on the minutes</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-73960FAA-56E3-41CB-9533-9264039D212F">
+    <parameters>
+      <label>Coordination Unit sends QA check to all Committee Members</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="" a:alt_id="sid-7C7103A8-4314-466E-B10E-4DF56BBC24D0">
+    <parameters>
+      <label>Support Officer updates  departmental records</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

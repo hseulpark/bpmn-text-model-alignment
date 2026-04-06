@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a13" endpoint="" a:alt_id="sid-9E7C8E2F-A68F-4351-891D-3C45470903FF">
+    <parameters>
+      <label>Receive job application</label>
+      <method/>
+      <type>:receiveTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-1B3C9106-4B8E-4CDD-AA2B-90C0CEFBF110">
+    <parallel_branch>
+      <call id="a2" endpoint="" a:alt_id="sid-350B578F-F175-476C-9CC1-FE94974FD840">
+        <parameters>
+          <label>Confirm job application</label>
+          <method/>
+          <type>:sendTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="sid-4A095501-FD40-47DA-A623-B8058745F057">
+        <parameters>
+          <label>Rate job application</label>
+          <method/>
+          <type>:sendTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="sid-E74029EF-2195-4BFB-BC65-A34001C8E480">
+    <alternative condition=""/>
+    <alternative condition="">
+      <call id="a6" endpoint="" a:alt_id="sid-0F87869F-89E2-408C-98F3-B43DE795B9BA">
+        <parameters>
+          <label>Negotiate interview</label>
+          <method/>
+          <type>:manualTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a8" endpoint="" a:alt_id="sid-542FF37F-6958-4503-A554-C804186DD434">
+        <parameters>
+          <label>Rate job seeker</label>
+          <method/>
+          <type>:manualTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-01C5CE5A-E3C7-406A-ACB0-8648DA09E36B">
+        <alternative condition="">
+          <call id="a10" endpoint="" a:alt_id="sid-D8E45F1D-2A7C-416C-A044-3DE16D7DE888">
+            <parameters>
+              <label>Hire prospective customers</label>
+              <method/>
+              <type>:manualTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition=""/>
+      </choose>
+    </alternative>
+  </choose>
+</description>

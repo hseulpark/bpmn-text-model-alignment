@@ -1,0 +1,116 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-6.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/10-6.err1.001.xml",
+  "user_tasks": [
+    "send dismissal",
+    "take step",
+    "review dismissal",
+    "send that",
+    "reach decision point",
+    "reject dismissal",
+    "make decision",
+    "confirm dismissal",
+    "mspn send dismissal",
+    "mspo take next step",
+    "mspn send",
+    "decision point reach review",
+    "mspo choose possible outcomes",
+    "mspo decide first possible outcome",
+    "process continue next step",
+    "mspo confirm dismissal",
+    "process continue same subsequent decision point",
+    "mspo reject",
+    "process converge decision point"
+  ],
+  "model_tasks": [
+    "mspo reviews the dismissal",
+    "mspo rejects the dismissal of the mspn",
+    "mspo confirms the dismissal of the mspn"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send dismissal",
+        "take step",
+        "review dismissal",
+        "send that",
+        "reach decision point",
+        "reject dismissal",
+        "make decision",
+        "confirm dismissal",
+        "mspo take next step",
+        "mspn send",
+        "decision point reach review",
+        "mspo choose possible outcomes",
+        "mspo decide first possible outcome",
+        "process continue next step",
+        "process continue same subsequent decision point",
+        "process converge decision point"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "mspo confirms the dismissal of the mspn",
+          "model_index": 2,
+          "user": [
+            "mspn send dismissal",
+            "mspo confirm dismissal"
+          ],
+          "user_indices": [
+            8,
+            15
+          ],
+          "pair_sims": [
+            0.763,
+            0.813
+          ],
+          "combo_sim": 0.867
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "mspo reject",
+          "user_index": 17,
+          "model": [
+            "mspo reviews the dismissal",
+            "mspo rejects the dismissal of the mspn"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.611,
+            0.734
+          ],
+          "combo_sim": 0.682,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial action where the MSPN sends a dismissal. Following this, the MSPO takes the next step by reviewing the dismissal that was sent by the MSPN. After the review, a decision point is reached where the MSPO must choose between two possible outcomes.\n\nIn the first possible outcome, the MSPO decides to reject the dismissal of the MSPN. If this decision is made, the process continues to the next step, which is another decision point.\n\nIn the second possible outcome, the MSPO confirms the dismissal of the MSPN. If this decision is made, the process also continues to the same subsequent decision point.\n\nRegardless of whether the MSPO rejects or confirms the dismissal, the process converges at this decision point, and from there, it proceeds to the conclusion of the process. The process then ends.",
+  "output_text": "The process begins with a starting point where the MSPO (which could stand for a specific role or department) initiates a review of the dismissal of the MSPN (another role or entity). After this review, a decision needs to be made. There are two possible outcomes from this decision point:\n\n1. If the MSPO decides to reject the dismissal of the MSPN, the process follows one path where the MSPO formally rejects the dismissal. \n\n2. Alternatively, if the MSPO decides to confirm the dismissal of the MSPN, the process follows a different path where the MSPO confirms the dismissal.\n\nRegardless of whether the dismissal is rejected or confirmed, the process concludes at the same endpoint. This marks the end of the process."
+}

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Receive Sales Enquiry</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+        <parameters>
+          <label>Create Contact</label>
+          <method />
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a8" endpoint="">
+    <parameters>
+      <label>Send Customer Approval</label>
+      <method />
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="">
+    <parameters>
+      <label>Qualify Price and Interest</label>
+      <method />
+      <type>:task</type>
+      <mid>'6'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+        <parameters>
+          <label>Update Enquiry</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a9" endpoint="">
+    <parameters>
+      <label>Receive Customer Approval</label>
+      <method />
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:mutated="true"><parallel_branch><call id="a11" endpoint="">
+        <parameters>
+          <label>Update Enquiry Status - Not Approved</label>
+          <method />
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch><parallel_branch><call id="a13" endpoint="">
+        <parameters>
+          <label>Create Quote</label>
+          <method />
+          <type>:task</type>
+          <mid>'12'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a14" endpoint="">
+        <parameters>
+          <label>Conduct Requirements Analysis</label>
+          <method />
+          <type>:task</type>
+          <mid>'13'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a15" endpoint="">
+        <parameters>
+          <label>Update Enquiry Status</label>
+          <method />
+          <type>:task</type>
+          <mid>'14'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a16" endpoint="">
+        <parameters>
+          <label>Create Job</label>
+          <method />
+          <type>:task</type>
+          <mid>'15'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch></parallel></description>

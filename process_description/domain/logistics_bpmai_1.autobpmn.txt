@@ -1,0 +1,9 @@
+The process begins when a shipment request is received. Once the request is received, the next step is to check if the product is available. After checking product availability, a decision is made. If the product is available, the process continues to check the shipment address.
+
+After verifying the shipment address, another decision point is reached. If the address is valid, the process proceeds to assemble the inbound shipment. Once the shipment is assembled, it is sent out. The shipment is then received at its destination, where it undergoes an inbound shipment check.
+
+Following the check, the products are prepared for shipment to a specific service station. At this point, a decision is made, but regardless of the decision, the process continues to the next decision point. This decision point leads to another decision, which eventually converges back to the previous decision point.
+
+If, after checking the shipment address, it is determined that the products should be prepared for regional shipment instead, the process follows a different path. The products are prepared for regional shipment, and this path also leads to the same decision point as the previous path.
+
+Finally, all paths converge at a final decision point, which leads to the end of the process. The process concludes successfully once all conditions are met and the appropriate actions are taken.

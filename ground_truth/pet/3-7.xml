@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-7D27F8E5-A215-4C8A-8A77-FB70EC6A2108">
+    <parameters>
+      <label>Employee  searches the police report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-9B24B3B1-D5C0-40F3-A3A1-77CD00BFE55C">
+    <parameters>
+      <label>Employee puts together claim documentation and police report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-1FC229BA-FB61-43BD-A739-7C28BFA80E75">
+    <parameters>
+      <label>Claims handler calculates an initial claim estimate</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-0315489D-5FD5-4F32-8C6F-128678BDB4C9">
+    <parameters>
+      <label>Claims handler creates an action plan</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-1DAC6A3D-C45B-4A02-BEDC-AF569DBD0B5C">
+    <parameters>
+      <label>Claims manager negotiates a settlement on the claim estimate</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-A83B057C-6834-4792-AB06-B28DAE826382">
+    <parameters>
+      <label>Claims manager informs claimant of the outcome</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

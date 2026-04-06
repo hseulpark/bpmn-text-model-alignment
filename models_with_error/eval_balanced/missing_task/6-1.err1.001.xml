@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-B8C36DE1-F2FA-43B8-8704-CB24D7F2E1FF">
+    <parameters>
+      <label>ACME AG receives invoices</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-F7E8B18F-EC6C-453D-BACE-4FB6F5D0C295">
+    <parameters>
+      <label>Secretariat performs invoice's visual inspection</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-64704B6E-960B-4C5A-AF54-3BC1009F9D72">
+    <parameters>
+      <label>Secretariat forwards the invoice to an accounting employee</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-041B38D0-8F0F-4AC5-949C-138B4093A933">
+    <parameters>
+      <label>Accounting employee identifies the charging suppliers</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-6F1893B5-6DDA-4CA6-A2C8-589FB2D85811">
+    <parameters>
+      <label>Accounting employee creates a new invoice</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-7430FB52-4AFD-4F7E-ABE4-2F2A8A733703">
+    <parameters>
+      <label>Accounting employee checks the invoice items</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-2630F32C-9536-4269-A7CF-561AF28EFB1E">
+    <parameters>
+      <label>Accounting employee notes the  cost center and the cost center managers (docket)</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a34" endpoint="" a:alt_id="sid-9DFA5417-4FEC-425B-B2D1-B5F03D68678A">
+    <parameters>
+      <label>Docket and the invoice's copy go to the internal mail</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-E6923AF8-3A97-40D7-B21F-3646FECB7AF8">
+    <parameters>
+      <label>Accounting employee  sends the docket and the invoice copy to the  cost center manager</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a35" endpoint="" a:alt_id="sid-EDBE25D0-9DBB-4CF1-9E32-2D030C43D7C2">
+      <parameters>
+        <label>Cost center manager receives the copy of the invoice</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a9" endpoint="" a:alt_id="sid-0EC2763A-9201-4614-A920-AAAEAFBE8E2C">
+      <parameters>
+        <label>Cost center manager reviews the content for accuracy</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-33E456DE-CC4F-4B5A-86E7-559336AB9B89">
+      <alternative condition="">
+        <call id="a11" endpoint="" a:alt_id="sid-FD45EA49-09D1-4095-BB48-556DB1A75527">
+          <parameters>
+            <label>Cost center manager notes his code one on  the docket (AP)</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a12" endpoint="" a:alt_id="sid-DC2969BF-6A80-44FC-B3F6-036C0092F0F7">
+          <parameters>
+            <label>Cost center manager returns the copy of the invoice</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-854C36B9-7E0D-448A-BC64-DDDC9D5FEFAC">
+          <alternative condition="">
+            <call id="a13" endpoint="" a:alt_id="sid-2A51A6C7-5668-46AD-9EFE-8FFF9B5B3032">
+              <parameters>
+                <label>Pass the copy of the invoice to the next cost center manager</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <call id="a14" endpoint="" a:alt_id="sid-8863F885-4FF0-4EFD-8BF3-D5065BA3B824">
+              <parameters>
+                <label>Cost center manager  sends invoice back to accounting</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a16" endpoint="" a:alt_id="sid-B59DFB83-2885-419F-ADE9-B5650C3847A5">
+              <parameters>
+                <label>Accounting employee proceedes with the clarification with the vendor</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-BD5CC168-F7DC-42B9-BEBD-A3C1DB7207F9">
+              <alternative condition="" />
+              <alternative condition="">
+                <call id="a19" endpoint="" a:alt_id="sid-5CA16D24-3FD5-4CE3-8D6C-2BBF504EAC4F">
+                  <parameters>
+                    <label>Accounting employee consults the cost center managers</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <call id="a20" endpoint="" a:alt_id="sid-C57349ED-2135-40D6-89F3-C1DECADAE7DA">
+              <parameters>
+                <label>Accounting employee sends the copy of the invoice to the cost center managers</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a21" endpoint="" a:alt_id="sid-AD9D8B14-AC80-4FD4-9051-EFB6ADDD3214">
+              <parameters>
+                <label>Accounting employee forwards the copy of the invoice to the commercial manager</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a22" endpoint="" a:alt_id="sid-8F5F2476-4EA2-495E-9757-899AAFC756FD">
+              <parameters>
+                <label>Commercial manager  makes the commercial audit</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a23" endpoint="" a:alt_id="sid-1F486EB5-3B17-4480-9C18-69BEE45E0245">
+              <parameters>
+                <label>Commercial manager  issues the approval for payment</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-92EA788D-06A7-4D8E-912A-CED64ECC59D4">
+              <alternative condition="">
+                <call id="a25" endpoint="" a:alt_id="sid-AC7992E6-06B8-435D-9F22-60658848E4C2">
+                  <parameters>
+                    <label>Board checks invoice</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="" />
+            </choose>
+            <call id="a27" endpoint="" a:alt_id="sid-677CABCE-CD21-4737-9EB9-FED9D2F9F061">
+              <parameters>
+                <label>Commercial manager moves invoice's copy  and the docket to the accounting employee</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-435EB1D1-786A-411B-984A-8943524F8FD5">
+              <alternative condition="" />
+              <alternative condition="">
+                <call id="a29" endpoint="" a:alt_id="sid-13355D1A-3CAF-4D8B-9411-A88A615733C2">
+                  <parameters>
+                    <label>Accounting employee resolves complaint</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <call id="a31" endpoint="" a:alt_id="sid-247ED8B9-DDFF-4DFC-A104-AF2CB3692A93">
+              <parameters>
+                <label>Accounting employee gives payment instructions</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a32" endpoint="" a:alt_id="sid-62948860-1F23-4957-90B8-9772DFAA3582">
+              <parameters>
+                <label>Accounting employee closes the invoice</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="">
+        <call id="a37" endpoint="" a:alt_id="sid-36110983-BA76-479B-A292-384FAF79D0CD">
+          <parameters>
+            <label>Cost center manager rejects the AP</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a16" endpoint="" a:alt_id="sid-B59DFB83-2885-419F-ADE9-B5650C3847A5">
+          <parameters>
+            <label>Accounting employee proceedes with the clarification with the vendor</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-BD5CC168-F7DC-42B9-BEBD-A3C1DB7207F9">
+          <alternative condition="" />
+          <alternative condition="">
+            <call id="a19" endpoint="" a:alt_id="sid-5CA16D24-3FD5-4CE3-8D6C-2BBF504EAC4F">
+              <parameters>
+                <label>Accounting employee consults the cost center managers</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <call id="a20" endpoint="" a:alt_id="sid-C57349ED-2135-40D6-89F3-C1DECADAE7DA">
+          <parameters>
+            <label>Accounting employee sends the copy of the invoice to the cost center managers</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a21" endpoint="" a:alt_id="sid-AD9D8B14-AC80-4FD4-9051-EFB6ADDD3214">
+          <parameters>
+            <label>Accounting employee forwards the copy of the invoice to the commercial manager</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a22" endpoint="" a:alt_id="sid-8F5F2476-4EA2-495E-9757-899AAFC756FD">
+          <parameters>
+            <label>Commercial manager  makes the commercial audit</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a23" endpoint="" a:alt_id="sid-1F486EB5-3B17-4480-9C18-69BEE45E0245">
+          <parameters>
+            <label>Commercial manager  issues the approval for payment</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-92EA788D-06A7-4D8E-912A-CED64ECC59D4">
+          <alternative condition="">
+            <call id="a25" endpoint="" a:alt_id="sid-AC7992E6-06B8-435D-9F22-60658848E4C2">
+              <parameters>
+                <label>Board checks invoice</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="" />
+        </choose>
+        <call id="a27" endpoint="" a:alt_id="sid-677CABCE-CD21-4737-9EB9-FED9D2F9F061">
+          <parameters>
+            <label>Commercial manager moves invoice's copy  and the docket to the accounting employee</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-435EB1D1-786A-411B-984A-8943524F8FD5">
+          <alternative condition="" />
+          <alternative condition="">
+            <call id="a29" endpoint="" a:alt_id="sid-13355D1A-3CAF-4D8B-9411-A88A615733C2">
+              <parameters>
+                <label>Accounting employee resolves complaint</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <call id="a31" endpoint="" a:alt_id="sid-247ED8B9-DDFF-4DFC-A104-AF2CB3692A93">
+          <parameters>
+            <label>Accounting employee gives payment instructions</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a32" endpoint="" a:alt_id="sid-62948860-1F23-4957-90B8-9772DFAA3582">
+          <parameters>
+            <label>Accounting employee closes the invoice</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <escape a:alt_id="-1" />
+      </alternative>
+    </choose>
+  </loop>
+</description>

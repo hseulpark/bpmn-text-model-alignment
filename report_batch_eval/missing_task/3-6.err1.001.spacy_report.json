@@ -1,0 +1,141 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-6.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/3-6.err1.001.xml",
+  "user_tasks": [
+    "receive claim",
+    "check insurance status",
+    "make claim",
+    "make decision",
+    "evaluate severity",
+    "evaluate claim severity",
+    "send claimant relevant forms",
+    "return completed forms",
+    "completed forms",
+    "return forms",
+    "check they",
+    "inform claimant",
+    "update forms",
+    "register claim",
+    "reject their claim",
+    "process continue",
+    "process wait",
+    "claimant return completed forms",
+    "claim register management system",
+    "claim register system",
+    "claimant inform rejection"
+  ],
+  "model_tasks": [
+    "receive a claim",
+    "check claimant insurance status",
+    "evaluate claim  severity",
+    "send claimant relevant forms",
+    "claimant returns the forms",
+    "check forms for completeness",
+    "inform claimant to update the forms",
+    "informe claimant about claim rejection"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "make claim",
+        "make decision",
+        "evaluate severity",
+        "return forms",
+        "check they",
+        "update forms",
+        "register claim",
+        "reject their claim",
+        "process continue",
+        "process wait",
+        "claim register management system",
+        "claim register system",
+        "claimant inform rejection"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "check forms for completeness",
+          "model_index": 5,
+          "user": [
+            "return completed forms",
+            "completed forms"
+          ],
+          "user_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.69,
+            0.707
+          ],
+          "combo_sim": 0.67
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "inform claimant",
+          "user_index": 11,
+          "model": [
+            "inform claimant to update the forms",
+            "informe claimant about claim rejection"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.703,
+            0.752
+          ],
+          "combo_sim": 0.704,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "receive a claim",
+          "task_b": "check claimant insurance status",
+          "before_score": 9,
+          "after_score": 7,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U11",
+              "U2"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a claim is received. Once the claim is received, the next step is to check the insurance status of the person making the claim. Based on this check, a decision is made. If the claimant's insurance status is valid, the process continues with evaluating the severity of the claim. After evaluating the claim's severity, the claimant is sent the relevant forms that need to be completed.\n\nThe process then waits for the claimant to return the completed forms. If the forms are returned, they are checked for completeness. If the forms are not complete, the claimant is informed that they need to update the forms. Once the forms are complete, the claim is registered in the Claims Management system.\n\nIf at any point the claimant's insurance status is not valid, the claimant is informed that their claim has been rejected. The process ends after either the claim is registered in the system or the claimant is informed of the rejection.",
+  "output_text": "The process begins when a claim is received. Once the claim is received, the next step is to check the insurance status of the person making the claim. After verifying the insurance status, a decision is made based on the outcome of this check.\n\nIf the insurance status is valid, the process continues with evaluating the severity of the claim. Following this evaluation, the claimant is sent the relevant forms that they need to complete. After sending the forms, another decision point is reached.\n\nAt this decision point, the process waits for the claimant to return the completed forms. If the forms are returned, they are checked for completeness. If the forms are complete, the process continues; if not, the claimant is informed that they need to update the forms. Once informed, the process loops back to wait for the updated forms to be returned and checked again.\n\nIf the insurance status is not valid, the claimant is informed that their claim has been rejected. After informing the claimant of the rejection, the process comes to an end.\n\nThe process concludes once all necessary steps have been completed, whether that is through the successful completion and verification of forms or the rejection of the claim."
+}

@@ -1,0 +1,229 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/11_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/11_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "ask user",
+    "start tutorial",
+    "choose no",
+    "chooses no",
+    "complete introduction",
+    "continue game",
+    "load saved game",
+    "saved game",
+    "start new game",
+    "access game settings",
+    "end it",
+    "retrieve saved game data",
+    "saved point",
+    "select tutorial",
+    "guide they",
+    "start game",
+    "choose this",
+    "generate ambient noise",
+    "play background music",
+    "execute tasks",
+    "set up background music",
+    "load game",
+    "prompt user",
+    "provide input",
+    "provides input",
+    "plays background",
+    "user ask ui selection",
+    "user choose",
+    "player choose",
+    "user decide",
+    "game resume",
+    "game continue saved point",
+    "game proceed next step",
+    "user select tutorial",
+    "user ask tutorial",
+    "process return menu selection",
+    "system generate ambient noise",
+    "tasks execute parallel",
+    "ambient noise set up",
+    "system prompt user",
+    "user provide input"
+  ],
+  "model_tasks": [
+    "ui selection",
+    "start program",
+    "ask for tutorial",
+    "standard key assignment",
+    "start tutorial",
+    "continue game",
+    "generate ambient noise",
+    "play background music",
+    "load game",
+    "prompt user for input",
+    "begin game",
+    "load saved game",
+    "generate ambient noise",
+    "play background music",
+    "load game",
+    "prompt user for input",
+    "begin game",
+    "start new game",
+    "generate ambient noise",
+    "play background music",
+    "load game",
+    "prompt user for input",
+    "begin game",
+    "access game settings"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "ask user",
+        "choose no",
+        "chooses no",
+        "complete introduction",
+        "saved game",
+        "end it",
+        "retrieve saved game data",
+        "saved point",
+        "select tutorial",
+        "guide they",
+        "choose this",
+        "execute tasks",
+        "provide input",
+        "provides input",
+        "user choose",
+        "player choose",
+        "user decide",
+        "game resume",
+        "game continue saved point",
+        "game proceed next step",
+        "user select tutorial",
+        "process return menu selection",
+        "tasks execute parallel"
+      ],
+      "additional_tasks": [
+        "start program",
+        "standard key assignment",
+        "load game",
+        "begin game",
+        "generate ambient noise",
+        "play background music",
+        "load game",
+        "begin game"
+      ],
+      "merged_tasks": [
+        {
+          "model": "generate ambient noise",
+          "model_index": 12,
+          "user": [
+            "system generate ambient noise",
+            "ambient noise set up"
+          ],
+          "user_indices": [
+            36,
+            38
+          ],
+          "pair_sims": [
+            0.916,
+            0.894
+          ],
+          "combo_sim": 0.894
+        },
+        {
+          "model": "play background music",
+          "model_index": 13,
+          "user": [
+            "set up background music",
+            "plays background"
+          ],
+          "user_indices": [
+            20,
+            25
+          ],
+          "pair_sims": [
+            0.886,
+            0.767
+          ],
+          "combo_sim": 0.909
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U5",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U2",
+              "U21"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U21",
+              "U6"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U21",
+              "U5"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ]
+          }
+        ],
+        "mismatch_count": 4,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process at AO-Software begins with the program start in the UI selection.\n\nThen, the program starts for the player.\n\nOnce the program has started, the user is asked in the UI selection if they want to start the tutorial.\n\nIf the user chooses No, they begin with the standard key assignment.\n\nIf the user chooses Yes, they start a tutorial on the controller functions.\n\nAfter completing the introduction, the player can choose to continue a game, load a saved game, start a new game, or access the game settings.\n\nIf the user decides to continue a game, the game resumes from where it was last ended.\n\nIf the user decides to load a saved game, the saved game data is retrieved, and the game continues from the saved point.\n\nIf the user decides to start with the standard key assignment, the game proceeds to the next step.\n\nIf the user selects the tutorial, they are guided through the tutorial on the controller functions.\n\nAfter the tutorial, the user is asked if they want to start the game with the standard key assignment.\n\nIf they do not choose this, the process returns to the menu selection.\n\nIf they decide to start the game, the game proceeds to the next step.\n\nOnce the game starts, the system generates ambient noise and plays background music.\n\nThese tasks are executed in parallel.\n\nAfter the ambient noise and background music are set up, the game is loaded.\n\nOnce the game is loaded, the system prompts the user for input.\n\nAfter the user provides input, the game begins, and the process ends.",
+  "output_text": "The process begins with a starting point where the user interface is selected. Following this, the program is initiated. Once the program starts, the user is asked if they would like to go through a tutorial.\n\nAt this decision point, if the user chooses \"No,\" the process proceeds to assign standard keys for the game. If the user chooses \"Yes,\" the tutorial begins. Regardless of the choice, the process converges back to a common path.\n\nNext, the user is presented with several options: to continue the game, load a saved game, start a new game, or access game settings.\n\nIf the user decides to continue the game, the process involves generating ambient noise and playing background music. These two tasks can occur simultaneously. After these tasks, the game is loaded, the user is prompted for input, and the game begins.\n\nIf the user opts to load a saved game, the saved game is loaded, and similar to continuing the game, ambient noise is generated and background music is played concurrently. After these tasks, the game is loaded, the user is prompted for input, and the game begins.\n\nIf the user chooses to start a new game, the process is similar to loading a saved game. The new game is started, ambient noise is generated, and background music is played simultaneously. After these tasks, the game is loaded, the user is prompted for input, and the game begins.\n\nIf the user decides to access game settings, the settings are accessed, and the process then moves to the end.\n\nFinally, the process concludes at an endpoint."
+}

@@ -1,0 +1,138 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_web_5.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/split/tourism_web_5.err1.001.xml",
+  "user_tasks": [
+    "initiate booking request",
+    "make request",
+    "receive booking request",
+    "check availability",
+    "make decision",
+    "propose alternative time",
+    "propose alternative",
+    "send out notification",
+    "await response",
+    "receive response",
+    "send bill",
+    "confirm booking",
+    "send it",
+    "mark end",
+    "decision make point",
+    "process continue next step",
+    "process continue",
+    "response indicate",
+    "booking proceed",
+    "bill send requester",
+    "response lead",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "request booking",
+    "get booking request",
+    "start checking availability",
+    "finish checking availability",
+    "propose alternative time",
+    "send notification",
+    "get response",
+    "send the bill",
+    "confirm booking"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "make request",
+        "make decision",
+        "propose alternative",
+        "await response",
+        "send it",
+        "mark end",
+        "decision make point",
+        "process continue next step",
+        "process continue",
+        "response indicate",
+        "response lead",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "request booking",
+          "model_index": 0,
+          "user": [
+            "initiate booking request",
+            "receive booking request"
+          ],
+          "user_indices": [
+            0,
+            2
+          ],
+          "pair_sims": [
+            0.92,
+            0.946
+          ],
+          "combo_sim": 0.848
+        },
+        {
+          "model": "send the bill",
+          "model_index": 7,
+          "user": [
+            "send bill",
+            "bill send requester"
+          ],
+          "user_indices": [
+            10,
+            19
+          ],
+          "pair_sims": [
+            0.925,
+            0.647
+          ],
+          "combo_sim": 0.727
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "check availability",
+          "user_index": 3,
+          "model": [
+            "start checking availability",
+            "finish checking availability"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.912,
+            0.853
+          ],
+          "combo_sim": 0.803,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a booking request is initiated. First, the request for booking is made. Following this, the booking request is received and processed. The next step involves checking the availability for the requested booking.\n\nAt this point, a decision is made based on the availability. If the requested time is not available, an alternative time is proposed. Once an alternative time is proposed, the process continues to the next step. If the requested time is available, the process also continues without proposing an alternative.\n\nAfterward, a notification is sent out, and a response is awaited. Once a response is received, another decision is made. If the response indicates that the booking can proceed, the bill is sent to the requester. After sending the bill, the booking is confirmed.\n\nIf the response does not lead to sending the bill, the process continues to the next step without sending it. Finally, the process concludes, marking the end of the booking procedure.",
+  "output_text": "The process begins with a starting point, which signifies the initiation of the process. Once the process is initiated, it proceeds directly to the endpoint, where the process concludes. There are no additional steps, decisions, or activities between the start and end of the process. This represents a very straightforward and linear process flow from beginning to end."
+}

@@ -1,0 +1,295 @@
+{
+  "log_path": "./data/0.log.yaml",
+  "bpmn_path": "./data/11. and-seq.xml",
+  "user_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up brewer",
+    "pour water",
+    "serve"
+  ],
+  "model_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up the brewer",
+    "pour water",
+    "serve"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "common_user_tasks": [
+          "boil water",
+          "prepare coffee ground",
+          "set up brewer",
+          "pour water",
+          "serve"
+        ],
+        "common_model_tasks": [
+          "boil water",
+          "prepare coffee ground",
+          "set up the brewer",
+          "pour water",
+          "serve"
+        ],
+        "kendall_tau_distance": 0,
+        "out_of_order_bpmn_tasks": [],
+        "common_count": 5
+      },
+      "gateway_analysis": {
+        "user_relations": {
+          "relations": [
+            [
+              "PARALLEL",
+              "U0",
+              "U1"
+            ],
+            [
+              "SEQUENTIAL",
+              "U1",
+              "U2"
+            ],
+            [
+              "SEQUENTIAL",
+              "U3",
+              "U4"
+            ],
+            [
+              "SEQUENTIAL",
+              "U2",
+              "U3"
+            ]
+          ],
+          "join_relations": [],
+          "evidence": [
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "U0",
+                "U1"
+              ],
+              "evidence": "Boil water and prepare the coffee ground simultaneously."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U1",
+                "U2"
+              ],
+              "evidence": "(prev) Boil water and prepare the coffee ground simultaneously.  ||  (cur) Then, set up the brewer."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U3",
+                "U4"
+              ],
+              "evidence": "Afterward, pour water and serve."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U2",
+                "U3"
+              ],
+              "evidence": "(prev) Then, set up the brewer.  ||  (cur) Afterward, pour water and serve."
+            }
+          ]
+        },
+        "output_relations": {
+          "relations": [
+            [
+              "SEQUENTIAL",
+              "U0",
+              "U1"
+            ],
+            [
+              "SEQUENTIAL",
+              "U1",
+              "U2"
+            ],
+            [
+              "SEQUENTIAL",
+              "U2",
+              "U3"
+            ],
+            [
+              "PARALLEL",
+              "U0",
+              "U4"
+            ],
+            [
+              "PARALLEL",
+              "U1",
+              "U4"
+            ],
+            [
+              "PARALLEL",
+              "O3",
+              "U4"
+            ],
+            [
+              "PARALLEL",
+              "U0",
+              "U1"
+            ],
+            [
+              "PARALLEL",
+              "O3",
+              "U0"
+            ],
+            [
+              "PARALLEL",
+              "O3",
+              "U1"
+            ],
+            [
+              "SEQUENTIAL",
+              "O3",
+              "U2"
+            ],
+            [
+              "SEQUENTIAL",
+              "U4",
+              "O3"
+            ],
+            [
+              "SEQUENTIAL",
+              "U3",
+              "U4"
+            ]
+          ],
+          "join_relations": [],
+          "evidence": [
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U0",
+                "U1"
+              ],
+              "evidence": "(prev) First, the water is boiled.  ||  (cur) Then, the coffee ground is prepared."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U1",
+                "U2"
+              ],
+              "evidence": "(prev) Then, the coffee ground is prepared.  ||  (cur) Next, the brewer is set up."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U2",
+                "U3"
+              ],
+              "evidence": "(prev) Next, the brewer is set up.  ||  (cur) After that, the water is poured."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "U0",
+                "U4"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "U1",
+                "U4"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "O3",
+                "U4"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "U0",
+                "U1"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "O3",
+                "U0"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "PARALLEL",
+              "tasks": [
+                "O3",
+                "U1"
+              ],
+              "evidence": "Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "O3",
+                "U2"
+              ],
+              "evidence": "(prev) Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously.  ||  (cur) After both tasks are done, set up the brewer."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U2",
+                "U3"
+              ],
+              "evidence": "(prev) After both tasks are done, set up the brewer.  ||  (cur) Then, pour water."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U4",
+                "O3"
+              ],
+              "evidence": "Lastly, serve."
+            },
+            {
+              "type": "SEQUENTIAL",
+              "tasks": [
+                "U3",
+                "U4"
+              ],
+              "evidence": "(prev) Then, pour water.  ||  (cur) Lastly, serve."
+            }
+          ]
+        },
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U0",
+              "U1"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1
+      }
+    }
+  },
+  "user_text": "Boil water and prepare the coffee ground simultaneously. Then, set up the brewer. Afterward, pour water and serve.",
+  "output_text": "The process starts. First, the water is boiled. Then, the coffee ground is prepared. Next, the brewer is set up. After that, the water is poured. Finally, the coffee is served, and the process ends.Boil water and prepare coffee ground simultaneously. After both tasks are done, set up the brewer. Then, pour water. Lastly, serve."
+}

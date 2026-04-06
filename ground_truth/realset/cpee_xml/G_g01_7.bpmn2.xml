@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a8" endpoint="" a:alt_id="sid-16DF8CF8-2B08-43F9-9DD8-B3263D44D65C">
+    <parameters>
+      <label>send invitations for friends</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="" a:alt_id="sid-1CBB6B5F-A8EF-4C19-99B3-325F6C45D832">
+    <parameters>
+      <label>to send question
+ which games do you want to play?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a18" endpoint="" a:alt_id="sid-1879D5C8-A9D7-4B2E-B268-A3EC0E2EB2EF">
+    <parameters>
+      <label>recive list of games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a16" endpoint="" a:alt_id="sid-27D068D7-F619-468A-8616-3A08811EAEC5">
+    <parameters>
+      <label>Choose games</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-8DF87AF7-EBAA-417D-B4A0-FB8A046321F4">
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a10" endpoint="" a:alt_id="sid-89F7E573-64CE-42B5-890C-6F324758A8B2">
+          <parameters>
+            <label>appoint date  of LAN party  requiest
+to send</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="sid-4C87AE9F-B056-4852-92F4-38C64EB9684E" language="text/javascript">
+          <call id="a12" endpoint="" a:alt_id="sid-9982C782-1CB9-4A25-8A3D-67493DF58D5B">
+            <parameters>
+              <label>Date change</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a10" endpoint="" a:alt_id="sid-89F7E573-64CE-42B5-890C-6F324758A8B2">
+            <parameters>
+              <label>appoint date  of LAN party  requiest
+to send</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a0" endpoint="" a:alt_id="sid-1449C787-C2B8-47A6-A15A-6CF1EAE69F0D">
+          <parameters>
+            <label>guest games do you want ?</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="pre_test" condition="true" a:alt_id="sid-0A391713-4094-400C-A82C-A09E0D6B0121" language="text/javascript">
+          <call id="a6" endpoint="" a:alt_id="sid-3407AF0A-7A40-48BC-8511-00B288440B75">
+            <parameters>
+              <label>change guest games</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a0" endpoint="" a:alt_id="sid-1449C787-C2B8-47A6-A15A-6CF1EAE69F0D">
+            <parameters>
+              <label>guest games do you want ?</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </loop>
+      </loop>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="sid-EECCEF70-FEB0-44A3-BE28-99458EF64EF0">
+    <alternative condition=""/>
+    <alternative condition="">
+      <call id="a21" endpoint="" a:alt_id="sid-1029E75F-185D-4CA9-8E81-D2AC507A000B">
+        <parameters>
+          <label>download them</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a1" endpoint="" a:alt_id="sid-D3BB0351-9296-47C3-9151-BAA2F0E7C668">
+    <parameters>
+      <label>send to Fragen how much Bier want to trink?</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-C37E1241-77B6-4ED8-84C2-40A18385EF8F">
+    <parameters>
+      <label>to recieve estimation number of all bier require</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-6AEAB296-38A7-480F-BD41-785A3EBECB42">
+    <alternative condition=""/>
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-8486ADCE-C973-4444-96CB-8BD32BADBDFD">
+        <parameters>
+          <label>go to supermarket</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a4" endpoint="" a:alt_id="sid-304E8441-C3F9-46E3-A46F-8C2FD15B3C2A">
+        <parameters>
+          <label>buy bier missing</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a15" endpoint="" a:alt_id="sid-B9F2FD70-82D7-4D3C-8F3B-6EB350AF0A67">
+    <parameters>
+      <label>prepare to LAN party</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

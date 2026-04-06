@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="" a:alt_id="sid-C929E001-C9D3-45C6-A8E3-0696E3D7B561">
+    <parameters>
+      <label>Employee submits an expense report with a list of items</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="" a:alt_id="sid-DC785350-5AC0-45A0-B388-62F781B2F015">
+      <parameters>
+        <label>Supervisor reviews the expense report</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a16" endpoint="" a:alt_id="sid-834F2D06-00E5-4067-B68B-8796853227C2">
+      <parameters>
+        <label>Supervisor approves the report</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-5EF0A37D-A803-4A1B-9A37-EFB7B3F57E69">
+      <alternative condition="">
+        <call id="a6" endpoint="" a:alt_id="sid-D926C323-A771-41E4-889A-EC42A7878482">
+          <parameters>
+            <label>Supervisor moves report to the treasurer</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a7" endpoint="" a:alt_id="sid-3521031B-4FE9-4DB0-AD60-3A20E82A2841">
+          <parameters>
+            <label>Treasurer checks receipts</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a8" endpoint="" a:alt_id="sid-F533B273-2D47-43DE-8858-6F2F428831F7">
+          <parameters>
+            <label>Treasurer matches the items on the list</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-C6605437-15E5-42C1-BC84-C7AE76EE7C6F">
+          <alternative condition="">
+            <call id="a11" endpoint="" a:alt_id="sid-42C83DD0-09B8-4306-B7FD-28CEACACDE3D">
+              <parameters>
+                <label>Treasurer  sends report back to the employee</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a5" endpoint="" a:alt_id="sid-0318CC48-9A90-47AE-BCFE-7345AD208AA6">
+              <parameters>
+                <label>Employee edits the report</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <call id="a10" endpoint="" a:alt_id="sid-79056AA7-27D8-4963-A7F7-913DC499A2D0">
+              <parameters>
+                <label>Treasurer accepts the expenses for processing</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a13" endpoint="" a:alt_id="sid-261F8593-F623-4AE0-BEF3-ABD5E0B60845">
+              <parameters>
+                <label>Treasurer confirms the payment</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </alternative>
+        </choose>
+      </alternative>
+      <alternative condition="">
+        <call id="a5" endpoint="" a:alt_id="sid-0318CC48-9A90-47AE-BCFE-7345AD208AA6">
+          <parameters>
+            <label>Employee edits the report</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+  </loop>
+</description>

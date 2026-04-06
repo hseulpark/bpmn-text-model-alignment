@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-47213541-E255-4AD3-9F06-9BB6CA922A8E">
+    <parameters>
+      <label>sales department receives an order</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-CDC3420D-31B0-4989-BEC9-CE0B6463018F">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-1630227B-7E76-474B-82BD-4DA7CFE10EF5">
+        <parameters>
+          <label>sales department informs the storehouse</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a4" endpoint="" a:alt_id="sid-26D74471-BBA4-471E-B29C-9CD4E2DF6F40">
+        <parameters>
+          <label>sales department  accepts the bike order</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-69113178-D7BC-4932-83AC-0C195B20827C">
+        <parameters>
+          <label>sales department  informs the engineering department</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-095D7F0E-C1E9-40AB-8E2A-3E01F05702BD">
+        <parallel_branch>
+          <call id="a13" endpoint="" a:alt_id="sid-E1E34169-2234-4109-BBB8-03C390D5C3A2">
+            <parameters>
+              <label>engineering department prepares for the bike assembling</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <loop mode="post_test" condition="true">
+            <call id="a7" endpoint="" a:alt_id="sid-50BC3E57-3A48-4135-8F17-DB96CA768791">
+              <parameters>
+                <label>storehouse  processes the part list</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a8" endpoint="" a:alt_id="sid-E8242150-5545-4FC1-AA73-97208E1104A9">
+              <parameters>
+                <label>storehouse checks the  quantity of  parts</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-7FC8EC73-9201-484F-89B8-A613372231D3">
+              <alternative condition="">
+                <call id="a10" endpoint="" a:alt_id="sid-5C652ED2-ECCA-4019-84B4-2ADFE873F519">
+                  <parameters>
+                    <label>storehouse  reserves the part</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="">
+                <call id="a11" endpoint="" a:alt_id="sid-C74EEF2B-E3C5-40FE-847E-7329C85C5B2B">
+                  <parameters>
+                    <label>storehouse back-orders the part</label>
+                    <method />
+                    <type>:task</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+          </loop>
+        </parallel_branch>
+      </parallel>
+      <call id="a14" endpoint="" a:alt_id="sid-E937EBB8-0B32-4E94-B804-AA0A6F96F80E">
+        <parameters>
+          <label>engineering department assembles the bicycle</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="sid-7DFA5BD6-4CA5-4855-B780-0D16D90D40ED">
+        <parameters>
+          <label>sales department ships the bicycle</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-15BE6249-28C6-4BE3-AAF9-D671E2CE52E9">
+        <parameters>
+          <label>sales department rejects the bike order</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

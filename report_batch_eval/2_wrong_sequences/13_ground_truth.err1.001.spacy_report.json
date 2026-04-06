@@ -1,0 +1,145 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/13_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/13_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "create bill",
+    "order goods",
+    "send inquiry",
+    "clarify question",
+    "await delivery",
+    "contact supplier",
+    "deliver parts",
+    "check quality",
+    "meet standards",
+    "request replacement delivery",
+    "store goods",
+    "transmit order",
+    "ship goods",
+    "bill create warehousing department",
+    "supplier send inquiry",
+    "question clarify specialist department",
+    "delivery occur working days",
+    "quantity check",
+    "quantity meet standards",
+    "sales department transmit order"
+  ],
+  "model_tasks": [
+    "create bill of materials",
+    "order goods",
+    "clarify inquiry with specialist",
+    "await delivery",
+    "check quantity and quality",
+    "request replacement delivery",
+    "await delivery",
+    "store goods",
+    "prepare and package goods",
+    "transmit order",
+    "ship or issue goods",
+    "contact supplier for immediate shipping",
+    "await delivery",
+    "escalate delivery issues"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send inquiry",
+        "deliver parts",
+        "check quality",
+        "meet standards",
+        "delivery occur working days",
+        "quantity meet standards",
+        "sales department transmit order"
+      ],
+      "additional_tasks": [
+        "await delivery",
+        "prepare and package goods",
+        "await delivery",
+        "escalate delivery issues"
+      ],
+      "merged_tasks": [
+        {
+          "model": "create bill of materials",
+          "model_index": 0,
+          "user": [
+            "create bill",
+            "bill create warehousing department"
+          ],
+          "user_indices": [
+            0,
+            13
+          ],
+          "pair_sims": [
+            0.71,
+            0.509
+          ],
+          "combo_sim": 0.595
+        },
+        {
+          "model": "clarify inquiry with specialist",
+          "model_index": 2,
+          "user": [
+            "clarify question",
+            "question clarify specialist department"
+          ],
+          "user_indices": [
+            3,
+            15
+          ],
+          "pair_sims": [
+            0.507,
+            0.844
+          ],
+          "combo_sim": 0.79
+        },
+        {
+          "model": "contact supplier for immediate shipping",
+          "model_index": 11,
+          "user": [
+            "contact supplier",
+            "supplier send inquiry"
+          ],
+          "user_indices": [
+            5,
+            14
+          ],
+          "pair_sims": [
+            0.773,
+            0.635
+          ],
+          "combo_sim": 0.7
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "store goods",
+          "task_b": "prepare and package goods",
+          "before_score": 18,
+          "after_score": 16,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "First, a bill of materials is created in the warehousing department of Startup TUd-03.\n\nThen, the goods are ordered.\n\nIf the supplier sends an inquiry, the question is clarified with the specialist department, and the delivery is awaited.\n\nIf the delivery does not occur within five working days, the supplier is contacted to check if immediate shipping is possible.\n\nIf immediate shipping is not possible, the process ends with an escalation of delivery issues.\n\nIf immediate shipping is possible, the delivery is awaited.\n\nWhen the parts are delivered by the supplier, the quantity and quality are checked.\n\nIf the quantity and quality do not meet the standards, a replacement delivery is requested and communicated to the supplier.\n\nThen, the delivery is awaited again.\n\nIf the quantity and quality meet the standards, the goods are stored.\n\nAfter storing the goods, the sales department transmits the order.\n\nNext, the goods are prepared and packaged.\n\nFinally, the goods are shipped or issued.",
+  "output_text": "The process begins with the creation of a bill of materials. Once this is completed, the next step is to order the necessary goods. After placing the order, there is a decision point to determine if an inquiry has been received. If an inquiry is received, the process involves clarifying the inquiry with a specialist. If no inquiry is received, the process continues without this step.\n\nFollowing the inquiry clarification, or if there was no inquiry, the process moves to another decision point. This decision leads to awaiting the delivery of the ordered goods. Once the goods are awaited, there is a series of decision points to determine the status of the delivery.\n\nIf the delivery is expected within five days, the process involves checking the quantity and quality of the goods upon arrival. If the goods do not meet the required standards, a replacement delivery is requested, and the process returns to awaiting delivery. If the goods meet the standards, they are stored, prepared, and packaged for the next steps.\n\nThe prepared goods are then transmitted, and the order is shipped or issued. After shipping, there are several decision points to ensure the process is completed correctly. If everything is in order, the process concludes.\n\nIf the delivery is not expected within five days, the supplier is contacted for immediate shipping. If immediate shipping is possible, the process returns to awaiting delivery. If immediate shipping is not possible, the delivery issues are escalated. This escalation involves several decision points to address the issues. Once resolved, the process returns to awaiting delivery.\n\nThroughout the process, there are multiple checks and decision points to ensure that each step is completed correctly and any issues are addressed promptly. The process concludes once all goods are shipped or issued successfully."
+}

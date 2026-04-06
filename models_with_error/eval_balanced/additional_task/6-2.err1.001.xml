@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a6" endpoint="" a:alt_id="sid-805B5A4E-DA93-4FC0-B638-00A5909FDD2E">
+    <parameters>
+      <label>Assembler AG places an order with the supplier</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a1" endpoint="" a:alt_id="sid-381389B2-A735-4AB4-A944-6E39F0341A12">
+    <parameters>
+      <label>Assembler AG sends the order to the supplier</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint=""><parameters><label>Update database</label><method /><type>:task</type><arguments /></parameters></call><call id="a2" endpoint="" a:alt_id="sid-1CD88C9D-9ECF-4854-ACD9-31215F5B4015">
+    <parameters>
+      <label>The supplier processes the order</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-3DB77561-1947-4A37-920C-EF766E22F5EF">
+    <parameters>
+      <label>The supplier sends an invoice to Assembler AG</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-D39DF576-D89F-4CBA-8508-D916AEFC6D19">
+    <parameters>
+      <label>Assembler AG receives the invoice</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

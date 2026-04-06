@@ -1,0 +1,178 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a1" endpoint="" a:alt_id="sid-3EA30E71-F766-4E4A-95BE-2F485E993245">
+        <parameters>
+          <label>Start Non-Specific LowBack Pain Diagnosis</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="">
+        <parameters>
+          <label>Finish Non-Specific LowBack Pain Diagnosis</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-2ECFB1FB-8F3E-40DB-B904-2D442EA54B67">
+        <alternative condition="">
+          <call id="a3" endpoint="" a:alt_id="sid-7368D6A1-A8C8-4C8B-89D0-F0EDA3CB0375">
+            <parameters>
+              <label>Apply
+Superficial
+Heat or other
+Nonpharmocol.
+Treatments</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-D4F9ED81-34FA-4B7F-827D-651EA99BBF27">
+            <alternative condition="">
+              <call id="a7" endpoint="" a:alt_id="sid-86BB337B-0979-4876-B64D-160ABC9A6C13">
+                <parameters>
+                  <label>Prescribe
+NSAID or SMR</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+        <alternative condition="">
+          <call id="a4" endpoint="" a:alt_id="sid-D6CA3AD9-AAD1-4D67-8E9F-1832F973A025">
+            <parameters>
+              <label>Apply Exercise
+or other
+Nonpharmacol.
+Treatments</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <choose mode="exclusive" a:alt_id="sid-78E48128-4FD1-48E4-A021-03BFDA8C3781">
+            <alternative condition="">
+              <call id="a10" endpoint="" a:alt_id="sid-70264F1A-5CA1-4A32-B208-563721E18DBA">
+                <parameters>
+                  <label>Prescribe
+NSAID</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="sid-777E9B7E-D07B-472E-BEE1-FC207BE4A76E">
+                <alternative condition="">
+                  <call id="a14" endpoint="" a:alt_id="sid-6588EF48-9EC4-41C1-8491-01D768A96CAC">
+                    <parameters>
+                      <label>Prescribe
+Opioid</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+                <alternative condition=""/>
+              </choose>
+            </alternative>
+            <alternative condition=""/>
+          </choose>
+        </alternative>
+      </choose>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

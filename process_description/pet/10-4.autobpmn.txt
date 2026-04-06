@@ -1,0 +1,7 @@
+The process begins with the MPON notifying the MPOO about intentions to change equipment. Following this notification, a decision is made. If the MPOO decides to proceed with self-dismounting, they announce this decision to the MPON. Alternatively, if the MPOO decides not to proceed with self-dismounting, they notify the MPON of this decision.
+
+Regardless of the decision made, the process continues with either the MPON or the MPOO performing a final reading of the equipment. After the final reading is completed, the next step involves either the MPON or the MPOO dismounting the old equipment.
+
+Once the old equipment is dismounted, the MPON mounts the new device. After the new device is installed, the MPON reads the meter count from the newly installed meter. The MPON then sends the values from the final reading to the GO.
+
+Following this, the MPON provides the GO with the required data. The process continues with the GO notifying the MSP about the required data. This marks the end of the process.

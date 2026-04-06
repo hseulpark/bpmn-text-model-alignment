@@ -1,0 +1,158 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/10-4.err1.001.xml",
+  "user_tasks": [
+    "notify mpoo",
+    "change equipment",
+    "follow notification",
+    "make decision",
+    "announce decision",
+    "notify mpon",
+    "perform final reading",
+    "complete final reading",
+    "dismount old equipment",
+    "mount new device",
+    "instal new device",
+    "read meter count",
+    "installed meter",
+    "send values",
+    "provide go",
+    "required data",
+    "notify msp",
+    "mark end",
+    "mpon notify mpoo",
+    "decision make notification",
+    "mpoo decide",
+    "process continue",
+    "mpon dismount old equipment",
+    "mpon mount new device",
+    "mpon read meter count",
+    "mpon send values",
+    "mpon provide go",
+    "go notify msp"
+  ],
+  "model_tasks": [
+    "the mpon notifies the mpoo about equipment change intentions",
+    "the mpoo announces self dismounting to the mpon",
+    "the mpon or mpoo performs the final reading",
+    "the mpon or the mpoo dismount the old equipment",
+    "the mpon mounts the new device",
+    "the mpon reads the meter count from the installed meter",
+    "the mpon sents the values of the final reading to the go",
+    "the mpon tells the go required data",
+    "the go  notifies the msp about the required data"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "change equipment",
+        "follow notification",
+        "make decision",
+        "announce decision",
+        "notify mpon",
+        "perform final reading",
+        "complete final reading",
+        "mount new device",
+        "instal new device",
+        "read meter count",
+        "installed meter",
+        "send values",
+        "provide go",
+        "required data",
+        "notify msp",
+        "mark end",
+        "mpon notify mpoo",
+        "decision make notification",
+        "mpoo decide",
+        "process continue",
+        "mpon send values",
+        "go notify msp"
+      ],
+      "additional_tasks": [
+        "the mpon or mpoo performs the final reading",
+        "the go  notifies the msp about the required data"
+      ],
+      "merged_tasks": [
+        {
+          "model": "the mpon or the mpoo dismount the old equipment",
+          "model_index": 3,
+          "user": [
+            "dismount old equipment",
+            "mpon dismount old equipment"
+          ],
+          "user_indices": [
+            8,
+            22
+          ],
+          "pair_sims": [
+            0.687,
+            0.886
+          ],
+          "combo_sim": 0.86
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "notify mpoo",
+          "user_index": 0,
+          "model": [
+            "the mpon notifies the mpoo about equipment change intentions",
+            "the mpoo announces self dismounting to the mpon"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.608,
+            0.647
+          ],
+          "combo_sim": 0.651,
+          "adjacent": true
+        },
+        {
+          "user": "mpon read meter count",
+          "user_index": 24,
+          "model": [
+            "the mpon reads the meter count from the installed meter",
+            "the mpon sents the values of the final reading to the go"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.868,
+            0.625
+          ],
+          "combo_sim": 0.803,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis ON, but output_text is empty (AutoBPMN API failed).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the MPON notifying the MPOO about intentions to change equipment. Following this notification, a decision is made. If the MPOO decides to proceed with self-dismounting, they announce this decision to the MPON. Alternatively, if the MPOO decides not to proceed with self-dismounting, they notify the MPON of this decision.\n\nRegardless of the decision made, the process continues with either the MPON or the MPOO performing a final reading of the equipment. After the final reading is completed, the next step involves either the MPON or the MPOO dismounting the old equipment.\n\nOnce the old equipment is dismounted, the MPON mounts the new device. After the new device is installed, the MPON reads the meter count from the newly installed meter. The MPON then sends the values from the final reading to the GO.\n\nFollowing this, the MPON provides the GO with the required data. The process continues with the GO notifying the MSP about the required data. This marks the end of the process.",
+  "output_text": ""
+}

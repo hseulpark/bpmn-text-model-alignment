@@ -1,0 +1,103 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-8.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/3-8.err1.001.xml",
+  "user_tasks": [
+    "customer submit claim",
+    "notification department take first step",
+    "notification department proceed",
+    "handling department check insurance details",
+    "handling department contact garage",
+    "handling department schedule payment",
+    "handling department reject claim",
+    "handling department send letter",
+    "customer notify letter"
+  ],
+  "model_tasks": [
+    "customer submits a claim",
+    "notification department checks the documents",
+    "notification department registers the claim",
+    "handling department picks up the claim",
+    "handling department performs asessment",
+    "handling department checks the insurance",
+    "handling department phones garage to authorise the repairs",
+    "handling department  schedules the payment",
+    "handling department rejects the claim",
+    "handling department sends a letter to the customer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "customer notify letter"
+      ],
+      "additional_tasks": [
+        "notification department registers the claim"
+      ],
+      "merged_tasks": [
+        {
+          "model": "notification department checks the documents",
+          "model_index": 1,
+          "user": [
+            "notification department take first step",
+            "notification department proceed"
+          ],
+          "user_indices": [
+            1,
+            2
+          ],
+          "pair_sims": [
+            0.685,
+            0.7
+          ],
+          "combo_sim": 0.662
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "handling department check insurance details",
+          "user_index": 3,
+          "model": [
+            "handling department picks up the claim",
+            "handling department performs asessment",
+            "handling department checks the insurance"
+          ],
+          "model_indices": [
+            3,
+            4,
+            5
+          ],
+          "pair_sims": [
+            0.596,
+            0.596,
+            0.897
+          ],
+          "combo_sim": 0.673,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer submits a claim. Once the claim is submitted, the notification department takes the first step by checking the documents provided by the customer. After verifying the documents, the notification department proceeds to register the claim officially.\n\nFollowing the registration, the claim is handed over to the handling department. The handling department then checks the insurance details related to the claim. After confirming the insurance information, the handling department performs an assessment of the claim.\n\nAt this point, a decision is made. If the claim is approved, the handling department contacts the garage by phone to authorize the necessary repairs. After authorizing the repairs, the handling department schedules the payment for the services.\n\nIf the claim is not approved, the handling department rejects the claim. Regardless of whether the claim is approved or rejected, the next step involves the handling department sending a letter to the customer to inform them of the decision.\n\nThe process concludes after the customer has been notified through the letter. This ensures that the customer is aware of the outcome of their claim, whether it has been approved and processed for repairs and payment, or rejected.",
+  "output_text": "The process begins when a customer submits a claim. Once the claim is submitted, the notification department is responsible for checking the documents associated with the claim. After verifying the documents, the notification department proceeds to register the claim.\n\nFollowing the registration, the handling department takes over by picking up the claim. The next step involves the handling department performing an assessment of the claim. After the assessment, the handling department checks the insurance details related to the claim.\n\nAt this point, a decision is made. If the claim is approved, the handling department contacts the garage to authorize the necessary repairs. Subsequently, the handling department schedules the payment for the repairs.\n\nIf the claim is not approved, the handling department rejects the claim. Regardless of whether the claim is approved or rejected, the process continues with the handling department sending a letter to the customer to inform them of the decision.\n\nThis concludes the process, ensuring that the customer is kept informed about the status and outcome of their claim."
+}

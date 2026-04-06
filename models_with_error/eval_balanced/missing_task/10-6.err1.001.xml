@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="" a:alt_id="sid-33038388-E382-4661-8B04-D3C3619E6D32">
+    <parameters>
+      <label>MSPO reviews the dismissal</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-01314A87-33B9-4E4B-B5FA-332C1CB49622">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-F0583A91-2A68-4AF9-B8B0-72A1145D1AA4">
+        <parameters>
+          <label>MSPO rejects the dismissal of the MSPN</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-329FB914-BDE6-424C-A667-E1F8D99DE7DD">
+        <parameters>
+          <label>MSPO confirms the dismissal of the MSPN</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

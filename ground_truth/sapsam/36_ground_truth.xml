@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Formulate Consulting Service</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Analyze Workshop Results</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Develop Strategic Opportunities</label>
+      <method/>
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Formulate Report</label>
+      <method/>
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a6" endpoint="">
+    <parameters>
+      <label>Forward Report to Management</label>
+      <method/>
+      <type>:task</type>
+      <mid>'5'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a7" endpoint="">
+      <parameters>
+        <label>Read and Check Report</label>
+        <method/>
+        <type>:task</type>
+        <mid>'6'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="Not in Order" language="text/javascript">
+      <call id="a9" endpoint="">
+        <parameters>
+          <label>Correct Report</label>
+          <method/>
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Read and Check Report</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <call id="a10" endpoint="">
+      <parameters>
+        <label>Forward Report</label>
+        <method/>
+        <type>:task</type>
+        <mid>'9'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a11" endpoint="">
+      <parameters>
+        <label>Formulate Consulting Service</label>
+        <method/>
+        <type>:task</type>
+        <mid>'10'</mid>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+</description>

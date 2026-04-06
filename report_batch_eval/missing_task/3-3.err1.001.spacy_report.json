@@ -1,0 +1,154 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/3-3.err1.001.xml",
+  "user_tasks": [
+    "register claim",
+    "examine it",
+    "examine claim",
+    "reach decision point",
+    "write settlement recommendation",
+    "follow writing",
+    "check recommendation",
+    "review it",
+    "mark claim",
+    "make decision",
+    "send claim",
+    "check settlement recommendation",
+    "make decisions",
+    "making decisions",
+    "end process",
+    "need further action",
+    "claims officer examine",
+    "claims officer write settlement recommendation",
+    "senior claims officer check recommendation",
+    "senior claims officer mark claim",
+    "decision make point",
+    "system send claim",
+    "process return point",
+    "claims officer examine claim",
+    "system proceed handling process",
+    "process involve summary"
+  ],
+  "model_tasks": [
+    "system registers a claim",
+    "claims officer examines a claim",
+    "claims officer writes a settlement recommendation",
+    "senior claims officer checks recommendation",
+    "system sends claim back",
+    "system proceeds the claim handling process"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "examine it",
+        "examine claim",
+        "reach decision point",
+        "write settlement recommendation",
+        "follow writing",
+        "check recommendation",
+        "review it",
+        "mark claim",
+        "make decision",
+        "check settlement recommendation",
+        "make decisions",
+        "making decisions",
+        "end process",
+        "need further action",
+        "claims officer examine",
+        "senior claims officer mark claim",
+        "decision make point",
+        "process return point",
+        "system proceed handling process",
+        "process involve summary"
+      ],
+      "additional_tasks": [
+        "system proceeds the claim handling process"
+      ],
+      "merged_tasks": [
+        {
+          "model": "system sends claim back",
+          "model_index": 4,
+          "user": [
+            "send claim",
+            "system send claim"
+          ],
+          "user_indices": [
+            10,
+            21
+          ],
+          "pair_sims": [
+            0.696,
+            0.867
+          ],
+          "combo_sim": 0.88
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U18",
+              "U23"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U14",
+              "U17"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U17",
+              "U18"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 3,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a claim is registered by the system. Once the claim is registered, a claims officer examines it. After examining the claim, a decision point is reached. If the decision is to proceed, the claims officer writes a settlement recommendation.\n\nFollowing the writing of the settlement recommendation, a senior claims officer checks the recommendation. After reviewing it, the senior claims officer marks the claim. At this point, another decision is made. If the decision is to send the claim back, the system sends the claim back, and the process returns to the point where the claims officer examines the claim again.\n\nAlternatively, if the decision is to continue with the claim, the system proceeds with the claim handling process. This leads back to the decision point where the claims officer examines the claim. If at any point the decision is not to proceed with the claim, the process ends.\n\nIn summary, the process involves registering a claim, examining it, potentially writing and checking a settlement recommendation, and making decisions on whether to send the claim back for re-examination or to proceed with handling, with the possibility of ending the process if no further action is needed.",
+  "output_text": "The process begins when a system registers a claim. After the claim is registered, a claims officer examines it. Following the examination, a decision point is reached where the process can take one of two paths.\n\nIf the decision is to proceed with a settlement recommendation, the claims officer writes a settlement recommendation. This recommendation is then checked by a senior claims officer. After the senior claims officer checks the recommendation, another decision point is encountered.\n\nAt this second decision point, if the recommendation is not approved, the system sends the claim back, and the process returns to the initial decision point after the claim examination. This means the claim will be re-evaluated by the claims officer.\n\nIf the recommendation is approved, the system proceeds with the claim handling process, and the process also loops back to the initial decision point after the claim examination, allowing for further actions if necessary.\n\nIf, at the initial decision point after the claim examination, the decision is not to proceed with a settlement recommendation, the process concludes and ends."
+}

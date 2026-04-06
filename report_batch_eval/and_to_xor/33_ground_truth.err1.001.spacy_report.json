@@ -1,0 +1,116 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/33_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/33_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "analyze technology needs",
+    "conduct market analysis",
+    "generate ideas",
+    "find ideas",
+    "review they",
+    "follow review",
+    "pass idea",
+    "project management",
+    "approve idea",
+    "reject it",
+    "note this",
+    "developers generate ideas",
+    "employees review",
+    "project management decide",
+    "process continue"
+  ],
+  "model_tasks": [
+    "analyze technology needs",
+    "conduct market analysis",
+    "generate ideas",
+    "review ideas",
+    "pass to project management",
+    "approve idea",
+    "reject idea"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "find ideas",
+        "follow review",
+        "pass idea",
+        "note this",
+        "developers generate ideas",
+        "employees review",
+        "process continue"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "pass to project management",
+          "model_index": 4,
+          "user": [
+            "project management",
+            "project management decide"
+          ],
+          "user_indices": [
+            7,
+            13
+          ],
+          "pair_sims": [
+            0.766,
+            0.715
+          ],
+          "combo_sim": 0.711
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U1",
+              "U11"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U1",
+              "U11"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with an employee analyzing technology needs.\n\n\nNext, a market analysis is conducted by the employee and, in parallel, developers generate ideas.\n\nAfter the ideas are found, they are reviewed by the employees.\n\nFollowing the review of the ideas and the completion of the market analysis, the idea is passed to project management.\n\nProject management then decides whether to approve the idea or not.\n\nIf the idea is not approved, it is rejected.\n\nIf the idea is approved, this is noted and the process continues.\n\nThe process ends with the discovery of new technologies.",
+  "output_text": "The process begins with an initial step where the technology needs are analyzed. Following this analysis, a decision point is reached. At this decision point, there are two possible paths to take.\n\nThe first path involves conducting a market analysis. Once the market analysis is completed, the process reaches another decision point.\n\nThe second path involves generating ideas. After the ideas are generated, they are reviewed. Once the review is complete, the process also reaches the same decision point as the first path.\n\nAt this decision point, regardless of the path taken, the process continues by passing the information to project management. Another decision point is then encountered.\n\nAt this new decision point, there are two possible outcomes. If the idea is approved, it moves forward to the approval step. Once approved, the process concludes.\n\nIf the idea is not approved, it is rejected. After the rejection, the process also concludes.\n\nIn summary, the process involves analyzing technology needs, followed by either conducting a market analysis or generating and reviewing ideas. The results are then passed to project management, where a decision is made to either approve or reject the idea, leading to the end of the process."
+}

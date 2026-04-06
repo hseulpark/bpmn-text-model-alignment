@@ -1,0 +1,13 @@
+The process begins when a customer makes a notice at the secretarial office. Following this, a secretarial worker inquires about the patient data. Once the data is gathered, the secretarial worker connects the doctor to the nursing officer. The nursing officer then conducts a thorough inquiry into the patient's condition. After gathering all necessary information, the nursing officer records this information on a registration form and hands it in at the secretarial office.
+
+The secretarial office then stores the information in the information system and prints the form's information. At this point, a decision is made. If the process continues in one direction, the secretarial office creates a patient file, stores the registration form and the print in the patient file, and produces two registration cards. The secretarial office then adds the new patient to the list of new notices. This path leads to a staff meeting where team members are involved.
+
+After the staff meeting, the secretarial office assigns new patients to team members and records these assignments on an assignment list. Team members then determine whether the medical file of the patient is required and add this information to the assignment list. The secretarial office stores the assignments in the information system and passes the produced registration cards.
+
+Another decision point occurs. If the process follows one path, the secretarial office prepares a letter to the family doctor and sends it. The secretarial office then receives a copy of a medical file and informs the intaker, adding the copy to the patient file.
+
+The process continues with the first intaker planning a meeting with the patient and examining them. The first intaker registers additional observations in notes and places a copy of these notes in the patient's file, along with a standard checklist.
+
+At another decision point, if the process takes one path, the second intaker plans the first meeting. The secretarial office types out the tapes and adds the information to the patient file.
+
+Finally, the secretarial office puts the patient on the list of patients and provides the team leader with this list. Team members then formulate a treatment plan for the patients, concluding the process.

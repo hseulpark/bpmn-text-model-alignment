@@ -1,0 +1,157 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/manufacturing_tomaskova_4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/split/manufacturing_tomaskova_4.err1.001.xml",
+  "user_tasks": [
+    "set everything",
+    "encounter decision point",
+    "make choice",
+    "create cycle",
+    "meet condition",
+    "resolve condition",
+    "plan production",
+    "assign workers",
+    "follow assignment",
+    "design production",
+    "finalize production design",
+    "deliver product",
+    "mark completion",
+    "follow production",
+    "conduct control check",
+    "meet required standards",
+    "required standards",
+    "complete quality control",
+    "reach decision point",
+    "take one",
+    "register it",
+    "move it",
+    "conclude path",
+    "finish product",
+    "load it",
+    "complete alternative path",
+    "process loop",
+    "process move first main activity",
+    "process continue assignment",
+    "production proceed",
+    "process advance",
+    "control check conduct production",
+    "product meet required standards",
+    "process take",
+    "process conclude end step"
+  ],
+  "model_tasks": [
+    "production planning",
+    "assign workers",
+    "production design",
+    "product delivery",
+    "production logout",
+    "start quality control",
+    "finish quality control",
+    "register to the finished stock",
+    "stock to the finished goods",
+    "register to the semi-finished stock",
+    "load to the semi-finished stock"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "set everything",
+        "encounter decision point",
+        "make choice",
+        "create cycle",
+        "meet condition",
+        "resolve condition",
+        "follow assignment",
+        "mark completion",
+        "follow production",
+        "conduct control check",
+        "meet required standards",
+        "required standards",
+        "reach decision point",
+        "take one",
+        "register it",
+        "move it",
+        "conclude path",
+        "load it",
+        "complete alternative path",
+        "process loop",
+        "process move first main activity",
+        "process continue assignment",
+        "production proceed",
+        "process advance",
+        "control check conduct production",
+        "product meet required standards",
+        "process take",
+        "process conclude end step"
+      ],
+      "additional_tasks": [
+        "production logout",
+        "start quality control",
+        "register to the finished stock",
+        "stock to the finished goods",
+        "register to the semi-finished stock",
+        "load to the semi-finished stock"
+      ],
+      "merged_tasks": [
+        {
+          "model": "production design",
+          "model_index": 2,
+          "user": [
+            "design production",
+            "finalize production design"
+          ],
+          "user_indices": [
+            9,
+            10
+          ],
+          "pair_sims": [
+            0.871,
+            0.819
+          ],
+          "combo_sim": 0.766
+        },
+        {
+          "model": "finish quality control",
+          "model_index": 6,
+          "user": [
+            "complete quality control",
+            "finish product"
+          ],
+          "user_indices": [
+            17,
+            23
+          ],
+          "pair_sims": [
+            0.713,
+            0.618
+          ],
+          "combo_sim": 0.865
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial step that sets everything in motion. Immediately, a decision point is encountered where a choice is made based on a specific condition. If the condition is true, the process loops back to this decision point, effectively creating a cycle until the condition is no longer met.\n\nOnce the condition is resolved, the process moves forward to the first main activity, which involves planning the production. After the production planning is complete, the next step is to assign workers to their respective tasks. Following the assignment of workers, the process continues with designing the production, ensuring that all necessary designs are in place for the production to proceed smoothly.\n\nAfter the production design is finalized, the process advances to delivering the product. Once the product is delivered, the next step involves logging out of the production phase, marking the completion of the production activities. Following the production logout, a quality control check is conducted to ensure that the product meets the required standards.\n\nAfter the quality control is completed, another decision point is reached. Here, the process can take one of two paths. If the product is ready to be finished, it is registered to the finished stock. Once registered, it is then moved to the finished goods stock, concluding this path.\n\nAlternatively, if the product is not yet finished, it is registered to the semi-finished stock. After registration, it is loaded into the semi-finished stock, completing this alternative path.\n\nFinally, regardless of the path taken, the process concludes with an end step, marking the completion of the entire process.",
+  "output_text": "The process begins with a starting point, where an initial event occurs. Immediately after this starting point, the process moves directly to its conclusion, where it ends. There are no additional steps, decisions, or actions between the start and the end. This process is straightforward, consisting solely of a beginning and an immediate end."
+}

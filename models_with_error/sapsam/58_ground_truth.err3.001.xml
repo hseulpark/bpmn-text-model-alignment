@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Send Invitations</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Lead Annual Planning Meeting</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Participate in Meeting</label>
+      <method />
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="">
+    <parameters>
+      <label>Align for Strategy</label>
+      <method />
+      <type>:task</type>
+      <mid>'6'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="">
+    <parameters>
+      <label>Reformulate Strategy</label>
+      <method />
+      <type>:task</type>
+      <mid>'5'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint=""><parameters><label>Validate data</label><method /><type>:task</type><arguments /></parameters></call><call id="a5" endpoint="">
+    <parameters>
+      <label>Review and Discuss Strategy</label>
+      <method />
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Pursue Strategy</label>
+      <method />
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments />
+    </parameters>
+  </call>
+</description>

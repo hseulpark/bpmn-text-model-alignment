@@ -1,0 +1,201 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/53_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/53_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "begin roadtrip participant",
+    "fix travel details",
+    "prepare checklist",
+    "check necessary papers",
+    "require visa",
+    "communicate application",
+    "clear unfinished business",
+    "take care",
+    "are pets",
+    "make arrangements",
+    "fetch it",
+    "obtain necessary vaccinations",
+    "check insurance coverage",
+    "apply additional coverage",
+    "gather addresses",
+    "make travel documents",
+    "involve guidebooks",
+    "prepare kit",
+    "gather adressesm",
+    "city maps",
+    "roadtrip participant fix travel details",
+    "roadtrip participant apply visa",
+    "application communicate embassy",
+    "arrangements make their care",
+    "process continue unsubscribing",
+    "neighbor fetch",
+    "travel documents gather",
+    "copies make",
+    "process involve guidebooks",
+    "prepare aid kit"
+  ],
+  "model_tasks": [
+    "fix travel details",
+    "prepare checklist",
+    "check and complete papers",
+    "apply for visa",
+    "communicate visa application",
+    "clear unfinished business",
+    "arrange pet care",
+    "unsubscribe from post or arrange neighbor",
+    "obtain vaccinations",
+    "check insurance coverage",
+    "apply for additional coverage",
+    "communicate with insurance company",
+    "gather travel documents and addresses",
+    "make copies of id cards and travel documents",
+    "buy or lend guidebooks and city maps",
+    "prepare first-aid kit"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin roadtrip participant",
+        "take care",
+        "make arrangements",
+        "fetch it",
+        "gather adressesm",
+        "roadtrip participant fix travel details",
+        "roadtrip participant apply visa",
+        "process continue unsubscribing",
+        "neighbor fetch",
+        "copies make",
+        "process involve guidebooks"
+      ],
+      "additional_tasks": [
+        "unsubscribe from post or arrange neighbor",
+        "communicate with insurance company"
+      ],
+      "merged_tasks": [
+        {
+          "model": "communicate visa application",
+          "model_index": 4,
+          "user": [
+            "communicate application",
+            "application communicate embassy"
+          ],
+          "user_indices": [
+            5,
+            22
+          ],
+          "pair_sims": [
+            0.71,
+            0.824
+          ],
+          "combo_sim": 0.818
+        },
+        {
+          "model": "arrange pet care",
+          "model_index": 6,
+          "user": [
+            "are pets",
+            "arrangements make their care"
+          ],
+          "user_indices": [
+            8,
+            23
+          ],
+          "pair_sims": [
+            0.659,
+            0.605
+          ],
+          "combo_sim": 0.818
+        },
+        {
+          "model": "make copies of id cards and travel documents",
+          "model_index": 13,
+          "user": [
+            "make travel documents",
+            "travel documents gather"
+          ],
+          "user_indices": [
+            15,
+            26
+          ],
+          "pair_sims": [
+            0.671,
+            0.604
+          ],
+          "combo_sim": 0.654
+        },
+        {
+          "model": "buy or lend guidebooks and city maps",
+          "model_index": 14,
+          "user": [
+            "involve guidebooks",
+            "city maps"
+          ],
+          "user_indices": [
+            16,
+            19
+          ],
+          "pair_sims": [
+            0.5,
+            0.652
+          ],
+          "combo_sim": 0.791
+        },
+        {
+          "model": "prepare first-aid kit",
+          "model_index": 15,
+          "user": [
+            "prepare kit",
+            "prepare aid kit"
+          ],
+          "user_indices": [
+            17,
+            29
+          ],
+          "pair_sims": [
+            0.593,
+            0.853
+          ],
+          "combo_sim": 0.814
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U8",
+              "U9"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the roadtrip participant fixes the travel details.\n\nThe first step is to prepare a checklist for preparations.\n\nFollowing this, the necessary papers are checked and completed.\n\nIf a visa is required, the roadtrip participant applys for a visa nad the application for the visa is communicated to the embassy.\n\nRegardless of the visa requirement, the next step is to clear any unfinished business.\n\nIf there are pets to take care of, arrangements are made for their care.\n\nRegardless of whether or not the are pets to take care of, the process continues with unsubscribing from the post or arranging for a neighbor to fetch it.\n\nAfterward, necessary vaccinations are obtained, and the insurance coverage is checked and additional coverage is applied for and communicated to the insurance company if necessary.\n\nNext, travel documents and addresses are gathered, and copies of ID cards and travel documents are made.\n\nThe process then involves buying or lending guidebooks and city maps, and preparing a first-aid kit.\n\nAll these tasks are performed in parallel.\n\nOnce, the travel documents and adressesm are gathered, the first-aid kit is prepared and the guidebooks and city maps and bought or lended, copies of if ID cards and travel documents are made.\n\nFinally, the all travel preparations are complete.",
+  "output_text": "The process begins with the task of fixing travel details. Once the travel details are fixed, the next step is to prepare a checklist. After the checklist is prepared, the process continues with checking and completing any necessary papers.\n\nFollowing this, there is a decision point to determine if a visa is required. If a visa is required, the process involves applying for the visa and then communicating the visa application. If no visa is required, the process skips directly to the next decision point.\n\nAfter handling the visa requirement, the process moves to clearing any unfinished business. Once this is done, another decision point arises to check if there are pets that need care. If there are pets to care for, arrangements for pet care are made. If there are no pets, the process proceeds to the next step without arranging pet care.\n\nThe next task involves either unsubscribing from postal services or arranging for a neighbor to handle them. Following this, vaccinations are obtained, and then the insurance coverage is checked.\n\nAt this point, there is another decision to determine if additional insurance coverage is needed. If additional coverage is needed, the process involves applying for it and then communicating with the insurance company. If no additional coverage is needed, the process skips directly to the next step.\n\nThe process then involves gathering travel documents and addresses. After gathering these documents, copies of ID cards and travel documents are made. The next step is to buy or borrow guidebooks and city maps. Finally, a first-aid kit is prepared, concluding the process."
+}

@@ -1,0 +1,11 @@
+The process begins when an employee purchases a product. After making the purchase, the employee submits an expense report that includes a list of the items they bought. This report is then subject to a decision point where it is determined whether the process should continue or end.
+
+If the process continues, the next step involves the supervisor reviewing the expense report. After reviewing, the supervisor approves the report, which leads to another decision point. If the report is approved, the supervisor forwards it to the treasurer.
+
+Once the treasurer receives the report, they check the receipts and match the items listed in the report. At this stage, there is another decision point. If there are discrepancies or issues, the treasurer sends the report back to the employee for corrections. The employee then edits the report as needed, and the process loops back to the decision point to determine if further edits are required or if the process can continue.
+
+If the treasurer finds everything in order, they accept the expenses for processing. The treasurer then confirms the payment, and the process moves to the next decision point.
+
+If at any point the report needs further editing, the employee makes the necessary changes, and the process loops back to the appropriate decision point to reassess the report.
+
+The process continues to loop through these steps until all conditions are satisfied, leading to the successful completion of the expense report processing. If at any decision point it is determined that the process should not continue, the process ends.

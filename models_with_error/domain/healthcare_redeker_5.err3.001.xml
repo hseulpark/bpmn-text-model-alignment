@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-1B01027B-198B-470F-9339-07CC74C182FA">
+    <parameters>
+      <label>arrive to the hospital</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-2D5924C9-F2AC-4B33-A514-91730B909874">
+    <parameters>
+      <label>prepare room for the surgery</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-42ABC2D5-7820-4268-9A8F-FFF3A7CB6114">
+    <parameters>
+      <label>perform surgery</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-C33DE431-449E-4BF1-9824-60A608EE5B57">
+        <parameters>
+          <label>discharge patient</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a7" endpoint="" a:alt_id="sid-4AE1E11B-DA4E-49C7-A7DC-9ADAB68EB78F">
+    <parameters>
+      <label>fill the report</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a12" endpoint="" a:alt_id="sid-1E63662E-A8E3-4192-8596-C5B9B8FEB328">
+        <parameters>
+          <label>sanitize room for the surgery</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-E5CBB051-5FE8-4F38-8292-941543B51521" a:mutated="true"><parallel_branch><call id="a2" endpoint="" a:alt_id="sid-0D143E87-76BE-4273-B648-642783B8A7E8">
+        <parameters>
+          <label>pay the bill</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch><parallel_branch /></parallel></description>

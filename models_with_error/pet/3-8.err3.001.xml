@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-BA073685-4686-460D-A701-2E4791B90B97">
+    <parameters>
+      <label>Customer submits a claim</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a13" endpoint=""><parameters><label>Review request</label><method /><type>:task</type><arguments /></parameters></call><call id="a2" endpoint="" a:alt_id="sid-224A5CDF-4D16-4C07-BD7F-A4F5A76019A4">
+    <parameters>
+      <label>Notification department checks the documents</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-70B5D2F8-5C02-48A1-AA53-7E8148B8526B">
+    <parameters>
+      <label>Notification department registers the claim and Handling department picks up the claim</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-57A53C30-56A9-4CD3-8540-6F09ED42C29A">
+    <parameters>
+      <label>Handling department checks the insurance</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-D7719480-C29B-4CE4-BBFD-E4F6E8F63516">
+    <parameters>
+      <label>Handling department performs asessment</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-76642E3D-EDC0-4233-BC5E-B88139F97294">
+    <alternative condition="">
+      <call id="a9" endpoint="" a:alt_id="sid-60FA0E56-89E3-47A5-AD63-580264C0D348">
+        <parameters>
+          <label>Handling department  schedules the payment</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a8" endpoint="" a:alt_id="sid-E013079C-522B-4343-AEDA-16069D702115">
+        <parameters>
+          <label>Handling department phones garage to authorise the repairs</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      </alternative>
+    <alternative condition="">
+      <call id="a10" endpoint="" a:alt_id="sid-F3BDF6C4-2B59-4F9B-82CC-2EB9D11852FC">
+        <parameters>
+          <label>Handling department rejects the claim</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a12" endpoint="" a:alt_id="sid-C983EE7B-F4FD-4E45-BB0C-F1D8A15E1557">
+    <parameters>
+      <label>Handling department sends a letter to the customer</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,97 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/17_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/17_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "need email account",
+    "log on",
+    "choose package",
+    "enter personal information",
+    "upload photo id",
+    "provide full names",
+    "confirm personal data",
+    "generate password",
+    "new email",
+    "email account need der email account creation portal",
+    "system check",
+    "new email id generate",
+    "process conclude creation",
+    "provide personal information"
+  ],
+  "model_tasks": [
+    "log on to email provider",
+    "choose package",
+    "check personal account availability",
+    "generate email id and password",
+    "provide full names",
+    "upload photo id",
+    "confirm personal data",
+    "enter personal information"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "need email account",
+        "log on",
+        "new email",
+        "email account need der email account creation portal",
+        "system check",
+        "process conclude creation",
+        "provide personal information"
+      ],
+      "additional_tasks": [
+        "log on to email provider",
+        "check personal account availability"
+      ],
+      "merged_tasks": [
+        {
+          "model": "generate email id and password",
+          "model_index": 3,
+          "user": [
+            "generate password",
+            "new email id generate"
+          ],
+          "user_indices": [
+            7,
+            11
+          ],
+          "pair_sims": [
+            0.752,
+            0.788
+          ],
+          "combo_sim": 0.914
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "generate email id and password",
+          "task_b": "enter personal information",
+          "before_score": 10,
+          "after_score": 8,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when an email account is needed in der Email Account Creation Portal.\n\nThe first step is to log on to the email provider's website and then chooses a package.\n\nThe system checks if a personal account is available.\n\nIf it is not available, the process ends with the private account being unavailable.\n\nIf a personal account is available, the private account welcome page and provides personal information is entered.\n\nNext, personal information has to be provided. For this, both the full names have to be entered and a photo ID must be uploaded.\n\nOnce the full names are provided and the photo ID is uploaded, the personal data is confirmed, and new email ID and password are generated.\n\nThe process concludes with the creation of the private email.",
+  "output_text": "The process begins with logging on to an email provider. Once logged in, the next step is to choose a package. After selecting a package, the availability of a personal account is checked.\n\nAt this point, a decision is made based on whether the personal account is available. If the account is available, the process continues with generating an email ID and password. This step leads to two tasks that can be done simultaneously: providing full names and uploading a photo ID. Both tasks must be completed before moving on.\n\nOnce both the full names are provided and the photo ID is uploaded, the process proceeds to confirm the personal data. After confirming the data, personal information is entered.\n\nIf, during the account availability check, it is determined that the personal account is not available, the process skips directly to the end without performing any further steps.\n\nFinally, after entering personal information, the process concludes."
+}

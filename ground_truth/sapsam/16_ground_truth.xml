@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Activate Learning Progress</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <choose mode="exclusive">
+      <alternative condition="">
+        <call id="a4" endpoint="">
+          <parameters>
+            <label>Click on Learning Progress</label>
+            <method/>
+            <type>:task</type>
+            <mid>'2'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+        <loop mode="post_test" condition="Manual">
+          <choose mode="exclusive">
+            <alternative condition="Manual" language="text/javascript">
+              <call id="a6" endpoint="">
+                <parameters>
+                  <label>Set Progress Manually</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'4'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Automatic" language="text/javascript">
+              <call id="a7" endpoint="">
+                <parameters>
+                  <label>Set Progress Automatically</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'5'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </loop>
+        <call id="a4" endpoint="">
+          <parameters>
+            <label>Click on Learning Progress</label>
+            <method/>
+            <type>:task</type>
+            <mid>'2'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a8" endpoint="">
+          <parameters>
+            <label>Display Red Cross</label>
+            <method/>
+            <type>:task</type>
+            <mid>'7'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a9" endpoint="">
+          <parameters>
+            <label>Display Green Marking</label>
+            <method/>
+            <type>:task</type>
+            <mid>'8'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a10" endpoint="">
+          <parameters>
+            <label>Display Yellow Marking</label>
+            <method/>
+            <type>:task</type>
+            <mid>'9'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a11" endpoint="">
+          <parameters>
+            <label>Display Gray Marking</label>
+            <method/>
+            <type>:task</type>
+            <mid>'10'</mid>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+  </loop>
+</description>

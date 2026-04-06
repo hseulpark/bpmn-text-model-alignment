@@ -1,0 +1,87 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/21_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/21_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "receive order",
+    "prepare dough",
+    "set up delivery",
+    "prepare cooking paper",
+    "complete phase tasks",
+    "phase 2",
+    "follow preparation",
+    "cook they",
+    "cook muffins",
+    "phase 3",
+    "meet requirements",
+    "initiate payment process",
+    "dispatch muffins",
+    "complete payment",
+    "end phase",
+    "mark end",
+    "tasks include",
+    "process move",
+    "muffins prepare",
+    "process advance"
+  ],
+  "model_tasks": [
+    "receive order",
+    "prepare dough",
+    "setup delivery",
+    "prepare cooking paper",
+    "prepare muffins",
+    "cook muffins",
+    "initiate payment process",
+    "dispatch muffins"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "complete phase tasks",
+        "phase 2",
+        "follow preparation",
+        "cook they",
+        "phase 3",
+        "meet requirements",
+        "complete payment",
+        "end phase",
+        "mark end",
+        "tasks include",
+        "process move",
+        "process advance"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "prepare muffins",
+          "task_b": "cook muffins",
+          "before_score": 9,
+          "after_score": 7,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process at MyMuffin begins with the receipt of a new order.\n\nOnce the order is received, the phase 1 tasks in MyMuffin commence simultaneously.\n\nThese tasks include preparing the dough, setting up the delivery, and preparing the cooking paper.\n\nAfter these phase 1 tasks are completed, the process moves to phase 2, where the muffins are prepared.\n\nFollowing the preparation of the muffins, they are cooked.\n\nOnce the muffins are cooked, the process advances to phase 3, where the requirements for this phase are met.\n\nThis includes initiating the payment process and dispatching the muffins.\n\nOnce the payment is completed and the muffins are dispatched, phase 3 is ended, marking the end of the process.",
+  "output_text": "The process begins when an order is received. Once the order is received, the next step is to prepare the dough. After the dough is prepared, the process involves setting up the delivery arrangements. Following the setup for delivery, cooking paper is prepared. With the cooking paper ready, the muffins are then prepared. Once the muffins are prepared, they are cooked.\n\nAfter the muffins are cooked, two activities occur simultaneously. First, the payment process is initiated. At the same time, the muffins are dispatched. Both of these activities must be completed before the process can proceed to its conclusion. Once the payment process is initiated and the muffins are dispatched, the process comes to an end."
+}

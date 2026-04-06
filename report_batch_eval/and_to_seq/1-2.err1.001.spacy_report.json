@@ -1,0 +1,172 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/1-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/1-2.err1.001.xml",
+  "user_tasks": [
+    "begin customer",
+    "bring defective computer",
+    "examine computer",
+    "identify defect",
+    "assess issue",
+    "provide customer",
+    "make decision",
+    "take computer",
+    "check hardware",
+    "inspect it",
+    "repair identified issues",
+    "identified issues",
+    "examine it",
+    "make necessary configurations",
+    "complete software tasks",
+    "conduct final test",
+    "pass test",
+    "detect issues",
+    "complete tasks",
+    "customer bring defective computer",
+    "customer service representative examine computer",
+    "crs provide customer",
+    "decision make point",
+    "customer decide",
+    "customer agree repair",
+    "process continue series",
+    "crs check hardware",
+    "crs inspect hardware",
+    "crs examine software",
+    "crs conduct final test",
+    "entire system function",
+    "system pass test",
+    "process conclude",
+    "issues detect test",
+    "process loop",
+    "center procedures set"
+  ],
+  "model_tasks": [
+    "customer brings a defective computer",
+    "crs checks the defect",
+    "crs hands out a repair cost calculation",
+    "customer takes computer home",
+    "crs checks  the hardware",
+    "crs repairs the hardware",
+    "crs checks the software",
+    "crs configures the software",
+    "crs tests  system functionality"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin customer",
+        "bring defective computer",
+        "examine computer",
+        "identify defect",
+        "assess issue",
+        "provide customer",
+        "make decision",
+        "take computer",
+        "check hardware",
+        "inspect it",
+        "repair identified issues",
+        "identified issues",
+        "examine it",
+        "make necessary configurations",
+        "complete software tasks",
+        "conduct final test",
+        "pass test",
+        "detect issues",
+        "complete tasks",
+        "crs provide customer",
+        "decision make point",
+        "customer decide",
+        "customer agree repair",
+        "process continue series",
+        "crs conduct final test",
+        "entire system function",
+        "system pass test",
+        "process conclude",
+        "issues detect test",
+        "process loop",
+        "center procedures set"
+      ],
+      "additional_tasks": [
+        "crs checks the defect",
+        "crs hands out a repair cost calculation"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "crs inspect hardware",
+          "user_index": 27,
+          "model": [
+            "crs repairs the hardware",
+            "crs checks the software"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.814,
+            0.68
+          ],
+          "combo_sim": 0.788,
+          "adjacent": true
+        },
+        {
+          "user": "crs examine software",
+          "user_index": 28,
+          "model": [
+            "crs configures the software",
+            "crs tests  system functionality"
+          ],
+          "model_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.737,
+            0.721
+          ],
+          "combo_sim": 0.748,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U26",
+              "U27"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer brings a defective computer to the service center. The Customer Service Representative (CRS) first examines the computer to identify the defect. After assessing the issue, the CRS provides the customer with a repair cost estimate.\n\nAt this point, a decision is made. If the customer decides not to proceed with the repair, they take the computer back home, and the process ends there.\n\nIf the customer agrees to the repair, the process continues with a series of parallel activities. The CRS simultaneously checks both the hardware and the software of the computer. For the hardware, the CRS inspects it thoroughly and then proceeds to repair any identified issues. For the software, the CRS examines it and makes necessary configurations to ensure it functions correctly.\n\nOnce both the hardware and software tasks are completed, the CRS conducts a final test to ensure the entire system is functioning properly. If the system passes the test, the process concludes successfully. If any issues are detected during the test, the process may loop back to the earlier stages of checking and repairing, depending on the specific conditions set by the service center's procedures. Finally, once all tasks are satisfactorily completed, the process ends.",
+  "output_text": "The process begins when a customer brings a defective computer to the service center. The Customer Service Representative (CRS) first examines the computer to identify the defect. After assessing the issue, the CRS provides the customer with a repair cost estimate.\n\nAt this point, a decision is made. If the customer decides not to proceed with the repair, they take the computer back home, and the process ends there.\n\nIf the customer agrees to the repair, the process continues with the CRS conducting a thorough check of the computer's hardware. Once the hardware inspection is complete, the CRS proceeds to repair any identified hardware issues.\n\nFollowing the hardware repair, the CRS checks the computer's software to ensure there are no issues. If necessary, the CRS configures the software to ensure it is functioning correctly.\n\nAfter both hardware and software have been addressed, the CRS performs a final test to verify the overall system functionality of the computer. If the system passes the functionality test, the process concludes successfully. If any issues are detected during the test, the process may loop back to the appropriate step for further inspection and repair until the system is fully functional. Once all repairs and tests are satisfactorily completed, the process ends."
+}

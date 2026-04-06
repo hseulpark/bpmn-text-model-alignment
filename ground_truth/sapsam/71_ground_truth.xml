@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Create Booking System</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Start Booking System</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Read Payment</label>
+      <method/>
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Initiate Payment Automation</label>
+      <method/>
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Payment Made" language="text/javascript">
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Book Payment</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Payment Not Made" language="text/javascript">
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Send Reminder</label>
+          <method/>
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Payment Made After Reminder" language="text/javascript">
+          <call id="a7" endpoint="">
+            <parameters>
+              <label>Book Payment</label>
+              <method/>
+              <type>:task</type>
+              <mid>'6'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="Payment Not Made After Reminder" language="text/javascript">
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Initiate Dunning Procedure</label>
+              <method/>
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments/>
+            </parameters>
+          </call>
+          <loop mode="pre_test" condition="true">
+            <call id="a12" endpoint="">
+              <parameters>
+                <label>Review Reminder Notice</label>
+                <method/>
+                <type>:task</type>
+                <mid>'11'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+            <loop mode="pre_test" condition="Review Not Successful" language="text/javascript">
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Correct Reminder Notice</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'15'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a12" endpoint="">
+                <parameters>
+                  <label>Review Reminder Notice</label>
+                  <method/>
+                  <type>:task</type>
+                  <mid>'11'</mid>
+                  <arguments/>
+                </parameters>
+              </call>
+            </loop>
+            <call id="a14" endpoint="">
+              <parameters>
+                <label>Send Reminder Notice</label>
+                <method/>
+                <type>:task</type>
+                <mid>'13'</mid>
+                <arguments/>
+              </parameters>
+            </call>
+          </loop>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

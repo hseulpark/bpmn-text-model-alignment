@@ -1,0 +1,193 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/14_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/14_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "seller display items",
+    "buyer purchase item",
+    "seller receive buyer order",
+    "seller send order",
+    "shipping company get item",
+    "shipping company deliver item",
+    "ebay track order",
+    "process conclude",
+    "buyer close order",
+    "shipping company deliver purchase",
+    "buyer ask money reimbursement",
+    "seller receive buyer decision",
+    "buyer request reshipment",
+    "process continue",
+    "send purchase confirmation",
+    "reimburse money"
+  ],
+  "model_tasks": [
+    "send confirmation",
+    "purchase item",
+    "receive order",
+    "display items",
+    "send to shipping",
+    "shipping company gets item",
+    "reship item",
+    "send to shipping",
+    "shipping company gets item",
+    "receive decision",
+    "reimburse money",
+    "track order",
+    "close order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "process conclude",
+        "buyer ask money reimbursement",
+        "buyer request reshipment",
+        "process continue"
+      ],
+      "additional_tasks": [
+        "receive order",
+        "display items",
+        "reship item",
+        "send to shipping",
+        "shipping company gets item",
+        "close order"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send confirmation",
+          "model_index": 0,
+          "user": [
+            "seller send order",
+            "send purchase confirmation"
+          ],
+          "user_indices": [
+            3,
+            14
+          ],
+          "pair_sims": [
+            0.539,
+            0.793
+          ],
+          "combo_sim": 0.706
+        },
+        {
+          "model": "purchase item",
+          "model_index": 1,
+          "user": [
+            "seller display items",
+            "buyer purchase item"
+          ],
+          "user_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.636,
+            0.885
+          ],
+          "combo_sim": 0.722
+        },
+        {
+          "model": "send to shipping",
+          "model_index": 4,
+          "user": [
+            "shipping company deliver item",
+            "shipping company deliver purchase"
+          ],
+          "user_indices": [
+            5,
+            9
+          ],
+          "pair_sims": [
+            0.663,
+            0.643
+          ],
+          "combo_sim": 0.577
+        },
+        {
+          "model": "receive decision",
+          "model_index": 9,
+          "user": [
+            "seller receive buyer order",
+            "seller receive buyer decision"
+          ],
+          "user_indices": [
+            2,
+            11
+          ],
+          "pair_sims": [
+            0.421,
+            0.62
+          ],
+          "combo_sim": 0.592
+        },
+        {
+          "model": "track order",
+          "model_index": 11,
+          "user": [
+            "ebay track order",
+            "buyer close order"
+          ],
+          "user_indices": [
+            6,
+            8
+          ],
+          "pair_sims": [
+            0.76,
+            0.418
+          ],
+          "combo_sim": 0.596
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "send confirmation",
+          "task_b": "display items",
+          "before_score": 19,
+          "after_score": 17,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "receive decision",
+          "task_b": "reimburse money",
+          "before_score": 19,
+          "after_score": 15,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U4",
+              "U5"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The online selling process of the eBay data stores is started.\n\nFirst, the seller is displaying items on the webpage.\n\nThe buyer can the purchase the item.\n\nAfter the purchase, the seller receives the buyer's order and sends an order purchase confirmation to the buyer.\n\nFollowing this, the seller sends the order to the shipping company.\n\nThe shipping company then gets the item and decides on what it will do.\n\nIf the shipping company delivers the item to the customer in proper datess, eBay tracks the order, and the process concludes with the buyer closing the order.\n\nHowever, if the shipping company does not deliver the purchase, the buyer has to decide what to do: ask for a money reimbursement or request a reshipment of the item.\n\nIf the buyer asks for a money reimbursement, the seller receives the buyer's decision and reimburses the money and the process ends with an escalation event.\n\nIf the buyer requests a reshipment of the item, the process continues with the seller sending the order to the shipping company again.",
+  "output_text": "The process begins with an initial step where a confirmation is sent. Following this, an item is purchased. Once the purchase is complete, the order is received, and the available items are displayed.\n\nNext, a decision point is reached. If the decision is positive, the process continues with sending the item to shipping. The shipping company then receives the item. Another decision point follows, but regardless of the outcome, the process moves forward to another decision point.\n\nAt this stage, the order is tracked, and subsequently, the order is closed. If the order is not delivered, a further decision is made. If the decision is to reship the item, the item is sent to shipping again, and the process loops back to the shipping step. If the decision is to reimburse, a decision is received, and the money is reimbursed. This leads to another decision point, which eventually loops back to the previous decision point.\n\nAfter handling the reshipment or reimbursement, the process escalates and loops back to the point where the order is tracked and closed. If the initial decision after displaying items is negative, the process ends."
+}

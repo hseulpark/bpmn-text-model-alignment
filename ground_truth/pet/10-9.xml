@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <choose mode="exclusive" a:alt_id="sid-F8B7CC15-B782-4376-B474-13BC286DA87A">
+    <alternative condition="">
+      <call id="a2" endpoint="" a:alt_id="sid-3CB06371-7A82-472B-98F8-D9770244278C">
+        <parameters>
+          <label>SP / PU / GO request changes to the MPO</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a3" endpoint="" a:alt_id="sid-509FCE2E-9466-445F-B50C-30B8F5B38F50">
+        <parameters>
+          <label>MPO causes a change</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a5" endpoint="" a:alt_id="sid-5D577E78-BE26-4827-8598-0CEB94F9E9B7">
+    <parameters>
+      <label>MPO reviews the change request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-0C5A2074-142F-4C91-BE6A-682C338EC0C1">
+    <alternative condition="">
+      <call id="a7" endpoint="" a:alt_id="sid-4B3A3360-E4E6-44BE-B84E-35252D2AA11E">
+        <parameters>
+          <label>MPO rejects the change</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a8" endpoint="" a:alt_id="sid-EC454EA1-79AE-4771-AD32-D1202E6BED93">
+        <parameters>
+          <label>MPO confirmes the change</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a10" endpoint="" a:alt_id="sid-D3A55857-5448-4AB5-BBD3-01B1D4117E2B">
+    <parameters>
+      <label>MPO performs the change</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-1996270F-2A67-4E1B-993A-5E1A59B3A3BD">
+    <alternative condition="">
+      <call id="a12" endpoint="" a:alt_id="sid-80CBD281-AEFB-4C3C-9247-FA502385198B">
+        <parameters>
+          <label>MPO reports the implementation to the SP / PU / GO</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a13" endpoint="" a:alt_id="sid-6AD6E9B4-55F0-425A-B0A1-2FC8C26F44F2">
+        <parameters>
+          <label>MPO notifies the SP / PU / GO about the failure</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

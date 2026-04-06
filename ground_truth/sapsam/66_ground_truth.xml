@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Choose Pizza from Menu</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Order Pizza by Phone</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Wait" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Wait 60 Minutes</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Inquire" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Call Pizzeria to Inquire</label>
+          <method/>
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <choose mode="exclusive">
+    <alternative condition="Pizza Arrives" language="text/javascript"/>
+    <alternative condition="Call Again" language="text/javascript">
+      <call id="a9" endpoint="">
+        <parameters>
+          <label>Call Pizzeria Again</label>
+          <method/>
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a8" endpoint="">
+    <parameters>
+      <label>Pizza Arrives</label>
+      <method/>
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a10" endpoint="">
+    <parameters>
+      <label>Pay Delivery Boy</label>
+      <method/>
+      <type>:task</type>
+      <mid>'9'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a11" endpoint="">
+    <parameters>
+      <label>Eat Pizza</label>
+      <method/>
+      <type>:task</type>
+      <mid>'10'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

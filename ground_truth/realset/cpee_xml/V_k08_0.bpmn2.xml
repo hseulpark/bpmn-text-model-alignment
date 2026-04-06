@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-8A22C9D9-0779-404C-A602-86E1803715D4">
+    <parameters>
+      <label>Enter login data</label>
+      <method/>
+      <type>:userTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a12" endpoint="" a:alt_id="sid-207FB08E-1B36-4B8D-9C42-161191C3C636">
+    <parameters>
+      <label>Check if credentials are correct</label>
+      <method/>
+      <type>:serviceTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-DDA26DD5-01DE-442C-81C3-32F9F6E109CF">
+    <alternative condition="">
+      <loop mode="post_test" condition="true">
+        <call id="a2" endpoint="" a:alt_id="sid-57D97516-6FAE-425C-9B15-DE5D6CAD42A8">
+          <parameters>
+            <label>Select product</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a4" endpoint="" a:alt_id="sid-68ECF844-C500-4827-8296-AA3E438EBC18">
+          <parameters>
+            <label>Add it to shopping cart</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a23" endpoint="" a:alt_id="sid-6CBFE006-1DD2-476D-9921-404A050E4364">
+          <parameters>
+            <label>Save item</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </loop>
+      <call id="a6" endpoint="" a:alt_id="sid-9DA3A03E-174C-42A0-B6CC-06F45D9CF0CD">
+        <parameters>
+          <label>Check if every selected item is in the shopping cart</label>
+          <method/>
+          <type>:userTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="" a:alt_id="sid-D84129D6-AA78-472C-91A5-0FF5ACA92591">
+        <parameters>
+          <label>Confirm order</label>
+          <method/>
+          <type>:userTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-61C82D6E-AB54-4DF6-9507-1B8566784285">
+        <parallel_branch>
+          <call id="a15" endpoint="" a:alt_id="sid-D4F2F6B4-F98A-413B-8AFD-2E52B91515D2">
+            <parameters>
+              <label>Prepare shipment details</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a16" endpoint="" a:alt_id="sid-6DC1D308-4562-449D-A093-05F61F0DC593">
+            <parameters>
+              <label>Prepare payment details</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a8" endpoint="" a:alt_id="sid-24F1583E-3971-4F02-8212-72A6F2F78ED9">
+        <parameters>
+          <label>Enter payment data</label>
+          <method/>
+          <type>:userTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-DDEDA8B9-236F-4DB5-A4E3-020FB6460CB3">
+        <parallel_branch>
+          <call id="a19" endpoint="" a:alt_id="sid-29513F22-88FE-4CA9-A629-CB964E644177">
+            <parameters>
+              <label>Send payment data to bank institut</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a10" endpoint="" a:alt_id="sid-99F7A738-C614-4EC2-85F8-F80356B4BA01">
+            <parameters>
+              <label>Enter shipping details</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <choose mode="exclusive" a:alt_id="sid-E946DB66-A323-4D5E-9215-23649D89D92B">
+        <alternative condition="">
+          <call id="a21" endpoint="" a:alt_id="sid-3A7A733E-EBED-42CD-92D5-5C1DAA63ABDC">
+            <parameters>
+              <label>Confirm and save order</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition=""/>
+      </choose>
+    </alternative>
+    <alternative condition=""/>
+  </choose>
+</description>

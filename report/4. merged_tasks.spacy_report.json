@@ -1,0 +1,58 @@
+{
+  "log_path": "./data/0.log.yaml",
+  "bpmn_path": "./data/4. merged_tasks.xml",
+  "user_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up brewer",
+    "pour water",
+    "serve"
+  ],
+  "model_tasks": [
+    "boil water",
+    "prepare brewer setup",
+    "pour water",
+    "serve"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "prepare brewer setup",
+          "model_index": 1,
+          "user": [
+            "prepare coffee ground",
+            "set up brewer"
+          ],
+          "user_indices": [
+            1,
+            2
+          ]
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "# User Input:\nFirst, boil water. Prepare coffee ground and set up the brewer. Pour water and serve.",
+  "output_text": "The process begins with a starting point, where an initial event occurs. Immediately after this starting point, the process moves directly to its conclusion, where it ends. There are no additional steps, decisions, or actions between the start and the end. This process is straightforward, consisting solely of a beginning and an immediate end."
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-96E4D713-7DCB-4136-9704-AEB87DFDC0ED">
+    <parameters>
+      <label>The MPON requests a device takeover bid of the MPOO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-113F82AA-3453-4EF5-8E67-346FC0145B10">
+    <parameters>
+      <label>The MPOO sends a tender for the equipment takeover to the MPON</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-F6352EA4-8C1D-4ED0-A550-893A804C5745">
+    <parameters>
+      <label>The MPON places an order at the MPOO</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-7278D297-7BCB-4898-9DC8-F19D83767132">
+    <parameters>
+      <label>The MPOO confirms the order of the MPON and sends the master data</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

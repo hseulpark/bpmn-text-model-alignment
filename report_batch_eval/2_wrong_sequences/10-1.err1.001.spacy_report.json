@@ -1,0 +1,172 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/10-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/10-1.err1.001.xml",
+  "user_tasks": [
+    "send dismissal",
+    "receive dismissal",
+    "review it",
+    "reach decision point",
+    "oppose dismissal",
+    "take action",
+    "taking action",
+    "complete action",
+    "confirm dismissal",
+    "make decision",
+    "opposing action",
+    "reach final decision point",
+    "mpon send dismissal",
+    "mpoo receive dismissal",
+    "decision point reach review",
+    "mpoo choose possible actions",
+    "mpoo decide scenario",
+    "process continue",
+    "mpoo take action",
+    "process reach decision point",
+    "mpoo confirm dismissal",
+    "process proceed mpoo",
+    "action lead same decision point",
+    "mpoo oppose",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "mpoo reviews the dismissal",
+    "mpon sents the dismissal",
+    "mpoo opposes the dismissal",
+    "mpoo confirmes the dismissal"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send dismissal",
+        "receive dismissal",
+        "review it",
+        "reach decision point",
+        "oppose dismissal",
+        "take action",
+        "taking action",
+        "complete action",
+        "confirm dismissal",
+        "make decision",
+        "opposing action",
+        "reach final decision point",
+        "mpoo receive dismissal",
+        "decision point reach review",
+        "mpoo choose possible actions",
+        "mpoo decide scenario",
+        "process continue",
+        "mpoo take action",
+        "process reach decision point",
+        "process proceed mpoo",
+        "action lead same decision point",
+        "mpoo oppose",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "mpon send dismissal",
+          "user_index": 12,
+          "model": [
+            "mpoo reviews the dismissal",
+            "mpon sents the dismissal",
+            "mpoo opposes the dismissal"
+          ],
+          "model_indices": [
+            0,
+            1,
+            2
+          ],
+          "pair_sims": [
+            0.646,
+            0.931,
+            0.623
+          ],
+          "combo_sim": 0.774,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U19",
+              "U4"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U20",
+              "U23"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U23",
+              "U24"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U20",
+              "U22"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 4,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial step where the MPON sends a dismissal. Following this, the MPOO receives the dismissal and reviews it. After the review, a decision point is reached where the MPOO must choose between two possible actions.\n\nIn one scenario, the MPOO decides to oppose the dismissal. If this is the case, the process continues with the MPOO taking action to oppose the dismissal. Once this action is completed, the process reaches another decision point.\n\nIn the alternative scenario, the MPOO confirms the dismissal. If this decision is made, the process proceeds with the MPOO confirming the dismissal. This action also leads to the same decision point as the opposing action.\n\nRegardless of whether the MPOO opposes or confirms the dismissal, the process concludes after reaching the final decision point, leading to the end of the process.",
+  "output_text": "The process begins with an initial step where the dismissal is reviewed by the MPOO. Following this review, the MPON sends the dismissal. After the dismissal is sent, a decision point is reached where there are two possible paths.\n\nIn the first path, the MPOO decides to oppose the dismissal. After opposing the dismissal, the process reaches another decision point.\n\nIn the second path, the MPOO confirms the dismissal. This confirmation also leads to the same decision point as the first path.\n\nRegardless of whether the MPOO opposes or confirms the dismissal, the process concludes at this decision point, leading to the end of the process."
+}

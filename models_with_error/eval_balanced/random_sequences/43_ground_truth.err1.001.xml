@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Order Placed by Customer</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Customer Issues Order</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Check Feasibility</label>
+      <method />
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Not Feasible" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Abort Process through Escalation</label>
+          <method />
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Feasible" language="text/javascript">
+      <choose mode="exclusive">
+        <alternative condition="Offer Available or Repeat Order" language="text/javascript">
+          <call id="a9" endpoint="">
+            <parameters>
+              <label>Create Order and Enter Production Planning</label>
+              <method />
+              <type>:task</type>
+              <mid>'12'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a15" endpoint="">
+            <parameters>
+              <label>Send Order Confirmation</label>
+              <method />
+              <type>:task</type>
+              <mid>'13'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No Offer Available" language="text/javascript">
+          <call id="a12" endpoint="">
+            <parameters>
+              <label>Wait for Offer Acceptance</label>
+              <method />
+              <type>:task</type>
+              <mid>'9'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a11" endpoint="">
+            <parameters>
+              <label>Send Offer</label>
+              <method />
+              <type>:task</type>
+              <mid>'8'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a10" endpoint="">
+            <parameters>
+              <label>Price Calculation and Offer Creation</label>
+              <method />
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Offer Not Accepted" language="text/javascript">
+              <call id="a14" endpoint="">
+                <parameters>
+                  <label>Inform No Order Confirmation</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'11'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="Offer Accepted" language="text/javascript">
+              <call id="a9" endpoint="">
+                <parameters>
+                  <label>Create Order and Enter Production Planning</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'12'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Send Order Confirmation</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'13'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

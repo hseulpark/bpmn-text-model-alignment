@@ -1,0 +1,149 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/9-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/9-2.err1.001.xml",
+  "user_tasks": [
+    "begin service representative",
+    "send mortgage offer",
+    "send offer",
+    "receive reply",
+    "reach decision point",
+    "take possible paths",
+    "update case details",
+    "follow update",
+    "perform cancellation",
+    "move case",
+    "generate request",
+    "complete necessary actions",
+    "reach final decision point",
+    "service representative send mortgage offer",
+    "csr wait reply",
+    "process reach decision point",
+    "csr update case details",
+    "path lead decision point",
+    "csr move case",
+    "csr generate request",
+    "process continue path",
+    "sequence lead decision point",
+    "paths converge final decision point",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "customer service representative (csr) sends a mortgage offer",
+    "csr waits for a customer reply",
+    "csr updates the case details",
+    "csr archives the work",
+    "csr performs cancellation",
+    "csr moves case to administration",
+    "csr  generates request for outstanding documents",
+    "csr updates the case details",
+    "csr archives the work",
+    "csr performs cancellation"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin service representative",
+        "send offer",
+        "receive reply",
+        "reach decision point",
+        "take possible paths",
+        "follow update",
+        "move case",
+        "generate request",
+        "complete necessary actions",
+        "reach final decision point",
+        "process reach decision point",
+        "path lead decision point",
+        "process continue path",
+        "sequence lead decision point",
+        "paths converge final decision point",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "csr archives the work",
+        "csr moves case to administration",
+        "csr  generates request for outstanding documents",
+        "csr archives the work",
+        "csr performs cancellation"
+      ],
+      "merged_tasks": [
+        {
+          "model": "customer service representative (csr) sends a mortgage offer",
+          "model_index": 0,
+          "user": [
+            "send mortgage offer",
+            "service representative send mortgage offer"
+          ],
+          "user_indices": [
+            1,
+            13
+          ],
+          "pair_sims": [
+            0.625,
+            0.785
+          ],
+          "combo_sim": 0.738
+        },
+        {
+          "model": "csr waits for a customer reply",
+          "model_index": 1,
+          "user": [
+            "csr wait reply",
+            "csr generate request"
+          ],
+          "user_indices": [
+            14,
+            19
+          ],
+          "pair_sims": [
+            0.83,
+            0.512
+          ],
+          "combo_sim": 0.815
+        },
+        {
+          "model": "csr updates the case details",
+          "model_index": 7,
+          "user": [
+            "update case details",
+            "csr move case"
+          ],
+          "user_indices": [
+            6,
+            18
+          ],
+          "pair_sims": [
+            0.745,
+            0.767
+          ],
+          "combo_sim": 0.852
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a Customer Service Representative (CSR) sends a mortgage offer to a customer. After sending the offer, the CSR waits for a reply from the customer. Once a reply is received, the process reaches a decision point where two possible paths can be taken.\n\nIn the first path, the CSR updates the case details. Following this update, the CSR archives the work. After archiving, the CSR performs a cancellation. This path then leads to another decision point, which eventually merges back into the main flow of the process.\n\nIn the second path, the CSR moves the case to administration. This leads to another decision point. From here, the CSR may generate a request for any outstanding documents needed. After generating this request, the process reaches yet another decision point. If the process continues along this path, the CSR updates the case details, archives the work, and performs a cancellation, similar to the first path. This sequence also leads to a decision point that merges back into the main flow.\n\nBoth paths eventually converge at a final decision point, which leads to the end of the process. The process concludes once all necessary actions have been completed and the final decision point is reached.",
+  "output_text": "The process begins when a Customer Service Representative (CSR) sends a mortgage offer to a customer. After sending the offer, the CSR waits for a reply from the customer. Once a reply is received, a decision point is reached where the CSR must choose between two paths.\n\nIn the first path, the CSR updates the case details. Following this, the CSR archives the work and then performs a cancellation. After the cancellation, another decision point is encountered, but regardless of the decision made here, the process continues to the next decision point.\n\nIn the second path, the CSR moves the case to administration. This leads to another decision point. If the decision is to generate a request for outstanding documents, the CSR does so and then updates the case details. After updating the case details, the CSR archives the work and performs a cancellation. Following the cancellation, a decision point is reached, but regardless of the decision made, the process continues to the next decision point.\n\nBoth paths eventually converge at a common decision point, and from there, the process concludes."
+}

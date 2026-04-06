@@ -1,0 +1,7 @@
+The process begins with a manager who checks the open leads. After reviewing the leads, the manager selects the top five leads to focus on. Once the top leads are chosen, the manager instructs the sales assistant to contact these leads.
+
+The process then enters a decision point where it checks if the task of contacting the leads is complete. If it is not complete, the process loops back, and the sales assistant continues to call the customers. Once the sales assistant successfully calls a customer, another decision point is reached.
+
+At this second decision point, if the call results in further action, the sales assistant sends a note to the manager. Upon receiving the note, the manager processes the lead accordingly. After processing, the process returns to the decision point to check if there are more leads to handle.
+
+If there are no more leads to process, the process concludes. This marks the end of the sequence, ensuring that all top leads have been contacted and processed as necessary.

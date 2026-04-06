@@ -1,0 +1,337 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/6-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/6-1.err1.001.xml",
+  "user_tasks": [
+    "receive invoices",
+    "receives invoices",
+    "perform visual inspection",
+    "identify suppliers",
+    "create new invoice",
+    "check items",
+    "note cost center",
+    "send docket",
+    "receive invoice copy",
+    "receive it",
+    "review content",
+    "note their approval code",
+    "return invoice copy",
+    "pass invoice copy",
+    "reject approval",
+    "send invoice",
+    "need clarification",
+    "resolve issues",
+    "send invoice copy",
+    "conduct commercial audit",
+    "check invoice",
+    "move invoice copy",
+    "resolve them",
+    "give payment instructions",
+    "close invoice",
+    "issues approval",
+    "acme ag receive invoices",
+    "secretariat forward invoice",
+    "accounting employee identify suppliers",
+    "employee create new invoice",
+    "employee note cost center",
+    "docket send mail system",
+    "accounting employee send docket",
+    "process check",
+    "center manager receive invoice copy",
+    "manager receive",
+    "center manager note their approval code",
+    "invoice copy pass next manager",
+    "center manager reject approval",
+    "accounting employee consult cases",
+    "accounting employee send invoice copy",
+    "commercial manager conduct commercial audit",
+    "process involve",
+    "board check invoice",
+    "board approve",
+    "commercial manager move invoice copy",
+    "accounting employee resolve",
+    "employee give payment instructions",
+    "process conclude",
+    "cycle repeat"
+  ],
+  "model_tasks": [
+    "acme ag receives invoices",
+    "review request",
+    "secretariat performs invoice's visual inspection",
+    "secretariat forwards the invoice to an accounting employee",
+    "accounting employee identifies the charging suppliers",
+    "accounting employee creates a new invoice",
+    "accounting employee checks the invoice items",
+    "accounting employee notes the  cost center and the cost center managers (docket)",
+    "docket and the invoice's copy go to the internal mail",
+    "accounting employee  sends the docket and the invoice copy to the  cost center manager",
+    "cost center manager receives the copy of the invoice",
+    "cost center manager reviews the content for accuracy",
+    "cost center manager notes his code one on  the docket (ap)",
+    "cost center manager returns the copy of the invoice",
+    "pass the copy of the invoice to the next cost center manager",
+    "cost center manager  sends invoice back to accounting",
+    "accounting employee proceedes with the clarification with the vendor",
+    "accounting employee consults the cost center managers",
+    "accounting employee sends the copy of the invoice to the cost center managers",
+    "accounting employee forwards the copy of the invoice to the commercial manager",
+    "commercial manager  makes the commercial audit",
+    "commercial manager  issues the approval for payment",
+    "board checks invoice",
+    "commercial manager moves invoice's copy  and the docket to the accounting employee",
+    "accounting employee resolves complaint",
+    "accounting employee gives payment instructions",
+    "accounting employee closes the invoice",
+    "cost center manager rejects the ap",
+    "cost center manager  sends invoice back to accounting",
+    "accounting employee proceedes with the clarification with the vendor",
+    "accounting employee consults the cost center managers",
+    "accounting employee sends the copy of the invoice to the cost center managers",
+    "accounting employee forwards the copy of the invoice to the commercial manager",
+    "commercial manager  makes the commercial audit",
+    "commercial manager  issues the approval for payment",
+    "board checks invoice",
+    "commercial manager moves invoice's copy  and the docket to the accounting employee",
+    "accounting employee resolves complaint",
+    "accounting employee gives payment instructions",
+    "accounting employee closes the invoice"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive invoices",
+        "perform visual inspection",
+        "identify suppliers",
+        "check items",
+        "note cost center",
+        "send docket",
+        "receive it",
+        "review content",
+        "note their approval code",
+        "return invoice copy",
+        "pass invoice copy",
+        "reject approval",
+        "send invoice",
+        "need clarification",
+        "resolve issues",
+        "send invoice copy",
+        "move invoice copy",
+        "resolve them",
+        "give payment instructions",
+        "issues approval",
+        "employee note cost center",
+        "docket send mail system",
+        "process check",
+        "manager receive",
+        "center manager note their approval code",
+        "center manager reject approval",
+        "process involve",
+        "board approve",
+        "process conclude",
+        "cycle repeat"
+      ],
+      "additional_tasks": [
+        "review request",
+        "cost center manager reviews the content for accuracy",
+        "cost center manager notes his code one on  the docket (ap)",
+        "cost center manager  sends invoice back to accounting",
+        "accounting employee proceedes with the clarification with the vendor",
+        "accounting employee consults the cost center managers",
+        "commercial manager  issues the approval for payment",
+        "commercial manager moves invoice's copy  and the docket to the accounting employee",
+        "cost center manager rejects the ap",
+        "cost center manager  sends invoice back to accounting",
+        "accounting employee proceedes with the clarification with the vendor",
+        "accounting employee consults the cost center managers",
+        "commercial manager  makes the commercial audit",
+        "commercial manager  issues the approval for payment",
+        "commercial manager moves invoice's copy  and the docket to the accounting employee",
+        "accounting employee resolves complaint",
+        "accounting employee gives payment instructions"
+      ],
+      "merged_tasks": [
+        {
+          "model": "accounting employee sends the copy of the invoice to the cost center managers",
+          "model_index": 18,
+          "user": [
+            "center manager receive invoice copy",
+            "accounting employee send invoice copy"
+          ],
+          "user_indices": [
+            34,
+            40
+          ],
+          "pair_sims": [
+            0.82,
+            0.835
+          ],
+          "combo_sim": 0.886
+        },
+        {
+          "model": "commercial manager  makes the commercial audit",
+          "model_index": 20,
+          "user": [
+            "conduct commercial audit",
+            "commercial manager conduct commercial audit"
+          ],
+          "user_indices": [
+            19,
+            41
+          ],
+          "pair_sims": [
+            0.846,
+            0.961
+          ],
+          "combo_sim": 0.916
+        },
+        {
+          "model": "accounting employee resolves complaint",
+          "model_index": 24,
+          "user": [
+            "accounting employee consult cases",
+            "accounting employee resolve"
+          ],
+          "user_indices": [
+            39,
+            46
+          ],
+          "pair_sims": [
+            0.679,
+            0.81
+          ],
+          "combo_sim": 0.748
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "receives invoices",
+          "user_index": 1,
+          "model": [
+            "accounting employee sends the copy of the invoice to the cost center managers",
+            "accounting employee forwards the copy of the invoice to the commercial manager"
+          ],
+          "model_indices": [
+            31,
+            32
+          ],
+          "pair_sims": [
+            0.633,
+            0.627
+          ],
+          "combo_sim": 0.612,
+          "adjacent": true
+        },
+        {
+          "user": "create new invoice",
+          "user_index": 4,
+          "model": [
+            "accounting employee creates a new invoice",
+            "accounting employee checks the invoice items"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.807,
+            0.583
+          ],
+          "combo_sim": 0.705,
+          "adjacent": true
+        },
+        {
+          "user": "receive invoice copy",
+          "user_index": 8,
+          "model": [
+            "cost center manager returns the copy of the invoice",
+            "pass the copy of the invoice to the next cost center manager"
+          ],
+          "model_indices": [
+            13,
+            14
+          ],
+          "pair_sims": [
+            0.661,
+            0.681
+          ],
+          "combo_sim": 0.612,
+          "adjacent": true
+        },
+        {
+          "user": "secretariat forward invoice",
+          "user_index": 27,
+          "model": [
+            "secretariat performs invoice's visual inspection",
+            "secretariat forwards the invoice to an accounting employee"
+          ],
+          "model_indices": [
+            2,
+            3
+          ],
+          "pair_sims": [
+            0.677,
+            0.886
+          ],
+          "combo_sim": 0.785,
+          "adjacent": true
+        },
+        {
+          "user": "accounting employee send docket",
+          "user_index": 32,
+          "model": [
+            "accounting employee notes the  cost center and the cost center managers (docket)",
+            "docket and the invoice's copy go to the internal mail",
+            "accounting employee  sends the docket and the invoice copy to the  cost center manager"
+          ],
+          "model_indices": [
+            7,
+            8,
+            9
+          ],
+          "pair_sims": [
+            0.66,
+            0.619,
+            0.782
+          ],
+          "combo_sim": 0.719,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "acme ag receives invoices",
+          "task_b": "secretariat performs invoice's visual inspection",
+          "before_score": 42,
+          "after_score": 40,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "acme ag receives invoices",
+          "task_b": "review request",
+          "before_score": 42,
+          "after_score": 40,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 8,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when ACME AG receives invoices. Once the invoices are received, the secretariat performs a visual inspection of each invoice. After this inspection, the secretariat forwards the invoice to an accounting employee.\n\nThe accounting employee then identifies the suppliers who are charging for the invoice. Following this, the employee creates a new invoice and checks the items listed on it. The employee also notes the cost center and the managers responsible for it on a document referred to as a docket. This docket, along with a copy of the invoice, is sent to the internal mail system.\n\nNext, the accounting employee sends the docket and the invoice copy to the cost center manager. The process then checks if the cost center manager has received the invoice copy. If the manager has received it, they review the content for accuracy.\n\nIf the content is accurate, the cost center manager notes their approval code on the docket and returns the invoice copy. If there are multiple cost center managers involved, the invoice copy is passed to the next manager. If the cost center manager rejects the approval, they send the invoice back to the accounting department for clarification with the vendor.\n\nIn cases where clarification is needed, the accounting employee consults with the cost center managers. After resolving any issues, the accounting employee sends the invoice copy to the cost center managers again and forwards it to the commercial manager.\n\nThe commercial manager conducts a commercial audit and issues approval for payment. The process then involves the board checking the invoice. If the board approves, the commercial manager moves the invoice copy and docket back to the accounting employee.\n\nIf there are any complaints, the accounting employee resolves them. Once resolved, the employee gives payment instructions and closes the invoice. The process concludes when the invoice is closed, and the cycle can repeat if necessary.",
+  "output_text": "The process begins when ACME AG receives invoices. Once the invoices are received, a review request is initiated. The secretariat then performs a visual inspection of the invoice. After this inspection, the secretariat forwards the invoice to an accounting employee.\n\nThe accounting employee's first task is to identify the suppliers who are charging for the invoice. Following this, the employee creates a new invoice and checks the items listed on it. The employee then notes the cost center and the managers responsible for it on a document referred to as a docket. This docket, along with a copy of the invoice, is sent to the internal mail system.\n\nNext, the accounting employee sends the docket and the invoice copy to the cost center manager. The process then checks if the cost center manager has received the invoice copy. If they have, the manager reviews the content for accuracy. If the content is accurate, the manager notes their approval code on the docket and returns the invoice copy. If the content is not accurate, the manager rejects the approval and sends the invoice back to the accounting department for clarification with the vendor.\n\nIf the invoice is returned for clarification, the accounting employee consults with the cost center managers to resolve any issues. Once resolved, the employee sends the invoice copy back to the cost center managers and forwards it to the commercial manager. The commercial manager conducts a commercial audit and issues approval for payment.\n\nAfter the commercial manager's approval, the invoice is checked by the board. If the board approves, the commercial manager moves the invoice copy and docket back to the accounting employee. If there are any complaints, the accounting employee resolves them before proceeding.\n\nOnce all approvals are in place, the accounting employee gives payment instructions and closes the invoice. The process concludes when all tasks are completed and the invoice is finalized."
+}

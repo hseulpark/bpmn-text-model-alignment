@@ -1,0 +1,9 @@
+The process begins with the initiation of an event where the MSPO (Managed Service Provider Organization) initiates the deregistration process at the GO (Governing Organization). Following this, the GO takes the responsibility to verify the deregistration request submitted by the MSPO.
+
+After the verification step, a decision point is reached. At this point, the GO has two possible actions based on the outcome of the verification. If the deregistration is not accepted, the GO will reject the deregistration request. Alternatively, if the deregistration is accepted, the GO will give a preliminary confirmation of the deregistration.
+
+Regardless of whether the deregistration is rejected or preliminarily confirmed, the process converges back to a single path. The GO then proceeds to assign itself as the Managed Service Provider (MSP).
+
+Once the GO has assigned itself as the MSP, it communicates this change to various stakeholders. First, the GO informs the MSPO about the current status of the assignment. Following this, the GO also informs the MPO (Managed Provider Organization) about the assignment. Finally, the GO communicates the assignment details to the SP (Service Provider).
+
+The process concludes after the GO has informed all relevant parties about the assignment of the GO as the MSP.

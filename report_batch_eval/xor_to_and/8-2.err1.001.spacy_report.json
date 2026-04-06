@@ -1,0 +1,177 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/8-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/8-2.err1.001.xml",
+  "user_tasks": [
+    "report which",
+    "inform hr",
+    "create job description",
+    "gather additional information",
+    "confirm details",
+    "ask department",
+    "submit job description",
+    "complete necessary steps",
+    "request correction",
+    "make necessary corrections",
+    "make corrections",
+    "need corrections",
+    "approve job description",
+    "post job",
+    "mark end",
+    "hr inform vacancy",
+    "hr need stage",
+    "hr decide",
+    "process continue next decision point",
+    "hr need",
+    "process move next decision point",
+    "hr submit job description",
+    "process loop",
+    "department request correction",
+    "hr make necessary corrections",
+    "process return point",
+    "hr wait approval",
+    "hr proceed",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "report the vacancy to hr",
+    "hr creates a job description",
+    "hr asks the department",
+    "hr submits the job description for consideration",
+    "hr waits for the approval",
+    "department requests a correction",
+    "hr corrects the description",
+    "hr posts the job"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "report which",
+        "create job description",
+        "gather additional information",
+        "confirm details",
+        "ask department",
+        "complete necessary steps",
+        "request correction",
+        "make necessary corrections",
+        "make corrections",
+        "need corrections",
+        "approve job description",
+        "post job",
+        "mark end",
+        "hr inform vacancy",
+        "hr need stage",
+        "hr decide",
+        "process continue next decision point",
+        "process move next decision point",
+        "process loop",
+        "hr make necessary corrections",
+        "process return point",
+        "hr proceed",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "inform hr",
+          "user_index": 1,
+          "model": [
+            "hr corrects the description",
+            "hr posts the job"
+          ],
+          "model_indices": [
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.739,
+            0.709
+          ],
+          "combo_sim": 0.644,
+          "adjacent": true
+        },
+        {
+          "user": "hr submit job description",
+          "user_index": 21,
+          "model": [
+            "report the vacancy to hr",
+            "hr creates a job description"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.602,
+            0.839
+          ],
+          "combo_sim": 0.762,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "hr creates a job description",
+          "task_b": "hr posts the job",
+          "before_score": 11,
+          "after_score": 9,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "hr creates a job description",
+          "task_b": "hr posts the job",
+          "before_score": 11,
+          "after_score": 9,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U26",
+              "U27"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U12",
+              "U2"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the identification of a vacancy, which is then reported to the Human Resources (HR) department. Once HR is informed about the vacancy, they proceed to create a job description for the open position.\n\nAfter the job description is created, there is a decision point. At this stage, HR may need to consult with the relevant department to gather additional information or confirm details about the job description. If HR decides to ask the department for input, they do so, and then the process continues to the next decision point. If HR does not need to ask the department, the process moves directly to the next decision point.\n\nThe next decision point involves determining whether the job description is ready to be submitted for consideration. If it is ready, HR submits the job description for consideration and then waits for approval from the department. If it is not ready, the process loops back to the previous decision point to ensure all necessary steps are completed.\n\nWhile waiting for approval, if the department requests a correction to the job description, HR makes the necessary corrections. Once the corrections are made, the process returns to the point where HR waits for approval again.\n\nIf no corrections are needed, or once the corrections are made and the job description is approved, HR proceeds to post the job. The process concludes with the job being posted, marking the end of the process.",
+  "output_text": "The process begins when a vacancy is reported to the Human Resources (HR) department. Once HR is informed of the vacancy, they proceed to create a job description for the open position. After the job description is prepared, two activities occur simultaneously: HR consults with the relevant department, and the process continues without any additional actions at this point.\n\nOnce both parallel activities are completed, the process reaches a decision point. Here, it checks if the job description is ready for submission. If it is not ready, the process loops back to the decision point until it is ready. When the job description is ready, HR submits it for consideration.\n\nFollowing the submission, HR waits for the job description to be approved. At this stage, another decision is made. If the department requests a correction to the job description, HR makes the necessary corrections. After correcting the description, the process returns to the point where HR waits for approval, and the cycle continues until no further corrections are needed.\n\nOnce the job description is approved without any further corrections, HR proceeds to post the job. The process concludes after the job has been posted."
+}

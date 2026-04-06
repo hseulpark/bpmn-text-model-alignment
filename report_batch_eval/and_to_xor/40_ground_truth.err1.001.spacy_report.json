@@ -1,0 +1,189 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/40_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/40_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "receive application",
+    "review application documents",
+    "conduct preselection",
+    "create rejection preselection",
+    "end process",
+    "reject preselection",
+    "examine application documents",
+    "check it",
+    "conduct telephone interview",
+    "communicate appointment",
+    "find suitable date",
+    "forward applicant documents",
+    "conduct personal interview",
+    "decide it",
+    "schedule appointment",
+    "plan assessment center",
+    "prepare assessment center",
+    "conduct assessment center",
+    "take vote",
+    "accept applicant",
+    "draft acceptance letter",
+    "reject applicant assessment center",
+    "draft rejection letter",
+    "applicant reject preselection",
+    "application documents examine detail",
+    "appointment communicate email",
+    "appointment forward relevant department"
+  ],
+  "model_tasks": [
+    "receive application",
+    "review documents",
+    "create rejection",
+    "examine documents in detail",
+    "conduct telephone interview",
+    "communicate personal interview appointment",
+    "forward to relevant department",
+    "conduct personal interview",
+    "schedule assessment center",
+    "plan and prepare assessment center",
+    "conduct assessment center",
+    "draft acceptance letter",
+    "draft rejection letter"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "conduct preselection",
+        "end process",
+        "reject preselection",
+        "check it",
+        "find suitable date",
+        "decide it",
+        "schedule appointment",
+        "take vote",
+        "accept applicant",
+        "reject applicant assessment center",
+        "applicant reject preselection",
+        "appointment communicate email"
+      ],
+      "additional_tasks": [
+        "plan and prepare assessment center"
+      ],
+      "merged_tasks": [
+        {
+          "model": "examine documents in detail",
+          "model_index": 3,
+          "user": [
+            "examine application documents",
+            "application documents examine detail"
+          ],
+          "user_indices": [
+            6,
+            24
+          ],
+          "pair_sims": [
+            0.693,
+            0.824
+          ],
+          "combo_sim": 0.798
+        },
+        {
+          "model": "forward to relevant department",
+          "model_index": 6,
+          "user": [
+            "forward applicant documents",
+            "appointment forward relevant department"
+          ],
+          "user_indices": [
+            11,
+            26
+          ],
+          "pair_sims": [
+            0.537,
+            0.815
+          ],
+          "combo_sim": 0.709
+        },
+        {
+          "model": "schedule assessment center",
+          "model_index": 8,
+          "user": [
+            "plan assessment center",
+            "prepare assessment center"
+          ],
+          "user_indices": [
+            15,
+            16
+          ],
+          "pair_sims": [
+            0.79,
+            0.77
+          ],
+          "combo_sim": 0.769
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U15",
+              "U16"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U16",
+              "U17"
+            ],
+            "user_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U16",
+              "U21"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 3,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 5,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process starts when an application is received by the recruitment department of ADOmoney Bank.\n\nFirst, the application documents are reviewed, and a preselection is conducted.\n\nEither a rejection is created after the preselection and sent to the applicant, ending the process with the applicant being rejected after the preselection, or the application documents are examined in detail.\n\nThen, it is checked whether the application is for a key position.\n\nIf yes, a telephone interview is conducted, and subsequently, an appointment for a personal interview is communicated via email.\n\nIf no, an appointment for a personal interview is directly communicated via email.\n\nThe appointment for a personal interview is communicated via email until a suitable date is found.\n\nOnce a suitable date is found, the appointment and the applicant's documents are forwarded to the relevant department.\n\nAfter that, the personal interview is conducted, and it is decided whether the applicant is suitable for the assessment center.\n\nIf yes, an appointment with the applicant for the assessment center is scheduled, and the assessment center is planned and prepared in parallel.\n\nOnce an appointment is scheduled and the assessment center is prepared, the assessment center is conducted, and a vote on the applicant is taken.\n\nIf the applicant is not suitable for the assessment center, a vote on the applicant is taken directly.\n\nIf the applicant is accepted, an acceptance letter is drafted and sent to the applicant.\n\nIf the applicant is rejected after the assessment center, a rejection letter is drafted and sent to the applicant.",
+  "output_text": "The process begins when an application is received. Once the application is in hand, the documents are reviewed. After reviewing the documents, a decision is made. If the application is to be rejected at this point, a rejection is created, and the process moves towards its conclusion.\n\nIf the application is not rejected immediately, the documents are examined in more detail. Following this detailed examination, another decision is made. If the position applied for is considered a key position, a telephone interview is conducted. If it is not a key position, the process skips the telephone interview and moves forward.\n\nAfter the telephone interview, or if the position is not key, the applicant is informed about a personal interview appointment. The application is then forwarded to the relevant department, where a personal interview is conducted.\n\nFollowing the personal interview, a decision is made regarding the suitability of the applicant. If the applicant is deemed not suitable, the process moves towards its conclusion without further steps. If the applicant is suitable, the process continues with scheduling an assessment center.\n\nThe assessment center is then planned and prepared. Once the planning is complete, the assessment center is conducted. After the assessment, a final decision is made.\n\nIf the applicant is accepted, an acceptance letter is drafted. If the applicant is rejected, a rejection letter is drafted instead. Once the appropriate letter is drafted, the process concludes."
+}

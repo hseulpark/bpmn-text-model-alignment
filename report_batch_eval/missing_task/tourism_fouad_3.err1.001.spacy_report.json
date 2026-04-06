@@ -1,0 +1,169 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_fouad_3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/tourism_fouad_3.err1.001.xml",
+  "user_tasks": [
+    "receive travel request",
+    "obtain request",
+    "prepare tour plan",
+    "send it",
+    "follow dispatch",
+    "receive response",
+    "make decision",
+    "book tour",
+    "reach decision point",
+    "meet certain conditions",
+    "charge customer",
+    "follow charge",
+    "contact customer",
+    "send bill",
+    "send booking confirmation",
+    "meet conditions",
+    "complete necessary actions",
+    "contact them",
+    "send confirmations",
+    "sending confirmations",
+    "process wait dispatch",
+    "customer charge tour",
+    "process involve",
+    "process proceed",
+    "process return previous decision point",
+    "process conclude further actions"
+  ],
+  "model_tasks": [
+    "get travel request",
+    "prepare the tour plan",
+    "send the tour  plan",
+    "receive response",
+    "book the tour",
+    "charge  customer",
+    "contact customer",
+    "send booking confirmation"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send it",
+        "follow dispatch",
+        "make decision",
+        "reach decision point",
+        "meet certain conditions",
+        "follow charge",
+        "send bill",
+        "meet conditions",
+        "complete necessary actions",
+        "contact them",
+        "send confirmations",
+        "sending confirmations",
+        "process wait dispatch",
+        "process involve",
+        "process proceed",
+        "process return previous decision point",
+        "process conclude further actions"
+      ],
+      "additional_tasks": [
+        "book the tour"
+      ],
+      "merged_tasks": [
+        {
+          "model": "get travel request",
+          "model_index": 0,
+          "user": [
+            "receive travel request",
+            "obtain request"
+          ],
+          "user_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.944,
+            0.613
+          ],
+          "combo_sim": 0.906
+        },
+        {
+          "model": "send the tour  plan",
+          "model_index": 2,
+          "user": [
+            "book tour",
+            "customer charge tour"
+          ],
+          "user_indices": [
+            7,
+            21
+          ],
+          "pair_sims": [
+            0.622,
+            0.546
+          ],
+          "combo_sim": 0.605
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U10",
+              "U12"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U12",
+              "U14"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U14",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 3,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a travel request is received. Once the request is obtained, the next step is to prepare a tour plan based on the request. After the tour plan is prepared, it is sent to the customer for review.\n\nFollowing the dispatch of the tour plan, the process waits to receive a response from the customer. Upon receiving the response, a decision is made. If the response is positive, the tour is booked. After booking the tour, another decision point is reached.\n\nAt this decision point, if certain conditions are met (indicated as \"true\"), the customer is charged for the tour. Following the charge, there is another decision to be made. Depending on the outcome, the process may involve contacting the customer directly. Alternatively, the process might proceed to send the customer a bill and then send a booking confirmation.\n\nAfter sending the booking confirmation, the process returns to the previous decision point to check if there are any further actions required. If the initial response from the customer was not positive, or if the conditions for charging the customer are not met, the process concludes without further actions.\n\nThe process ends once all necessary actions are completed, whether it involves charging the customer, contacting them, or sending confirmations and bills.",
+  "output_text": "The process begins when a travel request is received. Once the travel request is obtained, the next step is to prepare a tour plan. After the tour plan is prepared, it is sent out. Following this, a response is awaited.\n\nUpon receiving the response, a decision is made. If the decision is to proceed, the tour is booked. After booking the tour, another decision point is reached. If the decision is affirmative, the customer is charged for the tour.\n\nOnce the customer is charged, there are two possible actions that can occur. One option is to contact the customer, and the other is to send a booking confirmation. These actions can happen independently, and once both are completed, the process returns to the previous decision point.\n\nIf at any decision point the choice is not to proceed, or after completing the necessary actions following the booking, the process concludes."
+}

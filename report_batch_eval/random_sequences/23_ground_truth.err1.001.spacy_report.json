@@ -1,0 +1,98 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/23_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/23_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "enter term treatment",
+    "evaluate condition",
+    "send patient",
+    "complete laboratory tests",
+    "treat patient",
+    "follow treatment",
+    "prescribe necessary medicines",
+    "deliver prescription",
+    "patient enter term treatment",
+    "doctor initiate",
+    "patient send evaluation",
+    "doctor prescribe necessary medicines",
+    "process conclude",
+    "prescription deliver patient"
+  ],
+  "model_tasks": [
+    "patient enters treatment",
+    "deliver prescription",
+    "laboratory testing",
+    "treat patient",
+    "prescribe medicines",
+    "evaluate patient condition"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "enter term treatment",
+        "send patient",
+        "follow treatment",
+        "doctor initiate",
+        "patient send evaluation",
+        "process conclude",
+        "prescription deliver patient"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [
+        {
+          "model": "prescribe medicines",
+          "model_index": 4,
+          "user": [
+            "prescribe necessary medicines",
+            "doctor prescribe necessary medicines"
+          ],
+          "user_indices": [
+            6,
+            11
+          ],
+          "pair_sims": [
+            0.903,
+            0.869
+          ],
+          "combo_sim": 0.841
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "patient enters treatment",
+          "task_b": "prescribe medicines",
+          "before_score": 14,
+          "after_score": 10,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "patient enters treatment",
+          "task_b": "deliver prescription",
+          "before_score": 14,
+          "after_score": 12,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when the patient enters short-term treatment in the designated treatment chambers, initiated by the doctor.\n\nThe first step is to evaluate the condition of the patient.\n\nAfter the evaluation, the patient is sent to the laboratory for testing performed by the technicans.\n\nOnce the laboratory tests are completed, the patient is treated by the doctor based on the test results.\n\nFollowing the treatment, the doctor prescribes the necessary medicines.\n\nThe process concludes when the prescription is delivered to the patient.",
+  "output_text": "The process begins when a patient enters the treatment area. Once the patient is in the treatment area, the next step is to deliver a prescription to them. After the prescription is delivered, laboratory testing is conducted. Following the laboratory testing, the patient receives treatment based on the test results. After treating the patient, medicines are prescribed as necessary. Finally, the patient's condition is evaluated to assess the effectiveness of the treatment and any further needs. The process concludes after the evaluation of the patient's condition."
+}

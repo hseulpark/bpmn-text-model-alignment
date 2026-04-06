@@ -1,0 +1,117 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/0_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/0_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "receive application",
+    "send receipt confirmation",
+    "verify applicant",
+    "determine application status",
+    "reject application",
+    "send rejection",
+    "reject applicant",
+    "accept application",
+    "send invitation",
+    "prepare employment agreement",
+    "carry out job interview",
+    "deem applicant",
+    "send employment contract",
+    "receive signed contract",
+    "receipt confirmation send applicant",
+    "rejection send applicant",
+    "invitation send applicant",
+    "employment contract send applicant",
+    "process wait receipt",
+    "process conclude presence"
+  ],
+  "model_tasks": [
+    "receive application",
+    "send receipt confirmation",
+    "verify applicant",
+    "send rejection notice",
+    "send interview invitation",
+    "prepare employment agreement",
+    "conduct job interview",
+    "send rejection notice",
+    "send employment contract",
+    "wait for signed contract"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "determine application status",
+        "reject application",
+        "reject applicant",
+        "accept application",
+        "deem applicant",
+        "receipt confirmation send applicant",
+        "employment contract send applicant",
+        "process wait receipt",
+        "process conclude presence"
+      ],
+      "additional_tasks": [
+        "send rejection notice"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send rejection notice",
+          "model_index": 3,
+          "user": [
+            "send rejection",
+            "rejection send applicant"
+          ],
+          "user_indices": [
+            5,
+            15
+          ],
+          "pair_sims": [
+            0.886,
+            0.835
+          ],
+          "combo_sim": 0.818
+        },
+        {
+          "model": "send interview invitation",
+          "model_index": 4,
+          "user": [
+            "send invitation",
+            "invitation send applicant"
+          ],
+          "user_indices": [
+            8,
+            16
+          ],
+          "pair_sims": [
+            0.758,
+            0.818
+          ],
+          "combo_sim": 0.785
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the receipt of an application from the applicant in the ACME AG's Human Resources Department.\n\nUpon receiving the application, a receipt confirmation is sent to the applicant.\n\nThe next step involves verifying the applicant, after which the application status is determined by the Head of Human Resources.\n\nIf the application is rejected, a rejection is sent to the applicant, and the process ends with the applicant being rejected.\n\nIf the application is accepted, an invitation to a job interview is sent to the applicant by the Human Resources Department.\n\nFollowing this, the employment agreement is prepared.\n\nThe job interview is then carried out.\n\nAfter the interview, it is determined whether the applicant is suitable.\n\nIf the applicant is not suitable, a rejection is sent to the applicant, and the process ends with the applicant being rejected.\n\nIf the applicant is deemed suitable, an employment contract is sent to the applicant.\n\nThe process then waits for the receipt of the signed employment contract.\n\nOnce the signed contract is received, the process concludes with the presence of the signed employment contract.",
+  "output_text": "The process begins when an application is received. Once the application is received, a receipt confirmation is sent to acknowledge its arrival. Following this, the applicant's details are verified to ensure they meet the necessary criteria.\n\nAfter the verification step, the process splits into two parallel paths. In one path, a rejection notice is sent if the application does not meet the requirements. This path concludes at a point where it waits for the other parallel path to complete.\n\nIn the other parallel path, if the application is suitable, an interview invitation is sent to the applicant. After sending the invitation, preparations for an employment agreement are made. Subsequently, a job interview is conducted with the applicant.\n\nFollowing the job interview, a decision is made based on the applicant's suitability. If the applicant is deemed not suitable, a rejection notice is sent, and this path concludes at a point where it waits for the other path to complete. If the applicant is found suitable, an employment contract is sent to them.\n\nOnce the employment contract is sent, the process waits for the signed contract to be returned. After receiving the signed contract, this path also concludes at the same point where it waits for the other path to complete.\n\nFinally, once both parallel paths have reached their respective endpoints, the process comes to an end."
+}

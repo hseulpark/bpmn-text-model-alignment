@@ -1,0 +1,131 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/28_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/28_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "requirements describe",
+    "workshop conduct",
+    "project sketch create",
+    "process wait appointment confirmation",
+    "customer conversation conduct",
+    "specification sheet write",
+    "customer provide feedback",
+    "standard source products check",
+    "use cases define",
+    "costs calculate",
+    "decision make",
+    "existing products select",
+    "management systems adjust",
+    "product develop",
+    "customer feedback obtain customer",
+    "follow projects identify",
+    "develop new products",
+    "use existing ones"
+  ],
+  "model_tasks": [
+    "order intake in development department",
+    "describe requirements",
+    "conduct workshop",
+    "create project sketch",
+    "wait for appointment confirmation",
+    "conduct customer conversation",
+    "write specification sheet",
+    "send specification sheet to customer",
+    "receive customer feedback",
+    "perform project and capacity planning",
+    "check standard open-source products",
+    "define use cases",
+    "calculate costs",
+    "adjust knowledge management systems",
+    "develop new product",
+    "product acceptance with customer",
+    "obtain customer feedback",
+    "identify follow-up projects",
+    "complete order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "decision make",
+        "existing products select",
+        "product develop",
+        "use existing ones"
+      ],
+      "additional_tasks": [
+        "order intake in development department",
+        "write specification sheet",
+        "send specification sheet to customer",
+        "perform project and capacity planning",
+        "product acceptance with customer",
+        "obtain customer feedback",
+        "complete order"
+      ],
+      "merged_tasks": [
+        {
+          "model": "describe requirements",
+          "model_index": 1,
+          "user": [
+            "requirements describe",
+            "specification sheet write"
+          ],
+          "user_indices": [
+            0,
+            5
+          ],
+          "pair_sims": [
+            0.972,
+            0.485
+          ],
+          "combo_sim": 0.771
+        },
+        {
+          "model": "receive customer feedback",
+          "model_index": 8,
+          "user": [
+            "customer provide feedback",
+            "customer feedback obtain customer"
+          ],
+          "user_indices": [
+            6,
+            14
+          ],
+          "pair_sims": [
+            0.938,
+            0.934
+          ],
+          "combo_sim": 0.862
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "send specification sheet to customer",
+          "task_b": "receive customer feedback",
+          "before_score": 15,
+          "after_score": 13,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The SoKnow process begins with the order intake in the development department.\n\nNext, the requirements are described.\n\nA workshop is then conducted, based on which a project sketch is created.\n\nOnce the project sketch is completed, the process waits for the appointment confirmation from the customer company.\n\nFollowing this, a customer conversation is conducted, and then the specification sheet is written.\n\nAfter the specification sheet is completed, it is sent to the customer.\n\nThe customer then provides feedback, which is received.\n\nSubsequently, project and capacity planning are performed.\n\nNext, standard open-source products are checked.\n\nBased on this review, use cases are defined, and costs are calculated.\n\nA decision is made whether to develop new products or use existing ones.\n\nIf existing products are selected, the knowledge management systems are adjusted (target process).\n\nIf new products are to be developed, the product is developed (target process).\n\nAfter the adjustment of the knowledge management systems or the development of the new product, product acceptance is performed with the participation of the customer company.\n\nCustomer feedback is then obtained from the customer.\n\nFinally, follow-up projects are identified, and the order is completed.",
+  "output_text": "The process begins with the initiation of an order intake in the development department. Once the order is received, the next step involves describing the requirements necessary for the project. Following this, a workshop is conducted to further clarify and refine these requirements.\n\nAfter the workshop, a project sketch is created to outline the initial concept and structure of the project. The process then involves waiting for an appointment confirmation, which is necessary before proceeding to the next step.\n\nOnce the appointment is confirmed, a conversation with the customer is conducted to discuss the project details and ensure alignment with their expectations. Following this conversation, a specification sheet is written to document the agreed-upon requirements and project details.\n\nThe specification sheet is then sent to the customer for their review. After sending the document, the process involves receiving feedback from the customer, which is crucial for making any necessary adjustments.\n\nWith the customer's feedback in hand, project and capacity planning is performed to ensure that the project can be executed effectively with the available resources. The next step involves checking standard open-source products to see if they can be utilized in the project.\n\nFollowing this, use cases are defined to specify how the product will be used and to guide the development process. The costs associated with the project are then calculated to ensure financial feasibility.\n\nThe process continues with adjustments to the knowledge management systems, which may involve updating or integrating new information based on the project requirements. After these adjustments, the development of the new product begins.\n\nOnce the product is developed, it undergoes acceptance testing with the customer to ensure it meets their expectations and requirements. After the product is accepted, customer feedback is obtained to identify any areas for improvement or additional needs.\n\nBased on the feedback, potential follow-up projects are identified to continue the business relationship and address any further customer needs. Finally, the order is completed, marking the end of the process."
+}

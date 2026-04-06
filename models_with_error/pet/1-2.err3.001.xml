@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3103C8F9-D41A-401A-A387-6FEB39AD3564">
+    <parameters>
+      <label>customer brings a defective computer</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-68EBD1BD-9814-42A0-88BB-5962548129F8">
+    <parameters>
+      <label>CRS checks the defect and CRS hands out a repair cost calculation</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a16" endpoint=""><parameters><label>Validate data</label><method /><type>:task</type><arguments /></parameters></call><choose mode="exclusive" a:alt_id="sid-451D05FF-4D15-467A-B71B-F9E9C9B3926C">
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-419D89E5-DD0B-44B5-8ECA-C4FEB80352D7">
+        <parameters>
+          <label>customer takes computer home</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <loop mode="post_test" condition="true">
+        <choose mode="exclusive" a:alt_id="sid-ACA219F1-0195-4246-B74F-A2060A24A6AB" a:mutated="true"><alternative condition=""><call id="a7" endpoint="" a:alt_id="sid-F47BF51E-5EEE-4BF9-8659-79B357DD1B8A">
+              <parameters>
+                <label>CRS checks  the hardware</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a14" endpoint="" a:alt_id="sid-750D22EE-FF2E-4CBB-AD63-018ED4D6024E">
+              <parameters>
+                <label>CRS repairs the hardware</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative><alternative condition=""><call id="a8" endpoint="" a:alt_id="sid-0D756A4A-5FCC-4F43-85B6-5CF9D6338275">
+              <parameters>
+                <label>CRS checks the software</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a15" endpoint="" a:alt_id="sid-46A5CB4E-1576-4292-BEA1-156EA2EFE6A3">
+              <parameters>
+                <label>CRS configures the software</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+          </alternative></choose><call id="a9" endpoint="" a:alt_id="sid-6DB31534-C873-4E9B-BADE-EDF6D9E72D7D">
+          <parameters>
+            <label>CRS tests  system functionality</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </loop>
+    </alternative>
+  </choose>
+</description>

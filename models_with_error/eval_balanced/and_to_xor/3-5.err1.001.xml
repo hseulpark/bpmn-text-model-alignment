@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-6DC4E730-A0A1-4789-B663-4650CDB61CB5">
+    <parameters>
+      <label>Mail Processing Unit collects mail from the party</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-1DD93F97-B5C6-4B5B-AF55-2CD00968456B">
+    <parameters>
+      <label>Mail Clerk sorts the unopened mail</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-A006A7CD-A345-4CBD-BF97-69CA46FCE9BD">
+    <parameters>
+      <label>Mail Clerk  distributes the mail</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-A71EB26F-17D0-400F-8CCB-8AF020439988">
+    <parameters>
+      <label>Registry opens mail</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-31034244-6CCF-45EE-ADAD-A2AD17945EE1">
+    <parameters>
+      <label>Registry sorts mail</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-2031DFC7-EE99-4F06-896F-7BE3E2CB45AA">
+    <parameters>
+      <label>Registry register mail in a Mail Register</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-A1214FF6-2D96-4E2A-A824-3FAE69772ECD">
+    <parameters>
+      <label>Assistant Registry Manager  (ARM) performs a quality check</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-F10C8DE8-28F5-422E-8DF3-DDBF41697E49">
+    <alternative condition="">
+      <call id="a9" endpoint="" a:alt_id="sid-33E75D8A-DF03-46FE-8328-60EAD03F259C">
+        <parameters>
+          <label>ARM compiles a list of requisition</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="sid-543FF715-542D-4AFE-B363-7625172B7297">
+        <parameters>
+          <label>ARM sends  a list of requisition  back to the party</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a10" endpoint="" a:alt_id="sid-3DBEF17C-2CCB-4E53-A8B2-D299A9A002EB">
+        <parameters>
+          <label>ARM captures the matter details</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a12" endpoint="" a:alt_id="sid-A0DCF891-7A78-486E-8F40-DB69CCC067C7">
+        <parameters>
+          <label>ARM provides the matter details to the Cashier</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="sid-B27D7C4A-852D-461B-A1B0-FC058306D79F">
+        <parameters>
+          <label>Cashier takes the applicable fees</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-C87B3BA2-7DB3-4783-98C2-DF297CA99A4B" a:mutated="true"><alternative condition=""><call id="a14" endpoint="" a:alt_id="sid-1AAF22F0-7E31-47B4-A64E-8B5C37F4E10E">
+            <parameters>
+              <label>ARM puts the receipt</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a15" endpoint="" a:alt_id="sid-C272A063-17BB-4EE6-9630-3601F85FE373">
+            <parameters>
+              <label>ARM copied documents into an envelope</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a16" endpoint="" a:alt_id="sid-07C937FB-7834-48F9-80FB-E6631C7A1864">
+            <parameters>
+              <label>ARM posts documents to the party</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative><alternative condition=""><call id="a18" endpoint="" a:alt_id="sid-137DE70E-5633-4CF7-9CB1-3C5C60065352">
+            <parameters>
+              <label>Cashier captures the Party Details</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a19" endpoint="" a:alt_id="sid-9ACF693D-FDBD-4BBC-9C5B-A7FA0B981E5E">
+            <parameters>
+              <label>Cashier  prints the Physical Court File</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative></choose></alternative>
+  </choose>
+</description>

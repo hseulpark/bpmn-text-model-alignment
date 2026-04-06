@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-1D5DB96A-8E4B-4261-8547-480CA794035F">
+    <parameters>
+      <label>Coordination Unit drafts a schedule of meetings</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-B5C641B2-48EB-421C-AFD7-32C0811D0D82">
+    <parameters>
+      <label>Coordination Unit adds draft dates to all calendars</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-F08E965A-23CA-4F9D-AD0E-A47C8C50C676">
+    <parameters>
+      <label>Support Officer  checks the dates and Support Officer suggests modifications</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-7D204D22-3445-46FB-881B-D75B9DB77B77">
+    <parameters>
+      <label>Coordination Unit rechecks all dates</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-1D39354B-6AFD-4331-B6B1-339C5E43C8B8">
+    <parameters>
+      <label>Coordination Unit looks for potential conflicts</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-23727A69-DB82-4151-987A-102291E354DC">
+    <parameters>
+      <label>Coordination Unit sends final schedule to  Committee Members</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-301718FB-F199-4EF6-BCBB-8539FB04432A">
+    <parameters>
+      <label>Committee Members check diaries</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-7665FAFC-EA52-4946-B442-BC6B32365922">
+    <parameters>
+      <label>Committee Members advise the Coordination Unit of any conflicts</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+</description>

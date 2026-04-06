@@ -1,0 +1,79 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/90_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/90_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "claim revenue",
+    "make decision",
+    "ensure self financing",
+    "receive funding amounts",
+    "gain high market share",
+    "generate revenue",
+    "complete tasks",
+    "organize training units",
+    "perform consulting services",
+    "follow up",
+    "generate follow projects",
+    "process move next decision"
+  ],
+  "model_tasks": [
+    "claim revenue",
+    "ensure self-financing",
+    "receive funding amounts",
+    "gain high market share in open-source solutions",
+    "generate revenue through additional services",
+    "organize training units",
+    "perform consulting services",
+    "generate follow-up projects"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "make decision",
+        "complete tasks",
+        "follow up",
+        "process move next decision"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U7",
+              "U8"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process in the strategy process at SoKonow begins with claiming the revenue.\n\nNext, a decision is made whether to ensure self-financing or to receive funding amounts.\n\nIf self-financing is ensured, the process moves to the next decision.\n\nIf funding amounts are received, the process also moves to the next decision.\n\nSubsequently, work is done in parallel to gain a high market share in open-source solutions and to generate revenue through additional services.\n\nOnce these tasks are completed, training units are organized and consulting services are performed in parallel.\n\nAfter the consulting services are performed, follow-up projects are generated.\n\nThe process ends when the revenue has been claimed.",
+  "output_text": "The process begins with an initial step where revenue is claimed. Following this, a decision point is reached where two possible paths can be taken. The first path is chosen if the project is self-financing, leading to a step where self-financing is ensured. The second path is taken if funding has been received, leading to a step where the funding amounts are received. Regardless of which path is taken, both converge back to a common point.\n\nAfter this, the process splits into two parallel activities that occur simultaneously. The first activity focuses on gaining a high market share in open-source solutions. The second activity involves generating revenue through additional services. Once both activities are completed, they converge again to continue the process.\n\nThe next step involves organizing training units. Following this, consulting services are performed. The process then moves on to generating follow-up projects. Finally, the process concludes with the end of the sequence."
+}

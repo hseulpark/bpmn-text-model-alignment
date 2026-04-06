@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="" a:alt_id="sid-18403C96-CF4B-4913-8C1F-CE34E5FF62F2">
+    <parameters>
+      <label>claims officer examines a claim</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a1" endpoint="" a:alt_id="sid-95BAC8F9-4961-4675-BAF2-698777E79C73">
+    <parameters>
+      <label>system registers a claim</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="" a:alt_id="sid-77CCF4F0-AFCE-42F5-827C-6CDC432533CC">
+      <parameters>
+        <label>claims officer writes a settlement recommendation</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a4" endpoint="" a:alt_id="sid-63A4048A-909B-45BE-A658-30068CE1214D">
+      <parameters>
+        <label>senior claims officer checks recommendation</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a5" endpoint="" a:alt_id="sid-02498117-6DCD-4820-9137-D6EA5169F5F5">
+      <parameters>
+        <label>senior claims officer marks the claim</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-B88200F3-ECEA-4CA0-95DD-A0781A524DBC">
+      <alternative condition="">
+        <call id="a7" endpoint="" a:alt_id="sid-6CDCDC1C-B818-4298-8AFB-083E60A1AA7E">
+          <parameters>
+            <label>system sends claim back</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a8" endpoint="" a:alt_id="sid-172F87F8-10C3-47F9-8535-6B98DE585EE7">
+          <parameters>
+            <label>system proceeds the claim handling process</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <escape a:alt_id="-1" />
+      </alternative>
+    </choose>
+  </loop>
+</description>

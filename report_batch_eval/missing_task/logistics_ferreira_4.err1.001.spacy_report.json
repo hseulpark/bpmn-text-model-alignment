@@ -1,0 +1,165 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/logistics_ferreira_4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/logistics_ferreira_4.err1.001.xml",
+  "user_tasks": [
+    "obtain temperature values",
+    "make decision",
+    "generate standard notification",
+    "take different path",
+    "obtain status",
+    "estimate container status",
+    "change container",
+    "generate request",
+    "obtain client location",
+    "estimate distance",
+    "estimate delivery time",
+    "change route",
+    "estimate their status",
+    "evaluate damages",
+    "complete activities",
+    "lead standard notification",
+    "send generated messages",
+    "generated messages",
+    "mark end",
+    "path lead decision point",
+    "process take different path",
+    "activities occur",
+    "process converge",
+    "second activity involve",
+    "third simultaneous activity involve",
+    "process paths converge",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "generate standard notification",
+    "get container status",
+    "estimate container status",
+    "generate container change request",
+    "get client location",
+    "estimate distance",
+    "estimate delivery time",
+    "generate route change request",
+    "get goods status",
+    "estimate goods status",
+    "evaluate damages",
+    "generate removal request",
+    "generate price change request",
+    "send generated messages"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "obtain temperature values",
+        "make decision",
+        "take different path",
+        "complete activities",
+        "lead standard notification",
+        "generated messages",
+        "mark end",
+        "path lead decision point",
+        "process take different path",
+        "activities occur",
+        "process converge",
+        "second activity involve",
+        "third simultaneous activity involve",
+        "process paths converge",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "generate container change request",
+        "get goods status",
+        "generate removal request",
+        "generate price change request"
+      ],
+      "merged_tasks": [
+        {
+          "model": "get container status",
+          "model_index": 1,
+          "user": [
+            "obtain status",
+            "change container"
+          ],
+          "user_indices": [
+            4,
+            6
+          ],
+          "pair_sims": [
+            0.507,
+            0.533
+          ],
+          "combo_sim": 0.778
+        },
+        {
+          "model": "generate route change request",
+          "model_index": 7,
+          "user": [
+            "generate request",
+            "change route"
+          ],
+          "user_indices": [
+            7,
+            11
+          ],
+          "pair_sims": [
+            0.584,
+            0.707
+          ],
+          "combo_sim": 0.889
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U24",
+              "U9"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U23",
+              "U24"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "PARALLEL",
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 6,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the task of obtaining temperature values. After this, a decision is made. If the process follows one path, a standard notification is generated. This path then leads to another decision point.\n\nAlternatively, the process can take a different path from the initial decision, where three activities occur simultaneously. The first activity involves obtaining the status of a container, followed by estimating the container's status. A decision is then made based on this estimation. If necessary, a request to change the container is generated. Regardless of the decision, the process converges back to a single point.\n\nSimultaneously, the second activity involves obtaining the client's location, followed by estimating the distance. A decision is made based on this estimation. If required, the delivery time is estimated, leading to another decision. Depending on the outcome, a request to change the route may be generated. Regardless of the decision, the process converges back to a single point.\n\nThe third simultaneous activity involves obtaining the status of goods, followed by estimating their status. A decision is made based on this estimation. If necessary, damages are evaluated, leading to another decision. Depending on the outcome, a request for removal or a price change request may be generated. Regardless of the decision, the process converges back to a single point.\n\nOnce all three activities are completed, the process paths converge, leading back to the decision point after the standard notification. Finally, the process concludes with sending the generated messages, marking the end of the process.",
+  "output_text": "The process begins with an initial step where a decision is made. This decision leads to two possible paths. In the first path, a standard notification is generated. After this task, the process waits for the completion of tasks from the second path before proceeding.\n\nIn the second path, three tasks are initiated simultaneously. The first task involves obtaining the status of a container. Once the container status is retrieved, an estimation of the container status is made. Following this estimation, another decision is made. If certain conditions are met, a request to change the container is generated. Otherwise, the process continues without generating this request. Both outcomes eventually converge back to the main flow.\n\nSimultaneously, the second task in this path involves getting the client's location. After obtaining the location, the distance is estimated. Based on this estimation, a decision is made. If necessary, the delivery time is estimated, and another decision follows. Depending on the outcome, a route change request might be generated. Regardless of whether a route change request is made, the process continues and converges back to the main flow.\n\nThe third task in this path involves obtaining the status of the goods. After retrieving this information, an estimation of the goods' status is performed. A decision is then made based on this estimation. If required, damages are evaluated, leading to another decision. Depending on the evaluation, either a removal request or a price change request is generated. Both outcomes eventually converge back to the main flow.\n\nOnce all tasks in the second path are completed, the process waits for the completion of the first path (if it was taken) before proceeding. After all tasks and decisions are resolved, the generated messages are sent. Finally, the process concludes."
+}

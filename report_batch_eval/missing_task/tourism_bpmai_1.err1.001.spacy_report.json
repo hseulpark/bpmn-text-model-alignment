@@ -1,0 +1,137 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/tourism_bpmai_1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/missing_task/tourism_bpmai_1.err1.001.xml",
+  "user_tasks": [
+    "receive customer request",
+    "receive request",
+    "check it",
+    "determine steps",
+    "check request",
+    "make decision",
+    "choose manual registration",
+    "complete it",
+    "select automatic registration",
+    "reach same decision point",
+    "meet condition",
+    "complete search",
+    "book attraction",
+    "receive rejection",
+    "receive booking confirmation",
+    "send confirmation",
+    "check customer request",
+    "send notification",
+    "reach final decision point",
+    "decision lead registration process",
+    "process continue type",
+    "process involve decision point",
+    "process continue next decision point",
+    "confirmation send customer",
+    "process move same decision point",
+    "process return previous decision point",
+    "initial decision lead registration",
+    "notification send customer",
+    "process reach final decision point",
+    "determine next steps"
+  ],
+  "model_tasks": [
+    "receive customer request",
+    "check customer request",
+    "automatic registration",
+    "search for attraction provider",
+    "book attraction",
+    "receive rejection",
+    "receive booking confirmation",
+    "send confirmation to the customer",
+    "send notification to the customer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive request",
+        "check it",
+        "determine steps",
+        "check request",
+        "make decision",
+        "complete it",
+        "reach same decision point",
+        "meet condition",
+        "complete search",
+        "send confirmation",
+        "reach final decision point",
+        "decision lead registration process",
+        "process continue type",
+        "process involve decision point",
+        "process continue next decision point",
+        "process move same decision point",
+        "process return previous decision point",
+        "initial decision lead registration",
+        "process reach final decision point",
+        "determine next steps"
+      ],
+      "additional_tasks": [
+        "search for attraction provider"
+      ],
+      "merged_tasks": [
+        {
+          "model": "automatic registration",
+          "model_index": 2,
+          "user": [
+            "choose manual registration",
+            "select automatic registration"
+          ],
+          "user_indices": [
+            6,
+            8
+          ],
+          "pair_sims": [
+            0.753,
+            0.899
+          ],
+          "combo_sim": 0.768
+        },
+        {
+          "model": "send notification to the customer",
+          "model_index": 8,
+          "user": [
+            "send notification",
+            "notification send customer"
+          ],
+          "user_indices": [
+            17,
+            27
+          ],
+          "pair_sims": [
+            0.821,
+            0.953
+          ],
+          "combo_sim": 0.892
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis ON, but output_text is empty (AutoBPMN API failed).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 4,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a customer request is received. Once the request is received, it is checked to determine the next steps. After checking the request, a decision is made. If the decision leads to a registration process, there are two possible paths: manual registration or automatic registration. \n\nIf manual registration is chosen, it is completed before moving to the next decision point. Similarly, if automatic registration is selected, it is completed before reaching the same decision point. After either type of registration, the process continues to another decision point.\n\nAt this decision point, if the condition is met, the process involves searching for an attraction provider. Once the search is completed, another decision is made. If the decision is to proceed, the next step is to book the attraction. After attempting to book the attraction, there are two possible outcomes: receiving a rejection or receiving a booking confirmation.\n\nIf a rejection is received, the process continues to the next decision point. If a booking confirmation is received, a confirmation is sent to the customer, and then the process moves to the same decision point. Regardless of whether a rejection or confirmation is received, the process eventually returns to the previous decision point.\n\nIf the initial decision after checking the customer request does not lead to registration, a notification is sent to the customer. After sending the notification, the process reaches the final decision point, which leads to the end of the process.",
+  "output_text": ""
+}

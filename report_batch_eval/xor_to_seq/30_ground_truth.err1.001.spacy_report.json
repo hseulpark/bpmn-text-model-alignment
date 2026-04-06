@@ -1,0 +1,147 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/30_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_seq/30_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "initiate new service",
+    "enter store",
+    "find service",
+    "take ticket",
+    "represent their turn",
+    "check it",
+    "communicate which",
+    "communicate request",
+    "register request",
+    "register requests",
+    "send request document",
+    "prepare order",
+    "receive order description",
+    "deliver order",
+    "collect their order",
+    "mark process",
+    "specific criteria",
+    "client initiate new service",
+    "client enter store",
+    "client find service",
+    "client take ticket",
+    "ticket take der app",
+    "client wait waiting time",
+    "client wait his her turn",
+    "client ask specific request",
+    "register time expire",
+    "request communicate request assistant",
+    "request assistant register request",
+    "request assistant continue",
+    "request assistant send request document",
+    "assistants team deliver order",
+    "client collect their order"
+  ],
+  "model_tasks": [
+    "client initiates service",
+    "enter store and look for service",
+    "take ticket",
+    "wait and check criteria",
+    "wait for turn",
+    "ask for request",
+    "communicate request to assistant",
+    "register request",
+    "register request",
+    "send order request",
+    "prepare order",
+    "deliver order"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "initiate new service",
+        "find service",
+        "represent their turn",
+        "check it",
+        "communicate which",
+        "receive order description",
+        "collect their order",
+        "mark process",
+        "specific criteria",
+        "client enter store",
+        "client find service",
+        "client take ticket",
+        "ticket take der app",
+        "client wait waiting time",
+        "client wait his her turn",
+        "client ask specific request",
+        "register time expire",
+        "request communicate request assistant",
+        "request assistant continue",
+        "request assistant send request document",
+        "assistants team deliver order",
+        "client collect their order"
+      ],
+      "additional_tasks": [
+        "wait and check criteria",
+        "wait for turn"
+      ],
+      "merged_tasks": [
+        {
+          "model": "register request",
+          "model_index": 8,
+          "user": [
+            "register requests",
+            "request assistant register request"
+          ],
+          "user_indices": [
+            9,
+            27
+          ],
+          "pair_sims": [
+            0.914,
+            0.86
+          ],
+          "combo_sim": 0.807
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "communicate request",
+          "user_index": 7,
+          "model": [
+            "ask for request",
+            "communicate request to assistant"
+          ],
+          "model_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.761,
+            0.743
+          ],
+          "combo_sim": 0.761,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the client initiating a new service.\n\nThe client enters the store and looks for a specific service.\n\nIf the client does not find the service, the process ends.\n\nIf the client finds the service, the client takes a ticket representing their turn.\n \nNext it is checked were the ticket was taken.\n\nIf the ticket was taken in der app, the client waits for the waiting time, looks for the product and specific criteria and checks how many tickets are ahead until it is his/her turn.\n\nIf the ticket was taken physically, the client just waits for his/her turn.\n\nOnce it is their turn, the client asks for a specific request, which is communicated to the request assistant.\n\nAfter the register time expired and the request is communicated to the request assistant, the request assistant registers the request and checks if there are enough requests to respond to customer demand.\n\nIf there are not enough requests, the request assistant continues to register requests and checks again until there are enough requests to respond to customer demand.\n\nIf there are enough requests, the request assistant sends the order request document to the shop assistants' team, who then prepare the order and the registering is over.\n\nOnce the order is prepared and the order description is received, the shop assistants' team delivers the order to the client, who then collects their order.\n\nPreperation of the shop assistants team is finishedafter the order is delivered.\n\nThe process ends when the client collects their order and the process is marked as ended.",
+  "output_text": "The process begins when a client initiates a service. The client enters the store and looks for the desired service. At this point, there is a decision to be made: if the service is not found, the process ends. However, if the service is found, the client takes a ticket and waits while checking certain criteria. Once the criteria are met, the client waits for their turn.\n\nWhen it is the client's turn, they ask for their request to be fulfilled. The request is then communicated to an assistant. Following this, two activities occur simultaneously: the request is registered, and another parallel process is initiated. After the request is registered, there is a decision point, but regardless of the outcome, the process continues in parallel with the other ongoing activities.\n\nThe parallel activities converge, leading to another decision point. If the condition is true, the request is registered again, and another decision is made. Depending on the outcome of this decision, the process may escalate, but eventually, it returns to the decision point. If the condition is not true, the process proceeds to send an order request.\n\nThe order is then prepared and subsequently delivered. Once the order is delivered, the process concludes."
+}

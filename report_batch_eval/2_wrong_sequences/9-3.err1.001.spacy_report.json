@@ -1,0 +1,141 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/9-3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/9-3.err1.001.xml",
+  "user_tasks": [
+    "draft schedule",
+    "prepare draft schedule",
+    "add draft dates",
+    "review dates",
+    "identify issues",
+    "suggest modifications",
+    "follow suggestions",
+    "recheck dates",
+    "incorporate proposed changes",
+    "proposed changes",
+    "revised schedule",
+    "send final version",
+    "receive final schedule",
+    "check their diaries",
+    "confirm their availability",
+    "find conflicts",
+    "proposed dates",
+    "inform coordination unit",
+    "communicate scheduling conflicts",
+    "coordination unit draft schedule",
+    "coordination unit add draft dates",
+    "support officer review dates",
+    "support officer identify issues",
+    "coordination unit recheck dates",
+    "committee members check their diaries",
+    "committee members find conflicts",
+    "process conclude",
+    "committee members communicate scheduling conflicts"
+  ],
+  "model_tasks": [
+    "coordination unit drafts a schedule of meetings",
+    "coordination unit adds draft dates to all calendars",
+    "support officer  checks the dates",
+    "support officer suggests modifications",
+    "coordination unit looks for potential conflicts",
+    "coordination unit rechecks all dates",
+    "coordination unit sends final schedule to  committee members",
+    "committee members check diaries",
+    "committee members advise the coordination unit of any conflicts"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "draft schedule",
+        "prepare draft schedule",
+        "review dates",
+        "identify issues",
+        "suggest modifications",
+        "follow suggestions",
+        "recheck dates",
+        "incorporate proposed changes",
+        "proposed changes",
+        "revised schedule",
+        "send final version",
+        "receive final schedule",
+        "check their diaries",
+        "confirm their availability",
+        "find conflicts",
+        "proposed dates",
+        "communicate scheduling conflicts",
+        "process conclude",
+        "committee members communicate scheduling conflicts"
+      ],
+      "additional_tasks": [
+        "support officer suggests modifications",
+        "coordination unit sends final schedule to  committee members"
+      ],
+      "merged_tasks": [
+        {
+          "model": "coordination unit drafts a schedule of meetings",
+          "model_index": 0,
+          "user": [
+            "coordination unit draft schedule",
+            "coordination unit add draft dates"
+          ],
+          "user_indices": [
+            19,
+            20
+          ],
+          "pair_sims": [
+            0.84,
+            0.71
+          ],
+          "combo_sim": 0.756
+        },
+        {
+          "model": "support officer  checks the dates",
+          "model_index": 2,
+          "user": [
+            "support officer review dates",
+            "support officer identify issues"
+          ],
+          "user_indices": [
+            21,
+            22
+          ],
+          "pair_sims": [
+            0.782,
+            0.655
+          ],
+          "combo_sim": 0.798
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "coordination unit looks for potential conflicts",
+          "task_b": "coordination unit rechecks all dates",
+          "before_score": 8,
+          "after_score": 6,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the Coordination Unit drafting a schedule of meetings. Once the draft schedule is prepared, the Coordination Unit adds these draft dates to all relevant calendars. After this, the Support Officer reviews the dates to ensure they are appropriate. If the Support Officer identifies any issues, they suggest modifications to the schedule.\n\nFollowing the suggestions, the Coordination Unit rechecks all the dates to incorporate the proposed changes. They then look for any potential conflicts that might arise with the revised schedule. Once the Coordination Unit is satisfied that the schedule is free of conflicts, they send the final version to the Committee Members.\n\nUpon receiving the final schedule, the Committee Members check their diaries to confirm their availability. If any Committee Members find conflicts with the proposed dates, they inform the Coordination Unit of these issues. The process concludes after the Committee Members have communicated any scheduling conflicts to the Coordination Unit.",
+  "output_text": "The process begins with the Coordination Unit drafting a schedule of meetings. Once the draft schedule is prepared, the Coordination Unit adds the proposed dates to all relevant calendars. After this, the Support Officer reviews the dates to ensure they are suitable. If the Support Officer identifies any issues, they suggest modifications to the schedule.\n\nFollowing the suggestions, the Coordination Unit examines the schedule for any potential conflicts. They then recheck all the dates to ensure everything is in order. Once the dates are confirmed, the Coordination Unit sends the final schedule to the Committee Members.\n\nUpon receiving the schedule, the Committee Members review their diaries to check for any conflicts with the proposed meeting dates. If any conflicts are found, the Committee Members inform the Coordination Unit of these issues. The process concludes after the Committee Members have communicated any scheduling conflicts to the Coordination Unit."
+}

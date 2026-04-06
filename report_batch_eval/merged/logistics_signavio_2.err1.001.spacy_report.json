@@ -1,0 +1,133 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/logistics_signavio_2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/logistics_signavio_2.err1.001.xml",
+  "user_tasks": [
+    "receive customer order",
+    "receive order",
+    "pick stock items",
+    "need that",
+    "fulfill order",
+    "pick items",
+    "pack they",
+    "pack items",
+    "weigh parcels",
+    "meet shipping requirements",
+    "follow weighing",
+    "print shipping labels",
+    "move parcels",
+    "check number",
+    "match order",
+    "inspect quality",
+    "meet standards",
+    "meets standards",
+    "complete activities",
+    "load parcels",
+    "send delivery instructions",
+    "deliver parcels",
+    "update order status",
+    "reflect current stage",
+    "update stock levels",
+    "pick that",
+    "complete paths",
+    "shipping labels print weighing",
+    "activities occur",
+    "parcels move loading dock",
+    "process continue parallel paths",
+    "parcels load first path",
+    "delivery instructions send loading",
+    "parcels deliver correct destination",
+    "order status update second path",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "receive customer order and pick stock items",
+    "pack items into parcels",
+    "weight parcels",
+    "print shipping labels",
+    "move parcels to loading dock",
+    "check parcel count",
+    "inspect packing quality",
+    "load parcels on truck",
+    "send delivery instructions to transporter",
+    "update order status",
+    "update stock levels"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive customer order",
+        "receive order",
+        "need that",
+        "fulfill order",
+        "pick items",
+        "pack they",
+        "meet shipping requirements",
+        "follow weighing",
+        "move parcels",
+        "check number",
+        "match order",
+        "meet standards",
+        "meets standards",
+        "complete activities",
+        "deliver parcels",
+        "reflect current stage",
+        "pick that",
+        "complete paths",
+        "shipping labels print weighing",
+        "activities occur",
+        "process continue parallel paths",
+        "parcels load first path",
+        "parcels deliver correct destination",
+        "order status update second path",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "check parcel count"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send delivery instructions to transporter",
+          "model_index": 8,
+          "user": [
+            "send delivery instructions",
+            "delivery instructions send loading"
+          ],
+          "user_indices": [
+            20,
+            32
+          ],
+          "pair_sims": [
+            0.83,
+            0.754
+          ],
+          "combo_sim": 0.78
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with receiving a customer order. Once the order is received, the next step is to pick the stock items that are needed to fulfill the order. After picking the items, they are packed into parcels. Once the items are packed, the parcels are weighed to ensure they meet shipping requirements. Following the weighing, shipping labels are printed for each parcel.\n\nAfter printing the shipping labels, three activities occur simultaneously. First, the parcels are moved to the loading dock. Second, the number of parcels is checked to ensure it matches the order. Third, the quality of the packing is inspected to ensure it meets standards. These three activities are independent and can happen at the same time.\n\nOnce all three activities are completed, the process continues with two parallel paths. In the first path, the parcels are loaded onto a truck. After loading, delivery instructions are sent to the transporter to ensure the parcels are delivered to the correct destination. In the second path, the order status is updated to reflect the current stage of the process. Following this, the stock levels are updated to account for the items that have been picked and packed.\n\nFinally, once both paths are completed, the process concludes.",
+  "output_text": "The process begins with receiving a customer order and picking the stock items needed for that order. Once the items are picked, they are packed into parcels. After packing, the parcels are weighed to ensure they meet shipping requirements. Next, shipping labels are printed for each parcel.\n\nFollowing the printing of shipping labels, three activities occur simultaneously. First, the parcels are moved to the loading dock. Second, the number of parcels is checked to ensure it matches the order. Third, the quality of the packing is inspected to ensure it meets standards. These three tasks are performed in parallel and must all be completed before moving on to the next steps.\n\nOnce the parallel tasks are completed, the process continues with two more sets of parallel activities. In one set, the parcels are loaded onto a truck, and delivery instructions are sent to the transporter. In the other set, the order status is updated in the system, followed by updating the stock levels to reflect the items that have been shipped.\n\nAfter both sets of parallel activities are completed, the process concludes."
+}

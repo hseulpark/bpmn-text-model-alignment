@@ -1,0 +1,169 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/79_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/79_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "choose his preferred lunch",
+    "want pizza",
+    "wants pizza",
+    "choose pizza",
+    "chooses pizza",
+    "select order method",
+    "access website",
+    "call delivery person",
+    "place order",
+    "receive order",
+    "prepare pizza",
+    "deliver it",
+    "hand over pizza",
+    "receive it",
+    "accept payment",
+    "choose noodles",
+    "chooses noodles",
+    "start preparation",
+    "boil water",
+    "boils water",
+    "prepare sauce",
+    "add noodles",
+    "cook them",
+    "cook noodles",
+    "mix them",
+    "eat meal",
+    "frank choose his preferred lunch",
+    "delivery person receive order",
+    "frank receive",
+    "delivery person accept payment",
+    "frank choose noodles",
+    "sauce cook minutes"
+  ],
+  "model_tasks": [
+    "choose lunch",
+    "choose pizza",
+    "order online",
+    "place order",
+    "wait for pizza",
+    "receive order",
+    "order by phone",
+    "prepare pizza",
+    "deliver pizza",
+    "receive pizza",
+    "pay for pizza",
+    "accept payment",
+    "choose noodles",
+    "boil water",
+    "cook noodles",
+    "prepare sauce",
+    "cook sauce",
+    "mix noodles and sauce",
+    "eat meal"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "select order method",
+        "access website",
+        "call delivery person",
+        "deliver it",
+        "hand over pizza",
+        "receive it",
+        "chooses noodles",
+        "start preparation",
+        "boils water",
+        "cook them",
+        "mix them",
+        "delivery person receive order",
+        "frank receive",
+        "delivery person accept payment",
+        "frank choose noodles"
+      ],
+      "additional_tasks": [
+        "order online",
+        "wait for pizza",
+        "order by phone"
+      ],
+      "merged_tasks": [
+        {
+          "model": "choose lunch",
+          "model_index": 0,
+          "user": [
+            "choose his preferred lunch",
+            "frank choose his preferred lunch"
+          ],
+          "user_indices": [
+            0,
+            26
+          ],
+          "pair_sims": [
+            0.833,
+            0.705
+          ],
+          "combo_sim": 0.737
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "boil water",
+          "task_b": "cook sauce",
+          "before_score": 33,
+          "after_score": 27,
+          "improvement": 6
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "cook noodles",
+          "task_b": "prepare sauce",
+          "before_score": 33,
+          "after_score": 27,
+          "improvement": 6
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U1",
+              "U2"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U19",
+              "U20"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The lunch break at Global Car Manufacturing Inc.\nbegins, and Frank chooses his preferred lunch.\n\nHe then decides whether he wants pizza or noodles.\n\nIf he chooses pizza, he selects the order method.\n\nHe can either order online by accessing the website or by phone by calling the pizza delivery person.\n\nFor an online order, he places the order and waits for the pizza.\n\nThe pizza delivery person receives the order, prepares the pizza, and delivers it.\n\nThe pizza is handed over, and Frank receives it.\n\nHe pays for the pizza, and the pizza delivery person accepts the payment.\n\nIf Frank chooses noodles, he starts the preparation.\n\nHe boils water and simultaneously prepares the sauce.\n\nOnce the water boils, he adds the noodles and cooks them for eight minutes.\n\nThe sauce cooks for ten minutes.\n\nAfter cooking the noodles and the sauce, he mixes them together.\n\nFinally, he eats the meal.\n\nThe lunch break ends.",
+  "output_text": "The process begins with the decision of choosing what to have for lunch. The first step is to make a choice between two options: pizza or noodles.\n\nIf the decision is to have pizza, the process continues with another decision on how to order it. There are two ways to order pizza: online or by phone. \n\n- If the pizza is ordered online, the next step is to place the order. After placing the order, there is a waiting period for the pizza to arrive. Once the pizza is received, the process moves to the preparation phase.\n\n- If the pizza is ordered by phone, the process skips directly to the preparation phase after the order is placed.\n\nIn the preparation phase, the pizza is prepared and then delivered. Once the pizza is delivered, it is received, and payment is made. After the payment is accepted, the process for choosing pizza concludes.\n\nAlternatively, if the decision is to have noodles, the process involves several cooking steps. First, water is boiled. Then, the noodles are cooked. While the noodles are cooking, sauce preparation begins. The sauce is cooked, and once both the noodles and sauce are ready, they are mixed together. After mixing, the meal is ready to be eaten. Once the meal is consumed, the process for choosing noodles concludes.\n\nFinally, regardless of whether pizza or noodles were chosen, the process ends after the respective sequence of steps is completed."
+}

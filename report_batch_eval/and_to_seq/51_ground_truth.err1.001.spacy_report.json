@@ -1,0 +1,68 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/51_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/51_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "retrieve activity representation",
+    "complete this",
+    "create job posting",
+    "file documents",
+    "personnel clerk retrieve activity representation",
+    "requirement profile create"
+  ],
+  "model_tasks": [
+    "retrieve activity representation",
+    "create requirement profile",
+    "create job posting",
+    "file documents"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "complete this",
+        "personnel clerk retrieve activity representation"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U2",
+              "U5"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "and_to_seq => flattened <parallel> into sequence (structural fallback)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "First, the HR personnel clerk retrieves the activity representation.\n\nOnce this is completed, the requirement profile and a job posting are created simultaneously.\n\nSubsequently, the documents are filed and the process ends.",
+  "output_text": "The process begins with the initial step of retrieving an activity representation. This involves gathering or accessing the necessary information or data that represents the specific activity in question. Once this information is obtained, the next step is to create a requirement profile. This involves outlining the necessary qualifications, skills, and other criteria needed for the activity or position.\n\nFollowing the creation of the requirement profile, the process moves on to creating a job posting. This step involves drafting and publishing a job advertisement based on the requirement profile, aiming to attract suitable candidates for the position.\n\nAfter the job posting is created, the next step is to file documents. This involves organizing and storing all relevant documents and information related to the job posting and the process thus far, ensuring everything is properly documented and accessible for future reference.\n\nThe process concludes after the documents are filed, marking the end of the sequence of activities."
+}

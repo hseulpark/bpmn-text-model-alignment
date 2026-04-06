@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-5F5D39DF-9597-4F3D-8ACC-0469F0B56542">
+    <parameters>
+      <label>Receive customer order</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-8CB1A722-C43E-4A39-B9A8-53A8F9FD95EA">
+    <parameters>
+      <label>Pick stock items</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-76AC3B14-BBC7-42D6-9FA7-BAA7C9DE32A8">
+    <parameters>
+      <label>Pack items into parcels</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-2BFD2B36-F9AD-4895-9566-5A78210126DF">
+    <parameters>
+      <label>Weight parcels</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-B794B589-9B1B-4B5E-831E-DBE4C1463375">
+    <parameters>
+      <label>Print shipping labels</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-95B38508-261C-488F-8767-E24FAD4778B2">
+        <parameters>
+          <label>Move parcels to loading dock</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a8" endpoint="" a:alt_id="sid-433AA984-6A0D-40EA-8C71-C68ACDC91CDF">
+        <parameters>
+          <label>Check parcel count</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a10" endpoint="" a:alt_id="sid-F804B41A-8FC8-465F-9ABD-B5EF2BDA4F7C">
+        <parameters>
+          <label>inspect packing quality</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-522DE171-EEB3-4639-AB20-5FD2B3A79ED2">
+    <parallel_branch>
+      <call id="a12" endpoint="" a:alt_id="sid-7BD7CDCD-FE66-4224-A8B3-9697B0D4E8D5">
+        <parameters>
+          <label>Load parcels on truck</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="sid-23AA0B4D-6F79-472F-BAAB-6EF7791363C8">
+        <parameters>
+          <label>Send delivery instructions to transporter</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a14" endpoint="" a:alt_id="sid-41617D51-9ED0-4AF3-A5CB-FBB9CA881D1C">
+        <parameters>
+          <label>Update order status</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="sid-0D947A49-DBDF-4255-81FD-3D6B331BFFF1">
+        <parameters>
+          <label>Update stock levels</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+</description>

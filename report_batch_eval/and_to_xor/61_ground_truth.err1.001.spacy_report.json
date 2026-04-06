@@ -1,0 +1,243 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/61_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/61_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "define their search criteria",
+    "select their master study course",
+    "select informatics",
+    "select campus soest",
+    "find study course",
+    "select master study course",
+    "check application procedure",
+    "send required documents",
+    "required documents",
+    "get decision",
+    "contact imis office",
+    "fh swf",
+    "eu applicant",
+    "student go swf website",
+    "graduates get decision"
+  ],
+  "model_tasks": [
+    "go to fh-swf website",
+    "define search criteria",
+    "select master study course",
+    "select informatics and digitalisation",
+    "select campus soest",
+    "click \"find a study course\"",
+    "click \"learn more\" on imis banner",
+    "select master study course",
+    "click \"see how to apply here\"",
+    "apply via uni-assist",
+    "check application procedure",
+    "send documents to uni-assist",
+    "wait for decision 10-12 weeks",
+    "apply via fh-swf online portal",
+    "send documents",
+    "contact imis office",
+    "wait for decision 4-6 weeks"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "get decision",
+        "eu applicant",
+        "graduates get decision"
+      ],
+      "additional_tasks": [
+        "click \"learn more\" on imis banner",
+        "select master study course",
+        "click \"see how to apply here\"",
+        "apply via uni-assist",
+        "send documents to uni-assist",
+        "wait for decision 10-12 weeks",
+        "apply via fh-swf online portal",
+        "wait for decision 4-6 weeks"
+      ],
+      "merged_tasks": [
+        {
+          "model": "go to fh-swf website",
+          "model_index": 0,
+          "user": [
+            "fh swf",
+            "student go swf website"
+          ],
+          "user_indices": [
+            11,
+            13
+          ],
+          "pair_sims": [
+            0.758,
+            0.705
+          ],
+          "combo_sim": 0.791
+        },
+        {
+          "model": "click \"find a study course\"",
+          "model_index": 5,
+          "user": [
+            "select their master study course",
+            "find study course"
+          ],
+          "user_indices": [
+            1,
+            4
+          ],
+          "pair_sims": [
+            0.646,
+            0.864
+          ],
+          "combo_sim": 0.702
+        },
+        {
+          "model": "send documents",
+          "model_index": 14,
+          "user": [
+            "send required documents",
+            "required documents"
+          ],
+          "user_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.832,
+            0.525
+          ],
+          "combo_sim": 0.734
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "go to fh-swf website",
+          "task_b": "click \"see how to apply here\"",
+          "before_score": 27,
+          "after_score": 25,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "contact imis office",
+          "task_b": "wait for decision 4-6 weeks",
+          "before_score": 27,
+          "after_score": 23,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U1",
+              "U2"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U3",
+              "U5"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U1",
+              "U5"
+            ],
+            "user_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U2",
+              "U5"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U1",
+              "U3"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U2",
+              "U3"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U1",
+              "U2"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 7,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the application for IMIS by an Undergraduate Student.\n\nThe student first goes to the fh-swf website.\n\nOnce there, they define their search criteria.\n\nNext, they simultaneously select their Master Study Course, select Informatics and Digitalisation as subject area and select Campus Soest.\n\nAfter that, they click on \"Find a Study Course.\" Following this, they click on \"Learn more\" on the IMIS banner.\n\nThey then select the Master Study Course and click on \"See how to apply here.\"\n\nAt this point, they need to determine if they are an EU applicant or not.\n\nIf they are a non-EU / international applicant, they proceed to apply via Uni-Assist.\n\nAfter applying, they check the application procedure and send the required documents to Uni-Assist.\n\nthey then wait to get a decision within 10-12 weeks.\n\nIf they are an EU applicant, they apply via the FH-SWF Online Portal.\n\nAfter applying, they send the required documents and contact the IMIS office.\n\nIf they are an FH-SWF student or graduate, they apply via the FH-SWF Online Portal and contact the IMIS office.\n\nFH-SWF Students/Graduates and EU-applicant get a decision within 4-6 weeks after they contacted the IMIS office.\n\nFinally, the process end with the receipt of a admission/rejection letter.",
+  "output_text": "The process begins with the individual visiting the FH-SWF website. Once there, they define their search criteria. Based on these criteria, they have three options to choose from: selecting a master study course, selecting Informatics and Digitalisation, or selecting the Campus Soest. The individual can choose any one of these options.\n\nAfter making a selection, the individual proceeds to click on the \"Find a Study Course\" button. Following this, they click on the \"Learn more\" link on the IMIS banner. This leads them to select a master study course once again. After selecting the course, they click on the \"See how to apply here\" link.\n\nAt this point, the process diverges based on the applicant's status. If the applicant is a non-EU applicant, they apply via Uni-Assist. They then check the application procedure and send their documents to Uni-Assist. After sending the documents, they wait for a decision, which takes approximately 10 to 12 weeks.\n\nIf the applicant is an EU applicant, they apply through the FH-SWF online portal. They send their documents and then contact the IMIS office. After making contact, they wait for a decision, which takes about 4 to 6 weeks.\n\nOnce the decision is received, the process concludes."
+}

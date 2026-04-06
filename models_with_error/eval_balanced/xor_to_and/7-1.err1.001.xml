@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-10BB98F5-55E6-47B9-BF39-727F2F19F385">
+    <parameters>
+      <label>Manager checks the open leads</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-75D41171-5F2B-41DD-950E-B61114F5668E">
+    <parameters>
+      <label>Manager selects the top five leads</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-83385A1D-5CA2-4808-9C31-D3EABA93A140">
+    <parameters>
+      <label>Manager tells Sales Assistant to  contact the leads</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="post_test" condition="true">
+    <call id="a4" endpoint="" a:alt_id="sid-99800CC3-28C7-45BE-A160-085218A756F4">
+      <parameters>
+        <label>Sales Assistant calls  customer</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-345B5FA6-891C-4C88-A8C7-B2A792278FB4" a:mutated="true"><parallel_branch><call id="a6" endpoint="" a:alt_id="sid-55295656-9228-417B-BE53-E61542ED2CDA">
+          <parameters>
+            <label>Sales Assistant  sends a note to the Manager</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a7" endpoint="" a:alt_id="sid-E06304E3-73A8-49E1-AC55-41DA9C752AAB">
+          <parameters>
+            <label>Manager  processes the lead</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </parallel_branch><parallel_branch /></parallel></loop>
+</description>

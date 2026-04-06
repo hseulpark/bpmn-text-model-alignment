@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3C2B9677-2A18-45EB-8953-48923E45C0B6">
+    <parameters>
+      <label>Find out wanted resources</label>
+      <method/>
+      <type>:userTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-2A35A0AB-BAC0-460B-8891-B64E043E06A6">
+    <parallel_branch>
+      <call id="a6" endpoint="" a:alt_id="sid-985914CC-C768-4A22-837F-4468B4770AA5">
+        <parameters>
+          <label>Check repo for already available resources</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a3" endpoint="" a:alt_id="sid-340F36E6-4089-4CB8-823D-272C75757DD5">
+        <parameters>
+          <label>Collect urgently needed resources</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <choose mode="exclusive" a:alt_id="sid-35CDDA60-257A-4C7F-AE37-D49AD5255ACB">
+    <alternative condition="">
+      <call id="a9" endpoint="" a:alt_id="sid-8241B2EF-C99A-4B81-96DC-FA038AB0EAA9">
+        <parameters>
+          <label>Build tools</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition=""/>
+  </choose>
+  <call id="a4" endpoint="" a:alt_id="sid-C41F978B-5B2B-4CB1-990A-646B66005D87">
+    <parameters>
+      <label>Collect the remained resources</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:alt_id="sid-C11EE045-DD72-45E1-9840-43F729A07A62">
+    <parallel_branch>
+      <loop mode="pre_test" condition="true">
+        <call id="a26" endpoint="" a:alt_id="sid-6C0E2903-48B1-4B05-B048-86B4DD1A35B6">
+          <parameters>
+            <label>Wait for random natural event for some time</label>
+            <method/>
+            <type>:task</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <choose mode="exclusive" a:alt_id="sid-8A34CC83-0B43-4EE1-AFEF-B505E6B526CA">
+          <alternative condition="">
+            <call id="a13" endpoint="" a:alt_id="sid-206C73D7-90B5-4A90-8064-66A97059D943">
+              <parameters>
+                <label>Reset bot</label>
+                <method/>
+                <type>:serviceTask</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a12" endpoint="" a:alt_id="sid-FF3C47DC-233A-438E-89C7-0CE859EAB997">
+              <parameters>
+                <label>Continue farming</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <call id="a11" endpoint="" a:alt_id="sid-0826E670-DA6C-4631-BE0C-33F438B6B5D1">
+              <parameters>
+                <label>Start farming</label>
+                <method/>
+                <type>:task</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+        </choose>
+        <choose mode="exclusive" a:alt_id="sid-161FD857-0137-44F5-832D-BD1C52581E2F">
+          <alternative condition="">
+            <call id="a15" endpoint="" a:alt_id="sid-0430CCCD-AF49-4073-8527-04A01E5D9993">
+              <parameters>
+                <label>Notify player</label>
+                <method/>
+                <type>:serviceTask</type>
+                <arguments/>
+              </parameters>
+            </call>
+            <call id="a2" endpoint="" a:alt_id="sid-29E1429B-FB16-4982-BF4C-B6789CC0F027">
+              <parameters>
+                <label>Read message</label>
+                <method/>
+                <type>:userTask</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition=""/>
+        </choose>
+        <choose mode="exclusive" a:alt_id="sid-EFF7224F-A4ED-4E02-BE42-C2E742B7BD61">
+          <alternative condition="">
+            <call id="a22" endpoint="" a:alt_id="sid-4B5C7B37-5361-45CC-A09E-B8D88F688520">
+              <parameters>
+                <label>Give bot a sleeping break</label>
+                <method/>
+                <type>:serviceTask</type>
+                <arguments/>
+              </parameters>
+            </call>
+          </alternative>
+          <alternative condition="">
+            <choose mode="inclusive" a:alt_id="sid-4AB3A09E-78E0-4518-B8F5-ED5F62E2F640">
+              <alternative condition="">
+                <call id="a19" endpoint="" a:alt_id="sid-7FD87B3B-B75D-431C-A623-7EF93FE79982">
+                  <parameters>
+                    <label>Brag to friends</label>
+                    <method/>
+                    <type>:userTask</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="">
+                <call id="a20" endpoint="" a:alt_id="sid-31D29627-A5E8-4572-8506-263BCBD8984A">
+                  <parameters>
+                    <label>Help with materials</label>
+                    <method/>
+                    <type>:userTask</type>
+                    <arguments/>
+                  </parameters>
+                </call>
+              </alternative>
+            </choose>
+            <escape a:alt_id="-1"/>
+          </alternative>
+        </choose>
+      </loop>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a24" endpoint="" a:alt_id="sid-B2E1BA5A-9C5F-4778-999F-E2427CD07AD8">
+        <parameters>
+          <label>Update list of resources</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+</description>

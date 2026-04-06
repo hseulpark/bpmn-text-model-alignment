@@ -1,0 +1,139 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/merged/3-1.err1.001.xml",
+  "user_tasks": [
+    "begin party",
+    "send request",
+    "receive request",
+    "retrieve sct file",
+    "obtain file",
+    "forward sct warrant possession",
+    "enter waiting period",
+    "receive report",
+    "receive police report",
+    "retrieve respective sct file",
+    "update it",
+    "attach new sct document",
+    "include information",
+    "existing file",
+    "keep documents",
+    "mark end",
+    "party send request",
+    "back office retrieve sct file",
+    "back office retrieve respective sct file",
+    "back office attach new sct document",
+    "store sct file"
+  ],
+  "model_tasks": [
+    "party sends a warrant possession request",
+    "client service back office receives the request",
+    "client service back office retrieves the sct file",
+    "client service back office forwards the sct warrant possession to queensland police",
+    "back office stores the sct physical file",
+    "back office awaits a police report",
+    "back office receives the report",
+    "back office  retrieves the respective sct file and back office attaches the new sct document",
+    "back office stores the expanded sct physical file"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "begin party",
+        "send request",
+        "receive request",
+        "retrieve sct file",
+        "obtain file",
+        "enter waiting period",
+        "retrieve respective sct file",
+        "update it",
+        "include information",
+        "existing file",
+        "keep documents",
+        "mark end",
+        "party send request",
+        "back office attach new sct document",
+        "store sct file"
+      ],
+      "additional_tasks": [
+        "party sends a warrant possession request",
+        "client service back office receives the request",
+        "back office awaits a police report"
+      ],
+      "merged_tasks": [
+        {
+          "model": "back office receives the report",
+          "model_index": 6,
+          "user": [
+            "receive report",
+            "receive police report"
+          ],
+          "user_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.631,
+            0.564
+          ],
+          "combo_sim": 0.557
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "attach new sct document",
+          "user_index": 11,
+          "model": [
+            "back office  retrieves the respective sct file and back office attaches the new sct document",
+            "back office stores the expanded sct physical file"
+          ],
+          "model_indices": [
+            7,
+            8
+          ],
+          "pair_sims": [
+            0.714,
+            0.61
+          ],
+          "combo_sim": 0.634,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "back office stores the sct physical file",
+          "task_b": "back office receives the report",
+          "before_score": 15,
+          "after_score": 11,
+          "improvement": 4
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "client service back office forwards the sct warrant possession to queensland police",
+          "task_b": "back office stores the sct physical file",
+          "before_score": 15,
+          "after_score": 11,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a party sends a request for a warrant possession. This request is received by the Client Service Back Office. Once the request is in their hands, the Client Service Back Office retrieves the SCT file related to the request. After obtaining the file, they forward the SCT Warrant Possession to the Queensland Police for further action.\n\nFollowing this, the Back Office stores the physical SCT file securely. They then enter a waiting period, during which they anticipate receiving a report from the Police. Once the Police report is received, the Back Office retrieves the respective SCT file again to update it.\n\nThe next step involves the Back Office attaching the new SCT document, which includes the information from the Police report, to the existing file. After this update, the Back Office stores the expanded SCT physical file, ensuring all documents are kept together. This marks the end of the process.",
+  "output_text": "The process begins when a party sends a request for a warrant possession. This request is received by the Client Service Back Office. Once the request is received, the Client Service Back Office retrieves the SCT file related to the request. After retrieving the file, the Client Service Back Office forwards the SCT Warrant Possession to the Queensland Police for further action.\n\nFollowing this, the Back Office stores the physical SCT file securely. The process then involves a waiting period where the Back Office awaits a report from the Police. Once the Police report is received, the Back Office retrieves the respective SCT file again. At this point, the Back Office attaches the new SCT document to the file.\n\nFinally, the Back Office stores the expanded SCT physical file, which now includes the new document. This marks the end of the process."
+}

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Receive Order</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Create and Forward Order Ticket</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:mutated="true"><alternative condition=""><call id="a5" endpoint="">
+        <parameters>
+          <label>Prepare Meals</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a6" endpoint="">
+        <parameters>
+          <label>Prepare Cart and Non-Alcoholic Beverages</label>
+          <method />
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative><alternative condition=""><call id="a7" endpoint="">
+        <parameters>
+          <label>Check if Wine Desired</label>
+          <method />
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Yes" language="text/javascript">
+          <call id="a9" endpoint="">
+            <parameters>
+              <label>Fetch Wine from Cellar</label>
+              <method />
+              <type>:task</type>
+              <mid>'8'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No" language="text/javascript" />
+      </choose>
+      <call id="a10" endpoint="">
+        <parameters>
+          <label>Check if Other Alcoholic Beverages Desired</label>
+          <method />
+          <type>:task</type>
+          <mid>'9'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Yes" language="text/javascript">
+          <call id="a12" endpoint="">
+            <parameters>
+              <label>Prepare Other Alcoholic Beverages</label>
+              <method />
+              <type>:task</type>
+              <mid>'11'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No" language="text/javascript" />
+      </choose>
+    </alternative></choose><call id="a14" endpoint="">
+    <parameters>
+      <label>Consolidate Items</label>
+      <method />
+      <type>:task</type>
+      <mid>'13'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a15" endpoint="">
+    <parameters>
+      <label>Deliver Order to Guest</label>
+      <method />
+      <type>:task</type>
+      <mid>'14'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a16" endpoint="">
+    <parameters>
+      <label>Check for Other Orders</label>
+      <method />
+      <type>:task</type>
+      <mid>'15'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="No Other Orders" language="text/javascript">
+      <call id="a18" endpoint="">
+        <parameters>
+          <label>Debit Customer's Account</label>
+          <method />
+          <type>:task</type>
+          <mid>'17'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Other Orders" language="text/javascript" />
+  </choose>
+</description>

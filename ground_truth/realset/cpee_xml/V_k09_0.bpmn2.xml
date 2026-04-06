@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a13" endpoint="" a:alt_id="sid-FE459528-72C0-44E3-9DE1-62FEB8B12924">
+    <parameters>
+      <label>Connect to the managment system</label>
+      <method/>
+      <type>:userTask</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a0" endpoint="" a:alt_id="sid-F533125F-D8F7-4098-97F9-80D8DC313F7F">
+      <parameters>
+        <label>Read order from system</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-EB8CFC1F-FE67-4521-97D9-1EA33080657A">
+      <alternative condition="">
+        <call id="a5" endpoint="" a:alt_id="sid-8F8797BD-0BE8-40E6-B9AA-CDF9F54C3757">
+          <parameters>
+            <label>Contact the wholesaler</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a4" endpoint="" a:alt_id="sid-B4F4C0DF-105D-4FD8-B05C-BC1DB2A03F4B">
+          <parameters>
+            <label>Reordered from the wholesaler</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a6" endpoint="" a:alt_id="sid-B498DBA1-FAA9-4A45-A90D-888EA636FA6C">
+          <parameters>
+            <label>Browse the warehouse</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+        <call id="a2" endpoint="" a:alt_id="sid-F3B265E0-F432-4D29-9854-F1656FA35C73">
+          <parameters>
+            <label>Withdrawn  the product from the warehouse</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+    <choose mode="exclusive" a:alt_id="sid-F6E66BDF-A28E-414D-967E-C1487197F42E">
+      <alternative condition="">
+        <call id="a9" endpoint="" a:alt_id="sid-58607C94-600A-495D-9E26-D4CBF78D2621">
+          <parameters>
+            <label>delivery delay penalty from the wholesaler</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+      <alternative condition="">
+        <call id="a10" endpoint="" a:alt_id="sid-2B47D193-6F42-43FA-8962-E1901A51008C">
+          <parameters>
+            <label>Give the Ok for the arrived product</label>
+            <method/>
+            <type>:serviceTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+    <call id="a11" endpoint="" a:alt_id="sid-7B6D29ED-E8F4-428D-A53A-E7307C3F961A">
+      <parameters>
+        <label>Register the product in the management system</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true" a:alt_id="sid-6F0B6237-77E0-426B-B9A4-0927A3B6D0C4" language="text/javascript">
+      <call id="a0" endpoint="" a:alt_id="sid-F533125F-D8F7-4098-97F9-80D8DC313F7F">
+        <parameters>
+          <label>Read order from system</label>
+          <method/>
+          <type>:serviceTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-EB8CFC1F-FE67-4521-97D9-1EA33080657A">
+        <alternative condition="">
+          <call id="a5" endpoint="" a:alt_id="sid-8F8797BD-0BE8-40E6-B9AA-CDF9F54C3757">
+            <parameters>
+              <label>Contact the wholesaler</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a4" endpoint="" a:alt_id="sid-B4F4C0DF-105D-4FD8-B05C-BC1DB2A03F4B">
+            <parameters>
+              <label>Reordered from the wholesaler</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a6" endpoint="" a:alt_id="sid-B498DBA1-FAA9-4A45-A90D-888EA636FA6C">
+            <parameters>
+              <label>Browse the warehouse</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+          <call id="a2" endpoint="" a:alt_id="sid-F3B265E0-F432-4D29-9854-F1656FA35C73">
+            <parameters>
+              <label>Withdrawn  the product from the warehouse</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <choose mode="exclusive" a:alt_id="sid-F6E66BDF-A28E-414D-967E-C1487197F42E">
+        <alternative condition="">
+          <call id="a9" endpoint="" a:alt_id="sid-58607C94-600A-495D-9E26-D4CBF78D2621">
+            <parameters>
+              <label>delivery delay penalty from the wholesaler</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a10" endpoint="" a:alt_id="sid-2B47D193-6F42-43FA-8962-E1901A51008C">
+            <parameters>
+              <label>Give the Ok for the arrived product</label>
+              <method/>
+              <type>:serviceTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+      <call id="a11" endpoint="" a:alt_id="sid-7B6D29ED-E8F4-428D-A53A-E7307C3F961A">
+        <parameters>
+          <label>Register the product in the management system</label>
+          <method/>
+          <type>:serviceTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-73C5A88B-DD8F-4BC2-BD54-5C295EBCB8B1">
+      <parallel_branch>
+        <call id="a17" endpoint="" a:alt_id="sid-D4572426-72A8-4B94-A4F5-8B5DF5139696">
+          <parameters>
+            <label>Pack the product</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a16" endpoint="" a:alt_id="sid-425E443E-B873-43B0-B5D3-B8C6C26B1E3B">
+          <parameters>
+            <label>Request a courier</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+    </parallel>
+    <call id="a18" endpoint="" a:alt_id="sid-C5DBE713-5CAF-40AE-8EE5-567DCB262C8D">
+      <parameters>
+        <label>Ship the delivery</label>
+        <method/>
+        <type>:userTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+  </loop>
+</description>

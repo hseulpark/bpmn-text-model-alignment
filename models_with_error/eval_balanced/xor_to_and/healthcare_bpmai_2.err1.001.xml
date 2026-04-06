@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a19" endpoint="" a:alt_id="sid-DA936480-F161-4E9B-980B-0BA8026BC910">
+    <parameters>
+      <label>Come to the hospital</label>
+      <method />
+      <type>:manualTask</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a22" endpoint="" a:alt_id="sid-CA052EB5-E180-47B1-94C7-C7540346FDC2">
+    <parameters>
+      <label>Stay the front</label>
+      <method />
+      <type>:manualTask</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a24" endpoint="" a:alt_id="sid-DD642251-8B20-49EE-9BAB-274FA9ED740B">
+    <parameters>
+      <label>Visit the nurse</label>
+      <method />
+      <type>:manualTask</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-A678FB6D-E69F-4DBA-862D-39E85C28AA2A">
+    <parameters>
+      <label>Check insurance</label>
+      <method />
+      <type>:manualTask</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-1BECB57C-A72F-4682-A49B-035A36C583D0">
+    <alternative condition="">
+      <call id="a1" endpoint="" a:alt_id="sid-0DD59DA9-CDF8-49F4-8295-2CD6613F0569">
+        <parameters>
+          <label>Check patients state</label>
+          <method />
+          <type>:manualTask</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-68345878-45A6-46C5-B7EF-A469C7D13AC7">
+        <alternative condition="">
+          <call id="a3" endpoint="" a:alt_id="sid-55268CA3-E99E-48D5-89EA-DFD37A0CB9F1">
+            <parameters>
+              <label>Send patient home</label>
+              <method />
+              <type>:manualTask</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <loop mode="pre_test" condition="true">
+            <call id="a18" endpoint="" a:alt_id="sid-C08202A0-646C-467F-8BA3-B3F657C70889">
+              <parameters>
+                <label>Examine the patient</label>
+                <method />
+                <type>:task</type>
+                <arguments />
+              </parameters>
+            </call>
+            <choose mode="exclusive" a:alt_id="sid-C71C3CA4-0187-4FE1-828F-47F31E7F89A4">
+              <alternative condition="">
+                <call id="a15" endpoint="" a:alt_id="sid-1E5E8809-5B63-4C02-BA80-D5210A4AC587">
+                  <parameters>
+                    <label>Hospitalize</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a10" endpoint="" a:alt_id="sid-EC470F11-D30B-4F64-B487-D0329D0D2A83">
+                  <parameters>
+                    <label>Book patient for doctor</label>
+                    <method />
+                    <type>:userTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+              </alternative>
+              <alternative condition="">
+                <call id="a12" endpoint="" a:alt_id="sid-CB93EFE6-0700-4338-A24F-A4D2908E37B2">
+                  <parameters>
+                    <label>Send patient to pharmacy</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a23" endpoint="" a:alt_id="sid-7104998A-A7E6-49AF-B4C5-991FD53C8629">
+                  <parameters>
+                    <label>Visit pharmacy</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a26" endpoint="" a:alt_id="sid-DAD96BD2-88E3-4A3A-ADEF-A8B499A27A2A">
+                  <parameters>
+                    <label>Order medicine</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a27" endpoint="" a:alt_id="sid-1F6555B5-2DC7-49F0-B31A-06764CA92A0D">
+                  <parameters>
+                    <label>Pay medicine</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <call id="a25" endpoint="" a:alt_id="sid-656E4E8C-07EF-4257-92B5-D91D477B4C19">
+                  <parameters>
+                    <label>Receive medicine</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <escape a:alt_id="-1" />
+              </alternative>
+              <alternative condition="">
+                <call id="a13" endpoint="" a:alt_id="sid-BEE416F0-84E2-4ADB-988B-B3875D3B6D25">
+                  <parameters>
+                    <label>Send patient home</label>
+                    <method />
+                    <type>:manualTask</type>
+                    <arguments />
+                  </parameters>
+                </call>
+                <escape a:alt_id="-1" />
+              </alternative>
+            </choose>
+          </loop>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-3EE1B4CB-541D-40AD-99C1-A7191E694641">
+        <parameters>
+          <label>Check if patient is registered in hospital</label>
+          <method />
+          <type>:userTask</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-CD3C8821-018E-4695-B8B3-E96C81141461">
+        <alternative condition="">
+          <call id="a5" endpoint="" a:alt_id="sid-FDDE57E9-C099-4017-8EEA-02E71597E215">
+            <parameters>
+              <label>Register patient</label>
+              <method />
+              <type>:userTask</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="" />
+      </choose>
+      <call id="a21" endpoint="" a:alt_id="sid-873768E8-6C27-4904-8BDC-4EB360698CED">
+        <parameters>
+          <label>Pay fee</label>
+          <method />
+          <type>:manualTask</type>
+          <arguments />
+        </parameters>
+      </call>
+      <loop mode="pre_test" condition="true">
+        <call id="a10" endpoint="" a:alt_id="sid-EC470F11-D30B-4F64-B487-D0329D0D2A83">
+          <parameters>
+            <label>Book patient for doctor</label>
+            <method />
+            <type>:userTask</type>
+            <arguments />
+          </parameters>
+        </call>
+        <call id="a18" endpoint="" a:alt_id="sid-C08202A0-646C-467F-8BA3-B3F657C70889">
+          <parameters>
+            <label>Examine the patient</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <parallel wait="-1" cancel="last" a:alt_id="sid-C71C3CA4-0187-4FE1-828F-47F31E7F89A4" a:mutated="true"><parallel_branch><call id="a15" endpoint="" a:alt_id="sid-1E5E8809-5B63-4C02-BA80-D5210A4AC587">
+              <parameters>
+                <label>Hospitalize</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+          </parallel_branch><parallel_branch><call id="a12" endpoint="" a:alt_id="sid-CB93EFE6-0700-4338-A24F-A4D2908E37B2">
+              <parameters>
+                <label>Send patient to pharmacy</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a23" endpoint="" a:alt_id="sid-7104998A-A7E6-49AF-B4C5-991FD53C8629">
+              <parameters>
+                <label>Visit pharmacy</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a26" endpoint="" a:alt_id="sid-DAD96BD2-88E3-4A3A-ADEF-A8B499A27A2A">
+              <parameters>
+                <label>Order medicine</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a27" endpoint="" a:alt_id="sid-1F6555B5-2DC7-49F0-B31A-06764CA92A0D">
+              <parameters>
+                <label>Pay medicine</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <call id="a25" endpoint="" a:alt_id="sid-656E4E8C-07EF-4257-92B5-D91D477B4C19">
+              <parameters>
+                <label>Receive medicine</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </parallel_branch><parallel_branch><call id="a13" endpoint="" a:alt_id="sid-BEE416F0-84E2-4ADB-988B-B3875D3B6D25">
+              <parameters>
+                <label>Send patient home</label>
+                <method />
+                <type>:manualTask</type>
+                <arguments />
+              </parameters>
+            </call>
+            <escape a:alt_id="-1" />
+          </parallel_branch></parallel></loop>
+    </alternative>
+  </choose>
+</description>

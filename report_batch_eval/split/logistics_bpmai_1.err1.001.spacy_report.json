@@ -1,0 +1,163 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/logistics_bpmai_1.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/split/logistics_bpmai_1.err1.001.xml",
+  "user_tasks": [
+    "receive shipment request",
+    "receive request",
+    "check product availability",
+    "make decision",
+    "check shipment address",
+    "verify shipment address",
+    "reach decision point",
+    "assemble inbound shipment",
+    "assemble shipment",
+    "send out it",
+    "receive shipment",
+    "undergo inbound shipment check",
+    "follow check",
+    "prepare products",
+    "follow different path",
+    "meet conditions",
+    "take appropriate actions",
+    "checking product",
+    "process continue",
+    "process proceed",
+    "shipment receive its destination",
+    "decision make point",
+    "process continue next decision point",
+    "decision point lead decision",
+    "products prepare regional shipment",
+    "path lead same decision point",
+    "paths converge final decision point",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "start receiving shipment request",
+    "finish receiving shipment request",
+    "check product availability",
+    "check shipment address",
+    "assemble inbound shipment",
+    "send inbound shipment",
+    "receive inbound\n shipment",
+    "check inbound\n shipment",
+    "prepare products for   shipment \nto particular service station",
+    "prepare products for regional  shipment",
+    "prepare products for   shipment \nto particular service station"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive request",
+        "make decision",
+        "reach decision point",
+        "assemble shipment",
+        "send out it",
+        "receive shipment",
+        "undergo inbound shipment check",
+        "follow check",
+        "prepare products",
+        "follow different path",
+        "meet conditions",
+        "take appropriate actions",
+        "checking product",
+        "process continue",
+        "process proceed",
+        "shipment receive its destination",
+        "decision make point",
+        "process continue next decision point",
+        "decision point lead decision",
+        "path lead same decision point",
+        "paths converge final decision point",
+        "process conclude"
+      ],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "receive shipment request",
+          "user_index": 0,
+          "model": [
+            "start receiving shipment request",
+            "finish receiving shipment request"
+          ],
+          "model_indices": [
+            0,
+            1
+          ],
+          "pair_sims": [
+            0.897,
+            0.867
+          ],
+          "combo_sim": 0.814,
+          "adjacent": true
+        },
+        {
+          "user": "verify shipment address",
+          "user_index": 5,
+          "model": [
+            "send inbound shipment",
+            "receive inbound\n shipment",
+            "check inbound\n shipment"
+          ],
+          "model_indices": [
+            5,
+            6,
+            7
+          ],
+          "pair_sims": [
+            0.572,
+            0.567,
+            0.741
+          ],
+          "combo_sim": 0.605,
+          "adjacent": true
+        },
+        {
+          "user": "products prepare regional shipment",
+          "user_index": 24,
+          "model": [
+            "prepare products for   shipment \nto particular service station",
+            "prepare products for regional  shipment",
+            "prepare products for   shipment \nto particular service station"
+          ],
+          "model_indices": [
+            8,
+            9,
+            10
+          ],
+          "pair_sims": [
+            0.7,
+            0.97,
+            0.7
+          ],
+          "combo_sim": 0.85,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when a shipment request is received. Once the request is received, the next step is to check if the product is available. After checking product availability, a decision is made. If the product is available, the process continues to check the shipment address.\n\nAfter verifying the shipment address, another decision point is reached. If the address is valid, the process proceeds to assemble the inbound shipment. Once the shipment is assembled, it is sent out. The shipment is then received at its destination, where it undergoes an inbound shipment check.\n\nFollowing the check, the products are prepared for shipment to a specific service station. At this point, a decision is made, but regardless of the decision, the process continues to the next decision point. This decision point leads to another decision, which eventually converges back to the previous decision point.\n\nIf, after checking the shipment address, it is determined that the products should be prepared for regional shipment instead, the process follows a different path. The products are prepared for regional shipment, and this path also leads to the same decision point as the previous path.\n\nFinally, all paths converge at a final decision point, which leads to the end of the process. The process concludes successfully once all conditions are met and the appropriate actions are taken.",
+  "output_text": "The process begins with a starting point, which signifies the initiation of the process. Once the process is initiated, it proceeds directly to the endpoint, where the process concludes. There are no additional steps, decisions, or activities between the start and end of the process."
+}

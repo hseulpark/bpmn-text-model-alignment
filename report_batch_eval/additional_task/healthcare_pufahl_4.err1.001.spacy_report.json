@@ -1,0 +1,138 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/healthcare_pufahl_4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/healthcare_pufahl_4.err1.001.xml",
+  "user_tasks": [
+    "assess patient conditions",
+    "perform physical examination",
+    "draw blood samples",
+    "send which",
+    "complete analysis",
+    "receive results",
+    "complete lab analysis",
+    "make diagnosis",
+    "gathered information",
+    "follow diagnosis",
+    "make decision",
+    "regard steps",
+    "indicate need",
+    "perform surgery",
+    "plan surgery",
+    "perform surgical intervention",
+    "discharge patient",
+    "mark end",
+    "activities occur",
+    "second activity involve",
+    "process continue",
+    "decision make diagnosis",
+    "diagnosis indicate need",
+    "process proceed",
+    "surgery need",
+    "process involve",
+    "regard next steps"
+  ],
+  "model_tasks": [
+    "assess patient conditions",
+    "review request",
+    "perform physical examination",
+    "draw blood samples",
+    "send analysis to the lab",
+    "receive analysis from the lab",
+    "make diagnosis",
+    "surgical intervention",
+    "plan surgery",
+    "discharge patient"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "send which",
+        "complete analysis",
+        "gathered information",
+        "follow diagnosis",
+        "make decision",
+        "regard steps",
+        "indicate need",
+        "perform surgery",
+        "mark end",
+        "activities occur",
+        "second activity involve",
+        "process continue",
+        "decision make diagnosis",
+        "diagnosis indicate need",
+        "process proceed",
+        "surgery need",
+        "process involve",
+        "regard next steps"
+      ],
+      "additional_tasks": [
+        "review request",
+        "send analysis to the lab"
+      ],
+      "merged_tasks": [
+        {
+          "model": "receive analysis from the lab",
+          "model_index": 5,
+          "user": [
+            "receive results",
+            "complete lab analysis"
+          ],
+          "user_indices": [
+            5,
+            6
+          ],
+          "pair_sims": [
+            0.523,
+            0.665
+          ],
+          "combo_sim": 0.791
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "assess patient conditions",
+          "task_b": "review request",
+          "before_score": 12,
+          "after_score": 10,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U13",
+              "U15"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ]
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 1,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with assessing the patient's conditions. Once the assessment is complete, two activities occur simultaneously. The first activity involves performing a physical examination on the patient. The second activity involves drawing blood samples from the patient, which are then sent to the lab for analysis. After the lab completes the analysis, the results are received.\n\nOnce both the physical examination and the lab analysis are completed, the process continues with making a diagnosis based on the gathered information. Following the diagnosis, a decision is made regarding the next steps. If the diagnosis indicates the need for immediate surgical intervention, the process proceeds with performing the surgery. Alternatively, if the surgery needs to be planned for a later time, the process involves planning the surgery accordingly.\n\nAfter either the surgical intervention is performed or the surgery is planned, the final step in the process is to discharge the patient. This marks the end of the process.",
+  "output_text": "The process begins with an initial step where the patient's conditions are assessed. Following this, a request is reviewed to determine the next steps. After the review, two activities occur simultaneously. First, a physical examination of the patient is performed. At the same time, blood samples are drawn from the patient. These samples are then sent to a laboratory for analysis. Once the analysis is completed, the results are received back from the lab.\n\nAfter both the physical examination and the lab analysis are completed, the process continues with making a diagnosis based on the gathered information. At this point, a decision is made regarding the patient's treatment path. There are two possible courses of action. If the situation requires immediate action, a surgical intervention is performed. Alternatively, if surgery is needed but not immediately urgent, a plan for surgery is developed.\n\nOnce either the surgical intervention is completed or the surgery is planned, the process concludes with discharging the patient. This marks the end of the process."
+}

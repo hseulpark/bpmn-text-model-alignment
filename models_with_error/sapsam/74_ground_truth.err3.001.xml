@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Enter Library</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Search for Books on PC</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Leave Library</label>
+      <method />
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments />
+    </parameters>
+  </call>
+<call id="a5" endpoint="">
+    <parameters>
+      <label>Go to Checkout Counter</label>
+      <method />
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="">
+    <parameters>
+      <label>Check Student ID</label>
+      <method />
+      <type>:task</type>
+      <mid>'5'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last" a:mutated="true"><parallel_branch><call id="a8" endpoint="">
+        <parameters>
+          <label>Receive Books</label>
+          <method />
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    </parallel_branch><parallel_branch /></parallel><call id="a4" endpoint="">
+    <parameters>
+      <label>Search for Books</label>
+      <method />
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint=""><parameters><label>Validate data</label><method /><type>:task</type><arguments /></parameters></call></description>

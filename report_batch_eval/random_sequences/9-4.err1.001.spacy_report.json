@@ -1,0 +1,132 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/9-4.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/random_sequences/9-4.err1.001.xml",
+  "user_tasks": [
+    "finalize dates",
+    "set dates",
+    "update group calendars",
+    "reflect new meeting schedule",
+    "create meeting folders",
+    "organize necessary materials",
+    "meeting folders",
+    "upload appropriate documents",
+    "upload documents",
+    "advise committee members",
+    "read documents",
+    "hold meeting",
+    "produce minutes",
+    "discuss what",
+    "conduct quality assurance",
+    "ensure accuracy",
+    "complete qa check",
+    "send reviewed minutes",
+    "reviewed minutes",
+    "update departmental records",
+    "reflect outcomes",
+    "mark end",
+    "coordination unit finalize dates",
+    "support officer update group calendars",
+    "support officer create meeting folders",
+    "support officer ensure",
+    "appropriate documents upload system",
+    "support officer advise committee members",
+    "committee members hold meeting",
+    "meeting conclude",
+    "coordination unit conduct quality assurance",
+    "coordination unit send reviewed minutes",
+    "support officer update departmental records"
+  ],
+  "model_tasks": [
+    "coordination unit finalizes the dates",
+    "support officer updates all group calendars",
+    "support officer creates meeting folders",
+    "support officer ensures all appropriate documents are uploaded to system",
+    "support officer advises committee members to read all  documents",
+    "committee members hold  meeting",
+    "support office produces minutes",
+    "support officer updates  departmental records",
+    "coordination unit sends qa check to all committee members",
+    "coordination unit conducts a qa check on the minutes"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "finalize dates",
+        "set dates",
+        "update group calendars",
+        "reflect new meeting schedule",
+        "create meeting folders",
+        "organize necessary materials",
+        "meeting folders",
+        "upload appropriate documents",
+        "upload documents",
+        "advise committee members",
+        "read documents",
+        "hold meeting",
+        "produce minutes",
+        "discuss what",
+        "conduct quality assurance",
+        "ensure accuracy",
+        "complete qa check",
+        "send reviewed minutes",
+        "reviewed minutes",
+        "update departmental records",
+        "reflect outcomes",
+        "mark end",
+        "support officer ensure",
+        "appropriate documents upload system",
+        "meeting conclude",
+        "coordination unit conduct quality assurance"
+      ],
+      "additional_tasks": [
+        "support officer ensures all appropriate documents are uploaded to system",
+        "support office produces minutes"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [
+        {
+          "user": "coordination unit send reviewed minutes",
+          "user_index": 31,
+          "model": [
+            "coordination unit sends qa check to all committee members",
+            "coordination unit conducts a qa check on the minutes"
+          ],
+          "model_indices": [
+            8,
+            9
+          ],
+          "pair_sims": [
+            0.581,
+            0.695
+          ],
+          "combo_sim": 0.719,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the Coordination Unit finalizing the dates for an upcoming meeting. Once the dates are set, the Support Officer updates all group calendars to reflect the new meeting schedule. Following this, the Support Officer creates meeting folders to organize the necessary materials for the meeting.\n\nNext, the Support Officer ensures that all appropriate documents are uploaded to the system, making them accessible for the meeting participants. After the documents are uploaded, the Support Officer advises the Committee Members to read all the documents in preparation for the meeting.\n\nThe Committee Members then hold the meeting as scheduled. After the meeting concludes, the Support Office is responsible for producing the minutes, which are the official record of what was discussed and decided during the meeting.\n\nOnce the minutes are produced, the Coordination Unit conducts a quality assurance (QA) check on them to ensure accuracy and completeness. After the QA check is completed, the Coordination Unit sends the reviewed minutes to all Committee Members for their records.\n\nFinally, the Support Officer updates the departmental records to reflect the outcomes and decisions made during the meeting. This marks the end of the process.",
+  "output_text": "The process begins with the Coordination Unit finalizing the dates for an upcoming meeting. Once the dates are set, the Support Officer updates all group calendars to reflect the scheduled meeting. Following this, the Support Officer creates meeting folders to organize the necessary materials for the meeting.\n\nNext, the Support Officer ensures that all appropriate documents are uploaded to the system, making them accessible for the meeting. After the documents are uploaded, the Support Officer advises the Committee Members to read all the documents in preparation for the meeting.\n\nThe Committee Members then hold the meeting as planned. After the meeting concludes, the Support Office is responsible for producing the minutes, which are the official written record of the meeting's discussions and decisions.\n\nOnce the minutes are produced, the Support Officer updates the departmental records to include the new information from the meeting. Subsequently, the Coordination Unit sends a quality assurance (QA) check to all Committee Members, ensuring they have the opportunity to review the minutes.\n\nFinally, the Coordination Unit conducts a QA check on the minutes to verify their accuracy and completeness. The process concludes after this QA check is completed."
+}

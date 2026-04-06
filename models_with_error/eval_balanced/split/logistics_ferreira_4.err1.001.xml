@@ -1,0 +1,259 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a1" endpoint="" a:alt_id="sid-D3AF00B5-1D9F-4E12-8A83-83F83A90D944">
+        <parameters>
+          <label>Start getting temperature values</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="">
+        <parameters>
+          <label>Finish getting temperature values</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-784C10FC-DD0C-4DA2-8816-5334464147CB">
+        <alternative condition="">
+          <call id="a4" endpoint="" a:alt_id="sid-2F65350D-B20B-424F-95D3-8B5CEF7541C7">
+            <parameters>
+              <label>Generate standard notification</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <parallel wait="-1" cancel="last" a:alt_id="sid-6267CBC9-E63F-4620-89DB-364BB774CB98">
+            <parallel_branch>
+              <call id="a5" endpoint="" a:alt_id="sid-8C6776B7-4793-4135-BE86-0AC71723FAF1">
+                <parameters>
+                  <label>Get container status</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a9" endpoint="" a:alt_id="sid-44512103-293F-4E3D-8B04-783E31791888">
+                <parameters>
+                  <label>Estimate container status</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="sid-E3618C1C-C1F0-4F84-BF93-943F2AEE656B">
+                <alternative condition=""/>
+                <alternative condition="">
+                  <call id="a7" endpoint="" a:alt_id="sid-F0D50D94-7FB9-46AC-9D72-070D26C6EAEB">
+                    <parameters>
+                      <label>Generate container change request</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                </alternative>
+              </choose>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a11" endpoint="" a:alt_id="sid-B71AB58E-F605-44E4-9E90-8C7FA88470A9">
+                <parameters>
+                  <label>Get client location</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a16" endpoint="" a:alt_id="sid-AD6EDCCE-08E1-4F43-B7BF-C6756181ABD8">
+                <parameters>
+                  <label>Estimate distance</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="sid-16DCFDDC-F827-49D5-931D-0A1CC10B8509">
+                <alternative condition="">
+                  <call id="a12" endpoint="" a:alt_id="sid-F651354A-A940-482E-A69D-A5F6FF1181F8">
+                    <parameters>
+                      <label>Estimate delivery time</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="sid-E5462574-E317-4E1C-8925-E00589B43E68">
+                    <alternative condition=""/>
+                    <alternative condition="">
+                      <call id="a15" endpoint="" a:alt_id="sid-03E5C674-3823-4DF9-8E0B-07BE15E03E71">
+                        <parameters>
+                          <label>Generate route change request</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition=""/>
+              </choose>
+            </parallel_branch>
+            <parallel_branch>
+              <call id="a19" endpoint="" a:alt_id="sid-51C2114A-67FE-45FF-89C0-CE742D0509B5">
+                <parameters>
+                  <label>Get goods status</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <call id="a20" endpoint="" a:alt_id="sid-E2231FCD-1340-4903-9C15-2740CD4B3BEC">
+                <parameters>
+                  <label>Estimate goods status</label>
+                  <method/>
+                  <type>:task</type>
+                  <arguments/>
+                </parameters>
+              </call>
+              <choose mode="exclusive" a:alt_id="sid-82FADD5F-6EB5-4965-84D1-4FCB7B060FD3">
+                <alternative condition="">
+                  <call id="a23" endpoint="" a:alt_id="sid-8AF210EB-731D-4055-903A-73C74FB9BBE2">
+                    <parameters>
+                      <label>Evaluate damages</label>
+                      <method/>
+                      <type>:task</type>
+                      <arguments/>
+                    </parameters>
+                  </call>
+                  <choose mode="exclusive" a:alt_id="sid-FF9ED4EB-F00B-4A01-9A22-D08D379237FD">
+                    <alternative condition="">
+                      <call id="a25" endpoint="" a:alt_id="sid-416F9804-C753-479C-A2F6-4888AA174B6E">
+                        <parameters>
+                          <label>Generate removal request</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                    <alternative condition="">
+                      <call id="a26" endpoint="" a:alt_id="sid-043B57DB-F3E8-42F6-B62D-EF199F999DC0">
+                        <parameters>
+                          <label>Generate price change request</label>
+                          <method/>
+                          <type>:task</type>
+                          <arguments/>
+                        </parameters>
+                      </call>
+                    </alternative>
+                  </choose>
+                </alternative>
+                <alternative condition=""/>
+              </choose>
+            </parallel_branch>
+          </parallel>
+        </alternative>
+      </choose>
+      <call id="a28" endpoint="" a:alt_id="sid-A054F671-BC28-42F5-BA26-4E4292A8E2D3">
+        <parameters>
+          <label>Send generated messages</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>

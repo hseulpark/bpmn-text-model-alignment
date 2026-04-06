@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-7D615BA4-460E-4232-9EF2-8411F4752547">
+    <parameters>
+      <label>MPOO deregisters at the GO</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-9917A157-95B2-4080-8BA2-D2143D1BB6C0">
+    <parameters>
+      <label>GO verifies the deregistration</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-B6CA21F9-5A0E-4AEF-8ABF-3E940B272AA9">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-03D4C87F-615F-41C4-9508-AA063A72F344">
+        <parameters>
+          <label>GO rejects the deregistration of the MPOO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-D417C0B2-D946-47F4-9886-38BA71DDB5E9">
+        <parameters>
+          <label>GO preliminarily confirms the deregistration of the MPOO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-5DC7D21C-8376-4C44-B0A2-7CC518FC7E6F">
+        <parameters>
+          <label>GO prepares the readmission of the measuring point</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a8" endpoint="" a:alt_id="sid-2B3FE1D8-BCFC-4BBB-A963-C3FCBEB69E6E">
+            <parameters>
+              <label>MPOO confirmes the continuation to the MPOO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        <call id="a9" endpoint="" a:alt_id="sid-97681604-77AD-40C8-8CB6-BFC1035E23C2">
+        <parameters>
+          <label>GO performs the equipment acquisition and / or equipment changes</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a10" endpoint="" a:alt_id="sid-5CB3086A-4A38-4D6D-85B7-6167AE4236F5">
+        <parameters>
+          <label>GO assigns the GO as MPO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="sid-5E0CE9DF-721D-4407-84F8-146ADB0B1D29">
+        <parameters>
+          <label>GO informs the MPOO about the end of the assignment of the MPOO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a12" endpoint="" a:alt_id="sid-62A6C448-339D-490A-AAB6-5210950A7B8A">
+        <parameters>
+          <label>GO informs the MPOO about the beginning of the assignment of the GO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a13" endpoint="" a:alt_id="sid-E37CE43A-3D08-4125-8434-89C9DECF38E9">
+        <parameters>
+          <label>GO informs the MSPO about the assignment of the GO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a14" endpoint="" a:alt_id="sid-C50AA8AD-CA01-46F8-9BCA-8EE45AAC7E51">
+        <parameters>
+          <label>GO informs the SP about the assignment of the GO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+</description>

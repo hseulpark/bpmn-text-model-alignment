@@ -1,0 +1,123 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/18_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/18_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "prepare workplace",
+    "provide anti static mat",
+    "place motherboard",
+    "insert cpu",
+    "following step",
+    "apply thermal paste",
+    "check it",
+    "decide steps",
+    "display image",
+    "perform corresponding troubleshooting step",
+    "troubleshooting step",
+    "recognize hard drive",
+    "motherboard place anti static mat",
+    "cpu insert processor",
+    "thermal paste apply following step",
+    "boot loop occur",
+    "decide next steps"
+  ],
+  "model_tasks": [
+    "prepare workplace",
+    "insert cpu",
+    "place motherboard",
+    "apply thermal paste",
+    "troubleshoot no image",
+    "troubleshoot hard drive",
+    "troubleshoot no power",
+    "troubleshoot boot loop"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "provide anti static mat",
+        "following step",
+        "check it",
+        "decide steps",
+        "motherboard place anti static mat",
+        "cpu insert processor",
+        "thermal paste apply following step",
+        "decide next steps"
+      ],
+      "additional_tasks": [
+        "troubleshoot no power"
+      ],
+      "merged_tasks": [
+        {
+          "model": "troubleshoot no image",
+          "model_index": 4,
+          "user": [
+            "display image",
+            "troubleshooting step"
+          ],
+          "user_indices": [
+            8,
+            10
+          ],
+          "pair_sims": [
+            0.574,
+            0.447
+          ],
+          "combo_sim": 0.718
+        },
+        {
+          "model": "troubleshoot hard drive",
+          "model_index": 5,
+          "user": [
+            "perform corresponding troubleshooting step",
+            "recognize hard drive"
+          ],
+          "user_indices": [
+            9,
+            11
+          ],
+          "pair_sims": [
+            0.406,
+            0.753
+          ],
+          "combo_sim": 0.77
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "prepare workplace",
+          "task_b": "place motherboard",
+          "before_score": 11,
+          "after_score": 9,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "insert cpu",
+          "task_b": "place motherboard",
+          "before_score": 11,
+          "after_score": 7,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The PC assembly process begins with preparing the workplace by providing an anti-static mat, tools, and gloves.\n\nNext, the motherboard is placed on the anti-static mat.\n\nThen, the CPU is inserted into the processor.\n\nIn the following step, thermal paste is applied.\n\nNow, it is checked whether the installation is possible.\n\nIf the installation is possible, the process ends.\n\nIf the installation is not possible, the next steps are decided as follows:\nIf no image is displayed, the corresponding troubleshooting step is performed.\nIf the hard drive is not recognized, the corresponding troubleshooting step is performed.\nIf there is no power, the corresponding troubleshooting step is performed.\nIf a boot loop occurs, the corresponding troubleshooting step is performed.\n\nAfter troubleshooting, it is checked again whether the installation is possible.\n\nIf the installation is not possible, the next steps are decided as before, until the installation is possible.\n\nIf the installation is possible, the process ends.",
+  "output_text": "The process begins with preparing the workplace to ensure everything is ready for the assembly. Once the workplace is prepared, the next step is to insert the CPU into the appropriate slot on the motherboard. After the CPU is securely in place, the motherboard itself is positioned correctly within the computer case.\n\nFollowing the placement of the motherboard, thermal paste is applied to the CPU to ensure proper heat dissipation. After applying the thermal paste, a decision point is reached where the system checks if everything is functioning correctly.\n\nIf everything is functioning correctly, the process concludes successfully. However, if there are issues, the process moves to another decision point to identify the specific problem.\n\nIf the issue is that there is no image on the display, the process involves troubleshooting this \"No Image\" problem. If the hard drive is not recognized, the process involves troubleshooting the \"Hard Drive Not Recognized\" issue. If there is no power, the process involves troubleshooting the \"No Power\" problem. Lastly, if the system is stuck in a boot loop, the process involves troubleshooting the \"Boot Loop\" issue.\n\nAfter addressing any of these specific issues, the process loops back to the initial decision point to check again if everything is functioning correctly. This cycle continues until all issues are resolved, at which point the process concludes successfully."
+}

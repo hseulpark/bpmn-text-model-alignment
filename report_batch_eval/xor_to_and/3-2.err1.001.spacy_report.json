@@ -1,0 +1,165 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/pet/3-2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/xor_to_and/3-2.err1.001.xml",
+  "user_tasks": [
+    "check files",
+    "reach decision point",
+    "track files",
+    "initiate search",
+    "locate them",
+    "complete either",
+    "hand over files",
+    "distribute document",
+    "carry out both",
+    "complete parallel activities",
+    "conduct directions hearings",
+    "conclude sequence",
+    "process involve",
+    "files miss",
+    "process converge",
+    "activities occur",
+    "files hand over associate",
+    "document distribute same time",
+    "process continue"
+  ],
+  "model_tasks": [
+    "check the files",
+    "physically track the files",
+    "initiate the search of missing files",
+    "hand files to the associate",
+    "distribute judgeis lawlist  to the relevant people",
+    "conduct the directions hearings"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "reach decision point",
+        "track files",
+        "initiate search",
+        "locate them",
+        "complete either",
+        "distribute document",
+        "carry out both",
+        "complete parallel activities",
+        "conclude sequence",
+        "process involve",
+        "files miss",
+        "process converge",
+        "activities occur",
+        "document distribute same time",
+        "process continue"
+      ],
+      "additional_tasks": [
+        "distribute judgeis lawlist  to the relevant people"
+      ],
+      "merged_tasks": [
+        {
+          "model": "hand files to the associate",
+          "model_index": 3,
+          "user": [
+            "hand over files",
+            "files hand over associate"
+          ],
+          "user_indices": [
+            6,
+            16
+          ],
+          "pair_sims": [
+            0.594,
+            0.9
+          ],
+          "combo_sim": 0.805
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "check files",
+          "user_index": 0,
+          "model": [
+            "check the files",
+            "physically track the files",
+            "initiate the search of missing files"
+          ],
+          "model_indices": [
+            0,
+            1,
+            2
+          ],
+          "pair_sims": [
+            0.784,
+            0.592,
+            0.557
+          ],
+          "combo_sim": 0.652,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U13",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ]
+          },
+          {
+            "mismatch_type": "exclusive_flattened_to_sequence",
+            "task_pair": [
+              "U2",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "xor_to_seq => missing <choose mode='exclusive'>; treated as sequential (structural fallback)"
+          },
+          {
+            "mismatch_type": "exclusive_to_parallel_inconsistency",
+            "task_pair": [
+              "U2",
+              "U3"
+            ],
+            "user_types": [
+              "EXCLUSIVE"
+            ],
+            "output_types": [
+              "PARALLEL"
+            ],
+            "detail": "xor_to_and => converted <choose mode='exclusive'> to <parallel> (structural fallback)"
+          }
+        ],
+        "mismatch_count": 4,
+        "structural": {
+          "model_parallel_count": 2,
+          "model_exclusive_choose_count": 0,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": true,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": true
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with an initial step where files are checked. After this, a decision point is reached. If the files are not immediately available, the process involves physically tracking the files. Alternatively, if the files are missing, a search is initiated to locate them. Once either of these actions is completed, the process converges back to a single path.\n\nFollowing this, two activities occur simultaneously. First, the files are handed over to an Associate. At the same time, a document known as the Judge's Lawlist is distributed to the relevant people. Both of these tasks are carried out in parallel, meaning they happen at the same time but independently of each other.\n\nAfter these parallel activities are completed, the process continues with conducting directions hearings. This is the final step in the process, which then concludes the sequence of activities.",
+  "output_text": "The process begins with an initial step where files are checked. Once the files have been checked, two activities occur simultaneously. First, there is a task to physically track the files. At the same time, a search is initiated for any missing files. Both of these tasks are carried out concurrently.\n\nAfter both the physical tracking of the files and the search for missing files are completed, the process moves forward to another set of simultaneous activities. In this next phase, the files are handed over to an Associate. Concurrently, a document known as the Judge's Lawlist is distributed to the relevant people.\n\nOnce both the files have been handed to the Associate and the Judge's Lawlist has been distributed, the process proceeds to conduct directions hearings. After the directions hearings are conducted, the process comes to an end."
+}

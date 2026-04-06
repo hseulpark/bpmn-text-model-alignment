@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <loop mode="pre_test" condition="true">
+    <call id="a19" endpoint="" a:alt_id="sid-876E279D-BB51-42F5-85DC-5E0F1C1D7FA4">
+      <parameters>
+        <label>Load front page</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <parallel wait="-1" cancel="last" a:alt_id="sid-817F25E3-CD4B-4521-80EE-A98315FBAD4B">
+      <parallel_branch>
+        <call id="a11" endpoint="" a:alt_id="sid-3605B691-E1D9-42DE-80A0-6B84943E96D7">
+          <parameters>
+            <label>Topic</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a12" endpoint="" a:alt_id="sid-7060FAE3-2160-4644-915D-A0BBF57CCDDB">
+          <parameters>
+            <label>Payment</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a13" endpoint="" a:alt_id="sid-7F9ADD00-73F4-4C6D-A105-6E08CA38CFB7">
+          <parameters>
+            <label>Expierience</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+      <parallel_branch>
+        <call id="a14" endpoint="" a:alt_id="sid-41BD9C37-584E-4F5E-9D64-CBDD767A9B4A">
+          <parameters>
+            <label>Hobbies</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </parallel_branch>
+    </parallel>
+    <call id="a5" endpoint="" a:alt_id="sid-186951FA-C200-4FCD-9626-AB6AA7115CB6">
+      <parameters>
+        <label>Send Request</label>
+        <method/>
+        <type>:sendTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a17" endpoint="" a:alt_id="sid-E7EA8A31-68CA-4D7B-9BA3-800661035ECF">
+      <parameters>
+        <label>Wait until offer arrives</label>
+        <method/>
+        <type>:intermediateCatchEvent</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a2" endpoint="" a:alt_id="sid-DAD1FA97-43BF-465E-9304-E8BEE8FAE392">
+      <parameters>
+        <label>Offer recieved</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <loop mode="pre_test" condition="true" a:alt_id="sid-89961929-720E-4489-A53A-977E8C7C8A28" language="text/javascript">
+      <call id="a19" endpoint="" a:alt_id="sid-876E279D-BB51-42F5-85DC-5E0F1C1D7FA4">
+        <parameters>
+          <label>Load front page</label>
+          <method/>
+          <type>:serviceTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-817F25E3-CD4B-4521-80EE-A98315FBAD4B">
+        <parallel_branch>
+          <call id="a11" endpoint="" a:alt_id="sid-3605B691-E1D9-42DE-80A0-6B84943E96D7">
+            <parameters>
+              <label>Topic</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a12" endpoint="" a:alt_id="sid-7060FAE3-2160-4644-915D-A0BBF57CCDDB">
+            <parameters>
+              <label>Payment</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a13" endpoint="" a:alt_id="sid-7F9ADD00-73F4-4C6D-A105-6E08CA38CFB7">
+            <parameters>
+              <label>Expierience</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a14" endpoint="" a:alt_id="sid-41BD9C37-584E-4F5E-9D64-CBDD767A9B4A">
+            <parameters>
+              <label>Hobbies</label>
+              <method/>
+              <type>:userTask</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a5" endpoint="" a:alt_id="sid-186951FA-C200-4FCD-9626-AB6AA7115CB6">
+        <parameters>
+          <label>Send Request</label>
+          <method/>
+          <type>:sendTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="" a:alt_id="sid-E7EA8A31-68CA-4D7B-9BA3-800661035ECF">
+        <parameters>
+          <label>Wait until offer arrives</label>
+          <method/>
+          <type>:intermediateCatchEvent</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a2" endpoint="" a:alt_id="sid-DAD1FA97-43BF-465E-9304-E8BEE8FAE392">
+        <parameters>
+          <label>Offer recieved</label>
+          <method/>
+          <type>:serviceTask</type>
+          <arguments/>
+        </parameters>
+      </call>
+    </loop>
+    <call id="a4" endpoint="" a:alt_id="sid-A1E6B5EB-60AF-4D55-B6B9-4860C8DAD3BE">
+      <parameters>
+        <label>All other Offers become Invalid</label>
+        <method/>
+        <type>:serviceTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a6" endpoint="" a:alt_id="sid-47081789-26B0-40DC-9360-7F70542EFF6D">
+      <parameters>
+        <label>Send Status Update every week</label>
+        <method/>
+        <type>:sendTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a10" endpoint="" a:alt_id="sid-7BB45233-CD6E-4156-BB38-DE649470D297">
+      <parameters>
+        <label>Recieve status update from company</label>
+        <method/>
+        <type>:receiveTask</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <call id="a18" endpoint="" a:alt_id="sid-B543620B-D804-4E3A-B383-143151056E01">
+      <parameters>
+        <label>Internishp is finished</label>
+        <method/>
+        <type>:intermediateCatchEvent</type>
+        <arguments/>
+      </parameters>
+    </call>
+    <choose mode="exclusive" a:alt_id="sid-374313FE-EC21-46D7-AA20-090628B182DE">
+      <alternative condition=""/>
+      <alternative condition="">
+        <call id="a9" endpoint="" a:alt_id="sid-1E244A7E-B711-4236-9EC8-21D5D9443595">
+          <parameters>
+            <label>Tweet to your Friends about the Company</label>
+            <method/>
+            <type>:userTask</type>
+            <arguments/>
+          </parameters>
+        </call>
+      </alternative>
+    </choose>
+  </loop>
+</description>

@@ -1,0 +1,91 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/17_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_seq/17_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "need email account",
+    "log on",
+    "choose package",
+    "enter personal information",
+    "upload photo id",
+    "provide full names",
+    "confirm personal data",
+    "generate password",
+    "new email",
+    "email account need der email account creation portal",
+    "system check",
+    "new email id generate",
+    "process conclude creation",
+    "provide personal information"
+  ],
+  "model_tasks": [
+    "log on to email provider",
+    "choose package",
+    "check personal account availability",
+    "enter personal information",
+    "provide full names",
+    "upload photo id",
+    "confirm personal data",
+    "generate email id and password"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "need email account",
+        "log on",
+        "new email",
+        "email account need der email account creation portal",
+        "system check",
+        "process conclude creation",
+        "provide personal information"
+      ],
+      "additional_tasks": [
+        "log on to email provider",
+        "check personal account availability"
+      ],
+      "merged_tasks": [
+        {
+          "model": "generate email id and password",
+          "model_index": 7,
+          "user": [
+            "generate password",
+            "new email id generate"
+          ],
+          "user_indices": [
+            7,
+            11
+          ],
+          "pair_sims": [
+            0.752,
+            0.788
+          ],
+          "combo_sim": 0.914
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins when an email account is needed in der Email Account Creation Portal.\n\nThe first step is to log on to the email provider's website and then chooses a package.\n\nThe system checks if a personal account is available.\n\nIf it is not available, the process ends with the private account being unavailable.\n\nIf a personal account is available, the private account welcome page and provides personal information is entered.\n\nNext, personal information has to be provided. For this, both the full names have to be entered and a photo ID must be uploaded.\n\nOnce the full names are provided and the photo ID is uploaded, the personal data is confirmed, and new email ID and password are generated.\n\nThe process concludes with the creation of the private email.",
+  "output_text": "The process begins with a starting point, where an initial event occurs. Immediately after this starting point, the process moves directly to its conclusion, where it ends. There are no additional steps, decisions, or actions between the start and the end. This process is straightforward, consisting solely of a beginning and an immediate end."
+}

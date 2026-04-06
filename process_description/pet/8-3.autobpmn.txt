@@ -1,0 +1,7 @@
+The process begins when the Human Resources Department (HFD) identifies a need for additional personnel. Once this need is detected, the HFD reports the vacancy to the Personnel Department. After reporting the vacancy, a decision point is reached.
+
+At this decision point, if the process continues, the HFD receives a job description from the Personnel Department for review. Upon receiving the job description, another decision point occurs. Here, the HFD evaluates the job description. If the job description requires changes, the HFD requests corrections. Once the corrections are made, the process loops back to the point where the HFD receives the job description for review again.
+
+If the HFD approves the job description without needing any corrections, they proceed to advertise the vacancy. After advertising the vacancy, the process returns to the initial decision point where the HFD had received the job description for review.
+
+If, at the initial decision point after reporting the vacancy, the process does not continue with receiving a job description, the process concludes.

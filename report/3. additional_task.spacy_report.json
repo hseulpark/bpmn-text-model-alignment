@@ -1,0 +1,49 @@
+{
+  "log_path": "./data/0.log.yaml",
+  "bpmn_path": "./data/3. additional_task.xml",
+  "user_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up brewer",
+    "pour water",
+    "serve"
+  ],
+  "model_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up the brewer",
+    "pour water",
+    "serve",
+    "clean the brewer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [],
+      "additional_tasks": [
+        "clean the brewer"
+      ],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "# User Input:\nFirst, boil water. Prepare coffee ground and set up the brewer. Pour water and serve.",
+  "output_text": "The process begins with a starting point, which signifies the initiation of the process. Immediately after this starting point, the process moves directly to the endpoint, which signifies the conclusion of the process. There are no additional steps, tasks, or decisions between the start and end points. The process is straightforward, consisting solely of a beginning and an end."
+}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3D8A8E63-2381-4564-A08C-DBAA61BE0B7F">
+    <parameters>
+      <label>INQ transmits the transaction data request and IP checks the request of the INQ</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint=""><parameters><label>Review request</label><method /><type>:task</type><arguments /></parameters></call></description>

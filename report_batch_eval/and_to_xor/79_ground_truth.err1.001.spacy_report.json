@@ -1,0 +1,164 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/79_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/79_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "choose his preferred lunch",
+    "want pizza",
+    "wants pizza",
+    "choose pizza",
+    "chooses pizza",
+    "select order method",
+    "access website",
+    "call delivery person",
+    "place order",
+    "receive order",
+    "prepare pizza",
+    "deliver it",
+    "hand over pizza",
+    "receive it",
+    "accept payment",
+    "choose noodles",
+    "chooses noodles",
+    "start preparation",
+    "boil water",
+    "boils water",
+    "prepare sauce",
+    "add noodles",
+    "cook them",
+    "cook noodles",
+    "mix them",
+    "eat meal",
+    "frank choose his preferred lunch",
+    "delivery person receive order",
+    "frank receive",
+    "delivery person accept payment",
+    "frank choose noodles",
+    "sauce cook minutes"
+  ],
+  "model_tasks": [
+    "choose lunch",
+    "choose pizza",
+    "order online",
+    "place order",
+    "wait for pizza",
+    "receive order",
+    "order by phone",
+    "prepare pizza",
+    "deliver pizza",
+    "receive pizza",
+    "pay for pizza",
+    "accept payment",
+    "choose noodles",
+    "boil water",
+    "cook noodles",
+    "prepare sauce",
+    "cook sauce",
+    "mix noodles and sauce",
+    "eat meal"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "select order method",
+        "access website",
+        "call delivery person",
+        "deliver it",
+        "hand over pizza",
+        "receive it",
+        "chooses noodles",
+        "start preparation",
+        "boils water",
+        "cook them",
+        "mix them",
+        "delivery person receive order",
+        "frank receive",
+        "delivery person accept payment",
+        "frank choose noodles"
+      ],
+      "additional_tasks": [
+        "order online",
+        "wait for pizza",
+        "order by phone"
+      ],
+      "merged_tasks": [
+        {
+          "model": "choose lunch",
+          "model_index": 0,
+          "user": [
+            "choose his preferred lunch",
+            "frank choose his preferred lunch"
+          ],
+          "user_indices": [
+            0,
+            26
+          ],
+          "pair_sims": [
+            0.833,
+            0.705
+          ],
+          "combo_sim": 0.737
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "place order",
+          "task_b": "wait for pizza",
+          "before_score": 30,
+          "after_score": 28,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "branching_semantics_inconsistency",
+            "task_pair": [
+              "U19",
+              "U20"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE"
+            ]
+          },
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U19",
+              "U20"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "SEQUENTIAL"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 2,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": true,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The lunch break at Global Car Manufacturing Inc.\nbegins, and Frank chooses his preferred lunch.\n\nHe then decides whether he wants pizza or noodles.\n\nIf he chooses pizza, he selects the order method.\n\nHe can either order online by accessing the website or by phone by calling the pizza delivery person.\n\nFor an online order, he places the order and waits for the pizza.\n\nThe pizza delivery person receives the order, prepares the pizza, and delivers it.\n\nThe pizza is handed over, and Frank receives it.\n\nHe pays for the pizza, and the pizza delivery person accepts the payment.\n\nIf Frank chooses noodles, he starts the preparation.\n\nHe boils water and simultaneously prepares the sauce.\n\nOnce the water boils, he adds the noodles and cooks them for eight minutes.\n\nThe sauce cooks for ten minutes.\n\nAfter cooking the noodles and the sauce, he mixes them together.\n\nFinally, he eats the meal.\n\nThe lunch break ends.",
+  "output_text": "The process begins with the decision to choose what to have for lunch. The first choice is between pizza and noodles.\n\nIf pizza is chosen, the next decision is how to order it. There are two options: ordering online or by phone. \n\n- If the decision is to order online, the order is placed through an online platform. After placing the order, there is a waiting period for the pizza to arrive. Once the order is received, the process continues to the preparation of the pizza, followed by its delivery. After the pizza is delivered, it is received, and payment is made. Finally, the payment is accepted, and this path of the process concludes.\n\n- If the decision is to order by phone, the process skips directly to the preparation of the pizza. After preparation, the pizza is delivered, received, and payment is made. The payment is then accepted, concluding this path of the process.\n\nIf noodles are chosen instead of pizza, the process involves two parallel tasks: boiling water and preparing the sauce.\n\n- For boiling water, once the water is boiled, the noodles are cooked.\n\n- For preparing the sauce, the sauce is cooked after preparation.\n\nOnce both the noodles are cooked and the sauce is ready, they are mixed together. The meal is then eaten, concluding this path of the process.\n\nThe process ends after either the pizza path or the noodles path is completed."
+}

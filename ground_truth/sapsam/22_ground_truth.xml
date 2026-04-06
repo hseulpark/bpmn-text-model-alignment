@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Register Patient</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Register SSN</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Register Name</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Register Surname</label>
+          <method/>
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a8" endpoint="">
+    <parameters>
+      <label>Print Referral Document</label>
+      <method/>
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Archive Record</label>
+      <method/>
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

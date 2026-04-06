@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-411DF6B6-6142-4464-A46D-F44BEF978D50">
+    <parameters>
+      <label>HFD detects a number of personnel requirements</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-D666F005-55C4-4169-97A9-CF416EB914FB">
+    <parameters>
+      <label>HFD reports the vacancy to Personnel Department</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <loop mode="pre_test" condition="true">
+    <call id="a3" endpoint="" a:alt_id="sid-E99C8855-A6D2-4BC4-9496-A00F2394C1EC">
+      <parameters>
+        <label>HFD gets the job description for review from Personnel Department</label>
+        <method />
+        <type>:task</type>
+        <arguments />
+      </parameters>
+    </call>
+    <call id="a6" endpoint="" a:alt_id="sid-9AAD972A-E15F-4F6C-983A-43FAC5DCB435">
+          <parameters>
+            <label>HFD asks for corrections</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      <call id="a5" endpoint="" a:alt_id="sid-8C90A295-82A8-4729-9274-6D0D9891D206">
+          <parameters>
+            <label>HFD approves the job description and HFD advertizes the vacancy</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+        <escape a:alt_id="-1" />
+      </loop>
+<call id="a7" endpoint=""><parameters><label>Review request</label><method /><type>:task</type><arguments /></parameters></call></description>

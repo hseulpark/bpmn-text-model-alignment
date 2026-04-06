@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Fix Travel Details</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Prepare Checklist</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Check and Complete Papers</label>
+      <method/>
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Visa Required" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Apply for Visa</label>
+          <method/>
+          <type>:task</type>
+          <mid>'5'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Communicate Visa Application</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Visa Required" language="text/javascript"/>
+  </choose>
+  <call id="a7" endpoint="">
+    <parameters>
+      <label>Clear Unfinished Business</label>
+      <method/>
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Pets to Care" language="text/javascript">
+      <call id="a10" endpoint="">
+        <parameters>
+          <label>Arrange Pet Care</label>
+          <method/>
+          <type>:task</type>
+          <mid>'9'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Pets" language="text/javascript"/>
+  </choose>
+  <call id="a11" endpoint="">
+    <parameters>
+      <label>Unsubscribe from Post or Arrange Neighbor</label>
+      <method/>
+      <type>:task</type>
+      <mid>'10'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a12" endpoint="">
+    <parameters>
+      <label>Obtain Vaccinations</label>
+      <method/>
+      <type>:task</type>
+      <mid>'11'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a13" endpoint="">
+    <parameters>
+      <label>Check Insurance Coverage</label>
+      <method/>
+      <type>:task</type>
+      <mid>'12'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Additional Coverage Needed" language="text/javascript">
+      <call id="a15" endpoint="">
+        <parameters>
+          <label>Apply for Additional Coverage</label>
+          <method/>
+          <type>:task</type>
+          <mid>'14'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a17" endpoint="">
+        <parameters>
+          <label>Communicate with Insurance Company</label>
+          <method/>
+          <type>:task</type>
+          <mid>'15'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="No Additional Coverage" language="text/javascript"/>
+  </choose>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a18" endpoint="">
+        <parameters>
+          <label>Gather Travel Documents and Addresses</label>
+          <method/>
+          <type>:task</type>
+          <mid>'17'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a21" endpoint="">
+        <parameters>
+          <label>Make Copies of ID Cards and Travel Documents</label>
+          <method/>
+          <type>:task</type>
+          <mid>'20'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a19" endpoint="">
+        <parameters>
+          <label>Buy or Lend Guidebooks and City Maps</label>
+          <method/>
+          <type>:task</type>
+          <mid>'18'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a20" endpoint="">
+        <parameters>
+          <label>Prepare First-Aid Kit</label>
+          <method/>
+          <type>:task</type>
+          <mid>'19'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+</description>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Inform Credit Institution of SEC Approval Start</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a4" endpoint="">
+        <parameters>
+          <label>Prepare Registration Report</label>
+          <method/>
+          <type>:task</type>
+          <mid>'3'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Check Against Blue-Sky Laws</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Prepare Issue Price</label>
+          <method/>
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a9" endpoint="">
+        <parameters>
+          <label>Wait for Registration Approval</label>
+          <method/>
+          <type>:task</type>
+          <mid>'8'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a11" endpoint="">
+        <parameters>
+          <label>Organize Information Event</label>
+          <method/>
+          <type>:task</type>
+          <mid>'10'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a12" endpoint="">
+        <parameters>
+          <label>Receive Registration Approval</label>
+          <method/>
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a13" endpoint="">
+    <parameters>
+      <label>Decide Issue Price</label>
+      <method/>
+      <type>:task</type>
+      <mid>'12'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="">
+    <parameters>
+      <label>Check Obligation Occurrence</label>
+      <method/>
+      <type>:task</type>
+      <mid>'14'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Occurs" language="text/javascript">
+      <call id="a17" endpoint="">
+        <parameters>
+          <label>Conclude Contract</label>
+          <method/>
+          <type>:task</type>
+          <mid>'16'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a19" endpoint="">
+        <parameters>
+          <label>Offer Stock to Public</label>
+          <method/>
+          <type>:task</type>
+          <mid>'17'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Does Not Occur" language="text/javascript"/>
+  </choose>
+</description>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-C31C9692-EE0A-415D-A972-1FAA34C2A4EA">
+    <parameters>
+      <label>GO requests the measurements to the MSP</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-1974D971-9036-4132-85AB-5330FF9025E8">
+    <parameters>
+      <label>MSP checks the received request</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-A76E8EF4-D096-4E10-8817-4869DB683454">
+    <alternative condition="">
+      <call id="a4" endpoint="" a:alt_id="sid-F80834E6-D4AF-4D59-BD94-5495217F0BB8">
+        <parameters>
+          <label>MSP denies the request of the GO</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="">
+      <call id="a5" endpoint="" a:alt_id="sid-7D50C73E-CEA0-4919-9AC5-4922F3A3A55E">
+        <parameters>
+          <label>MSP performs the measurement</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-A7D31D5B-C6A6-45C6-ABFF-052C6B855C4B">
+        <alternative condition="">
+          <call id="a7" endpoint="" a:alt_id="sid-67E4F788-918C-4DC8-AF49-6564C565DFE4">
+            <parameters>
+              <label>MSP informs the GO about the failure</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a8" endpoint="" a:alt_id="sid-B18252AC-41E5-420B-AEEC-A4EF8B1CADF4">
+            <parameters>
+              <label>MSP transmits the measured values to the GO</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a9" endpoint="" a:alt_id="sid-D496D7FC-01AA-417F-BBE0-A9FF62495A0E">
+            <parameters>
+              <label>GO processes the measured values</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a10" endpoint="" a:alt_id="sid-6E2296E2-34F6-4F43-8A68-36255804977F">
+            <parameters>
+              <label>GO sends the changed values to the MSP and GO transmits the readings to the SP</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+          </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

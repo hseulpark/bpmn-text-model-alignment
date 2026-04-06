@@ -1,0 +1,207 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/manufacturing_bpmai_2.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/2_wrong_sequences/manufacturing_bpmai_2.err1.001.xml",
+  "user_tasks": [
+    "receive order",
+    "process customer demand",
+    "fulfill order",
+    "determine necessary components",
+    "make decision",
+    "purchase they",
+    "purchase additional components",
+    "purchase parts",
+    "move on",
+    "complete production",
+    "perform quality checks",
+    "pass quality checks",
+    "meet quality standards",
+    "follow up",
+    "perform follow production",
+    "address issues",
+    "complete follow production",
+    "fill product",
+    "package product",
+    "transport product",
+    "send product",
+    "mark end",
+    "decision make point",
+    "parts miss",
+    "process continue",
+    "process move on production",
+    "product pass quality checks",
+    "product meet quality standards",
+    "product transport warehouse",
+    "product send customer"
+  ],
+  "model_tasks": [
+    "receive customer order",
+    "processing customer demand",
+    "determine demanded components according to planning",
+    "purchase missing parts and put on stock",
+    "perform production",
+    "perform \nquality checks",
+    "perform follow-up production",
+    "fill product \ninto a \npackaging",
+    "pack and label product",
+    "send product to customer",
+    "transport product to the warehouse"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "fulfill order",
+        "make decision",
+        "purchase they",
+        "move on",
+        "pass quality checks",
+        "meet quality standards",
+        "follow up",
+        "address issues",
+        "mark end",
+        "decision make point",
+        "process continue",
+        "process move on production",
+        "product pass quality checks",
+        "product meet quality standards"
+      ],
+      "additional_tasks": [
+        "pack and label product"
+      ],
+      "merged_tasks": [
+        {
+          "model": "receive customer order",
+          "model_index": 0,
+          "user": [
+            "receive order",
+            "product send customer"
+          ],
+          "user_indices": [
+            0,
+            29
+          ],
+          "pair_sims": [
+            0.839,
+            0.65
+          ],
+          "combo_sim": 0.842
+        },
+        {
+          "model": "determine demanded components according to planning",
+          "model_index": 2,
+          "user": [
+            "determine necessary components",
+            "purchase additional components"
+          ],
+          "user_indices": [
+            3,
+            6
+          ],
+          "pair_sims": [
+            0.646,
+            0.5
+          ],
+          "combo_sim": 0.669
+        },
+        {
+          "model": "purchase missing parts and put on stock",
+          "model_index": 3,
+          "user": [
+            "purchase parts",
+            "parts miss"
+          ],
+          "user_indices": [
+            7,
+            23
+          ],
+          "pair_sims": [
+            0.671,
+            0.555
+          ],
+          "combo_sim": 0.728
+        },
+        {
+          "model": "perform follow-up production",
+          "model_index": 6,
+          "user": [
+            "perform follow production",
+            "complete follow production"
+          ],
+          "user_indices": [
+            14,
+            16
+          ],
+          "pair_sims": [
+            0.897,
+            0.837
+          ],
+          "combo_sim": 0.839
+        },
+        {
+          "model": "fill product \ninto a \npackaging",
+          "model_index": 7,
+          "user": [
+            "fill product",
+            "package product"
+          ],
+          "user_indices": [
+            17,
+            18
+          ],
+          "pair_sims": [
+            0.683,
+            0.622
+          ],
+          "combo_sim": 0.842
+        },
+        {
+          "model": "transport product to the warehouse",
+          "model_index": 10,
+          "user": [
+            "transport product",
+            "product transport warehouse"
+          ],
+          "user_indices": [
+            19,
+            28
+          ],
+          "pair_sims": [
+            0.697,
+            0.836
+          ],
+          "combo_sim": 0.873
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": {
+          "task_a": "send product to customer",
+          "task_b": "transport product to the warehouse",
+          "before_score": 12,
+          "after_score": 8,
+          "improvement": 4
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 2,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with the receipt of a customer order. Once the order is received, the next step involves processing the customer's demand. Following this, the necessary components required to fulfill the order are determined according to a pre-existing plan.\n\nAt this point, a decision is made. If any parts are missing, they are purchased and added to the stock. If no parts are missing, the process continues without purchasing additional components. Regardless of whether parts were purchased or not, the process then moves on to production.\n\nAfter production is completed, quality checks are performed on the product. Another decision is made based on the results of these quality checks. If the product passes the quality checks, the process continues. If the product does not meet the quality standards, follow-up production is performed to address any issues. Once the follow-up production is completed, the process continues.\n\nThe next step involves filling the product into appropriate packaging. After the product is packaged, it is then packed and labeled. Following this, the product is transported to the warehouse.\n\nFinally, the product is sent to the customer, marking the end of the process.",
+  "output_text": "The process begins with receiving a customer order. Once the order is received, the next step is to process the customer's demand. This involves determining the components needed to fulfill the order according to the planning.\n\nAfter identifying the required components, a decision is made. If there are any missing parts, they are purchased and added to the stock. If no parts are missing, the process continues without purchasing additional components.\n\nFollowing this, production is carried out. Once production is complete, quality checks are performed to ensure the product meets the required standards. If the product passes the quality checks, the process moves forward. However, if the product does not meet the quality standards, additional production is performed to address any issues.\n\nAfter ensuring the product meets quality standards, it is filled into appropriate packaging. The product is then packed and labeled correctly. Once the product is ready, it is sent to the customer.\n\nFinally, the product is transported to the warehouse, marking the end of the process."
+}

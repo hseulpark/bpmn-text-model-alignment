@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Order Intake in Development Department</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Describe Requirements</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a4" endpoint="">
+    <parameters>
+      <label>Conduct Workshop</label>
+      <method />
+      <type>:task</type>
+      <mid>'3'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a5" endpoint="">
+    <parameters>
+      <label>Create Project Sketch</label>
+      <method />
+      <type>:task</type>
+      <mid>'4'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a6" endpoint="">
+    <parameters>
+      <label>Wait for Appointment Confirmation</label>
+      <method />
+      <type>:task</type>
+      <mid>'5'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a7" endpoint="">
+    <parameters>
+      <label>Conduct Customer Conversation</label>
+      <method />
+      <type>:task</type>
+      <mid>'6'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a8" endpoint="">
+    <parameters>
+      <label>Write Specification Sheet</label>
+      <method />
+      <type>:task</type>
+      <mid>'7'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Send Specification Sheet to Customer</label>
+      <method />
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a10" endpoint="">
+    <parameters>
+      <label>Receive Customer Feedback</label>
+      <method />
+      <type>:task</type>
+      <mid>'9'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a11" endpoint="">
+    <parameters>
+      <label>Perform Project and Capacity Planning</label>
+      <method />
+      <type>:task</type>
+      <mid>'10'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a12" endpoint="">
+    <parameters>
+      <label>Check Standard Open-Source Products</label>
+      <method />
+      <type>:task</type>
+      <mid>'11'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a13" endpoint="">
+    <parameters>
+      <label>Define Use Cases</label>
+      <method />
+      <type>:task</type>
+      <mid>'12'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a14" endpoint="">
+    <parameters>
+      <label>Calculate Costs</label>
+      <method />
+      <type>:task</type>
+      <mid>'13'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a16" endpoint="">
+        <parameters>
+          <label>Adjust Knowledge Management Systems</label>
+          <method />
+          <type>:task</type>
+          <mid>'15'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a17" endpoint="">
+        <parameters>
+          <label>Develop New Product</label>
+          <method />
+          <type>:task</type>
+          <mid>'16'</mid>
+          <arguments />
+        </parameters>
+      </call>
+    <call id="a19" endpoint="">
+    <parameters>
+      <label>Obtain Customer Feedback and Identify Follow-up Projects</label>
+      <method />
+      <type>:task</type>
+      <mid>'18'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a21" endpoint="">
+    <parameters>
+      <label>Complete Order</label>
+      <method />
+      <type>:task</type>
+      <mid>'20'</mid>
+      <arguments />
+    </parameters>
+  </call>
+</description>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-3C882D8A-1B7D-454F-AE4F-8CCA5C06DEFE">
+    <parameters>
+      <label>Call to the hospital</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-E2B0AEED-87EC-4930-9524-0127998E51F6">
+    <parameters>
+      <label>Decision about patient acceptance</label>
+      <method />
+      <type>:task</type>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive" a:alt_id="sid-75B8EA98-138E-45B5-A83B-32F973898451">
+    <alternative condition="">
+      <call id="a13" endpoint="" a:alt_id="sid-5E32F327-77CA-47DD-B81A-8E5A5E13193A">
+        <parameters>
+          <label>Add to list of patients</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <loop mode="post_test" condition="true">
+        <call id="a4" endpoint="" a:alt_id="sid-56E18939-1DE4-43B8-BE97-4B60537DABBB">
+          <parameters>
+            <label>Patient control</label>
+            <method />
+            <type>:task</type>
+            <arguments />
+          </parameters>
+        </call>
+      </loop>
+      <call id="a14" endpoint="" a:alt_id="sid-9692A5DA-141F-44C0-AA2E-07A6F4137A59">
+        <parameters>
+          <label>Call patient to hospital</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a15" endpoint="" a:alt_id="sid-3771859A-0230-4020-8A50-D133F2B75A3C">
+        <parameters>
+          <label>Patient hospitalization</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a6" endpoint="" a:alt_id="sid-3C01333A-2392-46D2-B3BE-45B5DCAF461C">
+        <parameters>
+          <label>Child birth</label>
+          <method />
+          <type>:task</type>
+          <arguments />
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-389D20C9-3703-44CD-86F8-623EB1279022" a:mutated="true"><parallel_branch><call id="a16" endpoint="" a:alt_id="sid-AD6A10E5-7444-4FE7-98B0-62016ADF030A">
+            <parameters>
+              <label>Patient post-hospitalization</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </parallel_branch><parallel_branch><call id="a8" endpoint="" a:alt_id="sid-7DC5068A-12EB-444A-8BC4-D76CD203EFD9">
+            <parameters>
+              <label>Special treatment</label>
+              <method />
+              <type>:task</type>
+              <arguments />
+            </parameters>
+          </call>
+        </parallel_branch></parallel></alternative>
+    <alternative condition="" />
+  </choose>
+</description>

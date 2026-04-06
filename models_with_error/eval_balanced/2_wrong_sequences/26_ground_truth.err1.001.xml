@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='utf-8'?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Receive Late Payment</label>
+      <method />
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Inform Management</label>
+      <method />
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments />
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Reminder Sent" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Check Reminder Sent</label>
+          <method />
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Yes" language="text/javascript">
+          <call id="a8" endpoint="">
+            <parameters>
+              <label>Inquire with Customer</label>
+              <method />
+              <type>:task</type>
+              <mid>'6'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a9" endpoint="">
+            <parameters>
+              <label>Send Inquiry Email</label>
+              <method />
+              <type>:task</type>
+              <mid>'7'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Response Received" language="text/javascript">
+              <call id="a11" endpoint="">
+                <parameters>
+                  <label>Perform Online Banking Check</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'9'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a13" endpoint="">
+                <parameters>
+                  <label>Post Payment</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'10'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No Response" language="text/javascript">
+              <call id="a12" endpoint="">
+                <parameters>
+                  <label>Notify Lawyer</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'11'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Request Legal Assistance</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'12'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+        <alternative condition="No" language="text/javascript">
+          <call id="a6" endpoint="">
+            <parameters>
+              <label>Create Reminder</label>
+              <method />
+              <type>:task</type>
+              <mid>'14'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a17" endpoint="">
+            <parameters>
+              <label>Send Reminder</label>
+              <method />
+              <type>:task</type>
+              <mid>'15'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <choose mode="exclusive">
+            <alternative condition="Payment Made" language="text/javascript">
+              <call id="a13" endpoint="">
+                <parameters>
+                  <label>Post Payment</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'10'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+            <alternative condition="No Payment" language="text/javascript">
+              <call id="a19" endpoint="">
+                <parameters>
+                  <label>Create Another Reminder</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'19'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a20" endpoint="">
+                <parameters>
+                  <label>Notify Finance Department</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'20'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a12" endpoint="">
+                <parameters>
+                  <label>Notify Lawyer</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'11'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+              <call id="a15" endpoint="">
+                <parameters>
+                  <label>Request Legal Assistance</label>
+                  <method />
+                  <type>:task</type>
+                  <mid>'12'</mid>
+                  <arguments />
+                </parameters>
+              </call>
+            </alternative>
+          </choose>
+        </alternative>
+      </choose>
+    </alternative>
+    <alternative condition="No Reminder Sent" language="text/javascript">
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>Create Reminder</label>
+          <method />
+          <type>:task</type>
+          <mid>'14'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <call id="a17" endpoint="">
+        <parameters>
+          <label>Send Reminder</label>
+          <method />
+          <type>:task</type>
+          <mid>'15'</mid>
+          <arguments />
+        </parameters>
+      </call>
+      <choose mode="exclusive">
+        <alternative condition="Payment Made" language="text/javascript">
+          <call id="a13" endpoint="">
+            <parameters>
+              <label>Post Payment</label>
+              <method />
+              <type>:task</type>
+              <mid>'10'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="No Payment" language="text/javascript">
+          <call id="a19" endpoint="">
+            <parameters>
+              <label>Create Another Reminder</label>
+              <method />
+              <type>:task</type>
+              <mid>'19'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a20" endpoint="">
+            <parameters>
+              <label>Notify Finance Department</label>
+              <method />
+              <type>:task</type>
+              <mid>'20'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          <call id="a15" endpoint="">
+            <parameters>
+              <label>Request Legal Assistance</label>
+              <method />
+              <type>:task</type>
+              <mid>'12'</mid>
+              <arguments />
+            </parameters>
+          </call>
+        <call id="a12" endpoint="">
+            <parameters>
+              <label>Notify Lawyer</label>
+              <method />
+              <type>:task</type>
+              <mid>'11'</mid>
+              <arguments />
+            </parameters>
+          </call>
+          </alternative>
+      </choose>
+    </alternative>
+  </choose>
+</description>

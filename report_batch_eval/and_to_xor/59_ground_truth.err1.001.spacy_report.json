@@ -1,0 +1,139 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/sapsam/59_ground_truth.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/and_to_xor/59_ground_truth.err1.001.xml",
+  "user_tasks": [
+    "want loan",
+    "fill out credit application",
+    "complete credit application",
+    "send it",
+    "receive application",
+    "receive respective loan requests",
+    "check loan amount",
+    "send rejection",
+    "check it",
+    "carry out rate determination",
+    "send credit report",
+    "receive loan request",
+    "estimate interest",
+    "receive rejection",
+    "forward them",
+    "complete loan process",
+    "customer want loan",
+    "mediation agency receive application",
+    "bank b check loan amount",
+    "rejection send mediation agency",
+    "credit report send mediation agency",
+    "bank a receive loan request",
+    "mediation agency receive rejection",
+    "customer receive rejection"
+  ],
+  "model_tasks": [
+    "fill credit application",
+    "send to mediation agency",
+    "forward to banks",
+    "bank a receives loan request",
+    "check loan amount - bank a",
+    "send rejection - bank a",
+    "determine interest rate - bank a",
+    "send credit report - bank a",
+    "bank b receives loan request",
+    "check income - bank b",
+    "send rejection - bank b",
+    "determine interest rate - bank b",
+    "send credit report - bank b",
+    "forward to customer"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "want loan",
+        "complete credit application",
+        "send it",
+        "receive application",
+        "receive respective loan requests",
+        "check it",
+        "carry out rate determination",
+        "estimate interest",
+        "complete loan process",
+        "customer want loan",
+        "mediation agency receive application",
+        "credit report send mediation agency",
+        "mediation agency receive rejection",
+        "customer receive rejection"
+      ],
+      "additional_tasks": [
+        "forward to banks",
+        "determine interest rate - bank a",
+        "check income - bank b",
+        "determine interest rate - bank b",
+        "send credit report - bank b"
+      ],
+      "merged_tasks": [
+        {
+          "model": "check loan amount - bank a",
+          "model_index": 4,
+          "user": [
+            "check loan amount",
+            "bank b check loan amount"
+          ],
+          "user_indices": [
+            6,
+            18
+          ],
+          "pair_sims": [
+            0.866,
+            0.781
+          ],
+          "combo_sim": 0.839
+        }
+      ],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "fill credit application",
+          "task_b": "forward to banks",
+          "before_score": 22,
+          "after_score": 20,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": null,
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_exclusive_inconsistency",
+            "task_pair": [
+              "U21",
+              "U5"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "EXCLUSIVE",
+              "PARALLEL"
+            ],
+            "detail": "and_to_xor => converted <parallel> to <choose mode='exclusive'> (annotation-safe)"
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 3,
+          "user_has_and": true,
+          "user_has_xor": true,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": true,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "A customer wants a loan and begins by filling out the credit application.\n\nOnce the credit application is completed, it is sent to the mediation agency.\n\nThe mediation agency receives the application and forwards it to Bank A and Bank B, where respective loan requests are received.\n\nBank B checks the loan amount and decides if the customer's income is between €2,000 and €100,000.\nIf the income is not within this range, a rejection is sent.\nIf the income is within the specified range, it is checked whether the loan amount is greater than 20 times the monthly income.\nIf this is the case, a rejection is sent to the mediation agency.\nOtherwise, the interest rate determination is carried out and a credit report is sent to the mediation agency.\n\nIn parallel, Bank A also receives a loan request and checks the loan amount.\nIf the loan amount is greater than 20 times the monthly income, a rejection is sent to the mediation agency.\nOtherwise, 20% interest per year is estimated and a credit report is sent to the mediation agency.\n\nThe mediation agency receives the rejection or credit reports from both banks and forwards them to the customer.\n\nThe customer can either receive a rejection or a credit proposal.\n\nIn both cases, the loan process is completed.",
+  "output_text": "The process begins with an initial step where a credit application is filled out. Once the application is completed, it is sent to a mediation agency. The mediation agency then forwards the application to multiple banks for consideration.\n\nThe process splits into two parallel paths, one for each bank. In the first path, Bank A receives the loan request. Bank A then checks the loan amount requested. If the loan amount is greater than 20 times the applicant's income, Bank A sends a rejection notice. If the loan amount is 20 times the income or less, Bank A determines an appropriate interest rate and sends a credit report back to the mediation agency.\n\nSimultaneously, in the second path, Bank B receives the loan request. Bank B checks the applicant's income. If the income is not within a certain acceptable range, Bank B sends a rejection notice. If the income is within the acceptable range, Bank B determines an interest rate and sends a credit report back to the mediation agency.\n\nAfter both banks have processed the loan request, the mediation agency collects the responses. Finally, the mediation agency forwards the results, including any credit reports or rejection notices, to the customer. The process concludes at this point."
+}

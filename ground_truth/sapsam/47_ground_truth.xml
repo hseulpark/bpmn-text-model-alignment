@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0">
+  <call id="a2" endpoint="">
+    <parameters>
+      <label>Define Requirements</label>
+      <method/>
+      <type>:task</type>
+      <mid>'1'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="">
+    <parameters>
+      <label>Select Licenses</label>
+      <method/>
+      <type>:task</type>
+      <mid>'2'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <choose mode="exclusive">
+    <alternative condition="Executed" language="text/javascript">
+      <call id="a5" endpoint="">
+        <parameters>
+          <label>Check System Execution</label>
+          <method/>
+          <type>:task</type>
+          <mid>'4'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a7" endpoint="">
+        <parameters>
+          <label>Purchase License</label>
+          <method/>
+          <type>:task</type>
+          <mid>'6'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+    <alternative condition="Not Executed" language="text/javascript">
+      <call id="a8" endpoint="">
+        <parameters>
+          <label>Purchase Test License</label>
+          <method/>
+          <type>:task</type>
+          <mid>'7'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </alternative>
+  </choose>
+  <call id="a9" endpoint="">
+    <parameters>
+      <label>Agree Framework Contracts</label>
+      <method/>
+      <type>:task</type>
+      <mid>'8'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a10" endpoint="">
+    <parameters>
+      <label>Create License Purchase Agreement</label>
+      <method/>
+      <type>:task</type>
+      <mid>'9'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a12" endpoint="">
+        <parameters>
+          <label>Provide License Purchase Contract Data</label>
+          <method/>
+          <type>:task</type>
+          <mid>'11'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a13" endpoint="">
+        <parameters>
+          <label>Update Contract Information</label>
+          <method/>
+          <type>:task</type>
+          <mid>'12'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+  <call id="a14" endpoint="">
+    <parameters>
+      <label>Place Order</label>
+      <method/>
+      <type>:task</type>
+      <mid>'13'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a15" endpoint="">
+    <parameters>
+      <label>Final Acceptance of Delivery</label>
+      <method/>
+      <type>:task</type>
+      <mid>'14'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a16" endpoint="">
+    <parameters>
+      <label>Review Framework Agreements</label>
+      <method/>
+      <type>:task</type>
+      <mid>'15'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a17" endpoint="">
+    <parameters>
+      <label>Update System</label>
+      <method/>
+      <type>:task</type>
+      <mid>'16'</mid>
+      <arguments/>
+    </parameters>
+  </call>
+  <parallel wait="-1" cancel="last">
+    <parallel_branch>
+      <call id="a19" endpoint="">
+        <parameters>
+          <label>Forward Payment</label>
+          <method/>
+          <type>:task</type>
+          <mid>'18'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+    <parallel_branch>
+      <call id="a20" endpoint="">
+        <parameters>
+          <label>Send Message to Accounting/Controlling</label>
+          <method/>
+          <type>:task</type>
+          <mid>'19'</mid>
+          <arguments/>
+        </parameters>
+      </call>
+    </parallel_branch>
+  </parallel>
+</description>

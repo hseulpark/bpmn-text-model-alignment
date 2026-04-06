@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<description xmlns="http://cpee.org/ns/description/1.0" xmlns:a="http://cpee.org/ns/annotation/1.0">
+  <call id="a1" endpoint="" a:alt_id="sid-2F36B3B1-80A4-40A4-BCCF-FCEE1598ED6F">
+    <parameters>
+      <label>Party sends a warrant possession request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a2" endpoint="" a:alt_id="sid-E59626F5-7832-414B-9782-EC5CF2D0A6E5">
+    <parameters>
+      <label>Client Service Back Office receives the request</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a3" endpoint="" a:alt_id="sid-2288768A-A48E-4500-9B70-E719E06F5032">
+    <parameters>
+      <label>Client Service Back Office retrieves the SCT file</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a4" endpoint="" a:alt_id="sid-EA5DAC1B-F052-4EE9-9F5D-D3A77D63EEF8">
+    <parameters>
+      <label>Client Service Back Office forwards the SCT Warrant Possession to Queensland Police</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a5" endpoint="" a:alt_id="sid-F5B24686-2AD7-4034-BE64-2CF8D076C525">
+    <parameters>
+      <label>Back Office stores the SCT physical file</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a6" endpoint="" a:alt_id="sid-8365FA01-F73E-4C4D-91B0-3C454401736E">
+    <parameters>
+      <label>Back Office awaits a Police report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a7" endpoint="" a:alt_id="sid-8B24E60C-A3C5-4308-B4A1-CA69C8E50962">
+    <parameters>
+      <label>Back Office receives the report</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a8" endpoint="" a:alt_id="sid-8BAB57A1-0FA4-47C7-A37D-E68C4704DF33">
+    <parameters>
+      <label>Back Office  retrieves the respective SCT file</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a9" endpoint="" a:alt_id="sid-CB2731BC-0589-4355-8E4D-CC8C6633B43C">
+    <parameters>
+      <label>Back Office attaches the new SCT document</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+  <call id="a10" endpoint="" a:alt_id="sid-E01A6CE1-C4E3-4924-9BC4-A60685EFC7E5">
+    <parameters>
+      <label>Back Office stores the expanded SCT physical file</label>
+      <method/>
+      <type>:task</type>
+      <arguments/>
+    </parameters>
+  </call>
+</description>

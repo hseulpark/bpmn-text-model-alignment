@@ -1,0 +1,149 @@
+{
+  "log_path": "/Users/hanseulpark/bpmn-text-checker/process_description/domain/manufacturing_aris_3.autobpmn.txt",
+  "bpmn_path": "/Users/hanseulpark/bpmn-text-checker/models_with_error/eval_balanced/additional_task/manufacturing_aris_3.err1.001.xml",
+  "user_tasks": [
+    "receive production order",
+    "receive order",
+    "prepare necessary materials",
+    "take place",
+    "takes place",
+    "assemble door",
+    "make decision",
+    "need quality check",
+    "require quality check",
+    "send inquiry",
+    "initiate process",
+    "receive inquiry",
+    "check quality",
+    "assembled door",
+    "complete quality check",
+    "send back quality report",
+    "receive quality report",
+    "carry out necessary repairs",
+    "fix door",
+    "release door",
+    "door assembly process take place",
+    "report indicate",
+    "door need",
+    "process return point",
+    "quality report indicate",
+    "door release next steps",
+    "process continue",
+    "process conclude"
+  ],
+  "model_tasks": [
+    "receive production order",
+    "prepare materrials",
+    "assemble door",
+    "send inquiry for quality check",
+    "receive inquiry for quality check",
+    "check quality",
+    "send quality report",
+    "receive quality report",
+    "fix door",
+    "release door",
+    "review request"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [
+        "receive order",
+        "take place",
+        "takes place",
+        "make decision",
+        "require quality check",
+        "send inquiry",
+        "initiate process",
+        "receive inquiry",
+        "assembled door",
+        "complete quality check",
+        "carry out necessary repairs",
+        "door assembly process take place",
+        "report indicate",
+        "door need",
+        "process return point",
+        "door release next steps",
+        "process continue",
+        "process conclude"
+      ],
+      "additional_tasks": [
+        "review request"
+      ],
+      "merged_tasks": [
+        {
+          "model": "send quality report",
+          "model_index": 6,
+          "user": [
+            "send back quality report",
+            "quality report indicate"
+          ],
+          "user_indices": [
+            15,
+            24
+          ],
+          "pair_sims": [
+            0.869,
+            0.82
+          ],
+          "combo_sim": 0.851
+        }
+      ],
+      "split_tasks": [
+        {
+          "user": "need quality check",
+          "user_index": 7,
+          "model": [
+            "send inquiry for quality check",
+            "receive inquiry for quality check"
+          ],
+          "model_indices": [
+            3,
+            4
+          ],
+          "pair_sims": [
+            0.797,
+            0.762
+          ],
+          "combo_sim": 0.628,
+          "adjacent": true
+        }
+      ],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": {
+          "task_a": "assemble door",
+          "task_b": "review request",
+          "before_score": 13,
+          "after_score": 11,
+          "improvement": 2
+        },
+        "two_wrong_sequences_best_pair": {
+          "task_a": "assemble door",
+          "task_b": "review request",
+          "before_score": 13,
+          "after_score": 11,
+          "improvement": 2
+        },
+        "random_sequences_answer": null,
+        "two_wrong_sequences_answer": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [],
+        "mismatch_count": 0,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 1,
+          "user_has_and": false,
+          "user_has_xor": false,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": false,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "The process begins with receiving a production order. Once the order is received, the next step is to prepare the necessary materials for production. After the materials are prepared, the door assembly process takes place.\n\nOnce the door is assembled, a decision is made regarding whether a quality check is needed. If a quality check is required, an inquiry is sent to initiate this process. The inquiry is then received, and the quality of the assembled door is checked. After the quality check is completed, a quality report is sent back.\n\nUpon receiving the quality report, another decision is made. If the report indicates that the door needs fixing, the necessary repairs are carried out. After fixing the door, the process returns to the point where the decision about the quality check is made, allowing for another quality check if needed.\n\nIf the quality report indicates that the door is satisfactory, the door is released for the next steps. This also leads back to the decision point about the quality check, allowing the process to continue as needed.\n\nIf, at any point, it is determined that no further quality checks are necessary, the process concludes.",
+  "output_text": "The process begins with receiving a production order. Once the order is received, the next step is to prepare the necessary materials for production. After the materials are ready, the door assembly process takes place.\n\nFollowing the assembly of the door, a decision point is reached. If the decision is to proceed with a quality check, an inquiry is sent to initiate this process. The inquiry is then received by the quality check team, who proceed to perform the quality check on the assembled door. After the quality check is completed, a quality report is sent back.\n\nUpon receiving the quality report, another decision is made. If the report indicates that the door needs fixing, the necessary repairs are carried out. Once the door is fixed, the process returns to the decision point after assembly to determine if another quality check is needed.\n\nIf the quality report is satisfactory and no fixing is required, the door is released. After releasing the door, the process loops back to the decision point after assembly to decide if further quality checks are necessary.\n\nIf, at the initial decision point after assembly, it is determined that no quality check is needed, the process moves directly to reviewing the request. Once the request is reviewed, the process concludes."
+}

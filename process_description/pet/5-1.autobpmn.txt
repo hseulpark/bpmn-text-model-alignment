@@ -1,0 +1,5 @@
+The process begins when the system receives a customer request for a loan amount. Once the request is received, it is assessed by the Risk Assessment (RA) Web service. After the assessment, there are three possible outcomes.
+
+First, if the RA Web service approves the loan, the process moves forward to the next step. Alternatively, if the RA Web service denies the loan, the process also continues to the next step. Lastly, if the RA Web service decides to send the request to the approver web service, this action is taken before proceeding.
+
+Regardless of which of the three outcomes occurs—approval, denial, or forwarding to the approver web service—the process converges at a common point. From this point, the customer receives feedback regarding their loan request. Finally, the process concludes.

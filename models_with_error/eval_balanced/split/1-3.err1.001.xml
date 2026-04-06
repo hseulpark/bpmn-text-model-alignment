@@ -1,0 +1,199 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements/>
+  <endpoints>
+    <user>https-post://cpee.org/services/timeout-user.php</user>
+    <auto>https-post://cpee.org/services/timeout-auto.php</auto>
+    <subprocess>https-post://cpee.org/flow/start/url/</subprocess>
+    <timeout>https-post://cpee.org/services/timeout.php</timeout>
+    <send>https-post://cpee.org/ing/correlators/message/send/</send>
+    <receive>https-get://cpee.org/ing/correlators/message/receive/</receive>
+  </endpoints>
+  <attributes>
+    <info>Enter info here</info>
+    <modeltype>CPEE</modeltype>
+    <theme>preset</theme>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0"
+      xmlns:a="http://cpee.org/ns/annotation/1.0">
+      <call id="a1" endpoint="" a:alt_id="sid-96EDBD17-A954-4254-9B30-7551D5A03B57">
+        <parameters>
+          <label>guest starts calling room service</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a6" endpoint="">
+        <parameters>
+          <label>guest finishes calling room service</label>
+          <color/>
+          <method>:post</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_logging_behavior>
+            <_exclude>false</_exclude>
+            <_include>false</_include>
+          </_logging_behavior>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <call id="a2" endpoint="" a:alt_id="sid-289D4327-A753-4AC4-A611-B5CFBC7BAF01">
+        <parameters>
+          <label>room service  manager takes down the order</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a3" endpoint="" a:alt_id="sid-02475C54-8045-49CF-B11D-526C44DE4BFD">
+        <parameters>
+          <label>room service  manager  submits an order ticket to a kitchen</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a4" endpoint="" a:alt_id="sid-BFA936A9-831A-4683-85D8-21D523A1BBF7">
+        <parameters>
+          <label>room service  manager  gives an order to the sommelier</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a5" endpoint="" a:alt_id="sid-1816B68F-6C9F-4F70-819E-BE00C4E3929B">
+        <parameters>
+          <label>room service  manager  assigns the order to the waiter</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <parallel wait="-1" cancel="last" a:alt_id="sid-94A2FFD9-F687-4089-83AE-51907FA4F7DD">
+        <parallel_branch>
+          <call id="a7" endpoint="" a:alt_id="sid-ECCF4D2C-02CB-449A-AE95-2155BA55556F">
+            <parameters>
+              <label>kitchen and sommelier do  tasks</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a8" endpoint="" a:alt_id="sid-FE2022B4-62EC-421B-86EE-231FC2E0AD76">
+            <parameters>
+              <label>waiter readies a cart</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <call id="a10" endpoint="" a:alt_id="sid-E036B2BF-3026-4F96-828D-4A7B4C7403BB">
+        <parameters>
+          <label>waiter delivers a cart</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <call id="a11" endpoint="" a:alt_id="sid-EE8DB009-638B-4228-8114-002A4F32C828">
+        <parameters>
+          <label>waiter returns to the room-service station</label>
+          <method/>
+          <type>:task</type>
+          <arguments/>
+        </parameters>
+      </call>
+      <choose mode="exclusive" a:alt_id="sid-C21BC5CF-C199-4D9B-9EBE-83AD2BA066B8">
+        <alternative condition="">
+          <call id="a12" endpoint="" a:alt_id="sid-08F06024-6F89-43F5-B5B6-FA47E4BD773F">
+            <parameters>
+              <label>waiter waits to do the billing</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+        <alternative condition="">
+          <call id="a14" endpoint="" a:alt_id="sid-22E98A7E-6EE7-4A0D-A5D6-2579738BFBB5">
+            <parameters>
+              <label>waiter debits guest ’ s account</label>
+              <method/>
+              <type>:task</type>
+              <arguments/>
+            </parameters>
+          </call>
+        </alternative>
+      </choose>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>
