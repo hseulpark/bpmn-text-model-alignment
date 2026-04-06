@@ -254,5 +254,3 @@ python3 evaluation/run_one_test.py
 
 Original base models were obtained from:
 - Chair of Information Systems and Business Process Management (TUM): https://github.com/com-pot-93/cpee-models
-
-This repository contains generated derivatives (error-injected models) for research evaluation.
