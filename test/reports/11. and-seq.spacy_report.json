@@ -1,0 +1,61 @@
+{
+  "log_path": "test/text/11. and-seq.txt",
+  "bpmn_path": "test/models/11. and-seq.xml",
+  "user_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up brewer",
+    "pour water",
+    "serve"
+  ],
+  "model_tasks": [
+    "boil water",
+    "prepare coffee ground",
+    "set up the brewer",
+    "pour water",
+    "serve"
+  ],
+  "comparison": {
+    "issues": {
+      "missing_tasks": [],
+      "additional_tasks": [],
+      "merged_tasks": [],
+      "split_tasks": [],
+      "order_analysis": {
+        "note": "",
+        "random_sequences_best_pair": null,
+        "two_wrong_sequences_best_pair": null
+      },
+      "gateway_analysis": {
+        "note": "Gateway analysis computed (structural + AutoBPMN output_text).",
+        "gateway_mismatches": [
+          {
+            "mismatch_type": "parallel_to_sequential_inconsistency",
+            "task_pair": [
+              "U0",
+              "U1"
+            ],
+            "user_types": [
+              "PARALLEL"
+            ],
+            "output_types": [
+              "SEQUENTIAL"
+            ],
+            "detail": "Parallel semantics in the user text are flattened into sequential flow in the model."
+          }
+        ],
+        "mismatch_count": 1,
+        "structural": {
+          "model_parallel_count": 0,
+          "model_exclusive_choose_count": 0,
+          "xor_to_seq_suspected": false,
+          "and_to_xor_suspected": false,
+          "and_to_seq_suspected": true,
+          "xor_to_and_suspected": false
+        }
+      }
+    }
+  },
+  "user_text": "Boil water and prepare the coffee ground simultaneously. Then, set up the brewer. Afterward, pour water and serve.",
+  "output_text": "The process begins with a starting point, which signifies the initiation of the process. There are no specific actions, decisions, or tasks that occur between the start and the end. The process concludes immediately after it begins, reaching the endpoint without any intermediate steps or activities. This represents a very simple process that starts and ends without any additional actions or events in between."
+}

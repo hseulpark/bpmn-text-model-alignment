@@ -84,7 +84,10 @@ Each report contains:
 To demonstrate how to use the similarity + mapping logic directly from Python:
 
 ```bash
-python3 sim_example.py
+python3 examples/sim_example.py \
+    --xml examples/models/gdpr_7_right_to_be_forgotten.json.xml \
+    --txt examples/text/gdpr_7_right_to_be_forgotten.json.autobpmn.txt \
+    --report_dir examples/reports/comparison_results
 ```
 
 What this example should show:
@@ -147,7 +150,17 @@ The injection script writes logs that record what was changed:
 To demonstrate how to call the injection logic from Python code:
 
 ```bash
-python3 inj_example.py
+python3 examples/inj_example.py \
+  --xml examples/models/healthcare_bpmai_2.xml \
+  --force_error additional_task \
+  --seed 42 \
+  --out_dir examples/reports/injected
+  
+python3 examples/inj_example.py \
+  --xml examples/models/gdpr_7_right_to_be_forgotten.json.xml \
+  --n_errors 3 \
+  --seed 42 \
+  --out_dir examples/reports/injected
 ```
 
 What this example should show:
@@ -204,14 +217,6 @@ Suggested structure:
 - `test/models/` : small XML models  
 - `test/text/` : corresponding process descriptions  
 - `test/expected/` : notes or expected outcomes per example  
-
-To run the minimal validation (if a test runner is included):
-
-```bash
-python3 evaluation/run_one_test.py
-```
-
-(If you do not provide a test runner, you can still validate manually by running the comparator on the files in `test/`.)
 
 ---
 

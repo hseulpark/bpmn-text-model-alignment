@@ -1,0 +1,19 @@
+The process begins when a person arrives at the hospital. Upon arrival, they are instructed to wait at the front area. After waiting, they proceed to visit a nurse. The nurse checks the person's insurance details. 
+
+Next, the process involves determining the patient's state. If the patient's condition is such that they can be sent home, they are sent home. If not, further steps are taken. 
+
+If the patient is not sent home, the process checks if the patient needs to be examined. If an examination is required, the patient is examined. Following the examination, there are several possible outcomes:
+
+1. If the examination indicates hospitalization is necessary, the patient is hospitalized. After hospitalization, the patient is booked for a doctor’s appointment. If further examination is needed, the patient is examined again.
+
+2. If the examination suggests that the patient should be sent to the pharmacy, the patient is directed to the pharmacy. At the pharmacy, the patient orders medicine, pays for it, and receives it. After receiving the medicine, the process checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again.
+
+3. If the examination suggests that the patient can be sent home, the patient is sent home. The process then checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again.
+
+If the patient is not sent home after the initial examination, the process checks if the patient is registered in the hospital. If the patient is not registered, they are registered. After registration, the patient pays a fee. 
+
+Once the fee is paid, the process checks if the patient needs to be booked for a doctor’s appointment. If so, the patient is booked for the appointment, and if further examination is needed, the patient is examined again. 
+
+After the examination, if hospitalization is necessary, the patient is hospitalized. If the patient needs to be sent to the pharmacy, they follow the same steps as previously described. If the patient can be sent home, they are sent home, and the process checks if further steps are needed.
+
+The process continues to loop through these checks and actions until all necessary steps are completed, at which point the process ends.
