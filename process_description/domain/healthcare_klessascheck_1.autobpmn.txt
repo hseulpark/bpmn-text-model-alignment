@@ -1,7 +1,0 @@
-The process begins with diagnosing a condition known as non-specific low back pain. Once the diagnosis is made, there is a decision point where two different paths can be taken.
-
-In the first path, the process involves applying superficial heat or other non-pharmacological treatments. After this treatment, there is another decision point. From here, the process can either proceed to prescribing a non-steroidal anti-inflammatory drug (NSAID) or a skeletal muscle relaxant (SMR), or it can skip this step. Regardless of whether medication is prescribed, the process then moves to a point where it converges with the other path.
-
-In the second path, the process involves applying exercise or other non-pharmacological treatments. Following this, there is a decision point where the process can either proceed to prescribing an NSAID or skip this step. If an NSAID is prescribed, there is another decision point where the process can either proceed to prescribing an opioid or skip this step. Regardless of whether an opioid is prescribed, the process then moves to a point where it converges with the other path.
-
-Finally, after both paths have converged, the process comes to an end.

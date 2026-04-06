@@ -1,9 +1,0 @@
-The process begins with the receipt of a customer order. Once the order is received, the next step involves processing the customer's demand. Following this, the necessary components required to fulfill the order are determined according to a pre-existing plan.
-
-At this point, a decision is made. If any parts are missing, they are purchased and added to the stock. If no parts are missing, the process continues without purchasing additional components. Regardless of whether parts were purchased or not, the process then moves on to production.
-
-After production is completed, quality checks are performed on the product. Another decision is made based on the results of these quality checks. If the product passes the quality checks, the process continues. If the product does not meet the quality standards, follow-up production is performed to address any issues. Once the follow-up production is completed, the process continues.
-
-The next step involves filling the product into appropriate packaging. After the product is packaged, it is then packed and labeled. Following this, the product is transported to the warehouse.
-
-Finally, the product is sent to the customer, marking the end of the process.

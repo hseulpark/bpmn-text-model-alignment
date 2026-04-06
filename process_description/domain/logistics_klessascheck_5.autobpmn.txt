@@ -1,9 +1,0 @@
-The process begins with the task of packaging a product. Once the product is packaged, it is then shipped. After shipping, a decision is made regarding the delivery method. 
-
-If the decision is to deliver the product directly to the customer's door, the product is delivered accordingly. Following this delivery, another decision is made. If it is necessary to print a pick-up receipt, this task is carried out, and the receipt is then posted. After posting the receipt, the product is rerouted to the closest station. Once this rerouting is complete, the process continues to the next decision point.
-
-Alternatively, if the initial decision is to deliver the product to a station instead of directly to the door, the product is delivered to the station. This leads to the same decision point as the rerouting option.
-
-At this decision point, if there is no further action required, the process moves to the final decision. However, if the product needs to be received back, it is received, and the process then proceeds to the final decision.
-
-The final decision determines if the process should end, and once all tasks and decisions are completed, the process concludes.

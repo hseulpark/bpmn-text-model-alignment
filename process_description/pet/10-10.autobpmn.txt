@@ -1,7 +1,0 @@
-The process begins with two possible starting points. First, a fault detector reports a failure to the Maintenance and Production Operator (MPO). Alternatively, the MPO may have a suspicion of their own fault. Regardless of which starting point occurs, the process converges at a decision point where the MPO examines the failure.
-
-After examining the failure, the MPO faces another decision. If the MPO rejects the failure of the fault detector, the process moves directly to the end. However, if the MPO confirms the failure of the fault detector, several actions follow.
-
-First, the MPO informs the General Operator (GO) about the confirmed failure. Then, the MPO also informs the Maintenance Service Provider (MSP). Following these notifications, the MPO proceeds to fix the fault at the measuring device. Once the repairs are completed, the MPO shares the results of the repairs.
-
-After sharing the repair results, the MPO informs the GO about the resolution of the interference. Subsequently, the MPO also informs the MSP about the resolution of the interference. Once these notifications are completed, the process reaches its conclusion.

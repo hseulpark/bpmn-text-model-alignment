@@ -1,5 +1,0 @@
-The process begins with assessing the patient's conditions. Once the assessment is complete, two activities occur simultaneously. The first activity involves performing a physical examination on the patient. The second activity involves drawing blood samples from the patient, which are then sent to the lab for analysis. After the lab completes the analysis, the results are received.
-
-Once both the physical examination and the lab analysis are completed, the process continues with making a diagnosis based on the gathered information. Following the diagnosis, a decision is made regarding the next steps. If the diagnosis indicates the need for immediate surgical intervention, the process proceeds with performing the surgery. Alternatively, if the surgery needs to be planned for a later time, the process involves planning the surgery accordingly.
-
-After either the surgical intervention is performed or the surgery is planned, the final step in the process is to discharge the patient. This marks the end of the process.

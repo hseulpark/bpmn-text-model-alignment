@@ -1,9 +1,0 @@
-The process begins when a new order is received from the sales department. Once the order is obtained, the master is responsible for determining the necessary parts, the quantities required, and the delivery date for the order. After this information is gathered, it is entered into the production planning system, often referred to as PPS.
-
-The PPS then generates a list of parts that need to be procured for the order. This list is subsequently transferred from the PPS to the Enterprise Resource Planning system, known as ERP. At this point, a decision is made regarding the availability of the parts.
-
-If there are any missing parts, the process takes a path where these parts are procured. Once the missing parts are procured, or if no parts were missing initially, the process continues to the next step.
-
-The next step involves receiving a notice from the system, which prompts an employee to take care of the implementation of the order. After the implementation is handled, the order undergoes a quality check to ensure it meets the required standards.
-
-Finally, the process concludes after the quality check is completed, marking the end of the process.

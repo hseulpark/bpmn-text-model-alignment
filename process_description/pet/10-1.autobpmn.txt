@@ -1,7 +1,0 @@
-The process begins with an initial step where the MPON sends a dismissal. Following this, the MPOO receives the dismissal and reviews it. After the review, a decision point is reached where the MPOO must choose between two possible actions.
-
-In one scenario, the MPOO decides to oppose the dismissal. If this is the case, the process continues with the MPOO taking action to oppose the dismissal. Once this action is completed, the process reaches another decision point.
-
-In the alternative scenario, the MPOO confirms the dismissal. If this decision is made, the process proceeds with the MPOO confirming the dismissal. This action also leads to the same decision point as the opposing action.
-
-Regardless of whether the MPOO opposes or confirms the dismissal, the process concludes after reaching the final decision point, leading to the end of the process.

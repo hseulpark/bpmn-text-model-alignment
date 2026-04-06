@@ -1,5 +1,0 @@
-The process begins with an initial event that triggers a decision point. At this decision point, there are two possible paths. In the first path, a request for changes is made to the MPO by either the SP, PU, or GO. In the second path, the MPO itself initiates a change.
-
-After either of these actions, the process converges back to a single point where the MPO reviews the change request. Following this review, another decision is made. The MPO can either reject the change or confirm it. If the change is rejected, the process moves to a point where the MPO formally rejects the change, and then the process continues to the next step. If the change is confirmed, the process proceeds to the MPO performing the change.
-
-Once the change is performed, another decision point is reached. Here, the MPO can either report the successful implementation of the change to the SP, PU, or GO, or notify them about a failure in implementing the change. Regardless of whether the implementation is successful or not, the process concludes with a final event.

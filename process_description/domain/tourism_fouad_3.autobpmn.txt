@@ -1,9 +1,0 @@
-The process begins when a travel request is received. Once the request is obtained, the next step is to prepare a tour plan based on the request. After the tour plan is prepared, it is sent to the customer for review.
-
-Following the dispatch of the tour plan, the process waits to receive a response from the customer. Upon receiving the response, a decision is made. If the response is positive, the tour is booked. After booking the tour, another decision point is reached.
-
-At this decision point, if certain conditions are met (indicated as "true"), the customer is charged for the tour. Following the charge, there is another decision to be made. Depending on the outcome, the process may involve contacting the customer directly. Alternatively, the process might proceed to send the customer a bill and then send a booking confirmation.
-
-After sending the booking confirmation, the process returns to the previous decision point to check if there are any further actions required. If the initial response from the customer was not positive, or if the conditions for charging the customer are not met, the process concludes without further actions.
-
-The process ends once all necessary actions are completed, whether it involves charging the customer, contacting them, or sending confirmations and bills.

@@ -1,7 +1,0 @@
-The process begins with a starting point where a decision is made to follow one of two main paths. In the first path, the process involves sending various types of bills to the Grid Operator (GO). The options include the Metering Point Operations Organization (MPOO) sending a bill for metering point operations, the Metering Service Provider Organization (MSPO) sending a bill for measurement services, the MSPO sending a bill for additional readings, or the MPOO sending a bill for equipment acquisition. Each of these actions leads to the GO examining the received bill.
-
-Once the GO examines the bill, another decision is made. The GO can either reject the invoice or confirm it with a payment advice. Regardless of the decision, the process then converges back to the main decision point.
-
-In the second path, the MPOO sends a bill for equipment acquisition to the Metering Point Operator Network (MPON). The MPON then examines the bill. Following this examination, the MPON can either confirm the invoice with a payment advice or reject it. After this decision, the process also converges back to the main decision point.
-
-Finally, after all possible actions and decisions have been made, the process concludes at an endpoint.

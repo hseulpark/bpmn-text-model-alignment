@@ -1,5 +1,0 @@
-The process begins with an initial step where EC informs INQ about a change in data. Following this, INQ takes the responsibility to notify IP about the data change. Once IP is informed, they proceed to check whether the data can indeed be changed.
-
-At this point, a decision is made. If IP determines that the data can be changed, they confirm the changes back to INQ. Alternatively, if IP decides that the data cannot be changed, they reject the changes proposed by INQ.
-
-Regardless of whether the changes are confirmed or rejected, the process concludes after IP communicates their decision. This marks the end of the process.

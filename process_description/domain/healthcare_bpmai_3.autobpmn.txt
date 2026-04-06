@@ -1,9 +1,0 @@
-The process begins with a start event, which signifies the initiation of the process. The first step involves making a phone call to the hospital. Following this, a decision is made regarding whether to accept the patient.
-
-At this decision point, if the patient is accepted, the process continues by adding the patient to a list. After being added to the list, there is another decision point. If the condition is true, the process proceeds to conduct a patient control, which involves checking or monitoring the patient. Once the patient control is completed, the process loops back to the previous decision point to re-evaluate the condition.
-
-If the condition remains true, the process moves forward to call the patient to the hospital. After the patient is called, they are hospitalized. Following hospitalization, the process involves the childbirth event.
-
-After childbirth, there is another decision point. If the condition is met, the process continues with post-hospitalization care for the patient. Alternatively, if a different condition is met, the process involves providing special treatment to the patient. Both paths eventually converge back to the decision point after childbirth.
-
-If, at the initial decision point regarding patient acceptance, the patient is not accepted, the process skips directly to the end. Similarly, after the post-hospitalization care or special treatment, the process also reaches the end point, marking the conclusion of the process.

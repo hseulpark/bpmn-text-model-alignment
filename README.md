@@ -1,6 +1,6 @@
 # BPMN Text–Model Alignment (Research Prototype)
 
-This repository contains a research prototype for evaluating alignment between **process model structure** (CPEE XML, BPMN-like) and **natural-language process descriptions**. The main goal is to detect mismatches between the user text specification and the model, including **task-level** and **control-flow/gateway-level** errors.
+This repository contains a research prototype for evaluating alignment between **BPMN process model structure** (CPEE XML) and **natural-language process descriptions**. The main goal is to detect mismatches between the user text specification and the model, including **task-level** and **control-flow/gateway-level** errors.
 
 ---
 
@@ -10,24 +10,31 @@ This repository is structured to support reproducibility and thesis submission r
 
 - **README.md** (this file): setup + how to run everything  
 - **requirements.txt**: installable dependency list  
-- **Similarity + matching implementation**: included in the comparator code (`compare_text_model.py` and its imported modules)  
+- **Similarity + matching implementation**: implemented in `compare_text_model.py` and its imported functions  
 - **Comparator CLI**: `compare_text_model.py` (text–model comparison, writes JSON report)  
-- **Similarity usage example (non-CLI)**: `sim_example.py`  
+- **Similarity usage example (non-CLI)**: `examples/sim_example.py`  
 - **Error injection implementation**: `inject_errors.py` (inject controlled errors into CPEE XML)  
-- **Injection usage example (non-CLI)**: `inj_example.py`  
-- **Test data**: `./test/` (small set of example models/texts for quick validation)  
-- **Example process models for injection**: `./examples/models/` (2–3 XML models)  
+- **Injection usage example (non-CLI)**: `examples/inj_example.py`  
+- **Test data**: `./test/` (small set of example models/texts + generated reports)  
+- **Examples**: `./examples/` (small “real demo” inputs + outputs)  
 - **Evaluation pipeline code**: `./evaluation/` (batch scripts used in the thesis)  
-- **Generated evaluation models**: `models_with_error/` (includes the models used in the evaluation)  
-- **Evaluation artifacts**: `./evaluation/artifacts/` (CSV/XLSX tables, figures, result summaries)
+- **Generated evaluation models**: `models_with_error/` (models used in evaluation runs)  
+- **Generated evaluation reports**: `report_batch_eval/` (reports produced during balanced evaluation)  
+- **Evaluation artifacts**: `evaluation/artifacts/` (CSV/XLSX table)
 
-### Original model sources
+---
 
-The **ground-truth source models** are not necessarily included in full. They originate from the Chair of Information Systems and Business Process Management (TUM) repository:
+## Dataset note (ground_truth / process_description not included)
+
+The original model repository is maintained by the Chair of Information Systems and Business Process Management (TUM):
 
 - https://github.com/com-pot-93/cpee-models
 
-This project uses subsets such as `domain`, `pet`, and `sapsam` as base models for generating faulty variants via error injection.
+This submission repository **does not include** the full original `ground_truth/` and `process_description/` folders.
+Instead, it contains:
+
+- small representative **example models + texts** under `examples/` (for demo runs), and
+- the **generated models** used for evaluation under `models_with_error/`.
 
 ---
 
@@ -58,18 +65,18 @@ python3 inject_errors.py --help
 
 ## Core Workflows
 
-### A. Compare one process description against one XML model (CLI)
+### A. Compare one text file against one XML model (CLI)
 
 This runs the comparator and writes a JSON report.
 
 ```bash
 python3 compare_text_model.py \
-  --log process_description/domain/gdpr_1_data_breach.autobpmn.txt \
-  --bpmn models_with_error/domain/gdpr_1_data_breach.err3.001.xml \
-  --report_root report/
+  --log "test/text/8. and-or.txt" \
+  --bpmn "test/models/8. and-or.xml" \
+  --report_root test/reports
 ```
 
-**Output:** A JSON report is written into `report/` (or your specified `--report_root`).
+**Output:** A JSON report is written into `test/reports/` (or your specified `--report_root`).
 
 Each report contains:
 - paths (`log_path`, `bpmn_path`)
@@ -77,52 +84,57 @@ Each report contains:
 - detected issues (`comparison`)
 - original user text and optional model-generated text (`user_text`, `output_text`)
 
+> If your file name contains spaces, wrap the path in quotes (recommended), or escape spaces with `\ `.
+
 ---
 
-### B. Similarity / mapping usage outside the CLI (`sim_example.py`)
+### B. Similarity / mapping usage outside the CLI (`examples/sim_example.py`)
 
-To demonstrate how to use the similarity + mapping logic directly from Python:
+This demonstrates how to use the similarity + mapping + comparator logic **from Python**, without using the CLI as the primary interface.
+
+Example:
 
 ```bash
 python3 examples/sim_example.py \
-    --xml examples/models/gdpr_7_right_to_be_forgotten.json.xml \
-    --txt examples/text/gdpr_7_right_to_be_forgotten.json.autobpmn.txt \
-    --report_dir examples/reports/comparison_results
+  --xml examples/models/healthcare_bpmai_2.xml \
+  --txt examples/text/healthcare_bpmai_2.autobpmn.txt \
+  --report_dir examples/reports/comparison_results
 ```
 
 What this example should show:
-- computing similarity between task labels
-- matching user tasks to model tasks
-- printing matched pairs and similarity scores
+- loading text + model programmatically
+- extracting tasks
+- computing similarity and greedy 1:1 matches
+- generating and saving a JSON report under `examples/reports/comparison_results`
 
 ---
 
 ### C. Inject errors into one model (CLI)
 
-#### Inject multiple random errors (default)
+Inject multiple random errors:
 
 ```bash
 python3 inject_errors.py \
-  --in_xml examples/models/example_1.xml \
+  --in_xml examples/models/healthcare_bpmai_2.xml \
   --out_dir models_with_error/examples \
   --n_errors 3 \
   --seed 42 \
-  --log_csv error_injection_log.csv
+  --log_csv evaluation/artifacts/error_injection_log.csv
 ```
 
-#### Inject exactly one forced error (used for balanced evaluation sets)
+Inject exactly one forced error:
 
 ```bash
 python3 inject_errors.py \
-  --in_xml examples/models/example_1.xml \
+  --in_xml examples/models/healthcare_bpmai_2.xml \
   --out_dir models_with_error/examples \
   --n_errors 1 \
   --seed 42 \
   --force_error and_to_seq \
-  --log_csv error_injection_log.csv
+  --log_csv evaluation/artifacts/error_injection_log.csv
 ```
 
-#### Supported `--force_error` values
+Supported `--force_error` values:
 
 Task-level errors:
 - `missing_task`
@@ -137,15 +149,9 @@ Gateway/control-flow errors:
 - `xor_to_and`
 - `xor_to_seq`
 
-#### Injection logs
-
-The injection script writes logs that record what was changed:
-- CSV log (per generated model): `--log_csv ...`
-- JSON history (more details per run): `--log_json ...` (if enabled in your version)
-
 ---
 
-### D. Injection usage outside the CLI (`inj_example.py`)
+### D. Injection usage outside the CLI (`examples/inj_example.py`)
 
 To demonstrate how to call the injection logic from Python code:
 
@@ -155,7 +161,11 @@ python3 examples/inj_example.py \
   --force_error additional_task \
   --seed 42 \
   --out_dir examples/reports/injected
-  
+```
+
+Or inject multiple random errors:
+
+```bash
 python3 examples/inj_example.py \
   --xml examples/models/gdpr_7_right_to_be_forgotten.json.xml \
   --n_errors 3 \
@@ -177,18 +187,15 @@ All evaluation scripts used in the thesis are stored under:
 - `./evaluation/`
 
 Typical workflow:
-1. generate / assemble a balanced evaluation set (one injected error per instance)
+1. generate / assemble an evaluation set (including injected errors)
 2. run batch comparison
 3. aggregate JSON reports into tables / spreadsheets
 
-### Run balanced evaluation batch
-
-Example command (exact command used in the thesis evaluation):
+Example command used for balanced evaluation runs:
 
 ```bash
 python3 evaluation/run_compare_eval_balanced.py \
   --models_dir models_with_error/eval_balanced \
-  --desc_root process_description \
   --script compare_text_model.py \
   --report_root report_batch_eval
 ```
@@ -196,27 +203,18 @@ python3 evaluation/run_compare_eval_balanced.py \
 Outputs:
 - JSON reports stored under `report_batch_eval/` grouped by error category (folder names)
 
-### Evaluation artifacts
-
-All tables/Excel files/figures used for evaluation interpretation are stored in:
-
+Evaluation artifacts (tables/figures) are under:
 - `evaluation/artifacts/`
-
-This typically includes:
-- balanced evaluation CSV/XLSX logs
-- hit counts / hit rates tables
-- exported figures used in the thesis
 
 ---
 
 ## Test Data (`./test`)
 
-This repository includes a small test suite under `./test/` to validate correctness quickly.
+This repository includes a small test suite under `./test/`:
 
-Suggested structure:
 - `test/models/` : small XML models  
 - `test/text/` : corresponding process descriptions  
-- `test/expected/` : notes or expected outcomes per example  
+- `test/reports/` : generated JSON reports  
 
 ---
 
@@ -224,14 +222,14 @@ Suggested structure:
 
 - `compare_text_model.py` : main comparator CLI (produces JSON reports)  
 - `inject_errors.py` : error injection CLI (produces mutated XML + logs)  
-- `sim_example.py` : similarity demo without CLI  
-- `inj_example.py` : injection demo without CLI  
-- `examples/models/` : 2–3 example models for quick injection tests  
-- `test/` : minimal test data for validation  
+- `examples/sim_example.py` : similarity demo without CLI  
+- `examples/inj_example.py` : injection demo without CLI  
+- `examples/models/`, `examples/text/` : demo inputs  
+- `examples/reports/` : demo outputs (comparison results, injected models)  
 - `evaluation/` : scripts used for thesis evaluation (batch runs, aggregation)  
-- `models_with_error/` : generated models (includes evaluation models)  
-- `process_description/` : natural language descriptions used as user inputs  
-- `report/`, `report_batch_eval/` : generated JSON reports  
+- `models_with_error/` : generated models used in evaluation  
+- `report_batch_eval/` : generated evaluation JSON reports  
+- `test/` : minimal test data + example reports  
 
 ---
 
@@ -239,23 +237,23 @@ Suggested structure:
 
 - The comparator uses spaCy (`en_core_web_lg`) for task extraction.
 - SBERT embeddings use `sentence-transformers/all-MiniLM-L6-v2`.
-- Some workflows may call an external API (if enabled in your generator script). Internet access is required for such steps.
+- Gateway analysis may call an external API (AutoBPMN); internet access may be required for those steps.
 
 ---
 
-## How to get help / troubleshoot
+## Troubleshooting
 
 - Check script help:
   - `python3 compare_text_model.py --help`
   - `python3 inject_errors.py --help`
 - If spaCy model is missing:
   - `python -m spacy download en_core_web_lg`
-- If you hit HuggingFace warnings or rate limits:
-  - set `HF_TOKEN` in your environment (optional)
 
 ---
 
 ## License / Attribution
 
-Original base models were obtained from:
+Original base models are from:
 - Chair of Information Systems and Business Process Management (TUM): https://github.com/com-pot-93/cpee-models
+
+This repository contains generated derivatives (e.g., error-injected models and reports) for research evaluation.

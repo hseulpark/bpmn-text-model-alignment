@@ -1,7 +1,0 @@
-The process begins with the initial step where the MSPN registers the measurement at the GO. Following this, the GO takes the next step to examine the application submitted by the MSPN. After examining the application, a decision point is reached where the GO must choose between two possible outcomes.
-
-If the GO decides to reject the application of the MSPN, the process moves to the step where the GO formally rejects the application. After this rejection, the process continues to a decision point that leads to the next step.
-
-Alternatively, if the GO confirms the application of the MSPN, the process proceeds to the same decision point as after the rejection. Regardless of whether the application was rejected or confirmed, the process then moves forward to the next step.
-
-In this subsequent step, the GO assigns the MSPN. Once the assignment is made, the GO informs the MSPO about this assignment. Following this, the GO also informs the MPO about the assignment of the MSPN. Finally, the GO informs the SP about the assignment of the MSPN. With these notifications completed, the process comes to an end.
