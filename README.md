@@ -1,4 +1,4 @@
-# BPMN Text–Model Alignment (Research Prototype)
+# BPMN Text–Model Alignment (Bachelor's Thesis)
 
 This repository contains a research prototype for evaluating alignment between **BPMN process model structure** (CPEE XML) and **natural-language process descriptions**. The main goal is to detect mismatches between the user text specification and the model, including **task-level** and **control-flow/gateway-level** errors.
 
